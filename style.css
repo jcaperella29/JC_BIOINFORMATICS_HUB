@@ -1,3 +1,4 @@
+
 /* Base Reset */
 * {
     margin: 0;
@@ -7,60 +8,85 @@
 
 /* Body */
 body {
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77, #778da9);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #e0e1dd;
     padding: 20px;
-    line-height: 1.6;
+    min-height: 100vh;
 }
 
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em;
     margin-bottom: 10px;
+    color: #90e0ef;
 }
 
 header p {
-    font-size: 1.2em;
-    color: #666;
+    font-size: 1.3em;
+    color: #caf0f8;
 }
 
 /* Tool Sections */
 .tool {
-    background: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
 .tool h2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #ffd6ff;
+}
+
+.tool p {
+    margin-bottom: 15px;
 }
 
 .tool a {
     display: inline-block;
-    margin-top: 10px;
     text-decoration: none;
-    color: #ffffff;
-    background-color: #007BFF;
-    padding: 10px 20px;
-    border-radius: 5px;
+    background: #48cae4;
+    color: #03045e;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .tool a:hover {
-    background-color: #0056b3;
+    background: #0077b6;
+    color: #ffffff;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 50px;
     font-size: 0.9em;
-    color: #777;
+    color: #adb5bd;
 }
+
+/* Background Animation */
+@keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
