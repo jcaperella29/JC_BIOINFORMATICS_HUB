@@ -112,5 +112,9 @@ footer {
 .tab-content.active {
     display: block;
 }
+.tab-button.active {
+    background: #00b4d8;
+    box-shadow: 0 0 10px #00b4d8, 0 0 20px #00b4d8;
+}
 
 
