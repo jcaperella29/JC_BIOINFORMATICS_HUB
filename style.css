@@ -96,9 +96,9 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/DNA_double_helix_horizontal.png') repeat-x;
+    background: url('dna-background.png') repeat-x;
     background-size: contain;
-    opacity: 0.04; /* subtle glow */
+    opacity: 0.04;
     animation: scrollDNA 80s linear infinite;
     z-index: 0;
 }
@@ -107,10 +107,3 @@ footer {
     from { background-position: 0 0; }
     to { background-position: 5000px 0; }
 }
-
-/* Make sure main content appears above background */
-header, main, footer {
-    position: relative;
-    z-index: 1;
-}
-
