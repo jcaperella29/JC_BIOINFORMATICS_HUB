@@ -6,12 +6,9 @@
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77, #778da9);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background: transparent; /* remove gradient */
     color: #e0e1dd;
     padding: 20px;
     min-height: 100vh;
