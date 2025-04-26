@@ -33,11 +33,11 @@ header p {
 
 /* Tool Sections */
 .tool {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.8); /* stronger, less transparent */
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 15px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -55,12 +55,11 @@ header p {
 .tool p {
     margin-bottom: 15px;
 }
-
 .tool a {
     display: inline-block;
     text-decoration: none;
-    background: #48cae4;
-    color: #03045e;
+    background: #0077b6; /* deep ocean blue */
+    color: #ffffff; /* pure white text */
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
@@ -68,9 +67,10 @@ header p {
 }
 
 .tool a:hover {
-    background: #0077b6;
-    color: #ffffff;
+    background: #023e8a; /* darker on hover */
 }
+
+
 
 /* Footer */
 footer {
