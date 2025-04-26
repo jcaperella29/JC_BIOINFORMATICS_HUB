@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bioinformatics Tools Hub</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bioinformatics Tools Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dna-bg"></div>
+  <div class="dna-bg"></div>
 
-    <header>
-        <h1>Welcome to My Bioinformatics Tools Hub</h1>
-        <p>Explore my bioinformatics applications focused on RNA-Seq, ATAC-Seq, and MiRNA-Seq analysis.</p>
-    </header>
+  <header>
+    <h1>Welcome to My Bioinformatics Tools Hub</h1>
+    <p>Explore my bioinformatics applications focused on RNA-Seq, ATAC-Seq, and MiRNA-Seq analysis.</p>
+  </header>
 
-    <nav class="tab-nav">
-        <button class="tab-button" onclick="showTab('rna')">RNA-Seq</button>
-        <button class="tab-button" onclick="showTab('atac')">ATAC-Seq</button>
-        <button class="tab-button" onclick="showTab('mirna')">miRNA-Seq</button>
-    </nav>
+  <nav class="tab-nav">
+    <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
+    <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
+    <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
+    <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
+  </nav>
 
-    <main>
-        <section id="rna" class="tab-content active">
-            <div class="tool">
-                <h2>RNA-Seq Analysis App</h2>
-                <p>This app allows the user to input a counts.csv file, perform basic differential gene expression analysis with DESeq2, generate quality control plots, and output results to csv files and plots to a PowerPoint file.</p>
-                <a href="https://github.com/jcaperella29/RNA_SEQ_APP" target="_blank">View on GitHub</a>
-            </div>
-        </section>
+  <main>
+    <section id="welcome" class="tab-content active">
+      <div class="tool">
+        <h2>Welcome!</h2>
+        <p>Welcome to my bioinformatics hub! Here you'll find apps built for analyzing RNA-Seq, ATAC-Seq, and miRNA-Seq data, all designed for researchers and scientists. Click the tabs above to explore each tool.</p>
+      </div>
+    </section>
 
-        <section id="atac" class="tab-content">
-            <div class="tool">
-                <h2>ATAC-Seq Analysis App</h2>
-                <p>This is a Shiny App built to make ATAC-Seq data analysis easier for non-programmers. The app includes data QC, differential peak calling, visualization and downstream annotation steps, all wrapped into a simple point-and-click interface.</p>
-                <a href="https://github.com/jcaperella29/ATAC_APP" target="_blank">View on GitHub</a>
-            </div>
-        </section>
+    <section id="rna" class="tab-content">
+      <div class="tool">
+        <h2>RNA-Seq Analysis App</h2>
+        <p>This app allows the user to input a counts.csv file, perform basic differential gene expression analysis with DESeq2, generate quality control plots, and output results to csv files and plots to a PowerPoint file.</p>
+        <a href="https://github.com/jcaperella29/RNA_SEQ_APP" target="_blank">View on GitHub</a>
+      </div>
+    </section>
 
-        <section id="mirna" class="tab-content">
-            <div class="tool">
-                <h2>MiRNA-Seq Shiny App</h2>
-                <p>This is a Shiny App for analyzing MiRNA-Seq data, including differential expression analysis and visualization. Designed to be user-friendly with minimal coding required from the user side.</p>
-                <a href="https://github.com/jcaperella29/MI_RNA_SHINY" target="_blank">View on GitHub</a>
-            </div>
-        </section>
-    </main>
+    <section id="atac" class="tab-content">
+      <div class="tool">
+        <h2>ATAC-Seq Analysis App</h2>
+        <p>This is a Shiny App built to make ATAC-Seq data analysis easier for non-programmers. The app includes data QC, differential peak calling, visualization and downstream annotation steps, all wrapped into a simple point-and-click interface.</p>
+        <a href="https://github.com/jcaperella29/ATAC_APP" target="_blank">View on GitHub</a>
+      </div>
+    </section>
 
-    <footer>
-        <p>Made with ❤️ by jcaperella29</p>
-    </footer>
+    <section id="mirna" class="tab-content">
+      <div class="tool">
+        <h2>MiRNA-Seq Shiny App</h2>
+        <p>This is a Shiny App for analyzing MiRNA-Seq data, including differential expression analysis and visualization. Designed to be user-friendly with minimal coding required from the user side.</p>
+        <a href="https://github.com/jcaperella29/MI_RNA_SHINY" target="_blank">View on GitHub</a>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-        }
-    </script>
+  <footer>
+    <p>Made with ❤️ by jcaperella29</p>
+  </footer>
+
+  <script>
+    function showTab(tabId, btn) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+  </script>
 </body>
 </html>
