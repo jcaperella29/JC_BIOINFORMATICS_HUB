@@ -13,13 +13,14 @@
     <h1>JCaperella Bioinformatics Hub</h1>
     <p>Turning complex genomic data into usable insights through code and clarity. Explore tools designed for researchers, biologists, and data scientists.</p>
   </header>
+<nav class="tab-nav">
+  <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
+  <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
+  <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
+  <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
+  <button class="tab-button" onclick="showTab('methylation', this)">Methylation Analysis</button>
+</nav>
 
-  <nav class="tab-nav">
-    <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
-    <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
-    <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
-    <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
-  </nav>
 
   <main>
     <section id="welcome" class="tab-content active">
@@ -52,7 +53,21 @@
         <a href="https://github.com/jcaperella29/MI_RNA_SHINY" target="_blank">View on GitHub</a>
       </div>
     </section>
+
+  <section id="methylation" class="tab-content">
+  <div class="tool">
+    <h2>DNA Methylation Analysis App</h2>
+    <p>
+      A fully interactive Shiny app for analyzing DNA methylation data from arrays such as Illumina 450k. Features include differential methylation analysis (DE), pathway enrichment using Enrichr, PCA/UMAP visualizations, Random Forest classification, and power analysis. Optimized for both local and HPC environments via Singularity/Apptainer.
+    </p>
+    <a href="https://github.com/jcaperella29/methylation_shiny" target="_blank">View on GitHub</a>
+  </div>
+</section>
+
+    
   </main>
+
+  
 
   <footer>
     <p>Made with ❤️ by John Caperella • <a href="mailto:jcaperella29@gmail.com">jcaperella29@gmail.com</a></p>
