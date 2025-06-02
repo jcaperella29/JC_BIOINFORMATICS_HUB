@@ -81,13 +81,22 @@
     <div class="ribbon">No PLINK Needed!</div>
 
     <h2>GWAS Analysis App</h2>
-    <p>
-      A Shiny app for Genome-Wide Association Studies that supports direct upload of VCF, phenotype, and covariate tables in CSV format.
-      <br><br>
-      It includes built-in filtering by Minor Allele Frequency (MAF) threshold and generates downstream plots and summaries for variant association analysis. Containerized via Singularity for seamless deployment on HPC environments.
+<p>
+      A full-stack, no-code Shiny app for Genome-Wide Association Studies (GWAS) using raw VCF files—no PLINK needed. Upload your VCF, phenotype, and optional covariate table to begin.
     </p>
+    <ul>
+      <li><strong>📈 QC Filters:</strong> MAF, allele frequency, call rate, and HWE p-value thresholds</li>
+      <li><strong>🧬 GWAS Engine:</strong> Logistic regression with Bonferroni correction support</li>
+      <li><strong>📊 Visualization:</strong> PCA, UMAP, QQ plot, Manhattan plot with region zoom</li>
+      <li><strong>🧠 Machine Learning:</strong> Random Forest classifier with AUC, importance scores, and ROC curve</li>
+      <li><strong>🧭 SNP-to-Gene Mapping:</strong> Maps significant SNPs to nearest genes</li>
+      <li><strong>🧪 Enrichment Analysis:</strong> Uses KEGG, GO, and Reactome via <code>enrichR</code></li>
+      <li><strong>📉 Power Analysis:</strong> Cohen’s d-based observed power and sample size curve</li>
+      <li><strong>📥 Export Everything:</strong> GWAS tables, enrichment results, ML metrics, and more</li>
+    </ul>
     <a href="https://github.com/jcaperella29/GWAS_SHINY_APP" target="_blank">View on GitHub</a>
   </div>
+    
 </section>
 
 
