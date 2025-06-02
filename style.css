@@ -122,3 +122,23 @@ footer {
     font-size: 0.9em;
     color: #adb5bd;
 }
+
+
+/* Badge-style ribbon */
+.ribbon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff4757;
+  color: white;
+  padding: 6px 12px;
+  font-weight: bold;
+  font-size: 0.85em;
+  font-family: 'Montserrat', sans-serif;
+  transform: rotate(10deg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+
