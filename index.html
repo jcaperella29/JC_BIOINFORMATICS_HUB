@@ -19,6 +19,8 @@
   <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
   <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
   <button class="tab-button" onclick="showTab('methylation', this)">Methylation Analysis</button>
+  <button class="tab-button" onclick="showTab('gwas', this)">GWAS</button>
+
 </nav>
 
 
@@ -71,6 +73,16 @@
       A fully interactive Shiny app for analyzing DNA methylation data from arrays such as Illumina 450k. Features include differential methylation analysis (DE), pathway enrichment using Enrichr, PCA/UMAP visualizations, Random Forest classification, and power analysis. Optimized for both local and HPC environments via Singularity/Apptainer.
     </p>
     <a href="https://github.com/jcaperella29/methylation_shiny" target="_blank">View on GitHub</a>
+  </div>
+</section>
+<section id="gwas" class="tab-content">
+  <div class="tool">
+    <h2>GWAS Analysis App</h2>
+    <p>
+      A robust, full-stack Shiny app designed to streamline Genome-Wide Association Studies (GWAS). Users can upload PLINK `.assoc` files, visualize Manhattan and QQ plots, and explore SNP-level statistics interactively. <br><br>
+      Built for both local and HPC environments, the app is containerized with Singularity for easy deployment and reproducibility. Ideal for researchers working with large-scale genomic datasets who want a no-code interface for GWAS interpretation.
+    </p>
+    <a href="https://github.com/jcaperella29/GWAS_SHINY_APP" target="_blank">View on GitHub</a>
   </div>
 </section>
 
