@@ -19,6 +19,7 @@
   <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
   <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
   <button class="tab-button" onclick="showTab('methylation', this)">Methylation Analysis</button>
+  <button class="tab-button" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
   <button class="tab-button" onclick="showTab('gwas', this)">GWAS</button>
 
 </nav>
@@ -30,7 +31,7 @@
         <h2>Welcome!</h2>
         <p>
   I'm John Caperella, a bioinformatics specialist with an M.S. from Brandeis University and a background in biochemistry.
-  This hub features interactive tools I’ve built for RNA-Seq, ATAC-Seq, miRNA-Seq, and DNA methylation analysis—each one designed to simplify complex workflows and support life science research with minimal coding required.
+  This hub features interactive tools I’ve built for RNA-Seq, ATAC-Seq, miRNA-Seq,GWAS,CRISPR editings/Perturb-seq and DNA methylation analysis—each one designed to simplify complex workflows and support life science research with minimal coding required.
   <br><br>
   These apps aren’t just dashboards—they’re full-stack, no-nonsense tools built to handle every major task for each data type. From QC to differential expression to visualization, they do everything  your little heart could desire.
 </p>
@@ -75,7 +76,28 @@
     <a href="https://github.com/jcaperella29/methylation_shiny" target="_blank">View on GitHub</a>
   </div>
 </section>
+<section id="crispr" class="tab-content">
+  <div class="tool">
+    <h2>CRISPR Perturb-seq & Mixscape App</h2>
+    <p>
+      Analyze single-cell CRISPR perturbation experiments with this robust, HPC-ready Shiny app for Mixscape and Seurat workflows. Upload your counts and metadata, run UMAPs, Mixscape, and full differential gene expression—all in one place.
+      <br><br>
+      <strong>Features:</strong>
+      <ul>
+        <li>🧬 <b>Single-cell perturbation analysis</b> (Seurat + Mixscape)</li>
+        <li>📊 QC, normalization, UMAP, clustering, and summary stats</li>
+        <li>🦾 Full Mixscape pipeline with differential expression</li>
+        <li>💾 Export: KO gene tables, summary stats, and plots</li>
+        <li>☁️ <b>Deploys anywhere:</b> local laptop, HPC, or cloud via Singularity + Slurm</li>
+      </ul>
+      <span style="font-size:0.95em;">For detailed HPC deployment, see the README for Singularity and Slurm instructions.</span>
+    </p>
+    <a href="https://github.com/jcaperella29/Perturb_seq_app" target="_blank">View on GitHub</a>
+  </div>
+</section>
 
+
+    
 <section id="gwas" class="tab-content">
   <div class="tool">
     <div class="ribbon">No PLINK Needed!</div>
