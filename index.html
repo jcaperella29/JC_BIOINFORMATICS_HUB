@@ -122,64 +122,61 @@
     
 </section>
 
-section id="scrna" class="tab-content">
-      <h2>Single-cell RNA-Seq Solution</h2>
-      <p class="muted">Seurat-based workflow for end-to-end single-cell analysis with clear, reproducible steps.</p>
 
-      <div class="grid" style="margin-top:12px;">
-        <div class="card">
-          <div class="card-body">
-            <h3>What it does</h3>
-            <ul>
-              <li>Cell-level QC & filtering (e.g., features/cell, mito/ribo % thresholds)</li>
-              <li>Normalization → variable features → scaling (with optional covariate regression)</li>
-              <li>Dimensionality reduction: PCA → neighbors → UMAP/t-SNE</li>
-              <li>Clustering (graph-based) & marker discovery</li>
-              <li>Basic annotation helpers and exportable figures/results</li>
-            </ul>
-          </div>
-        </div>
+  /* --- scRNA tab styling (matches GWAS card vibe) --- */
+.tool .scrna-title {
+  font-size: 2.1em;
+  font-weight: 800;
+  line-height: 1.1;
+  /* soft gradient like your screenshot title */
+  background: linear-gradient(90deg, #ffb3ff, #b3d4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
 
-        <div class="card">
-          <div class="card-body">
-            <h3>Quick start</h3>
-            <ol>
-              <li>Clone the repo:
-                <div><code>git clone https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution</code></div>
-              </li>
-              <li>Install dependencies (see repo README for R/Seurat requirements).</li>
-              <li>Provide a counts matrix (e.g., 10x) or Seurat-ready input.</li>
-              <li>Run the workflow / launch the UI per the README instructions.</li>
-            </ol>
-            <p class="muted">Tip: keep a sample <code>.rds</code> to validate the pipeline quickly.</p>
-          </div>
-        </div>
+.tool .lead {
+  font-size: 1.05em;
+  color: #344054;        /* readable on white card */
+  margin-bottom: 14px;
+}
 
-        <div class="card">
-          <div class="card-body">
-            <h3>Links</h3>
-            <p>
-              <a class="pill" href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution" target="_blank" rel="noopener">GitHub Repo</a>
-            </p>
-            <p class="muted">Add a “Live App” button here later if you host it (Shiny/Posit Connect, etc.).</p>
-          </div>
-        </div>
-      </div>
+.emoji-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 18px;
+}
+.emoji-list li {
+  margin: 8px 0;
+  font-size: 1.02em;
+  color: #1b263b;
+}
+.emoji-list li strong { font-weight: 700; }
 
-      <div class="card" style="margin-top:16px;">
-        <div class="card-body">
-          <h3>Outputs</h3>
-          <ul>
-            <li>QC plots (counts/features/percent mito), dimensionality plots (PCA, UMAP)</li>
-            <li>Cluster assignments and marker tables</li>
-            <li>Optional saved Seurat object and exportable figures</li>
-          </ul>
-          <p class="muted">Keep outputs lightweight so they render nicely in GitHub or a static report.</p>
-        </div>
-      </div>
-    </section>
-    <!-- ▲▲▲ NEW TAB CONTENT ▲▲▲ -->
-  
+/* big primary button (keep your existing .tool a default) */
+.github-btn {
+  display: inline-block;
+  background: #0d6efd;
+  color: #fff !important;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  box-shadow: 0 6px 16px rgba(13,110,253,.28);
+  transition: transform .12s ease, filter .12s ease;
+}
+.github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
+
+/* optional: subtle gradient bubble behind the card (like your GWAS bg) */
+.scrna-hero {
+  background:
+    radial-gradient(1100px 520px at 10% -10%, rgba(165,243,252,.35), transparent 60%),
+    radial-gradient(900px 520px at 95% 0%, rgba(199,210,254,.35), transparent 60%);
+  padding: 6px;
+  border-radius: 16px;
+}
+
 
     
   </main>
@@ -207,5 +204,6 @@ section id="scrna" class="tab-content">
   </script>
 </body>
 </html>
+
 
 
