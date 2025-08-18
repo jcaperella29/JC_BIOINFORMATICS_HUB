@@ -268,32 +268,42 @@
     </section>
 
     <!-- Single-cell RNA-Seq (NEW) -->
-    <section id="scrna" class="tab-content">
-      <div class="scrna-hero">
-        <div class="tool">
-          <div class="ribbon">NEW</div>
-          <h2 class="scrna-title">Single-cell RNA-Seq App</h2>
+   <section id="scrna" class="tab-content">
+  <div class="scrna-hero">
+    <div class="tool">
+      <div class="ribbon">NEW</div>
+      <h2 class="scrna-title">Single-cell RNA-Seq App</h2>
 
-          <p class="lead">
-            A streamlined, Seurat-based workflow for single-cell RNA-seq. Bring 10x (or comparable) counts and get QC, clustering, markers, and clean figures—ready to slot into your Hub.
-          </p>
+      <p class="lead">
+        Interactive Seurat-based app to explore scRNA-seq data, run DE, pathway enrichment,
+        classification, power analyses, and download publication-ready tables/plots.
+      </p>
 
-          <ul class="emoji-list">
-            <li>🧼 <strong>QC & Filtering:</strong> features/cell, counts, % mito/ribo thresholds</li>
-            <li>⚙️ <strong>Preprocessing:</strong> normalization → variable features → scaling (optional covariate regression)</li>
-            <li>🧭 <strong>Dimensionality Reduction:</strong> PCA, neighbors, UMAP / t-SNE</li>
-            <li>🔗 <strong>Clustering & Markers:</strong> graph-based clustering, differential markers</li>
-            <li>🏷️ <strong>Annotation Helpers:</strong> utilities for quick cluster labeling</li>
-            <li>🖼️ <strong>Visualization:</strong> QC panels, PCA/UMAP maps, marker heatmaps</li>
-            <li>📦 <strong>Outputs:</strong> marker tables, cluster IDs, saved Seurat object & figures</li>
-          </ul>
+      <ul class="emoji-list">
+        <li>🗂️ <strong>Upload:</strong> counts CSV (genes × cells/samples) + metadata CSV (matching names)</li>
+        <li>🧱 <strong>Create Seurat Object:</strong> load & normalize your data in-app</li>
+        <li>🧭 <strong>Dimensionality Reduction:</strong> <strong>PCA & UMAP</strong> for cluster/pattern visualization</li>
+        <li>🧬 <strong>Differential Expression:</strong> by condition and by cell type; find condition-only DE genes</li>
+        <li>🧠 <strong>Pathway Analysis:</strong> enrich DE gene sets across multiple databases</li>
+        <li>🌋 <strong>Volcano Plot:</strong> publication-style volcano for condition-only DE</li>
+        <li>🤖 <strong>Feature Selection & Classification:</strong> Random Forest markers, ROC, importance</li>
+        <li>📈 <strong>Power Analysis:</strong> estimate power and minimum sample size for key DE genes</li>
+        <li>🔥 <strong>Heatmaps:</strong> top features and group differences</li>
+        <li>⬇️ <strong>Downloads:</strong> export all result tables and figures</li>
+      </ul>
 
-          <a class="github-btn"
-             href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
-             target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </div>
-    </section>
+      <a class="github-btn"
+         href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
+         target="_blank" rel="noopener">View on GitHub</a>
+
+      <p class="lead" style="margin-top:16px;">
+        <strong>Tips:</strong> CSV format only; counts & metadata must match by name. For best results, use
+        quality-filtered data (see <code>insurance_policy_script.R</code>).
+      </p>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!-- ========= FOOTER ========= -->
@@ -321,6 +331,7 @@
   </script>
 </body>
 </html>
+
 
 
 
