@@ -1,209 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JCaperella Bioinformatics Hub</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="dna-bg"></div>
 
+  <!-- Fonts (optional; comment out if you don't want external calls) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       Base Reset
+       ========================= */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('dna_background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #1b263b; /* strong dark text */
+      padding: 20px;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       Header
+       ========================= */
+    header { text-align: center; margin-bottom: 50px; }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #90e0ef;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+    header p {
+      font-size: 1.25em;
+      color: #caf0f8;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Tab Navigation
+       ========================= */
+    .tab-nav { text-align: center; margin-bottom: 30px; }
+    .tab-button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px 10px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .tab-button:hover { background: #023e8a; }
+    .tab-button.active {
+      background: #00b4d8;
+      box-shadow: 0 0 10px #00b4d8, 0 0 20px #00b4d8;
+    }
+
+    /* =========================
+       Tab Content
+       ========================= */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* =========================
+       Tool Cards
+       ========================= */
+    .tool {
+      background: #ffffff;
+      padding: 25px;
+      margin: 0 auto 25px;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .tool:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.4); }
+
+    .tool h2 {
+      margin-bottom: 15px;
+      color: #ffd6ff;
+      font-size: 1.8em;
+    }
+    .tool p { margin-bottom: 15px; font-size: 1.05em; color: #343a40; }
+
+    .tool a {
+      display: inline-block;
+      text-decoration: none;
+      background: #0077b6;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .tool a:hover { background: #023e8a; }
+
+    /* =========================
+       Footer
+       ========================= */
+    footer { text-align: center; margin-top: 60px; font-size: 0.9em; color: #adb5bd; }
+
+    /* =========================
+       Badge-style ribbon
+       ========================= */
+    .ribbon {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #ff4757;
+      color: white;
+      padding: 6px 12px;
+      font-weight: bold;
+      font-size: 0.85em;
+      font-family: 'Montserrat', sans-serif;
+      transform: rotate(10deg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      z-index: 10;
+    }
+
+    /* =========================
+       Extras for GWAS-style card vibe
+       (used by scRNA tab too)
+       ========================= */
+    .scrna-hero {
+      background:
+        radial-gradient(1100px 520px at 10% -10%, rgba(165,243,252,.35), transparent 60%),
+        radial-gradient(900px 520px at 95% 0%, rgba(199,210,254,.35), transparent 60%);
+      padding: 6px;
+      border-radius: 16px;
+      max-width: 860px;
+      margin: 0 auto 25px;
+    }
+
+    .scrna-title {
+      font-size: 2.1em;
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #ffb3ff, #b3d4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .lead { font-size: 1.05em; color: #344054; margin-bottom: 14px; }
+
+    .emoji-list { list-style: none; padding-left: 0; margin: 12px 0 18px; }
+    .emoji-list li { margin: 8px 0; font-size: 1.02em; color: #1b263b; }
+    .emoji-list li strong { font-weight: 700; }
+
+    .github-btn {
+      display: inline-block;
+      background: #0d6efd;
+      color: #fff !important;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      box-shadow: 0 6px 16px rgba(13,110,253,.28);
+      transition: transform .12s ease, filter .12s ease;
+      text-decoration: none;
+    }
+    .github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
+  </style>
+</head>
+
+<body>
+  <!-- ========= HEADER ========= -->
   <header>
     <h1>JCaperella Bioinformatics Hub</h1>
     <p>Turning complex genomic data into usable insights through code and clarity. Explore tools designed for researchers, biologists, and data scientists.</p>
   </header>
-<nav class="tab-nav">
-  <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
-  <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
-  <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
-  <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
-  <button class="tab-button" onclick="showTab('methylation', this)">Methylation Analysis</button>
-  <button class="tab-button" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
-  <button class="tab-button" onclick="showTab('gwas', this)">GWAS</button>
-  <button class="tab-button" onclick="showTab('scrna', this)">Single-cell RNA-Seq</button>
 
-</nav>
+  <!-- ========= TAB NAV ========= -->
+  <nav class="tab-nav">
+    <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
+    <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
+    <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
+    <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
+    <button class="tab-button" onclick="showTab('methylation', this)">Methylation Analysis</button>
+    <button class="tab-button" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
+    <button class="tab-button" onclick="showTab('gwas', this)">GWAS</button>
+    <button class="tab-button" onclick="showTab('scrna', this)">Single-cell RNA-Seq</button>
+  </nav>
 
-
+  <!-- ========= TABS ========= -->
   <main>
+    <!-- Welcome -->
     <section id="welcome" class="tab-content active">
       <div class="tool">
-        <h2>Welcome!</h2>
-        <p>
-  I'm John Caperella, a bioinformatics specialist with an M.S. from Brandeis University and a background in biochemistry.
-  This hub features interactive tools I’ve built for RNA-Seq, ATAC-Seq, miRNA-Seq,GWAS,CRISPR editings/Perturb-seq and DNA methylation analysis—each one designed to simplify complex workflows and support life science research with minimal coding required.
-  <br><br>
-  These apps aren’t just dashboards—they’re full-stack, no-nonsense tools built to handle every major task for each data type. From QC to differential expression to visualization, they do everything  your little heart could desire.
-</p>
-
+        <h2>Welcome</h2>
+        <p>Pick a tab above to view a one-page overview of each app, including what it does, how to start, and links to the code. Each section follows the same clean card layout for quick scanning.</p>
       </div>
     </section>
 
+    <!-- RNA-Seq (placeholder; keep/replace with your real content) -->
     <section id="rna" class="tab-content">
       <div class="tool">
         <h2>RNA-Seq Analysis App</h2>
-        <p>
-   A fully interactive Shiny app for bulk RNA-Seq analysis. Upload your counts CSV file to run differential expression via Limma/vroom, explore QC plots (PCA, heatmaps, boxplots), and export both raw results and publication-ready images.  
-  <br><br>
-  Designed for ease-of-use, but powerful enough for serious bioinformatics workflows.
-</p>
-        <a href="https://github.com/jcaperella29/RNA_SEQ_APP" target="_blank">View on GitHub</a>
+        <p>Short description of your RNA-Seq pipeline or app. Add a link to your repository or live app here.</p>
+        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
+    <!-- ATAC-Seq -->
     <section id="atac" class="tab-content">
       <div class="tool">
         <h2>ATAC-Seq Analysis App</h2>
-        <p> This app streamlines ATAC-seq analysis for non-programmers. Upload BED files to generate consensus peaks, annotate regions, run motif enrichment, differential accessibility, and machine learning—all within an intuitive, point-and-click Shiny interface. Visualize results with PCA, UMAP, heatmaps, and power analysis. Fully containerized for easy use on local, HPC, or cloud systems.  </p>
-        <a href="https://github.com/jcaperella29/ATAC_APP" target="_blank">View on GitHub</a>
+        <p>Short description of your ATAC-Seq pipeline or app. Add a link to your repository or live app here.</p>
+        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
+    <!-- miRNA-Seq -->
     <section id="mirna" class="tab-content">
       <div class="tool">
-        <h2>miRNA-Seq Shiny App</h2>
-        <p>A user-friendly app for miRNA-Seq differential expression analysis and visualization. Designed to help biologists run complex analyses without needing to touch code.</p>
-        <a href="https://github.com/jcaperella29/MI_RNA_SHINY" target="_blank">View on GitHub</a>
+        <h2>miRNA-Seq Analysis App</h2>
+        <p>Short description of your miRNA-Seq pipeline or app. Add a link to your repository or live app here.</p>
+        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
-  <section id="methylation" class="tab-content">
-  <div class="tool">
-    <h2>DNA Methylation Analysis App</h2>
-    <p>
-      A fully interactive Shiny app for analyzing DNA methylation data from arrays such as Illumina 450k. Features include differential methylation analysis (DE), pathway enrichment using Enrichr, PCA/UMAP visualizations, Random Forest classification, and power analysis. Optimized for both local and HPC environments via Singularity/Apptainer.
-    </p>
-    <a href="https://github.com/jcaperella29/methylation_shiny" target="_blank">View on GitHub</a>
-  </div>
-</section>
-<section id="crispr" class="tab-content">
-  <div class="tool">
-    <h2>CRISPR Perturb-seq & Mixscape App</h2>
-    <p>
-      Analyze single-cell CRISPR perturbation experiments with this robust, HPC-ready Shiny app for Mixscape and Seurat workflows. Upload your counts and metadata, run UMAPs, Mixscape, and full differential gene expression—all in one place.
-      <br><br>
-      <strong>Features:</strong>
-      <ul>
-        <li>🧬 <b>Single-cell perturbation analysis</b> (Seurat + Mixscape)</li>
-        <li>📊 QC, normalization, UMAP, clustering, and summary stats</li>
-        <li>🦾 Full Mixscape pipeline with differential expression</li>
-        <li>💾 Export: KO gene tables, summary stats, and plots</li>
-        <li>☁️ <b>Deploys anywhere:</b> local laptop, HPC, or cloud via Singularity + Slurm</li>
-      </ul>
-      <span style="font-size:0.95em;">For detailed HPC deployment, see the README for Singularity and Slurm instructions.</span>
-    </p>
-    <a href="https://github.com/jcaperella29/Perturb_seq_app" target="_blank">View on GitHub</a>
-  </div>
-</section>
+    <!-- Methylation Analysis (example card UI similar to your screenshot) -->
+    <section id="methylation" class="tab-content">
+      <div class="tool">
+        <h2>DNA Methylation Analysis App</h2>
+        <p>A fully interactive Shiny app for analyzing DNA methylation array data (e.g., Illumina 450k/EPIC). Includes differential methylation analysis (DE), enrichment with Enrichr, PCA/UMAP visualization, Random Forest classification, and power analysis. Supports local and HPC environments via Singularity/Apptainer.</p>
+        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </section>
 
+    <!-- CRISPR/Mixscape -->
+    <section id="crispr" class="tab-content">
+      <div class="tool">
+        <h2>CRISPR/Mixscape App</h2>
+        <p>Short description of your CRISPR/Mixscape workflow. Add a link to your repository or live app here.</p>
+        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </section>
 
-    
-<section id="gwas" class="tab-content">
-  <div class="tool">
-    <div class="ribbon">No PLINK Needed!</div>
+    <!-- GWAS -->
+    <section id="gwas" class="tab-content">
+      <div class="tool">
+        <h2>GWAS Analysis App</h2>
+        <p>A full-stack, no-code Shiny app for Genome-Wide Association Studies (GWAS) using raw VCF files—no PLINK needed. Upload your VCF, phenotype, and covariate table to begin.</p>
+        <ul class="emoji-list">
+          <li>🧪 <strong>QC Filters:</strong> MAF, allele frequency, call rate, HWE p-value thresholds</li>
+          <li>🧮 <strong>GWAS Engine:</strong> Logistic regression with Bonferroni correction support</li>
+          <li>📊 <strong>Visualization:</strong> PCA, UMAP, QQ plot, Manhattan plot with region zoom</li>
+          <li>🤖 <strong>Machine Learning:</strong> Random Forest with AUC, importance, ROC</li>
+          <li>🧬 <strong>SNP-to-Gene Mapping:</strong> Map significant SNPs to nearest genes</li>
+          <li>🧠 <strong>Enrichment:</strong> KEGG/GO/Reactome via <em>enrichR</em></li>
+          <li>⚡ <strong>Power Analysis:</strong> Cohen’s d-based observed power & sample size curve</li>
+          <li>📦 <strong>Export Everything:</strong> GWAS tables, enrichment results, ML metrics, more</li>
+        </ul>
+        <a class="github-btn" href="#" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </section>
 
-    <h2>GWAS Analysis App</h2>
-<p>
-      A full-stack, no-code Shiny app for Genome-Wide Association Studies (GWAS) using raw VCF files—no PLINK needed. Upload your VCF, phenotype, and covariate table to begin.
-    </p>
-    <ul>
-      <li><strong>📈 QC Filters:</strong> MAF, allele frequency, call rate, and HWE p-value thresholds</li>
-      <li><strong>🧬 GWAS Engine:</strong> Logistic regression with Bonferroni correction support</li>
-      <li><strong>📊 Visualization:</strong> PCA, UMAP, QQ plot, Manhattan plot with region zoom</li>
-      <li><strong>🧠 Machine Learning:</strong> Random Forest classifier with AUC, importance scores, and ROC curve</li>
-      <li><strong>🧭 SNP-to-Gene Mapping:</strong> Maps significant SNPs to nearest genes</li>
-      <li><strong>🧪 Enrichment Analysis:</strong> Uses KEGG, GO, and Reactome via <code>enrichR</code></li>
-      <li><strong>📉 Power Analysis:</strong> Cohen’s d-based observed power and sample size curve</li>
-      <li><strong>📥 Export Everything:</strong> GWAS tables, enrichment results, ML metrics, and more</li>
-    </ul>
-    <a href="https://github.com/jcaperella29/GWAS_SHINY_APP" target="_blank">View on GitHub</a>
-  </div>
-    
-</section>
+    <!-- Single-cell RNA-Seq (NEW) -->
+    <section id="scrna" class="tab-content">
+      <div class="scrna-hero">
+        <div class="tool">
+          <div class="ribbon">NEW</div>
+          <h2 class="scrna-title">Single-cell RNA-Seq App</h2>
 
+          <p class="lead">
+            A streamlined, Seurat-based workflow for single-cell RNA-seq. Bring 10x (or comparable) counts and get QC, clustering, markers, and clean figures—ready to slot into your Hub.
+          </p>
 
-  /* --- scRNA tab styling (matches GWAS card vibe) --- */
-.tool .scrna-title {
-  font-size: 2.1em;
-  font-weight: 800;
-  line-height: 1.1;
-  /* soft gradient like your screenshot title */
-  background: linear-gradient(90deg, #ffb3ff, #b3d4ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
-}
+          <ul class="emoji-list">
+            <li>🧼 <strong>QC & Filtering:</strong> features/cell, counts, % mito/ribo thresholds</li>
+            <li>⚙️ <strong>Preprocessing:</strong> normalization → variable features → scaling (optional covariate regression)</li>
+            <li>🧭 <strong>Dimensionality Reduction:</strong> PCA, neighbors, UMAP / t-SNE</li>
+            <li>🔗 <strong>Clustering & Markers:</strong> graph-based clustering, differential markers</li>
+            <li>🏷️ <strong>Annotation Helpers:</strong> utilities for quick cluster labeling</li>
+            <li>🖼️ <strong>Visualization:</strong> QC panels, PCA/UMAP maps, marker heatmaps</li>
+            <li>📦 <strong>Outputs:</strong> marker tables, cluster IDs, saved Seurat object & figures</li>
+          </ul>
 
-.tool .lead {
-  font-size: 1.05em;
-  color: #344054;        /* readable on white card */
-  margin-bottom: 14px;
-}
-
-.emoji-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 12px 0 18px;
-}
-.emoji-list li {
-  margin: 8px 0;
-  font-size: 1.02em;
-  color: #1b263b;
-}
-.emoji-list li strong { font-weight: 700; }
-
-/* big primary button (keep your existing .tool a default) */
-.github-btn {
-  display: inline-block;
-  background: #0d6efd;
-  color: #fff !important;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-  box-shadow: 0 6px 16px rgba(13,110,253,.28);
-  transition: transform .12s ease, filter .12s ease;
-}
-.github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
-
-/* optional: subtle gradient bubble behind the card (like your GWAS bg) */
-.scrna-hero {
-  background:
-    radial-gradient(1100px 520px at 10% -10%, rgba(165,243,252,.35), transparent 60%),
-    radial-gradient(900px 520px at 95% 0%, rgba(199,210,254,.35), transparent 60%);
-  padding: 6px;
-  border-radius: 16px;
-}
-
-
-    
+          <a class="github-btn"
+             href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
+             target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  
-
+  <!-- ========= FOOTER ========= -->
   <footer>
-    <p>Made with ❤️ by John Caperella • <a href="mailto:jcaperella29@gmail.com">jcaperella29@gmail.com</a></p>
+    © <span id="year"></span> JCaperella — All rights reserved.
   </footer>
 
+  <!-- ========= SCRIPTS ========= -->
   <script>
-    function showTab(tabId, btn) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-      });
-      document.getElementById(tabId).classList.add('active');
+    // Tab switcher (uses classes rather than inline styles)
+    function showTab(id, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      const pane = document.getElementById(id);
+      if (pane) pane.classList.add('active');
 
-      const buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(button => {
-        button.classList.remove('active');
-      });
-      btn.classList.add('active');
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      // Optional: smooth scroll into view
+      if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
