@@ -211,50 +211,126 @@
       </div>
     </section>
 
-    <!-- RNA-Seq (placeholder; keep/replace with your real content) -->
-    <section id="rna" class="tab-content">
-      <div class="tool">
-        <h2>RNA-Seq Analysis App</h2>
-        <p>Short description of your RNA-Seq pipeline or app. Add a link to your repository or live app here.</p>
-        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </section>
+ <section id="rna" class="tab-content">
+  <div class="tool">
+    <h2>Bulk RNA-Seq Analyzer</h2>
+    <p class="lead">
+      Interactive Shiny app for bulk RNA-seq: differential expression, PCA/UMAP, volcano & heatmaps,
+      enrichment, Random Forest, power analysis, and downloadable results.
+    </p>
+    <ul class="emoji-list">
+      <li>🗂️ <strong>Inputs:</strong> counts matrix + phenotype CSV</li>
+      <li>🧬 <strong>DE:</strong> limma-voom workflow</li>
+      <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
+      <li>🌋 <strong>Plots:</strong> volcano, heatmap, interactive tables</li>
+      <li>🧠 <strong>ML:</strong> Random Forest + ROC/AUC</li>
+      <li>🧪 <strong>Pathways:</strong> Enrichr (KEGG/GO/Reactome)</li>
+      <li>⚡ <strong>Power:</strong> sample size/power curves</li>
+      <li>📦 <strong>Runs anywhere:</strong> Docker/Singularity</li>
+    </ul>
 
-    <!-- ATAC-Seq -->
-    <section id="atac" class="tab-content">
-      <div class="tool">
-        <h2>ATAC-Seq Analysis App</h2>
-        <p>Short description of your ATAC-Seq pipeline or app. Add a link to your repository or live app here.</p>
-        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </section>
+    <a class="github-btn"
+       data-app="rna"
+       href="https://github.com/jcaperella29/RNA_SEQ_APP"
+       target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</section>
+<section id="atac" class="tab-content">
+  <div class="tool">
+    <h2>ATAC-Seq Peak Annotation & Enrichment</h2>
+    <p class="lead">
+      Upload MACS2 <code>.narrowPeak</code>, annotate with ChIPseeker, and run GO/KEGG/Reactome
+      enrichment with slick visuals and CSV exports.
+    </p>
+    <ul class="emoji-list">
+      <li>📄 <strong>Input:</strong> MACS2 <code>.narrowPeak</code> file</li>
+      <li>🏷️ <strong>Annotation:</strong> ChIPseeker + TxDb</li>
+      <li>📊 <strong>Views:</strong> pie charts, tables, barplots</li>
+      <li>🧠 <strong>Pathways:</strong> enrichR (GO/KEGG/Reactome)</li>
+      <li>🚀 <strong>Deploy:</strong> Docker & Singularity/HPC</li>
+    </ul>
 
-    <!-- miRNA-Seq -->
-    <section id="mirna" class="tab-content">
-      <div class="tool">
-        <h2>miRNA-Seq Analysis App</h2>
-        <p>Short description of your miRNA-Seq pipeline or app. Add a link to your repository or live app here.</p>
-        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </section>
+    <a class="github-btn"
+       data-app="atac"
+       href="https://github.com/jcaperella29/ATAC_APP"
+       target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</section>
 
-    <!-- Methylation Analysis (example card UI similar to your screenshot) -->
-    <section id="methylation" class="tab-content">
-      <div class="tool">
-        <h2>DNA Methylation Analysis App</h2>
-        <p>A fully interactive Shiny app for analyzing DNA methylation array data (e.g., Illumina 450k/EPIC). Includes differential methylation analysis (DE), enrichment with Enrichr, PCA/UMAP visualization, Random Forest classification, and power analysis. Supports local and HPC environments via Singularity/Apptainer.</p>
-        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </section>
+<section id="mirna" class="tab-content">
+  <div class="tool">
+    <h2>miRNA Differential Expression & Enrichment</h2>
+    <p class="lead">
+      DESeq2-based miRNA analysis with PCA/UMAP, volcano & heatmaps, Enrichr enrichment,
+      Random Forest classification, power analysis, and exports.
+    </p>
+    <ul class="emoji-list">
+      <li>🗂️ <strong>Inputs:</strong> miRNA counts + metadata</li>
+      <li>🧬 <strong>DE:</strong> DESeq2 pipeline</li>
+      <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
+      <li>🌋 <strong>Plots:</strong> volcano, top-miRNA bars, heatmaps</li>
+      <li>🧠 <strong>ML:</strong> RF classification + metrics</li>
+      <li>🧪 <strong>Pathways:</strong> Enrichr (clusterProfiler fallback)</li>
+      <li>⚡ <strong>Power:</strong> sample size estimates</li>
+    </ul>
 
-    <!-- CRISPR/Mixscape -->
+    <a class="github-btn"
+       data-app="mirna"
+       href="https://github.com/jcaperella29/MI_RNA_SHINY"
+       target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</section>
+
+
+<section id="methylation" class="tab-content">
+  <div class="tool">
+    <h2>DNA Methylation App</h2>
+    <p class="lead">
+      Explore beta values, run differential methylation, enrichment, PCA/UMAP, Random Forest,
+      power analysis, and download everything — HPC-ready.
+    </p>
+    <ul class="emoji-list">
+      <li>🗂️ <strong>Input:</strong> CSV beta matrix (e.g., 450k)</li>
+      <li>🧪 <strong>DE:</strong> probe-level stats + FDR</li>
+      <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
+      <li>🧠 <strong>ML:</strong> RF + AUC & importance</li>
+      <li>🧪 <strong>Pathways:</strong> Enrichr KEGG/GO/Reactome</li>
+      <li>⚡ <strong>Power:</strong> Cohen’s d → n per group</li>
+      <li>📦 <strong>Deploy:</strong> Singularity/Apptainer</li>
+    </ul>
+
+    <a class="github-btn"
+       data-app="methylation"
+       href="https://github.com/jcaperella29/methylation_shiny"
+       target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</section>
+
+
     <section id="crispr" class="tab-content">
-      <div class="tool">
-        <h2>CRISPR/Mixscape App</h2>
-        <p>Short description of your CRISPR/Mixscape workflow. Add a link to your repository or live app here.</p>
-        <a href="#" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </section>
+  <div class="tool">
+    <h2>CRISPR Mixscape Pipeline (Perturb-seq)</h2>
+    <p class="lead">
+      Single-cell CRISPR screen workflow using Seurat’s Mixscape: QC/normalization,
+      UMAP, perturbation scoring, KO/NP/NT assignment, DE, and rich plots — with HPC support.
+    </p>
+    <ul class="emoji-list">
+      <li>🧪 <strong>Inputs:</strong> counts + metadata CSVs</li>
+      <li>🧭 <strong>Dims:</strong> UMAP visualization</li>
+      <li>🧮 <strong>Mixscape:</strong> perturbation scores & class labels</li>
+      <li>🧬 <strong>DE:</strong> KO vs NT + downloads</li>
+      <li>📈 <strong>Views:</strong> bar/violin/heatmaps, summaries</li>
+      <li>📦 <strong>Deploy:</strong> Singularity + Slurm script</li>
+    </ul>
+
+    <a class="github-btn"
+       data-app="crispr"
+       href="https://github.com/jcaperella29/Perturb_seq_app"
+       target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+</section>
+
+
 
     <!-- GWAS -->
     <section id="gwas" class="tab-content">
@@ -343,6 +419,7 @@
   </script>
 </body>
 </html>
+
 
 
 
