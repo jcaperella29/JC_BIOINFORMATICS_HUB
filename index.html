@@ -8,6 +8,14 @@
 
   <!-- Fonts (optional; comment out if you don't want external calls) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+   <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){ dataLayer.push(arguments); }
+   gtag('js', new Date());
+   gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+  </script>
 
   <style>
     /* =========================
@@ -267,8 +275,8 @@
       </div>
     </section>
 
-    <!-- Single-cell RNA-Seq (NEW) -->
-   <section id="scrna" class="tab-content">
+<!-- Single-cell RNA-Seq (NEW) -->
+<section id="scrna" class="tab-content">
   <div class="scrna-hero">
     <div class="tool">
       <div class="ribbon">NEW</div>
@@ -293,8 +301,12 @@
       </ul>
 
       <a class="github-btn"
+         data-app="scrna"
          href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
-         target="_blank" rel="noopener">View on GitHub</a>
+         target="_blank" rel="noopener"
+         aria-label="Open scRNA-seq GitHub repository">
+        View on GitHub
+      </a>
 
       <p class="lead" style="margin-top:16px;">
         <strong>Tips:</strong> CSV format only; counts & metadata must match by name. For best results, use
@@ -331,6 +343,7 @@
   </script>
 </body>
 </html>
+
 
 
 
