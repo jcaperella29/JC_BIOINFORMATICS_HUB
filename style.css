@@ -141,4 +141,58 @@ footer {
   z-index: 10;
 }
 
+/* --- scRNA tab styling (matches GWAS card vibe) --- */
+.tool .scrna-title {
+  font-size: 2.1em;
+  font-weight: 800;
+  line-height: 1.1;
+  /* soft gradient like your screenshot title */
+  background: linear-gradient(90deg, #ffb3ff, #b3d4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.tool .lead {
+  font-size: 1.05em;
+  color: #344054;        /* readable on white card */
+  margin-bottom: 14px;
+}
+
+.emoji-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 18px;
+}
+.emoji-list li {
+  margin: 8px 0;
+  font-size: 1.02em;
+  color: #1b263b;
+}
+.emoji-list li strong { font-weight: 700; }
+
+/* big primary button (keep your existing .tool a default) */
+.github-btn {
+  display: inline-block;
+  background: #0d6efd;
+  color: #fff !important;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  box-shadow: 0 6px 16px rgba(13,110,253,.28);
+  transition: transform .12s ease, filter .12s ease;
+}
+.github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
+
+/* optional: subtle gradient bubble behind the card (like your GWAS bg) */
+.scrna-hero {
+  background:
+    radial-gradient(1100px 520px at 10% -10%, rgba(165,243,252,.35), transparent 60%),
+    radial-gradient(900px 520px at 95% 0%, rgba(199,210,254,.35), transparent 60%);
+  padding: 6px;
+  border-radius: 16px;
+}
+
 
