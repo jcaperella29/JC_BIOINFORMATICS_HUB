@@ -192,6 +192,8 @@
   <!-- ========= TAB NAV ========= -->
   <nav class="tab-nav">
     <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
+    <button class="tab-button" onclick="showTab('about', this)">About Me</button>
+
     <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
     <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
     <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
@@ -391,7 +393,49 @@
     </div>
   </div>
 </section>
+<!-- ===== ABOUT ME ===== -->
+<section id="about" class="tab-content">
+  <div class="tool">
+    <h2>About Me</h2>
 
+    <div class="about-grid">
+      <img
+        class="about-headshot"
+        src="assets/IMG_0740.jpg"
+        alt="Headshot of John Caperella"
+        loading="lazy"
+      />
+
+      <div>
+        <p style="margin-bottom:12px;">
+          I’m <strong>John Caperella</strong>, a bioinformatics developer focused on turning complex
+          genomic data into usable insights. I build clear, scalable tools for
+          <em>single-cell RNA-seq</em>, <em>CRISPR Mixscape</em>, and <em>omics visualization</em> in
+          <strong>R/Python/Shiny</strong>—so researchers and data scientists get to answers faster.
+        </p>
+
+        <ul class="emoji-list" style="margin-bottom:14px;">
+          <li>🧬 Single-cell & CRISPR analytics (Seurat/Mixscape)</li>
+          <li>📈 Reproducible viz apps, HPC-friendly (Docker/Singularity/Slurm)</li>
+          <
+        </ul>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="github-btn" href="jcaperella@gmail.com">Email Me</a>
+          <a class="github-btn" href=" target="https://www.linkedin.com/in/john-caperella" rel="noopener">LinkedIn</a>
+          <a class="github-btn" href="https://github.com/jcaperella29" target="_blank" rel="noopener">GitHub</a>
+          <!-- Optional resume:
+          <a class="github-btn" href="assets/JohnCaperella_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    
   </main>
 
   <!-- ========= FOOTER ========= -->
@@ -419,6 +463,7 @@
   </script>
 </body>
 </html>
+
 
 
 
