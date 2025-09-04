@@ -179,6 +179,25 @@
       text-decoration: none;
     }
     .github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
+
+    /* About layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+@media (min-width: 720px) {
+  .about-grid { grid-template-columns: 180px 1fr; gap: 20px; }
+}
+.about-headshot {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
   </style>
 </head>
 
@@ -463,6 +482,7 @@
   </script>
 </body>
 </html>
+
 
 
 
