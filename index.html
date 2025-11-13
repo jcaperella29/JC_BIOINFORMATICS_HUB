@@ -496,45 +496,55 @@
   </footer>
 
   <!-- ========= SCRIPTS ========= -->
-  <script>
-    // Tab switcher
-    function showTab(id, btn) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      const pane = document.getElementById(id);
-      if (pane) pane.classList.add('active');
+<script>
+  // Tab switcher
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    const pane = document.getElementById(id);
+    if (pane) pane.classList.add('active');
 
-      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
+    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
 
-      if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-      // GA4: track tab view
-      if (typeof gtag === 'function') {
-        gtag('event', 'tab_view', {
-          tab_id: id,
-          tab_label: btn ? btn.textContent.trim() : id
-        });
-      }
+    // GA4: track tab view
+    if (typeof gtag === 'function') {
+      console.log('tab_view event:', id);  // debug
+      gtag('event', 'tab_view', {
+        tab_id: id,
+        tab_label: btn ? btn.textContent.trim() : id
+      });
     }
+  }
 
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // GA4: track clicks on app GitHub buttons
-    document.addEventListener('DOMContentLoaded', function () {
-      const appButtons = document.querySelectorAll('.github-btn[data-app]');
-      appButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
-          if (typeof gtag === 'function') {
-            gtag('event', 'app_repo_click', {
-              app_id: btn.dataset.app,
-              link_url: btn.href
-            });
-          }
-        });
+  // GA4: track clicks on app GitHub buttons
+  document.addEventListener('DOMContentLoaded', function () {
+    const appButtons = document.querySelectorAll('.github-btn[data-app]');
+    console.log('Found app buttons:', appButtons.length);  // debug
+
+    appButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const appId = btn.dataset.app || 'unknown';
+        const url = btn.href;
+
+        console.log('app_repo_click event:', appId, url);  // debug
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'app_repo_click', {
+            app_id: appId,
+            link_url: url
+          });
+        }
       });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
+
 
