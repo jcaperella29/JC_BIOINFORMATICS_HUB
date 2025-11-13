@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JCaperella Bioinformatics Hub</title>
 
-  <!-- Fonts (optional) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
   <!-- Google Analytics 4 -->
@@ -18,9 +18,6 @@
   </script>
 
   <style>
-    /* =========================
-       Base Reset
-       ========================= */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -33,9 +30,6 @@
       line-height: 1.6;
     }
 
-    /* =========================
-       Header
-       ========================= */
     header { text-align: center; margin-bottom: 50px; }
     header h1 {
       font-size: 2.8em;
@@ -50,9 +44,6 @@
       margin: 0 auto;
     }
 
-    /* =========================
-       Tab Navigation
-       ========================= */
     .tab-nav { text-align: center; margin-bottom: 30px; }
     .tab-button {
       background: #0077b6;
@@ -71,15 +62,9 @@
       box-shadow: 0 0 10px #00b4d8, 0 0 20px #00b4d8;
     }
 
-    /* =========================
-       Tab Content
-       ========================= */
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* =========================
-       Tool Cards
-       ========================= */
     .tool {
       background: #ffffff;
       padding: 25px;
@@ -111,14 +96,8 @@
     }
     .tool a:hover { background: #023e8a; }
 
-    /* =========================
-       Footer
-       ========================= */
     footer { text-align: center; margin-top: 60px; font-size: 0.9em; color: #adb5bd; }
 
-    /* =========================
-       Badge-style ribbon
-       ========================= */
     .ribbon {
       position: absolute;
       top: -10px;
@@ -135,9 +114,6 @@
       z-index: 10;
     }
 
-    /* =========================
-       Extras for scRNA hero card
-       ========================= */
     .scrna-hero {
       background:
         radial-gradient(1100px 520px at 10% -10%, rgba(165,243,252,.35), transparent 60%),
@@ -179,7 +155,6 @@
     }
     .github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
 
-    /* About layout */
     .about-grid {
       display: grid;
       grid-template-columns: 140px 1fr;
@@ -197,7 +172,6 @@
       aspect-ratio: 1 / 1;
     }
 
-    /* Analytics embed */
     .analytics-embed-wrapper {
       max-width: 1000px;
       margin: 0 auto;
@@ -206,13 +180,11 @@
 </head>
 
 <body>
-  <!-- ========= HEADER ========= -->
   <header>
     <h1>JCaperella Bioinformatics Hub</h1>
     <p>Turning complex genomic data into usable insights through code and clarity. Explore tools designed for researchers, biologists, and data scientists.</p>
   </header>
 
-  <!-- ========= TAB NAV ========= -->
   <nav class="tab-nav">
     <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
     <button class="tab-button" onclick="showTab('about', this)">About Me</button>
@@ -227,9 +199,7 @@
     <button class="tab-button" onclick="showTab('analytics', this)">Analytics</button>
   </nav>
 
-  <!-- ========= TABS ========= -->
   <main>
-    <!-- Welcome -->
     <section id="welcome" class="tab-content active">
       <div class="tool">
         <h2>Welcome</h2>
@@ -237,7 +207,6 @@
       </div>
     </section>
 
-    <!-- RNA-Seq -->
     <section id="rna" class="tab-content">
       <div class="tool">
         <h2>Bulk RNA-Seq Analyzer</h2>
@@ -259,11 +228,13 @@
         <a class="github-btn"
            data-app="rna"
            href="https://github.com/jcaperella29/RNA_SEQ_APP"
-           target="_blank" rel="noopener">View on GitHub</a>
+           target="_blank" rel="noopener"
+           onclick="trackAppClick('rna', this.href)">
+          View on GitHub
+        </a>
       </div>
     </section>
 
-    <!-- ATAC-Seq -->
     <section id="atac" class="tab-content">
       <div class="tool">
         <h2>ATAC-Seq Peak Annotation & Enrichment</h2>
@@ -282,11 +253,13 @@
         <a class="github-btn"
            data-app="atac"
            href="https://github.com/jcaperella29/ATAC_APP"
-           target="_blank" rel="noopener">View on GitHub</a>
+           target="_blank" rel="noopener"
+           onclick="trackAppClick('atac', this.href)">
+          View on GitHub
+        </a>
       </div>
     </section>
 
-    <!-- miRNA-Seq -->
     <section id="mirna" class="tab-content">
       <div class="tool">
         <h2>miRNA Differential Expression & Enrichment</h2>
@@ -307,11 +280,13 @@
         <a class="github-btn"
            data-app="mirna"
            href="https://github.com/jcaperella29/MI_RNA_SHINY"
-           target="_blank" rel="noopener">View on GitHub</a>
+           target="_blank" rel="noopener"
+           onclick="trackAppClick('mirna', this.href)">
+          View on GitHub
+        </a>
       </div>
     </section>
 
-    <!-- Methylation -->
     <section id="methylation" class="tab-content">
       <div class="tool">
         <h2>DNA Methylation App</h2>
@@ -332,11 +307,13 @@
         <a class="github-btn"
            data-app="methylation"
            href="https://github.com/jcaperella29/methylation_shiny"
-           target="_blank" rel="noopener">View on GitHub</a>
+           target="_blank" rel="noopener"
+           onclick="trackAppClick('methylation', this.href)">
+          View on GitHub
+        </a>
       </div>
     </section>
 
-    <!-- CRISPR/Mixscape -->
     <section id="crispr" class="tab-content">
       <div class="tool">
         <h2>CRISPR Mixscape Pipeline (Perturb-seq)</h2>
@@ -356,11 +333,13 @@
         <a class="github-btn"
            data-app="crispr"
            href="https://github.com/jcaperella29/Perturb_seq_app"
-           target="_blank" rel="noopener">View on GitHub</a>
+           target="_blank" rel="noopener"
+           onclick="trackAppClick('crispr', this.href)">
+          View on GitHub
+        </a>
       </div>
     </section>
 
-    <!-- GWAS -->
     <section id="gwas" class="tab-content">
       <div class="tool">
         <h2>GWAS Analysis App</h2>
@@ -378,11 +357,13 @@
         <a class="github-btn"
            data-app="gwas"
            href="https://github.com/jcaperella29/GWAS_SHINY_APP"
-           target="_blank" rel="noopener">View on GitHub</a>
+           target="_blank" rel="noopener"
+           onclick="trackAppClick('gwas', this.href)">
+          View on GitHub
+        </a>
       </div>
     </section>
 
-    <!-- Single-cell RNA-Seq -->
     <section id="scrna" class="tab-content">
       <div class="scrna-hero">
         <div class="tool">
@@ -411,6 +392,7 @@
              data-app="scrna"
              href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
              target="_blank" rel="noopener"
+             onclick="trackAppClick('scrna', this.href)"
              aria-label="Open scRNA-seq GitHub repository">
             View on GitHub
           </a>
@@ -423,7 +405,6 @@
       </div>
     </section>
 
-    <!-- About Me -->
     <section id="about" class="tab-content">
       <div class="tool">
         <h2>About Me</h2>
@@ -461,7 +442,6 @@
       </div>
     </section>
 
-    <!-- Analytics -->
     <section id="analytics" class="tab-content">
       <div class="tool">
         <h2>Usage Analytics</h2>
@@ -487,63 +467,46 @@
         </p>
       </div>
     </section>
-
   </main>
 
-  <!-- ========= FOOTER ========= -->
   <footer>
     © <span id="year"></span> JCaperella — All rights reserved.
   </footer>
 
-  <!-- ========= SCRIPTS ========= -->
-<script>
-  // Tab switcher
-  function showTab(id, btn) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    const pane = document.getElementById(id);
-    if (pane) pane.classList.add('active');
+  <script>
+    // Tab switcher + GA4 tab view
+    function showTab(id, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      const pane = document.getElementById(id);
+      if (pane) pane.classList.add('active');
 
-    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
 
-    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // GA4: track tab view
-    if (typeof gtag === 'function') {
-      console.log('tab_view event:', id);  // debug
-      gtag('event', 'tab_view', {
-        tab_id: id,
-        tab_label: btn ? btn.textContent.trim() : id
-      });
+      if (typeof gtag === 'function') {
+        gtag('event', 'tab_view', {
+          tab_id: id,
+          tab_label: btn ? btn.textContent.trim() : id
+        });
+      }
     }
-  }
 
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  // GA4: track clicks on app GitHub buttons
-  document.addEventListener('DOMContentLoaded', function () {
-    const appButtons = document.querySelectorAll('.github-btn[data-app]');
-    console.log('Found app buttons:', appButtons.length);  // debug
-
-    appButtons.forEach(btn => {
-      btn.addEventListener('click', function () {
-        const appId = btn.dataset.app || 'unknown';
-        const url = btn.href;
-
-        console.log('app_repo_click event:', appId, url);  // debug
-
-        if (typeof gtag === 'function') {
-          gtag('event', 'app_repo_click', {
-            app_id: appId,
-            link_url: url
-          });
-        }
-      });
-    });
-  });
-</script>
-
+    // GA4 helper for app repo clicks
+    function trackAppClick(appId, url) {
+      console.log('app_repo_click event:', appId, url);
+      if (typeof gtag === 'function') {
+        gtag('event', 'app_repo_click', {
+          app_id: appId,
+          link_url: url
+        });
+      }
+    }
+  </script>
 </body>
 </html>
 
