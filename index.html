@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JCaperella Bioinformatics Hub</title>
 
-  <!-- Fonts -->
+  <!-- Fonts (optional) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-BH0ZXLJ6N2', { anonymize_ip: true });
-</script>
-
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-BH0ZXLJ6N2', { anonymize_ip: true });
+  </script>
 
   <style>
+    /* =========================
+       Base Reset
+       ========================= */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -31,6 +33,9 @@
       line-height: 1.6;
     }
 
+    /* =========================
+       Header
+       ========================= */
     header { text-align: center; margin-bottom: 50px; }
     header h1 {
       font-size: 2.8em;
@@ -45,6 +50,9 @@
       margin: 0 auto;
     }
 
+    /* =========================
+       Tab Navigation
+       ========================= */
     .tab-nav { text-align: center; margin-bottom: 30px; }
     .tab-button {
       background: #0077b6;
@@ -63,9 +71,15 @@
       box-shadow: 0 0 10px #00b4d8, 0 0 20px #00b4d8;
     }
 
+    /* =========================
+       Tab Content
+       ========================= */
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
+    /* =========================
+       Tool Cards
+       ========================= */
     .tool {
       background: #ffffff;
       padding: 25px;
@@ -97,13 +111,14 @@
     }
     .tool a:hover { background: #023e8a; }
 
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #adb5bd;
-    }
+    /* =========================
+       Footer
+       ========================= */
+    footer { text-align: center; margin-top: 60px; font-size: 0.9em; color: #adb5bd; }
 
+    /* =========================
+       Badge-style ribbon
+       ========================= */
     .ribbon {
       position: absolute;
       top: -10px;
@@ -120,6 +135,9 @@
       z-index: 10;
     }
 
+    /* =========================
+       Extras for scRNA hero card
+       ========================= */
     .scrna-hero {
       background:
         radial-gradient(1100px 520px at 10% -10%, rgba(165,243,252,.35), transparent 60%),
@@ -161,6 +179,7 @@
     }
     .github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
 
+    /* About layout */
     .about-grid {
       display: grid;
       grid-template-columns: 140px 1fr;
@@ -175,18 +194,25 @@
       border-radius: 12px;
       border: 1px solid #d1d5db;
       object-fit: cover;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
+    }
+
+    /* Analytics embed */
+    .analytics-embed-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
     }
   </style>
 </head>
 
 <body>
-
+  <!-- ========= HEADER ========= -->
   <header>
     <h1>JCaperella Bioinformatics Hub</h1>
     <p>Turning complex genomic data into usable insights through code and clarity. Explore tools designed for researchers, biologists, and data scientists.</p>
   </header>
 
+  <!-- ========= TAB NAV ========= -->
   <nav class="tab-nav">
     <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
     <button class="tab-button" onclick="showTab('about', this)">About Me</button>
@@ -198,19 +224,20 @@
     <button class="tab-button" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
     <button class="tab-button" onclick="showTab('gwas', this)">GWAS</button>
     <button class="tab-button" onclick="showTab('scrna', this)">Single-cell RNA-Seq</button>
+    <button class="tab-button" onclick="showTab('analytics', this)">Analytics</button>
   </nav>
 
+  <!-- ========= TABS ========= -->
   <main>
-
     <!-- Welcome -->
     <section id="welcome" class="tab-content active">
       <div class="tool">
         <h2>Welcome</h2>
-        <p>Pick a tab above to view a one-page overview of each app, including what it does, how to start, and links to the code.</p>
+        <p>Pick a tab above to view a one-page overview of each app, including what it does, how to start, and links to the code. Each section follows the same clean card layout for quick scanning.</p>
       </div>
     </section>
 
-    <!-- RNA -->
+    <!-- RNA-Seq -->
     <section id="rna" class="tab-content">
       <div class="tool">
         <h2>Bulk RNA-Seq Analyzer</h2>
@@ -218,54 +245,69 @@
           Interactive Shiny app for bulk RNA-seq: differential expression, PCA/UMAP, volcano & heatmaps,
           enrichment, Random Forest, power analysis, and downloadable results.
         </p>
-
         <ul class="emoji-list">
           <li>🗂️ <strong>Inputs:</strong> counts matrix + phenotype CSV</li>
           <li>🧬 <strong>DE:</strong> limma-voom workflow</li>
           <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
-          <li>🌋 <strong>Plots:</strong> volcano, heatmap</li>
-          <li>🧠 <strong>ML:</strong> Random Forest</li>
-          <li>🧪 <strong>Pathways:</strong> Enrichr</li>
-          <li>⚡ <strong>Power:</strong> sample size curves</li>
+          <li>🌋 <strong>Plots:</strong> volcano, heatmap, interactive tables</li>
+          <li>🧠 <strong>ML:</strong> Random Forest + ROC/AUC</li>
+          <li>🧪 <strong>Pathways:</strong> Enrichr (KEGG/GO/Reactome)</li>
+          <li>⚡ <strong>Power:</strong> sample size/power curves</li>
+          <li>📦 <strong>Runs anywhere:</strong> Docker/Singularity</li>
         </ul>
 
-        <a class="github-btn" data-app="rna" href="https://github.com/jcaperella29/RNA_SEQ_APP" target="_blank">View on GitHub</a>
+        <a class="github-btn"
+           data-app="rna"
+           href="https://github.com/jcaperella29/RNA_SEQ_APP"
+           target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
-    <!-- ATAC -->
+    <!-- ATAC-Seq -->
     <section id="atac" class="tab-content">
       <div class="tool">
         <h2>ATAC-Seq Peak Annotation & Enrichment</h2>
         <p class="lead">
-          Upload MACS2 <code>.narrowPeak</code>, annotate peaks, visualize, and run enrichment.
+          Upload MACS2 <code>.narrowPeak</code>, annotate with ChIPseeker, and run GO/KEGG/Reactome
+          enrichment with slick visuals and CSV exports.
         </p>
-
         <ul class="emoji-list">
-          <li>📄 <strong>Input:</strong> MACS2 .narrowPeak</li>
-          <li>🏷️ <strong>Annotation:</strong> ChIPseeker</li>
-          <li>📊 <strong>Visuals:</strong> barplots, pies, tables</li>
-          <li>🧠 <strong>Pathways:</strong> enrichR</li>
+          <li>📄 <strong>Input:</strong> MACS2 <code>.narrowPeak</code> file</li>
+          <li>🏷️ <strong>Annotation:</strong> ChIPseeker + TxDb</li>
+          <li>📊 <strong>Views:</strong> pie charts, tables, barplots</li>
+          <li>🧠 <strong>Pathways:</strong> enrichR (GO/KEGG/Reactome)</li>
+          <li>🚀 <strong>Deploy:</strong> Docker & Singularity/HPC</li>
         </ul>
 
-        <a class="github-btn" data-app="atac" href="https://github.com/jcaperella29/ATAC_APP" target="_blank">View on GitHub</a>
+        <a class="github-btn"
+           data-app="atac"
+           href="https://github.com/jcaperella29/ATAC_APP"
+           target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
-    <!-- miRNA -->
+    <!-- miRNA-Seq -->
     <section id="mirna" class="tab-content">
       <div class="tool">
         <h2>miRNA Differential Expression & Enrichment</h2>
-        <p class="lead">DESeq2 pipeline with PCA/UMAP, volcano, RF, enrichment, and power analysis.</p>
-
+        <p class="lead">
+          DESeq2-based miRNA analysis with PCA/UMAP, volcano & heatmaps, Enrichr enrichment,
+          Random Forest classification, power analysis, and exports.
+        </p>
         <ul class="emoji-list">
-          <li>🧬 DESeq2</li>
-          <li>🧭 PCA/UMAP</li>
-          <li>🌋 Volcano plots</li>
-          <li>🧠 Random Forest</li>
+          <li>🗂️ <strong>Inputs:</strong> miRNA counts + metadata</li>
+          <li>🧬 <strong>DE:</strong> DESeq2 pipeline</li>
+          <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
+          <li>🌋 <strong>Plots:</strong> volcano, top-miRNA bars, heatmaps</li>
+          <li>🧠 <strong>ML:</strong> RF classification + metrics</li>
+          <li>🧪 <strong>Pathways:</strong> Enrichr (clusterProfiler fallback)</li>
+          <li>⚡ <strong>Power:</strong> sample size estimates</li>
         </ul>
 
-        <a class="github-btn" data-app="mirna" href="https://github.com/jcaperella29/MI_RNA_SHINY" target="_blank">View on GitHub</a>
+        <a class="github-btn"
+           data-app="mirna"
+           href="https://github.com/jcaperella29/MI_RNA_SHINY"
+           target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
@@ -273,32 +315,48 @@
     <section id="methylation" class="tab-content">
       <div class="tool">
         <h2>DNA Methylation App</h2>
-        <p class="lead">Beta values, differential methylation, visualization, ML, and enrichment.</p>
-
+        <p class="lead">
+          Explore beta values, run differential methylation, enrichment, PCA/UMAP, Random Forest,
+          power analysis, and download everything — HPC-ready.
+        </p>
         <ul class="emoji-list">
-          <li>🗂️ Input: beta matrix</li>
-          <li>🧬 Differential methylation</li>
-          <li>🧠 Random Forest</li>
-          <li>🧪 Enrichr</li>
+          <li>🗂️ <strong>Input:</strong> CSV beta matrix (e.g., 450k)</li>
+          <li>🧪 <strong>DE:</strong> probe-level stats + FDR</li>
+          <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
+          <li>🧠 <strong>ML:</strong> RF + AUC & importance</li>
+          <li>🧪 <strong>Pathways:</strong> Enrichr KEGG/GO/Reactome</li>
+          <li>⚡ <strong>Power:</strong> Cohen’s d → n per group</li>
+          <li>📦 <strong>Deploy:</strong> Singularity/Apptainer</li>
         </ul>
 
-        <a class="github-btn" data-app="methylation" href="https://github.com/jcaperella29/methylation_shiny" target="_blank">View on GitHub</a>
+        <a class="github-btn"
+           data-app="methylation"
+           href="https://github.com/jcaperella29/methylation_shiny"
+           target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
-    <!-- CRISPR Mixscape -->
+    <!-- CRISPR/Mixscape -->
     <section id="crispr" class="tab-content">
       <div class="tool">
-        <h2>CRISPR Mixscape Pipeline</h2>
-        <p class="lead">Full Mixscape workflow: QC, UMAP, perturbation scoring, DE, enrichment.</p>
-
+        <h2>CRISPR Mixscape Pipeline (Perturb-seq)</h2>
+        <p class="lead">
+          Single-cell CRISPR screen workflow using Seurat’s Mixscape: QC/normalization,
+          UMAP, perturbation scoring, KO/NP/NT assignment, DE, and rich plots — with HPC support.
+        </p>
         <ul class="emoji-list">
-          <li>🧮 Mixscape class calls</li>
-          <li>🧭 UMAP</li>
-          <li>🧬 DE analysis</li>
+          <li>🧪 <strong>Inputs:</strong> counts + metadata CSVs</li>
+          <li>🧭 <strong>Dims:</strong> UMAP visualization</li>
+          <li>🧮 <strong>Mixscape:</strong> perturbation scores & class labels</li>
+          <li>🧬 <strong>DE:</strong> KO vs NT + downloads</li>
+          <li>📈 <strong>Views:</strong> bar/violin/heatmaps, summaries</li>
+          <li>📦 <strong>Deploy:</strong> Singularity + Slurm script</li>
         </ul>
 
-        <a class="github-btn" data-app="crispr" href="https://github.com/jcaperella29/Perturb_seq_app" target="_blank">View on GitHub</a>
+        <a class="github-btn"
+           data-app="crispr"
+           href="https://github.com/jcaperella29/Perturb_seq_app"
+           target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
@@ -306,82 +364,140 @@
     <section id="gwas" class="tab-content">
       <div class="tool">
         <h2>GWAS Analysis App</h2>
-        <p class="lead">Upload VCF + phenotype → run QC, GWAS, PCA/UMAP, ML, and enrichment.</p>
-
+        <p>A full-stack, no-code Shiny app for Genome-Wide Association Studies (GWAS) using raw VCF files—no PLINK needed. Upload your VCF, phenotype, and covariate table to begin.</p>
         <ul class="emoji-list">
-          <li>🧪 QC filters</li>
-          <li>📈 Manhattan/QQ</li>
-          <li>🤖 Random Forest</li>
+          <li>🧪 <strong>QC Filters:</strong> MAF, allele frequency, call rate, HWE p-value thresholds</li>
+          <li>🧮 <strong>GWAS Engine:</strong> Logistic regression with Bonferroni correction support</li>
+          <li>📊 <strong>Visualization:</strong> PCA, UMAP, QQ plot, Manhattan plot with region zoom</li>
+          <li>🤖 <strong>Machine Learning:</strong> Random Forest with AUC, importance, ROC</li>
+          <li>🧬 <strong>SNP-to-Gene Mapping:</strong> Map significant SNPs to nearest genes</li>
+          <li>🧠 <strong>Enrichment:</strong> KEGG/GO/Reactome via <em>enrichR</em></li>
+          <li>⚡ <strong>Power Analysis:</strong> Cohen’s d-based observed power & sample size curve</li>
+          <li>📦 <strong>Export Everything:</strong> GWAS tables, enrichment results, ML metrics, more</li>
         </ul>
-
-        <a class="github-btn" data-app="gwas" href="https://github.com/jcaperella29/GWAS_SHINY_APP" target="_blank">View on GitHub</a>
+        <a class="github-btn"
+           data-app="gwas"
+           href="https://github.com/jcaperella29/GWAS_SHINY_APP"
+           target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </section>
 
-    <!-- scRNA -->
+    <!-- Single-cell RNA-Seq -->
     <section id="scrna" class="tab-content">
       <div class="scrna-hero">
         <div class="tool">
           <div class="ribbon">NEW</div>
-
           <h2 class="scrna-title">Single-cell RNA-Seq App</h2>
-          <p class="lead">Seurat-based clustering, DE, pathways, ML, and power analysis.</p>
+
+          <p class="lead">
+            Interactive Seurat-based app to explore scRNA-seq data, run DE, pathway enrichment,
+            classification, power analyses, and download publication-ready tables/plots.
+          </p>
 
           <ul class="emoji-list">
-            <li>🗂️ Upload counts + metadata</li>
-            <li>🧭 PCA/UMAP</li>
-            <li>🧬 Differential expression</li>
-            <li>🧠 Classification</li>
+            <li>🗂️ <strong>Upload:</strong> counts CSV (genes × cells/samples) + metadata CSV (matching names)</li>
+            <li>🧱 <strong>Create Seurat Object:</strong> load & normalize your data in-app</li>
+            <li>🧭 <strong>Dimensionality Reduction:</strong> <strong>PCA & UMAP</strong> for cluster/pattern visualization</li>
+            <li>🧬 <strong>Differential Expression:</strong> by condition and by cell type; find condition-only DE genes</li>
+            <li>🧠 <strong>Pathway Analysis:</strong> enrich DE gene sets across multiple databases</li>
+            <li>🌋 <strong>Volcano Plot:</strong> publication-style volcano for condition-only DE</li>
+            <li>🤖 <strong>Feature Selection & Classification:</strong> Random Forest markers, ROC, importance</li>
+            <li>📈 <strong>Power Analysis:</strong> estimate power and minimum sample size for key DE genes</li>
+            <li>🔥 <strong>Heatmaps:</strong> top features and group differences</li>
+            <li>⬇️ <strong>Downloads:</strong> export all result tables and figures</li>
           </ul>
 
-          <a class="github-btn" data-app="scrna"
+          <a class="github-btn"
+             data-app="scrna"
              href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
-             target="_blank">View on GitHub</a>
+             target="_blank" rel="noopener"
+             aria-label="Open scRNA-seq GitHub repository">
+            View on GitHub
+          </a>
+
+          <p class="lead" style="margin-top:16px;">
+            <strong>Tips:</strong> CSV format only; counts & metadata must match by name. For best results, use
+            quality-filtered data (see <code>insurance_policy_script.R</code>).
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- About Me -->
     <section id="about" class="tab-content">
       <div class="tool">
         <h2>About Me</h2>
 
         <div class="about-grid">
-          <img class="about-headshot" src="assets/IMG_0740.jpg" alt="John Caperella">
+          <img
+            class="about-headshot"
+            src="assets/IMG_0740.jpg"
+            alt="Headshot of John Caperella"
+            loading="lazy"
+          />
 
           <div>
             <p>
-              I’m <strong>John Caperella</strong>, a bioinformatics developer who builds clean, scalable tools for
-              bulk RNA-seq, scRNA-seq, CRISPR Mixscape, GWAS, and more.
+              I’m <strong>John Caperella</strong>, a bioinformatics developer passionate about turning
+              complex genomic data into usable insights. I build clear, scalable tools for
+              <em>single-cell RNA-seq</em>, <em>CRISPR Mixscape</em>, and <em>omics visualization</em> in
+              <strong>R, Python, and Shiny</strong>—helping researchers and data scientists get to answers faster.
             </p>
 
             <ul class="emoji-list" style="margin:14px 0;">
-              <li>🧬 Single-cell & CRISPR analytics</li>
-              <li>📊 Reproducible visualization tools</li>
-              <li>🤖 LLM exploration for genomics</li>
+              <li>🧬 Single-cell & CRISPR analytics (Seurat/Mixscape)</li>
+              <li>📊 Reproducible visualization apps (Docker/Singularity/HPC)</li>
+              <li>🤖 Exploring LLMs for genomics workflows</li>
             </ul>
 
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
               <a class="github-btn" href="mailto:jcaperella@gmail.com">Email Me</a>
-              <a class="github-btn" href="https://www.linkedin.com/in/john-caperella/" target="_blank">LinkedIn</a>
-              <a class="github-btn" href="https://github.com/jcaperella29" target="_blank">GitHub</a>
-              <a class="github-btn" href="./assets/Resume.txt" target="_blank">Résumé (TXT)</a>
+              <a class="github-btn" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="github-btn" href="https://github.com/jcaperella29" target="_blank" rel="noopener">GitHub</a>
+              <a class="github-btn" href="./assets/Resume.txt" target="_blank" rel="noopener">Résumé (TXT)</a>
             </div>
-
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- Analytics -->
+    <section id="analytics" class="tab-content">
+      <div class="tool">
+        <h2>Usage Analytics</h2>
+        <p class="lead">
+          This dashboard is powered by Google Analytics 4 and Looker Studio. It summarizes which
+          apps and tabs are used most often, so I can keep improving the tools that matter.
+        </p>
+
+        <div class="analytics-embed-wrapper">
+          <iframe
+            width="600"
+            height="2125"
+            src="https://lookerstudio.google.com/embed/reporting/3d122c21-bde5-4cbb-891f-b8a242d63b9f/page/kIV1C"
+            frameborder="0"
+            style="border:0; width: 100%;"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+
+        <p style="margin-top: 10px; font-size: 0.9em; color: #6c757d;">
+          Data may take a few minutes to reflect new visits and clicks.
+        </p>
       </div>
     </section>
 
   </main>
 
+  <!-- ========= FOOTER ========= -->
   <footer>
     © <span id="year"></span> JCaperella — All rights reserved.
   </footer>
 
-  <!-- ======= Scripts ======= -->
+  <!-- ========= SCRIPTS ========= -->
   <script>
+    // Tab switcher
     function showTab(id, btn) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       const pane = document.getElementById(id);
@@ -392,7 +508,7 @@
 
       if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-      // GA tracking
+      // GA4: track tab view
       if (typeof gtag === 'function') {
         gtag('event', 'tab_view', {
           tab_id: id,
@@ -401,8 +517,10 @@
       }
     }
 
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // GA4: track clicks on app GitHub buttons
     document.addEventListener('DOMContentLoaded', function () {
       const appButtons = document.querySelectorAll('.github-btn[data-app]');
       appButtons.forEach(btn => {
@@ -417,15 +535,5 @@
       });
     });
   </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
