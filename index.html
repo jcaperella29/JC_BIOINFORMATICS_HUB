@@ -7,22 +7,21 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
 
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  // Automatically enable debug mode if URL contains debug=true
-  const isDebug = window.location.search.includes("debug=true");
+    // Automatically enable debug mode if URL contains debug=true
+    const isDebug = window.location.search.includes("debug=true");
 
-  gtag('config', 'G-BH0ZXLJ6N2', {
+    gtag('config', 'G-BH0ZXLJ6N2', {
       debug_mode: isDebug
-  });
-</script>
-
+    });
+  </script>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -231,14 +230,16 @@
           <li>⚡ <strong>Power:</strong> sample size/power curves</li>
           <li>📦 <strong>Runs anywhere:</strong> Docker/Singularity</li>
         </ul>
-         <a class="github-btn"
-        data-app="rna"
-         onclick="if(window.gtag){gtag('event','app_repo_click',{app_id:'rna',repo_name:'Bulk RNA-Seq Analyzer',repo_url:'https://github.com/jcaperella29/RNA_SEQ_APP'});}"
-         href="https://github.com/jcaperella29/RNA_SEQ_APP"
-         target="_blank" rel="noopener">
-        View on GitHub
-         </a>
-
+        <a
+          class="github-btn"
+          href="https://github.com/jcaperella29/RNA_SEQ_APP"
+          target="_blank" rel="noopener"
+          data-app-id="rna"
+          data-app-name="Bulk RNA-Seq Analyzer"
+          onclick="trackAppClick(this)"
+        >
+          View on GitHub
+        </a>
       </div>
     </section>
 
@@ -256,15 +257,16 @@
           <li>🧠 <strong>Pathways:</strong> enrichR (GO/KEGG/Reactome)</li>
           <li>🚀 <strong>Deploy:</strong> Docker & Singularity/HPC</li>
         </ul>
-        <a class="github-btn"
-           data-app="atac"
-          onclick="if(window.gtag){gtag('event','app_repo_click',{app_id:'atac',repo_name:'ATAC-Seq App',repo_url:'https://github.com/jcaperella29/ATAC_APP'});}"
+        <a
+          class="github-btn"
           href="https://github.com/jcaperella29/ATAC_APP"
-            target="_blank" rel="noopener">
+          target="_blank" rel="noopener"
+          data-app-id="atac"
+          data-app-name="ATAC-Seq App"
+          onclick="trackAppClick(this)"
+        >
           View on GitHub
-       </a>
-
-        
+        </a>
       </div>
     </section>
 
@@ -284,15 +286,16 @@
           <li>🧪 <strong>Pathways:</strong> Enrichr (clusterProfiler fallback)</li>
           <li>⚡ <strong>Power:</strong> sample size estimates</li>
         </ul>
-         <a class="github-btn"
-           data-app="mirna"
-          onclick="if(window.gtag){gtag('event','app_repo_click',{app_id:'mirna',repo_name:'miRNA-Seq App',repo_url:'https://github.com/jcaperella29/MI_RNA_SHINY'});}"
-            href="https://github.com/jcaperella29/MI_RNA_SHINY"
-          target="_blank" rel="noopener">
+        <a
+          class="github-btn"
+          href="https://github.com/jcaperella29/MI_RNA_SHINY"
+          target="_blank" rel="noopener"
+          data-app-id="mirna"
+          data-app-name="miRNA-Seq App"
+          onclick="trackAppClick(this)"
+        >
           View on GitHub
         </a>
-    
-         
       </div>
     </section>
 
@@ -312,15 +315,16 @@
           <li>⚡ <strong>Power:</strong> Cohen’s d → n per group</li>
           <li>📦 <strong>Deploy:</strong> Singularity/Apptainer</li>
         </ul>
-
-       <a class="github-btn"
-        data-app="methylation"
-        onclick="if(window.gtag){gtag('event','app_repo_click',{app_id:'methylation',repo_name:'Methylation App',repo_url:'https://github.com/jcaperella29/methylation_shiny'});}"
-        href="https://github.com/jcaperella29/methylation_shiny"
-       target="_blank" rel="noopener">
-     View on GitHub
-     </a>
-
+        <a
+          class="github-btn"
+          href="https://github.com/jcaperella29/methylation_shiny"
+          target="_blank" rel="noopener"
+          data-app-id="methylation"
+          data-app-name="Methylation App"
+          onclick="trackAppClick(this)"
+        >
+          View on GitHub
+        </a>
       </div>
     </section>
 
@@ -339,15 +343,16 @@
           <li>📈 <strong>Views:</strong> bar/violin/heatmaps, summaries</li>
           <li>📦 <strong>Deploy:</strong> Singularity + Slurm script</li>
         </ul>
-
-        <a class="github-btn"
-         data-app="crispr"
-         onclick="if(window.gtag){gtag('event','app_repo_click',{app_id:'crispr',repo_name:'CRISPR Mixscape App',repo_url:'https://github.com/jcaperella29/Perturb_seq_app'});}"
-        href="https://github.com/jcaperella29/Perturb_seq_app"
-        target="_blank" rel="noopener">
-         View on GitHub
-       </a>
-
+        <a
+          class="github-btn"
+          href="https://github.com/jcaperella29/Perturb_seq_app"
+          target="_blank" rel="noopener"
+          data-app-id="crispr"
+          data-app-name="CRISPR Mixscape App"
+          onclick="trackAppClick(this)"
+        >
+          View on GitHub
+        </a>
       </div>
     </section>
 
@@ -365,14 +370,16 @@
           <li>⚡ <strong>Power Analysis:</strong> Cohen’s d-based observed power & sample size curve</li>
           <li>📦 <strong>Export Everything:</strong> GWAS tables, enrichment results, ML metrics, more</li>
         </ul>
-        <a class="github-btn"
-        data-app="gwas"
-       onclick="if(window.gtag){gtag('event','app_repo_click',{app_id:'gwas',repo_name:'GWAS App',repo_url:'https://github.com/jcaperella29/GWAS_SHINY_APP'});}"
-       href="https://github.com/jcaperella29/GWAS_SHINY_APP"
-       target="_blank" rel="noopener">
-       View on GitHub
-      </a>
-
+        <a
+          class="github-btn"
+          href="https://github.com/jcaperella29/GWAS_SHINY_APP"
+          target="_blank" rel="noopener"
+          data-app-id="gwas"
+          data-app-name="GWAS App"
+          onclick="trackAppClick(this)"
+        >
+          View on GitHub
+        </a>
       </div>
     </section>
 
@@ -400,14 +407,16 @@
             <li>⬇️ <strong>Downloads:</strong> export all result tables and figures</li>
           </ul>
 
-            <a class="github-btn"
-            data-app="scrna"
-            onclick="if(window.gtag){gtag('event','app_repo_click',{app_id:'scrna',repo_name:'scRNA-Seq App',repo_url:'https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution'});}"
+          <a
+            class="github-btn"
             href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
-           target="_blank" rel="noopener">
-           View on GitHub
-           </a>
-
+            target="_blank" rel="noopener"
+            data-app-id="scrna"
+            data-app-name="scRNA-Seq App"
+            onclick="trackAppClick(this)"
+          >
+            View on GitHub
+          </a>
 
           <p class="lead" style="margin-top:16px;">
             <strong>Tips:</strong> CSV format only; counts & metadata must match by name. For best results, use
@@ -509,12 +518,18 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // GA4 helper for app repo clicks
-    function trackAppClick(appId, url) {
-      console.log('app_repo_click event:', appId, url);
+    function trackAppClick(el) {
+      const appId = el.dataset.appId || '';
+      const appName = el.dataset.appName || '';
+      const repoUrl = el.href || '';
+
+      console.log('app_repo_click event:', appId, appName, repoUrl);
+
       if (typeof gtag === 'function') {
         gtag('event', 'app_repo_click', {
           app_id: appId,
-          link_url: url
+          app_name: appName,
+          repo_url: repoUrl
         });
       }
     }
