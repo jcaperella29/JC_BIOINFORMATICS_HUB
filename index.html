@@ -462,58 +462,38 @@
         </div>
       </div>
     </section>
-
- 
 <!-- ==============================
      ANALYTICS TAB
 =================================== -->
-<section id="analytics" class="py-5">
-  <div class="container mt-5">
-    <h2 class="section-title text-center mb-4">Usage Analytics</h2>
+<section id="analytics" class="tab-content">
+  <div class="tool">
+    <h2>Usage Analytics</h2>
 
-    <p class="lead text-center mb-4" style="max-width: 800px; margin: auto;">
+    <p class="lead">
       This dashboard is powered by Google Analytics 4 and Looker Studio.
-      It shows real-time and historical click activity for each app using custom events.
+      It shows  historical click activity for each app.
     </p>
-    <p id="analytics-updated" class="text-center mt-3 text-muted" style="font-size: 0.9rem;">
-  Last updated: loading…
-</p>
 
-    <div class="d-flex justify-content-center">
-      <iframe width="900" height="600"
+    <!-- Last updated text -->
+    <p id="analytics-updated" style="margin-top: 4px; font-size: 0.9rem; color: #6c757d;">
+      Last updated: loading…
+    </p>
+
+    <div class="analytics-embed-wrapper">
+      <iframe
+        width="900"
+        height="600"
         src="https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF"
         frameborder="0"
-        style="border:0; border-radius: 12px;"
+        style="border:0; width: 100%; border-radius: 12px;"
         allowfullscreen
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
       </iframe>
-      
-
     </div>
   </div>
 </section>
 
-
-<!-- Optional: Center the iframe nicely -->
-<style>
-  .analytics-iframe-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
-  #analytics {
-    text-align: center;
-  }
-  #analytics .section-description {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
-
-  </main>
-
+ 
   <footer>
     © <span id="year"></span> JCaperella — All rights reserved.
   </footer>
@@ -537,28 +517,23 @@
         });
       }
     }
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // GA4 helper for app repo clicks
-    function trackAppClick(el) {
-      const appId = el.dataset.appId || '';
-      const appName = el.dataset.appName || '';
-      const repoUrl = el.href || '';
-
-      console.log('app_repo_click event:', appId, appName, repoUrl);
-
-      if (typeof gtag === 'function') {
-        gtag('event', 'app_repo_click', {
-          app_id: appId,
-          app_name: appName,
-          repo_url: repoUrl
-        });
-      }
+  // GA4 helper for app repo clicks
+  function trackAppClick(appId, url) {
+    console.log('app_repo_click event:', appId, url);
+    if (typeof gtag === 'function') {
+      gtag('event', 'app_repo_click', {
+        app_id: appId,
+        link_url: url
+      });
     }
-  </script>
-  <script>
+  }
+
+  // ==========================
+  // Analytics "Last updated"
+  // ==========================
   function updateAnalyticsTimestamp() {
     const el = document.getElementById('analytics-updated');
     if (!el) return;
@@ -572,18 +547,20 @@
       minute: '2-digit'
     });
 
-    el.textContent = `Last updated: ${formatted}`;
+    el.textContent = 'Last updated: ' + formatted;
   }
 
-  // Update immediately on page load
+  // Run once on load, and refresh every 10 minutes
   updateAnalyticsTimestamp();
-
-  // Optional: refresh timestamp every 10 minutes
   setInterval(updateAnalyticsTimestamp, 10 * 60 * 1000);
 </script>
+</body>
+</html>
+
 
 </body>
 </html>
+
 
 
 
