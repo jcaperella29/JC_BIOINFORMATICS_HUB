@@ -467,28 +467,27 @@
 <!-- ==============================
      ANALYTICS TAB
 =================================== -->
-<section id="analytics" class="tab-content hidden">
-  <h2 class="section-title">Usage Analytics</h2>
+<section id="analytics" class="py-5">
+  <div class="container mt-5">
+    <h2 class="section-title text-center mb-4">Usage Analytics</h2>
 
-  <p class="section-description">
-    This dashboard is powered by Google Analytics 4 and Looker Studio.
-    It summarizes which apps and tabs are used most often, helping me improve
-    the tools that matter.
-  </p>
+    <p class="lead text-center mb-4" style="max-width: 800px; margin: auto;">
+      This dashboard is powered by Google Analytics 4 and Looker Studio.
+      It shows real-time and historical click activity for each app using custom events.
+    </p>
 
-  <!-- Looker Studio Embed -->
-  <div class="analytics-iframe-wrapper">
-    <iframe
-      width="900"
-      height="1200"
-      src="https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF"
-      frameborder="0"
-      style="border:0; border-radius: 12px;"
-      allowfullscreen
-      sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-    </iframe>
+    <div class="d-flex justify-content-center">
+      <iframe width="900" height="600"
+        src="https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF"
+        frameborder="0"
+        style="border:0; border-radius: 12px;"
+        allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+      </iframe>
+    </div>
   </div>
 </section>
+
 
 <!-- Optional: Center the iframe nicely -->
 <style>
@@ -556,6 +555,7 @@
   </script>
 </body>
 </html>
+
 
 
 
