@@ -490,6 +490,7 @@
     </section>
 <!-- ==============================
      ANALYTICS TAB
+
 <section id="analytics" class="tab-content">
   <div class="tool">
     <h2>Usage Analytics</h2>
@@ -504,20 +505,20 @@
       Last checked: loading…
     </p>
 
-    <div class="analytics-embed-wrapper" style="margin-top: 20px;">
+    <div class="analytics-embed-wrapper">
       <iframe
-        width="600"
-        height="450"
+        id="analytics-iframe"
+        width="900"
+        height="600"
         src="https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF"
         frameborder="0"
-        style="border:0; width:100%; border-radius: 12px;"
+        style="border:0; width: 100%; border-radius: 12px;"
         allowfullscreen
         sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
       </iframe>
     </div>
   </div>
 </section>
-
 
 
  
@@ -527,84 +528,88 @@
     © <span id="year"></span> JCaperella — All rights reserved.
   </footer>
 
-  <script>
-    // Tab switcher + GA4 tab view
-    function showTab(id, btn) {
-      // Hide all tab contents
-      document.querySelectorAll('.tab-content').forEach(el => {
-        el.classList.remove('active');
-        el.style.display = 'none';
+ <script>
+  // Tab switcher + GA4 tab view
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    const pane = document.getElementById(id);
+    if (pane) pane.classList.add('active');
+
+    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'tab_view', {
+        tab_id: id,
+        tab_label: btn ? btn.textContent.trim() : id
       });
-
-      // Show the selected tab
-      const pane = document.getElementById(id);
-      if (pane) {
-        pane.classList.add('active');
-        pane.style.display = 'block';
-        pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-
-      // Button active state
-      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-
-      // GA4 tab_view event
-      if (typeof gtag === 'function') {
-        gtag('event', 'tab_view', {
-          tab_id: id,
-          tab_label: btn ? btn.textContent.trim() : id
-        });
-      }
     }
 
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // GA4 helper for app repo clicks
-    // HTML calls: onclick="trackAppClick(this)"
-    function trackAppClick(anchorEl) {
-      if (!anchorEl) return;
-
-      const appId   = anchorEl.getAttribute('data-app-id')   || 'unknown';
-      const appName = anchorEl.getAttribute('data-app-name') || 'unknown';
-      const url     = anchorEl.href;
-
-      console.log('app_repo_click event:', appId, url);
-
-      if (typeof gtag === 'function') {
-        gtag('event', 'app_repo_click', {
-          app_id:   appId,
-          app_name: appName,
-          link_url: url
-        });
-      }
+    // If we just opened the Analytics tab, refresh the embed & timestamp
+    if (id === 'analytics') {
+      refreshAnalyticsEmbed();
     }
+  }
 
-    // ==========================
-    // Analytics "Last updated"
-    // ==========================
-    function updateAnalyticsTimestamp() {
-      const el = document.getElementById('analytics-updated');
-      if (!el) return;
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-      const now = new Date();
-      const formatted = now.toLocaleString([], {
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
+  // GA4 helper for app repo clicks
+  function trackAppClick(el) {
+    const appId = el.getAttribute('data-app-id');
+    const url = el.href;
+    console.log('app_repo_click event:', appId, url);
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'app_repo_click', {
+        app_id: appId,
+        link_url: url
       });
-
-      el.textContent = 'Last updated: ' + formatted;
     }
+  }
 
-    // Run once on load, and refresh every 10 minutes
+  // ==========================
+  // Analytics "Last checked"
+  // ==========================
+  function updateAnalyticsTimestamp() {
+    const el = document.getElementById('analytics-updated');
+    if (!el) return;
+
+    const now = new Date();
+    const formatted = now.toLocaleString([], {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+
+    el.textContent = 'Last checked: ' + formatted;
+  }
+
+  function refreshAnalyticsEmbed() {
+    const iframe = document.getElementById('analytics-iframe');
+    if (!iframe) return;
+
+    // Base embed URL (no query params)
+    const baseSrc = "https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF";
+
+    // Add a cache-buster so the report actually reloads
+    const cacheBuster = Date.now();
+    iframe.src = baseSrc + "?ts=" + cacheBuster;
+
     updateAnalyticsTimestamp();
-    setInterval(updateAnalyticsTimestamp, 10 * 60 * 1000);
-  </script>
+  }
+
+  // Run once on initial load if Analytics tab is default (it isn't, but safe)
+  // updateAnalyticsTimestamp();
+</script>
+
 </body>
 </html>
+
 
 
 
