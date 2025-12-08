@@ -453,43 +453,86 @@
     </section>
 
     
-      <section id="about" class="tab-content">
-      <div class="tool">
-        <h2>About Me</h2>
+    
+<section id="about" class="tab-content">
+  <div class="tool">
+    <h2>About Me</h2>
 
-        <div class="about-grid">
-          <img
-            class="about-headshot"
-            src="assets/IMG_0740.jpg"
-            alt="Headshot of John Caperella"
-            loading="lazy"
-          />
+    <div class="about-grid">
+      <img
+        class="about-headshot"
+        src="assets/IMG_0740.jpg"
+        alt="Headshot of John Caperella"
+        loading="lazy"
+      />
 
-          <div>
-            <p>
-              I’m <strong>John Caperella</strong>, a bioinformatics developer passionate about turning
-              complex genomic data into usable insights. I build clear, scalable tools for
-              <em>single-cell RNA-seq</em>, <em>CRISPR Mixscape</em>, and <em>omics visualization</em> in
-              <strong>R, Python, and Shiny</strong>—helping researchers and data scientists get to answers faster.
-            </p>
+      <div>
+        <p>
+          I’m <strong>John Caperella</strong>, a bioinformatics developer passionate about turning
+          complex genomic data into usable insights. I build clear, scalable tools for
+          <em>single-cell RNA-seq</em>, <em>CRISPR Mixscape</em>, and <em>omics visualization</em> in
+          <strong>R, Python, and Shiny</strong>—helping researchers and data scientists get to answers faster.
+        </p>
 
-            <ul class="emoji-list" style="margin:14px 0;">
-              <li>🧬 Single-cell & CRISPR analytics (Seurat/Mixscape)</li>
-              <li>📊 Reproducible visualization apps (Docker/Singularity/HPC)</li>
-              <li>🤖 Exploring LLMs for genomics workflows</li>
-            </ul>
+        <ul class="emoji-list" style="margin:14px 0;">
+          <li>🧬 Single-cell &amp; CRISPR analytics (Seurat/Mixscape)</li>
+          <li>📊 Reproducible visualization apps (Docker/Singularity/HPC)</li>
+          <li>🤖 Exploring LLMs for genomics workflows</li>
+        </ul>
 
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="github-btn" href="mailto:jcaperella@gmail.com">Email Me</a>
-              <a class="github-btn" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a>
-              <a class="github-btn" href="https://github.com/jcaperella29" target="_blank" rel="noopener">GitHub</a>
-               <a class="github-btn" href="resume.html" target="_blank" rel="noopener">Résumé (HTML)</a>
-
-            </div>
-          </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <!-- Contact button scrolls to the form below -->
+          <a class="github-btn" href="#contact-form">Contact Form</a>
+          <a class="github-btn" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="github-btn" href="https://github.com/jcaperella29" target="_blank" rel="noopener">GitHub</a>
+          <a class="github-btn" href="resume.html" target="_blank" rel="noopener">Résumé (HTML)</a>
         </div>
+
+        <!-- Contact form (Formspree) -->
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          style="margin-top:16px; display:flex; flex-direction:column; gap:10px; max-width:420px;"
+        >
+          <!-- Replace YOUR_FORM_ID above with the actual ID from Formspree -->
+
+          <label style="display:flex; flex-direction:column; gap:4px; font-size:0.95rem;">
+            Your Email
+            <input
+              type="email"
+              name="email"
+              required
+              style="padding:6px 8px; border-radius:4px; border:1px solid #ccc;"
+            />
+          </label>
+
+          <label style="display:flex; flex-direction:column; gap:4px; font-size:0.95rem;">
+            Subject
+            <input
+              type="text"
+              name="subject"
+              required
+              style="padding:6px 8px; border-radius:4px; border:1px solid #ccc;"
+            />
+          </label>
+
+          <label style="display:flex; flex-direction:column; gap:4px; font-size:0.95rem;">
+            Message
+            <textarea
+              name="message"
+              rows="4"
+              required
+              style="padding:6px 8px; border-radius:4px; border:1px solid #ccc; resize:vertical;"
+            ></textarea>
+          </label>
+
+          <button type="submit" class="github-btn">Send Message</button>
+        </form>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- ==============================
          ANALYTICS TAB
@@ -602,4 +645,5 @@
   </script>
 </body>
 </html>
+
 
