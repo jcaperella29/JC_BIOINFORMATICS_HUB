@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>John J. Caperella Jr. – Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Resume of John J. Caperella Jr., MS – Bioinformatician & Full-Stack Software Engineer." />
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card-bg: #ffffff;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --accent: #0f766e;   /* teal */
+      --accent-soft: #ccfbf1;
+      --border-soft: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .resume {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: var(--card-bg);
+      padding: 2.5rem 2.25rem 2.75rem;
+      border-radius: 1rem;
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.12),
+        0 0 1px rgba(15, 23, 42, 0.08);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.25rem 0.75rem;
+      }
+      .resume {
+        padding: 1.75rem 1.5rem 2rem;
+        border-radius: 0.75rem;
+      }
+    }
+
+    .resume-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 2px solid var(--border-soft);
+    }
+
+    .resume-header h1 {
+      margin: 0;
+      font-size: clamp(1.9rem, 3vw + 1rem, 2.4rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .resume-header h2 {
+      margin: 0.45rem 0 0.9rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .contact-line {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+    }
+
+    .contact-line span::after {
+      content: "•";
+      margin: 0 0.35rem;
+      color: var(--border-soft);
+    }
+
+    .contact-line span:last-of-type::after {
+      content: "";
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 1.75rem;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.9rem;
+      padding-left: 0.75rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 0.85rem;
+    }
+
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.25rem 1.25rem;
+      font-weight: 600;
+    }
+
+    .edu-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .edu-notes {
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem 1.5rem;
+    }
+
+    .skill-group-title {
+      font-weight: 600;
+      font-size: 0.93rem;
+      margin-bottom: 0.15rem;
+      color: var(--accent);
+    }
+
+    .skill-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .skill-list li {
+      margin-bottom: 0.1rem;
+    }
+
+    /* Projects & Experience */
+    .item {
+      margin-bottom: 1.1rem;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.35rem 1.25rem;
+    }
+
+    .item-role {
+      font-weight: 600;
+    }
+
+    .item-context {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .item-tags {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .item-link {
+      font-size: 0.88rem;
+      margin-top: 0.25rem;
+    }
+
+    .item ul {
+      margin: 0.35rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .item li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* Small pills for tech stacks if needed later */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+    }
+
+    .pill {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+      }
+
+      .resume {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 1.5rem 1.75rem;
+      }
+
+      a {
+        color: #000000;
+        text-decoration: none;
+      }
+
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume" aria-label="Resume of John J. Caperella Jr.">
+    <header class="resume-header">
+      <h1>John J. Caperella Jr., MS</h1>
+      <h2>Bioinformatician &amp; Full-Stack Software Engineer</h2>
+      <div class="contact-line">
+        <span>Harrison, NY 10528</span>
+        <span>914-484-0257</span>
+        <span>
+          GitHub:
+          <a href="https://github.com/jcaperella29" target="_blank" rel="noopener noreferrer">
+            github.com/jcaperella29
+          </a>
+        </span>
+      </div>
+    </header>
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="section-title">Education</div>
+      <div class="section-body">
+        <div class="edu-item">
+          <div class="edu-header">
+            <div>Brandeis University, Waltham, MA</div>
+            <div>May 2024</div>
+          </div>
+          <div class="edu-sub">
+            Master of Science in Bioinformatics &nbsp;•&nbsp; GPA: 4.0
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-header">
+            <div>Pace University, Dyson College of Arts and Sciences, Pleasantville, NY</div>
+            <div>May 2019</div>
+          </div>
+          <div class="edu-sub">
+            Bachelor of Science in Biochemistry; Mathematics Minor
+          </div>
+          <div class="edu-notes">
+            Honors: Biochemistry Excellence Award, Dyson Society of Fellows, Dean’s Scholarship,
+            Dean’s List, Multiple Presentation Awards
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section">
+      <div class="section-title">Skills</div>
+      <div class="section-body skills-grid">
+        <div>
+          <div class="skill-group-title">Programming &amp; Deployment</div>
+          <ul class="skill-list">
+            <li>R (Bioconductor, ML, Shiny)</li>
+            <li>Python (ML, Biopython, Flask)</li>
+            <li>Bash, SQL Alchemy</li>
+            <li>Docker, Apptainer/Singularity</li>
+            <li>Nextflow, CWL</li>
+            <li>Google Cloud Platform</li>
+            <li>AWS (App Runner, SES, ECR)</li>
+            <li>Basic SQL and web development</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="skill-group-title">Genomics &amp; Genetics</div>
+          <ul class="skill-list">
+            <li>PLINK, METAL</li>
+            <li>Variant calling</li>
+            <li>ATAC peak analysis</li>
+            <li>Burden tests, meta-analysis</li>
+            <li>FASTQ pipelines</li>
+            <li>De novo assembly</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="skill-group-title">Transcriptomics</div>
+          <ul class="skill-list">
+            <li>RNA-seq, scRNA-seq</li>
+            <li>Microarray processing</li>
+            <li>WGCNA, differential expression</li>
+            <li>PCA/UMAP visualization</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="skill-group-title">ML &amp; Dimensionality Reduction</div>
+          <ul class="skill-list">
+            <li>Regression models</li>
+            <li>Random Forests, neural networks</li>
+            <li>PCA, UMAP</li>
+            <li>Hierarchical clustering, k-means</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="skill-group-title">Structural Biology</div>
+          <ul class="skill-list">
+            <li>PyMOL</li>
+            <li>AlphaFold</li>
+            <li>AutoDock</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="skill-group-title">Databases &amp; Data Sources</div>
+          <ul class="skill-list">
+            <li>Genebass, Ensembl, UCSC, NCBI</li>
+            <li>PDB, Open Targets, UniProt</li>
+            <li>Gene Ontology</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="skill-group-title">Data Visualization Tools</div>
+          <ul class="skill-list">
+            <li>
+              Flourish Studio – interactive bar, bubble, and treemap charts;
+              storytelling dashboards (Perturb-seq enrichment data).
+            </li>
+            <li>
+              Tableau – parameter-driven dashboards combining bar charts and volcano plots;
+              custom calculated fields; cross-sheet highlight actions; dynamic tooltips;
+              containers and layout control.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+      <div class="section-title">Projects</div>
+      <div class="section-body">
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Inflection Point Portal – Full-Stack Flask Application</div>
+            <div class="item-context">2025</div>
+          </div>
+          <div class="item-tags">
+            Solo Full-Stack Developer &nbsp;•&nbsp; AWS, Python/Flask, SQL Alchemy, HTML/CSS/JS, CometChat, AWS SES
+          </div>
+          <ul>
+            <li>
+              Built a production multipage portal for a small business (The Inflection Point)
+              as the sole full-stack developer.
+            </li>
+            <li>
+              Implemented user authentication, role-based access, and secure file uploading
+              (general and private).
+            </li>
+            <li>
+              Embedded a CometChat real-time messaging widget for user-to-user communication.
+            </li>
+            <li>
+              Built an email sending interface using AWS SES with UI forms for subject/body
+              and backend API handling.
+            </li>
+            <li>
+              Developed a goal-tracking dashboard with cumulative progress entries and
+              user-specific tracking.
+            </li>
+            <li>
+              Deployed on AWS with containerization, environment variables, and secure
+              secrets management.
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Bioinformatics Tools Hub — Multi-Species Analysis Platform</div>
+          </div>
+          <div class="item-context">
+            Creator &amp; Full-Stack Developer &nbsp;•&nbsp; R, Shiny, Python, Docker/Singularity, HTML/CSS/JS, GA4, Looker Studio
+          </div>
+          <div class="item-link">
+            <a href="https://jcaperella29.github.io/JC_BIOINFORMATICS_HUB/" target="_blank" rel="noopener noreferrer">
+              jcaperella29.github.io/JC_BIOINFORMATICS_HUB
+            </a>
+          </div>
+          <ul>
+            <li>
+              Engineered a unified platform of interactive multi-species analysis tools
+              supporting human, mouse, fly, and zebrafish for RNA-seq, scRNA-seq,
+              Perturb-seq, ATAC-seq, miRNA-seq, and GWAS workflows.
+            </li>
+            <li>
+              Built consistent UIs for differential expression, QC, PCA/UMAP, clustering,
+              metadata handling, and ML (RF/NN-based) analysis.
+            </li>
+            <li>
+              Containerized all tools for HPC deployment using Docker, Singularity,
+              and Apptainer, ensuring reproducibility and minimal setup.
+            </li>
+            <li>
+              Added a dedicated Analytics Tab with an embedded Looker Studio iframe dashboard,
+              GA4 event tracking, interactive usage time-series charts, and auto-updating
+              event tables with “Last Checked” timestamps.
+            </li>
+            <li>
+              Designed a central navigation portal improving accessibility for programmers
+              and non-programmers.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <div class="section-title">Relevant Experience</div>
+      <div class="section-body">
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Inflection Point – Web Developer</div>
+            <div class="item-context">Independent Software Engineer &nbsp;•&nbsp; 2024–Present</div>
+          </div>
+          <ul>
+            <li>
+              Design and deploy full-stack applications integrating scientific workflows,
+              business logic, and real-time communication tools.
+            </li>
+            <li>
+              Build Flask portals, Shiny apps, APIs, and containerized workflows ready
+              for production use.
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Computational Research Assistant – Department of Biology</div>
+            <div class="item-context">Pace University, Pleasantville, NY &nbsp;•&nbsp; 2021–2024</div>
+          </div>
+          <ul>
+            <li>
+              Automated zebrafish hair-cell counting with a Python GUI to streamline
+              image-based quantification.
+            </li>
+            <li>
+              Applied ML and AlphaFold to predict Cxcr4b receptor partners.
+            </li>
+            <li>
+              Provided computational and lab support; introduced the team to text-mining
+              workflows.
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Research Assistant – Department of Biology</div>
+            <div class="item-context">Pace University, Pleasantville, NY &nbsp;•&nbsp; 2020–2021</div>
+          </div>
+          <ul>
+            <li>Zebrafish husbandry and experimental support.</li>
+            <li>RNA extraction, RT-PCR, gel electrophoresis.</li>
+            <li>EdU labeling, confocal microscopy, sequence analysis.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Biology &amp; Chemistry Tutor</div>
+            <div class="item-context">Pace University, New York, NY &nbsp;•&nbsp; 2019–2020</div>
+          </div>
+          <ul>
+            <li>
+              Tutored General Biology and General &amp; Organic Chemistry students.
+            </li>
+            <li>
+              Supported exam preparation, concept reinforcement, and study strategy.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
