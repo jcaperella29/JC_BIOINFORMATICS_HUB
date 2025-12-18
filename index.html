@@ -222,6 +222,8 @@
     <button class="tab-button" onclick="showTab('about', this)">About Me</button>
 
     <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
+    <button class="tab-button" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
+
     <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
     <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
     <button class="tab-button" onclick="showTab('methylation', this)">Methylation Analysis</button>
@@ -268,6 +270,93 @@
         </a>
       </div>
     </section>
+
+
+    <section id="nextflow" class="tab-content">
+  <div class="tool">
+    <h2>Counts_matrix_Nextflow (RNA-seq Pipeline)</h2>
+
+    <p class="lead">
+      Portable <strong>Nextflow DSL2</strong> RNA-seq workflow: QC → STAR alignment → gene counts →
+      Salmon TPM → BigWig coverage → matrix merge + MultiQC summary.
+      Designed to be <strong>minimal, readable, and robust</strong>.
+    </p>
+
+    <ul class="emoji-list">
+      <li>📄 <strong>Inputs:</strong> paired-end FASTQs via samplesheet CSV</li>
+      <li>🧬 <strong>Core steps:</strong> fastp → STAR → featureCounts → Salmon → MultiQC</li>
+      <li>📈 <strong>Outputs:</strong> gene counts matrix, TPM matrix, BigWig tracks, QC report</li>
+      <li>🧱 <strong>Indexes:</strong> auto-builds STAR + Salmon indexes (per run)</li>
+      <li>🛡️ <strong>Robustness:</strong> skips coverage gracefully for zero-mapped samples</li>
+      <li>📦 <strong>Runs anywhere:</strong> Conda, Docker, or Singularity/Apptainer</li>
+      <li>🧪 <strong>Great for:</strong> demos, infra tests, portfolio/template pipelines</li>
+    </ul>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/Counts_matrix_Nextflow"
+        target="_blank" rel="noopener"
+        data-app-id="nextflow_counts_matrix"
+        data-app-name="Counts_matrix_Nextflow"
+        onclick="trackAppClick(this)"
+      >
+        View on GitHub
+      </a>
+
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/Counts_matrix_Nextflow#readme"
+        target="_blank" rel="noopener"
+        data-app-id="nextflow_counts_matrix_readme"
+        data-app-name="Counts_matrix_Nextflow README"
+        onclick="trackAppClick(this)"
+      >
+        README
+      </a>
+    </div>
+
+    <h3 style="margin: 6px 0 10px; color:#003566;">Quickstart</h3>
+
+    <p style="margin-bottom:8px; color:#343a40;"><strong>Docker</strong></p>
+    <pre style="background:#0b1320; color:#e5e7eb; padding:14px; border-radius:12px; overflow:auto; font-size:0.92rem; line-height:1.45;">
+docker build -t rnaseq-pipeline .
+nextflow run main.nf -profile docker \
+  --samplesheet samples.csv \
+  --ref genome.fa \
+  --gtf genes.gtf \
+  --transcripts transcripts.fa
+    </pre>
+
+    <p style="margin:14px 0 8px; color:#343a40;"><strong>Singularity/Apptainer</strong></p>
+    <pre style="background:#0b1320; color:#e5e7eb; padding:14px; border-radius:12px; overflow:auto; font-size:0.92rem; line-height:1.45;">
+singularity build containers/rnaseq-pipeline.sif docker://rnaseq-pipeline
+nextflow run main.nf -profile singularity \
+  --samplesheet samples.csv \
+  --ref genome.fa \
+  --gtf genes.gtf \
+  --transcripts transcripts.fa
+    </pre>
+
+    <h3 style="margin: 16px 0 10px; color:#003566;">Key Outputs</h3>
+    <pre style="background:#f1f5f9; color:#111827; padding:14px; border-radius:12px; overflow:auto; font-size:0.92rem; line-height:1.45;">
+results/
+├── qc/                       (fastp)
+├── ref/                      (STAR + Salmon indexes)
+├── bam/                      (sorted BAM + BAI + flagstat)
+├── bigwig/                   (coverage tracks)
+├── counts_per_sample/        (per-sample featureCounts)
+├── counts_matrix.tsv         (gene count matrix)
+├── salmon_tpm_matrix.tsv     (transcript TPM matrix)
+└── multiqc_report.html       (summary report)
+    </pre>
+
+    <p class="lead" style="margin-top:14px;">
+      <strong>Notes:</strong> intentionally simple; explicit channels; guards against common failure modes.
+      Easy to extend into DESeq2/edgeR downstream analysis.
+    </p>
+  </div>
+</section>
 
     <section id="atac" class="tab-content">
       <div class="tool">
@@ -645,6 +734,7 @@
   </script>
 </body>
 </html>
+
 
 
 
