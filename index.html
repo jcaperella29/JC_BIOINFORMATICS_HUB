@@ -231,6 +231,8 @@
     <button class="tab-button" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
     <button class="tab-button" onclick="showTab('gwas', this)">GWAS</button>
     <button class="tab-button" onclick="showTab('scrna', this)">Single-cell RNA-Seq</button>
+    <button class="tab-button" onclick="showTab('enrichment-llm', this)">Enrichment Triage (LLM)</button>
+
     <button class="tab-button" onclick="showTab('analytics', this)">Analytics</button>
   </nav>
 
@@ -409,7 +411,47 @@ results/
     </p>
   </div>
 </section>
+<section id="enrichment-llm" class="tab-content">
+  <div class="tool">
+    <div class="ribbon">NEW</div>
+    <h2>Enrichment Analysis LLM Triage (Flask App)</h2>
 
+    <p class="lead">
+      A lightweight <strong>Flask</strong> web app that takes enrichment results (CSV) and generates a structured,
+      human-readable triage report — highlighting likely biological <strong>drivers</strong>, <strong>reactive</strong>
+      programs, potential <strong>confounders</strong>, and suggested <strong>follow-up experiments</strong>.
+    </p>
+
+    <ul class="emoji-list">
+      <li>📄 <strong>Input:</strong> enrichment CSV (terms + scores + genes/overlap fields)</li>
+      <li>🧠 <strong>LLM reasoning:</strong> summarizes key programs and flags confounding patterns</li>
+      <li>🧪 <strong>Follow-ups:</strong> proposes targeted experiments with readouts + controls</li>
+      <li>📑 <strong>PDF report:</strong> generates a clean downloadable triage PDF</li>
+      <li>📦 <strong>Deploy:</strong> Docker + Apptainer/Singularity (HPC-friendly)</li>
+    </ul>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/Enrichment_Analysis_LLM_APP/tree/main"
+        target="_blank" rel="noopener"
+        data-app-id="enrichment_llm_repo"
+        data-app-name="Enrichment Analysis LLM Triage (GitHub)"
+        onclick="trackAppClick(this)"
+      >
+        View on GitHub
+      </a>
+    </div>
+
+    <p class="lead" style="margin-top:16px;">
+      <strong>Why it matters:</strong> enrichment tables are easy to generate but hard to interpret.
+      This tool helps translate “significant pathways” into an actionable short list of mechanisms
+      and concrete next experiments — without drowning the user in jargon.
+    </p>
+  </div>
+</section>
+
+    
     <section id="atac" class="tab-content">
       <div class="tool">
         <h2>ATAC-Seq Peak Annotation & Enrichment</h2>
@@ -788,6 +830,7 @@ results/
   </script>
 </body>
 </html>
+
 
 
 
