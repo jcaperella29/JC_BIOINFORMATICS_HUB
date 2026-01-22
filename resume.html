@@ -114,6 +114,23 @@
 
     .section-body { font-size: 0.95rem; }
 
+    /* Subsection label (for "Independent" vs "Client") */
+    .subsection-title {
+      margin: 0.6rem 0 0.75rem;
+      padding: 0.35rem 0.6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+    }
+
     /* Education */
     .edu-item { margin-bottom: 0.85rem; }
     .edu-item:last-child { margin-bottom: 0; }
@@ -196,6 +213,7 @@
       .resume { box-shadow: none; border-radius: 0; padding: 1.5rem 1.75rem; }
       a { color: #000000; text-decoration: none; }
       a::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+      .subsection-title { background: none; border: none; padding: 0; }
     }
   </style>
 </head>
@@ -347,29 +365,14 @@
       <div class="section-title">Projects</div>
       <div class="section-body">
 
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Inflection Point Portal — Full-Stack Flask Application</div>
-            <div class="item-context">2025</div>
-          </div>
-          <div class="item-tags">
-            Solo Full-Stack Developer &nbsp;•&nbsp; AWS, Python/Flask, SQL Alchemy, HTML/CSS/JS, CometChat, AWS SES
-          </div>
-          <ul>
-            <li>Built a production multipage portal for a small business (The Inflection Point) as the sole full-stack developer.</li>
-            <li>Implemented user authentication, role-based access, and secure file uploading (general + private).</li>
-            <li>Embedded a CometChat real-time messaging widget for user-to-user communication.</li>
-            <li>Built an email sending interface using AWS SES, with UI forms for subject/body and backend API handling.</li>
-            <li>Developed a goal-tracking dashboard with cumulative progress entries and user-specific tracking.</li>
-            <li>Deployed on AWS with containerization, environment variables, and secure secrets management.</li>
-          </ul>
-        </div>
+        <div class="subsection-title">Independent / Self-Directed</div>
 
         <div class="item">
           <div class="item-header">
             <div class="item-role">Bioinformatics Tools Hub — Multi-Species Analysis Platform</div>
+            <div class="item-context">Ongoing</div>
           </div>
-          <div class="item-context">
+          <div class="item-tags">
             Creator &amp; Full-Stack Developer &nbsp;•&nbsp; R, Shiny, Python, Docker/Singularity, HTML/CSS/JS, GA4, Looker Studio
           </div>
           <div class="item-link">
@@ -383,7 +386,8 @@
               and zebrafish for RNA-seq, scRNA-seq, Perturb-seq, ATAC-seq, miRNA-seq, and GWAS workflows.
             </li>
             <li>
-              Built consistent UIs for differential expression, QC, PCA/UMAP, clustering, metadata handling, and machine learning (RF/NN-based) analysis.
+              Built consistent UIs for differential expression, QC, PCA/UMAP, clustering, metadata handling,
+              and machine learning (RF/NN-based) analysis.
             </li>
             <li>
               Containerized all tools for HPC deployment using Docker, Singularity, and Apptainer, ensuring reproducibility and minimal setup.
@@ -392,9 +396,27 @@
               Added a dedicated Analytics Tab featuring an embedded Looker Studio iframe dashboard, GA4 event tracking,
               interactive time-series usage charts, auto-updating event tables, and “Last Checked” timestamps.
             </li>
-            <li>
-              Designed a central navigation portal improving accessibility for programmers and non-programmers.
-            </li>
+            <li>Designed a central navigation portal improving accessibility for programmers and non-programmers.</li>
+          </ul>
+        </div>
+
+        <div class="subsection-title">Client / Production Work</div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Inflection Point Portal — Full-Stack Flask Application</div>
+            <div class="item-context">2025</div>
+          </div>
+          <div class="item-tags">
+            Sole Developer (Client Project) &nbsp;•&nbsp; AWS, Python/Flask, SQL Alchemy, HTML/CSS/JS, CometChat, AWS SES
+          </div>
+          <ul>
+            <li>Built a production multi-page portal for a small business (The Inflection Point) as the sole full-stack developer.</li>
+            <li>Implemented user authentication, role-based access, and secure file uploading (general + private).</li>
+            <li>Embedded a CometChat real-time messaging widget for user-to-user communication.</li>
+            <li>Built an email sending interface using AWS SES, with UI forms for subject/body and backend API handling.</li>
+            <li>Developed a goal-tracking dashboard with cumulative progress entries and user-specific tracking.</li>
+            <li>Deployed on AWS with containerization, environment variables, and secure secrets management.</li>
           </ul>
         </div>
 
@@ -406,16 +428,33 @@
       <div class="section-title">Relevant Experience</div>
       <div class="section-body">
 
+        <div class="subsection-title">Independent / Consulting</div>
+
         <div class="item">
           <div class="item-header">
-            <div class="item-role">Inflection Point — Web Developer</div>
-            <div class="item-context">Independent Software Engineer &nbsp;•&nbsp; 2024–Present</div>
+            <div class="item-role">Independent Software Engineer</div>
+            <div class="item-context">2024–Present</div>
           </div>
           <ul>
             <li>Designed and deployed full-stack applications integrating scientific workflows, business logic, and real-time communication tools.</li>
             <li>Built Flask portals, Shiny apps, APIs, and containerized workflows ready for production use.</li>
+            <li>Implemented reproducible deployment patterns using Docker/Apptainer, environment variables, and secrets management.</li>
           </ul>
         </div>
+
+        <div class="item">
+          <div class="item-header">
+            <div class="item-role">Inflection Point — Contract Web Developer</div>
+            <div class="item-context">2024–2025</div>
+          </div>
+          <ul>
+            <li>Owned end-to-end delivery of a production portal (AWS + Flask) for a small business, from requirements through deployment.</li>
+            <li>Implemented authentication, role-based access, file upload flows, real-time chat integration, and an AWS SES email interface.</li>
+            <li>Built and shipped user-facing dashboards for structured goal tracking and progress history.</li>
+          </ul>
+        </div>
+
+        <div class="subsection-title">Academic Research</div>
 
         <div class="item">
           <div class="item-header">
