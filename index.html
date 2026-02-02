@@ -71,6 +71,12 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
+
+    /* 2-level nav */
+    .sub-tabs { display: none; margin-top: -10px; }
+    .sub-tabs.active { display: block; }
+    .main-tabs { margin-bottom: 14px; }
+
     .tool {
       background: #ffffff;
       padding: 25px;
@@ -217,27 +223,43 @@
     <p>Turning complex genomic data into usable insights through code and clarity. Explore tools designed for researchers, biologists, and data scientists.</p>
   </header>
 
-  <nav class="tab-nav">
-    <button class="tab-button active" onclick="showTab('welcome', this)">Welcome</button>
-    <button class="tab-button" onclick="showTab('about', this)">About Me</button>
-    <button class="tab-button" onclick="showTab('analytics', this)">Analytics</button>
-    <button class="tab-button" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
-     <button class="tab-button" onclick="showTab('nlp-phenotyper', this)">NLP Phenotyper</button>
+    <!-- ==============================
+       CATEGORY NAV (Level 1)
+  =============================== -->
+  <nav class="tab-nav main-tabs">
+    <button class="tab-button active" onclick="showCategory('info', 'welcome', this)">Introduction &amp; Site Info</button>
+    <button class="tab-button" onclick="showCategory('prep', 'nextflow', this)">Data Prep Tools</button>
+    <button class="tab-button" onclick="showCategory('omics', 'rna', this)">Primary Omics Analysis</button>
+    <button class="tab-button" onclick="showCategory('trans', 'enrichment-network', this)">Translational &amp; Decision Support</button>
+  </nav>
 
-    <button class="tab-button" onclick="showTab('rna', this)">RNA-Seq</button>
-    
-   
-   
-    <button class="tab-button" onclick="showTab('atac', this)">ATAC-Seq</button>
-    <button class="tab-button" onclick="showTab('mirna', this)">miRNA-Seq</button>
-    <button class="tab-button" onclick="showTab('methylation', this)">Methylation Analysis</button>
-    <button class="tab-button" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
-    <button class="tab-button" onclick="showTab('gwas', this)">GWAS</button>
-    <button class="tab-button" onclick="showTab('scrna', this)">Single-cell RNA-Seq</button>
-     <button class="tab-button" onclick="showTab('enrichment-network', this)">Enrichment Network</button>
-    <button class="tab-button" onclick="showTab('enrichment-llm', this)">Enrichment Triage (LLM)</button>
+  <!-- ==============================
+       SUB NAV (Level 2)
+  =============================== -->
+  <nav class="tab-nav sub-tabs active" id="subnav-info" aria-label="Introduction &amp; site info">
+    <button class="tab-button active" data-tab="welcome" onclick="showTab('welcome', this)">Welcome</button>
+    <button class="tab-button" data-tab="about" onclick="showTab('about', this)">About Me</button>
+    <button class="tab-button" data-tab="analytics" onclick="showTab('analytics', this)">Analytics</button>
+  </nav>
 
-    
+  <nav class="tab-nav sub-tabs" id="subnav-prep" aria-label="Data prep tools">
+    <button class="tab-button" data-tab="nextflow" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
+    <button class="tab-button" data-tab="nlp-phenotyper" onclick="showTab('nlp-phenotyper', this)">NLP Phenotyper</button>
+  </nav>
+
+  <nav class="tab-nav sub-tabs" id="subnav-omics" aria-label="Primary omics analysis tools">
+    <button class="tab-button" data-tab="rna" onclick="showTab('rna', this)">RNA-Seq</button>
+    <button class="tab-button" data-tab="atac" onclick="showTab('atac', this)">ATAC-Seq</button>
+    <button class="tab-button" data-tab="mirna" onclick="showTab('mirna', this)">miRNA-Seq</button>
+    <button class="tab-button" data-tab="methylation" onclick="showTab('methylation', this)">Methylation Analysis</button>
+    <button class="tab-button" data-tab="crispr" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
+    <button class="tab-button" data-tab="gwas" onclick="showTab('gwas', this)">GWAS</button>
+    <button class="tab-button" data-tab="scrna" onclick="showTab('scrna', this)">Single-cell RNA-Seq</button>
+  </nav>
+
+  <nav class="tab-nav sub-tabs" id="subnav-trans" aria-label="Translational and decision support tools">
+    <button class="tab-button" data-tab="enrichment-network" onclick="showTab('enrichment-network', this)">Enrichment Network</button>
+    <button class="tab-button" data-tab="enrichment-llm" onclick="showTab('enrichment-llm', this)">Enrichment Triage (LLM)</button>
   </nav>
 
   <main>
@@ -799,12 +821,40 @@ results/
 
   <script>
     // Tab switcher + GA4 tab view
+        // ==========================
+    // 2-level navigation
+    // ==========================
+    function showCategory(cat, defaultTabId, btn) {
+      // Toggle sub-nav bars
+      document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
+      const subnav = document.getElementById('subnav-' + cat);
+      if (subnav) subnav.classList.add('active');
+
+      // Active state for main category buttons only
+      document.querySelectorAll('.main-tabs .tab-button').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      // Open the default tab inside that category
+      const defaultBtn = document.querySelector(`#subnav-${cat} .tab-button[data-tab="${defaultTabId}"]`);
+      showTab(defaultTabId, defaultBtn);
+
+      // GA4 event: category view
+      if (typeof gtag === 'function') {
+        gtag('event', 'category_view', {
+          category_id: cat,
+          category_label: btn ? btn.textContent.trim() : cat
+        });
+      }
+    }
+
+    // Tab switcher + GA4 tab view
     function showTab(id, btn) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       const pane = document.getElementById(id);
       if (pane) pane.classList.add('active');
 
-      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      // Active state for sub-tab buttons only
+      document.querySelectorAll('.sub-tabs .tab-button').forEach(b => b.classList.remove('active'));
       if (btn) btn.classList.add('active');
 
       if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -873,6 +923,14 @@ results/
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
