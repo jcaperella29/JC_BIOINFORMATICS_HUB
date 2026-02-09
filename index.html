@@ -989,6 +989,8 @@ results/
   function showCategory(cat, defaultTabId, btn) {
     // show only this category's subnav
     document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.main-tabs .tab-button').forEach(b => b.classList.remove('active'));
+
     const subnav = document.getElementById('subnav-' + cat);
     if (subnav) subnav.classList.add('active');
 
@@ -1128,6 +1130,7 @@ results/
   
 </body>
 </html>
+
 
 
 
