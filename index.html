@@ -8,36 +8,21 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
-<script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    // Ensure a clean initial state (only the Introduction category sub-tabs are visible)
-    document.addEventListener('DOMContentLoaded', () => {
-      // Hide all subnav bars, then show the info one
-      document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
-      const infoSub = document.getElementById('subnav-info');
-      if (infoSub) infoSub.classList.add('active');
+    // Automatically enable debug mode if URL contains debug=true
+    const isDebug = window.location.search.includes("debug=true");
 
-      // Activate the first main category button (Introduction & Site Info)
-      const mainBtns = document.querySelectorAll('.main-tabs .tab-button');
-      mainBtns.forEach(b => b.classList.remove('active'));
-      if (mainBtns[0]) mainBtns[0].classList.add('active');
-
-      // Show Welcome by default
-      const welcomeBtn = document.querySelector('#subnav-info .tab-button[data-tab="welcome"]');
-      showTab('welcome', welcomeBtn);
+    gtag('config', 'G-BH0ZXLJ6N2', {
+      debug_mode: isDebug
     });
+  </script>
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  // Automatically enable debug mode if URL contains debug=true
-  const isDebug = window.location.search.includes("debug=true");
-
-  gtag('config', 'G-BH0ZXLJ6N2', { debug_mode: isDebug });
-</script>
 
   
 
@@ -1137,6 +1122,7 @@ function backToCategories() {
   
 </body>
 </html>
+
 
 
 
