@@ -11,6 +11,24 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
 <script>
+
+    // Ensure a clean initial state (only the Introduction category sub-tabs are visible)
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hide all subnav bars, then show the info one
+      document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
+      const infoSub = document.getElementById('subnav-info');
+      if (infoSub) infoSub.classList.add('active');
+
+      // Activate the first main category button (Introduction & Site Info)
+      const mainBtns = document.querySelectorAll('.main-tabs .tab-button');
+      mainBtns.forEach(b => b.classList.remove('active'));
+      if (mainBtns[0]) mainBtns[0].classList.add('active');
+
+      // Show Welcome by default
+      const welcomeBtn = document.querySelector('#subnav-info .tab-button[data-tab="welcome"]');
+      showTab('welcome', welcomeBtn);
+    });
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -56,13 +74,28 @@
       box-shadow: 0 0 10px #00b4d8, 0 0 20px #00b4d8;
     }
 
-    .tab-content { display: none; }
+    
+    /* Back to categories */
+    .back-row { text-align: center; margin: -10px 0 10px; }
+    .back-btn {
+      background: transparent;
+      color: #e0fbff;
+      border: 2px solid rgba(144, 224, 239, 0.55);
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: transform .12s ease, filter .12s ease, background .12s ease;
+    }
+    .back-btn:hover { transform: translateY(-1px); filter: brightness(.97); background: rgba(0,180,216,0.12); }
+
+.tab-content { display: none; }
     .tab-content.active { display: block; }
 
 
     /* 2-level nav */
-    .sub-tabs { display: none; margin-top: -10px; }
-    .sub-tabs.active { display: block; }
+    .sub-tabs { display: none !important; margin-top: -10px; }
+    .sub-tabs.active { display: flex !important; }
     .main-tabs { margin-bottom: 14px; }
 
     .tool {
@@ -308,21 +341,6 @@
 
   header { margin-bottom: 18px; }
 }
-/* Sticky main category nav */
-.main-nav-wrap {
-  position: sticky;
-  top: 8px;                 /* space below browser chrome */
-  z-index: 1000;
-  background: rgba(0, 20, 40, 0.75);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-radius: 16px;
-  padding: 10px 6px;
-  margin-bottom: 14px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
-}
-
-    
 /* =========================
    CARDS: better spacing on mobile
    ========================= */
@@ -378,21 +396,22 @@
 </header>
 
 
-    <!-- ==============================
+        <!-- ==============================
        CATEGORY NAV (Level 1)
-  ======<div class="main-nav-wrap">
-  <nav id="main-nav" class="tab-nav main-tabs">
-========================= -->
-  
-
+  =============================== -->
+  <nav id="main-nav" class="tab-nav main-tabs" aria-label="Main categories">
     <button class="tab-button active" onclick="showCategory('info', 'welcome', this)">Introduction &amp; Site Info</button>
     <button class="tab-button" onclick="showCategory('prep', 'nextflow', this)">Data Prep Tools</button>
     <button class="tab-button" onclick="showCategory('omics', 'rna', this)">Primary Omics Analysis</button>
     <button class="tab-button" onclick="showCategory('trans', 'enrichment-network', this)">Translational &amp; Decision Support</button>
   </nav>
-</div>
 
-  <!-- ==============================
+  <!-- Back control (shown after a category is opened) -->
+  <div id="back-row" class="back-row" style="display:none;">
+    <button class="back-btn" type="button" onclick="backToCategories()">← Back to categories</button>
+  </div>
+
+<!-- ==============================
        SUB NAV (Level 2)
   =============================== -->
   <nav class="tab-nav sub-tabs active" id="subnav-info" aria-label="Introduction &amp; site info">
@@ -997,7 +1016,10 @@ results/
       const defaultBtn = document.querySelector(`#subnav-${cat} .tab-button[data-tab="${defaultTabId}"]`);
       showTab(defaultTabId, defaultBtn);
 
-      // GA4 event: category view
+      
+      const backRow = document.getElementById('back-row');
+      if (backRow) backRow.style.display = 'block';
+// GA4 event: category view
       if (typeof gtag === 'function') {
         gtag('event', 'category_view', {
           category_id: cat,
@@ -1050,7 +1072,30 @@ results/
  function scrollToNav(e) {
   e.preventDefault();
   const nav = document.getElementById('main-nav');
+  if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' }
+
+function function_toggleBackRow(isHidden){
+  const backRow = document.getElementById('back-row');
+  if (backRow) backRow.style.display = isHidden ? 'none' : 'block';
+}
+
+function backToCategories() {
+  // Hide all sub-nav bars
+  document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
+
+  // Optional: show the Welcome pane as a neutral home
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  const welcome = document.getElementById('welcome');
+  if (welcome) welcome.classList.add('active');
+
+  // Keep main category buttons visible; scroll user to them
+  const nav = document.getElementById('main-nav');
   if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  function_toggleBackRow(true);
+}
+
+);
 }
 
 
@@ -1092,6 +1137,15 @@ results/
   
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
