@@ -982,146 +982,153 @@ results/
     © <span id="year"></span> JCaperella — All rights reserved.
   </footer>
 
-  <script>
-    // Tab switcher + GA4 tab view
-        // ==========================
-    // 2-level navigation
-    // ==========================
-    function showCategory(cat, defaultTabId, btn) {
-      // Toggle sub-nav bars
-      document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
-      const subnav = document.getElementById('subnav-' + cat);
-      if (subnav) subnav.classList.add('active');
+<script>
+  // ==========================
+  // 2-level navigation
+  // ==========================
+  function showCategory(cat, defaultTabId, btn) {
+    // show only this category's subnav
+    document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
+    const subnav = document.getElementById('subnav-' + cat);
+    if (subnav) subnav.classList.add('active');
 
-      // Active state for main category buttons only
-      document.querySelectorAll('.main-tabs .tab-button').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
+    // active state for main category buttons
+    document.querySelectorAll('.main-tabs .tab-button').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
 
-      // Open the default tab inside that category
-      const defaultBtn = document.querySelector(`#subnav-${cat} .tab-button[data-tab="${defaultTabId}"]`);
-      showTab(defaultTabId, defaultBtn);
+    // show default tab for that category
+    const defaultBtn = document.querySelector(`#subnav-${cat} .tab-button[data-tab="${defaultTabId}"]`);
+    showTab(defaultTabId, defaultBtn);
 
-      
-      const backRow = document.getElementById('back-row');
-      if (backRow) backRow.style.display = 'block';
-// GA4 event: category view
-      if (typeof gtag === 'function') {
-        gtag('event', 'category_view', {
-          category_id: cat,
-          category_label: btn ? btn.textContent.trim() : cat
-        });
-      }
-    }
+    // show Back button
+    toggleBackRow(false);
 
-    // Tab switcher + GA4 tab view
-    function showTab(id, btn) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      const pane = document.getElementById(id);
-      if (pane) pane.classList.add('active');
-
-      // Active state for sub-tab buttons only
-      document.querySelectorAll('.sub-tabs .tab-button').forEach(b => b.classList.remove('active'));
-      if (btn) btn.classList.add('active');
-
-      if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-      if (typeof gtag === 'function') {
-        gtag('event', 'tab_view', {
-          tab_id: id,
-          tab_label: btn ? btn.textContent.trim() : id
-        });
-      }
-
-      // If we just opened the Analytics tab, refresh the embed & timestamp
-      if (id === 'analytics') {
-        refreshAnalyticsEmbed();
-      }
-    }
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // GA4 helper for app repo clicks
-    function trackAppClick(el) {
-      const appId = el.getAttribute('data-app-id');
-      const url = el.href;
-      console.log('app_repo_click event:', appId, url);
-
-      if (typeof gtag === 'function') {
-        gtag('event', 'app_repo_click', {
-          app_id: appId,
-          link_url: url
-        });
-      }
-    }
- function scrollToNav(e) {
-  e.preventDefault();
-  const nav = document.getElementById('main-nav');
-  if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' }
-
-function function_toggleBackRow(isHidden){
-  const backRow = document.getElementById('back-row');
-  if (backRow) backRow.style.display = isHidden ? 'none' : 'block';
-}
-
-function backToCategories() {
-  // Hide all sub-nav bars
-  document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
-
-  // Optional: show the Welcome pane as a neutral home
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  const welcome = document.getElementById('welcome');
-  if (welcome) welcome.classList.add('active');
-
-  // Keep main category buttons visible; scroll user to them
-  const nav = document.getElementById('main-nav');
-  if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  function_toggleBackRow(true);
-}
-
-);
-}
-
-
-    
-    // ==========================
-    // Analytics "Last checked"
-    // ==========================
-    function updateAnalyticsTimestamp() {
-      const el = document.getElementById('analytics-updated');
-      if (!el) return;
-
-      const now = new Date();
-      const formatted = now.toLocaleString([], {
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
+    // GA4 event
+    if (typeof gtag === 'function') {
+      gtag('event', 'category_view', {
+        category_id: cat,
+        category_label: btn ? btn.textContent.trim() : cat
       });
+    }
+  }
 
-      el.textContent = 'Last checked: ' + formatted;
+  function showTab(id, btn) {
+    // show only this pane
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    const pane = document.getElementById(id);
+    if (pane) pane.classList.add('active');
+
+    // active state for sub-tab buttons (only within visible subnav)
+    document.querySelectorAll('.sub-tabs .tab-button').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // GA4 event
+    if (typeof gtag === 'function') {
+      gtag('event', 'tab_view', {
+        tab_id: id,
+        tab_label: btn ? btn.textContent.trim() : id
+      });
     }
 
-    function refreshAnalyticsEmbed() {
-      const iframe = document.getElementById('analytics-iframe');
-      if (!iframe) return;
-
-      const baseSrc = "https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF";
-      const cacheBuster = Date.now();
-      iframe.src = baseSrc + "?ts=" + cacheBuster;
-
-      updateAnalyticsTimestamp();
+    if (id === 'analytics') {
+      refreshAnalyticsEmbed();
     }
+  }
 
-   
+  // ==========================
+  // Back-to-categories
+  // ==========================
+  function toggleBackRow(isHidden) {
+    const backRow = document.getElementById('back-row');
+    if (backRow) backRow.style.display = isHidden ? 'none' : 'block';
+  }
 
- </script>
+  function backToCategories() {
+    // hide all subnav bars
+    document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
+
+    // clear sub-tab active states
+    document.querySelectorAll('.sub-tabs .tab-button').forEach(b => b.classList.remove('active'));
+
+    // show Welcome as default
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    const welcome = document.getElementById('welcome');
+    if (welcome) welcome.classList.add('active');
+
+    // keep main tabs; scroll to them
+    const nav = document.getElementById('main-nav');
+    if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    toggleBackRow(true);
+  }
+
+  // ==========================
+  // Hero link helper
+  // ==========================
+  function scrollToNav(e) {
+    e.preventDefault();
+    const nav = document.getElementById('main-nav');
+    if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ==========================
+  // Footer year
+  // ==========================
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ==========================
+  // GA4 helper for app clicks
+  // ==========================
+  function trackAppClick(el) {
+    const appId = el.getAttribute('data-app-id');
+    const url = el.href;
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'app_repo_click', {
+        app_id: appId,
+        link_url: url
+      });
+    }
+  }
+
+  // ==========================
+  // Analytics "Last checked"
+  // ==========================
+  function updateAnalyticsTimestamp() {
+    const el = document.getElementById('analytics-updated');
+    if (!el) return;
+
+    const now = new Date();
+    const formatted = now.toLocaleString([], {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+
+    el.textContent = 'Last checked: ' + formatted;
+  }
+
+  function refreshAnalyticsEmbed() {
+    const iframe = document.getElementById('analytics-iframe');
+    if (!iframe) return;
+
+    const baseSrc = "https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF";
+    iframe.src = baseSrc + "?ts=" + Date.now();
+    updateAnalyticsTimestamp();
+  }
+
+  // Start state: no crowding (only subnav-info visible because it's marked active in HTML)
+  toggleBackRow(true);
+</script>
 
   
 </body>
 </html>
+
 
 
 
