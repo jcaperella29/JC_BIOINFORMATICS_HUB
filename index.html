@@ -308,7 +308,21 @@
 
   header { margin-bottom: 18px; }
 }
+/* Sticky main category nav */
+.main-nav-wrap {
+  position: sticky;
+  top: 8px;                 /* space below browser chrome */
+  z-index: 1000;
+  background: rgba(0, 20, 40, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 10px 6px;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
 
+    
 /* =========================
    CARDS: better spacing on mobile
    ========================= */
@@ -366,14 +380,17 @@
 
     <!-- ==============================
        CATEGORY NAV (Level 1)
-  =============================== -->
+  ======<div class="main-nav-wrap">
   <nav id="main-nav" class="tab-nav main-tabs">
+========================= -->
+  
 
     <button class="tab-button active" onclick="showCategory('info', 'welcome', this)">Introduction &amp; Site Info</button>
     <button class="tab-button" onclick="showCategory('prep', 'nextflow', this)">Data Prep Tools</button>
     <button class="tab-button" onclick="showCategory('omics', 'rna', this)">Primary Omics Analysis</button>
     <button class="tab-button" onclick="showCategory('trans', 'enrichment-network', this)">Translational &amp; Decision Support</button>
   </nav>
+</div>
 
   <!-- ==============================
        SUB NAV (Level 2)
@@ -1075,6 +1092,7 @@ results/
   
 </body>
 </html>
+
 
 
 
