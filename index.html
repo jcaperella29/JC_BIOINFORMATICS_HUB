@@ -407,6 +407,7 @@
 
   <nav class="tab-nav sub-tabs" id="subnav-prep" aria-label="Data prep tools">
     <button class="tab-button" data-tab="nextflow" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
+    <button class="tab-button" data-tab="wdl-fastq-qc" onclick="showTab('wdl-fastq-qc', this)">WDL FASTQ QC</button>
     <button class="tab-button" data-tab="nlp-phenotyper" onclick="showTab('nlp-phenotyper', this)">NLP Phenotyper</button>
   </nav>
 
@@ -515,6 +516,56 @@
     </section>
 
 
+
+   <section id="wdl-fastq-qc" class="tab-content">
+  <div class="tool">
+    <div class="ribbon">NEW</div>
+    <h2>Paired FASTQ QC (WDL + Cromwell)</h2>
+
+    <p class="lead">
+      Containerized <strong>WDL</strong> workflow executed with <strong>Cromwell</strong> for paired-end FASTQ QC.
+      Runs <strong>FastQC</strong> on R1/R2 and generates a single <strong>MultiQC</strong> report across samples,
+      plus a merged read-count table.
+    </p>
+
+    <ul class="emoji-list">
+      <li>🧬 <strong>Inputs:</strong> paired FASTQs (R1/R2) + sample IDs via JSON</li>
+      <li>🔍 <strong>QC:</strong> FastQC per read pair</li>
+      <li>📊 <strong>Multi-sample summary:</strong> MultiQC report</li>
+      <li>🧾 <strong>Counts:</strong> merged per-sample read counts (R1/R2)</li>
+      <li>📦 <strong>Reproducible:</strong> Docker runtime inside WDL tasks</li>
+    </ul>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/paired-fastq-qc-wdl/tree/main"
+        target="_blank" rel="noopener"
+        data-app-id="paired_fastq_qc_wdl_repo"
+        data-app-name="Paired FASTQ QC (WDL + Cromwell)"
+        onclick="trackAppClick(this)"
+      >
+        View on GitHub
+      </a>
+
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/paired-fastq-qc-wdl/blob/main/README.md"
+        target="_blank" rel="noopener"
+        data-app-id="paired_fastq_qc_wdl_readme"
+        data-app-name="Paired FASTQ QC (WDL + Cromwell) README"
+        onclick="trackAppClick(this)"
+      >
+        README
+      </a>
+    </div>
+
+    <p class="lead" style="margin-top:16px;">
+      <strong>Use case:</strong> a compact, portfolio-friendly example of WDL/Cromwell workflow wiring,
+      containerized execution, and QC aggregation across multiple samples.
+    </p>
+  </div>
+</section> 
     <section id="nextflow" class="tab-content">
   <div class="tool">
     <h2>Counts_matrix_Nextflow (RNA-seq Pipeline)</h2>
@@ -1130,6 +1181,7 @@ results/
   
 </body>
 </html>
+
 
 
 
