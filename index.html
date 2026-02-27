@@ -408,6 +408,7 @@
   <nav class="tab-nav sub-tabs" id="subnav-prep" aria-label="Data prep tools">
     <button class="tab-button" data-tab="nextflow" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
     <button class="tab-button" data-tab="wdl-fastq-qc" onclick="showTab('wdl-fastq-qc', this)">WDL FASTQ QC</button>
+    <button class="tab-button" data-tab="gcp-fastq-event-pipeline" onclick="showTab('gcp-fastq-event-pipeline', this)">GCP FASTQ Event Pipeline</button>
     <button class="tab-button" data-tab="nlp-phenotyper" onclick="showTab('nlp-phenotyper', this)">NLP Phenotyper</button>
   </nav>
 
@@ -996,6 +997,59 @@ results/
   </div>
 </section>
 
+<section id="gcp-fastq-event-pipeline" class="tab-content">
+  <div class="tool">
+    <div class="ribbon">NEW</div>
+    <h2>GCP FASTQ Event Pipeline (Eventarc → Cloud Run Job)</h2>
+
+    <p class="lead">
+      Cloud-native, <strong>event-driven FASTQ processing</strong> on Google Cloud.
+      Upload a FASTQ to <strong>Cloud Storage</strong> and automatically trigger a serverless pipeline:
+      <strong>Eventarc</strong> fires on object finalize → <strong>Cloud Function</strong> launches a
+      containerized <strong>Cloud Run Job</strong> → results are written back for downstream analysis.
+    </p>
+
+    <ul class="emoji-list">
+      <li>☁️ <strong>Trigger:</strong> GCS “object finalize” event (Eventarc)</li>
+      <li>🧩 <strong>Orchestration:</strong> Cloud Function (glue layer)</li>
+      <li>📦 <strong>Compute:</strong> Cloud Run Job (containerized batch)</li>
+      <li>🧬 <strong>Bioinformatics-ready pattern:</strong> scalable ETL wiring for genomics ingestion</li>
+      <li>📤 <strong>Outputs:</strong> structured results written to storage (and designed to extend to analytics/warehousing)</li>
+      <li>🛠️ <strong>Great for:</strong> portfolio demos of serverless pipelines + reproducible containers</li>
+    </ul>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/gcp-fastq-event-pipeline"
+        target="_blank" rel="noopener"
+        data-app-id="gcp_fastq_event_pipeline_repo"
+        data-app-name="GCP FASTQ Event Pipeline (GitHub)"
+        onclick="trackAppClick(this)"
+      >
+        View on GitHub
+      </a>
+
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/gcp-fastq-event-pipeline#readme"
+        target="_blank" rel="noopener"
+        data-app-id="gcp_fastq_event_pipeline_readme"
+        data-app-name="GCP FASTQ Event Pipeline README"
+        onclick="trackAppClick(this)"
+      >
+        README
+      </a>
+    </div>
+
+    <p class="lead" style="margin-top:16px;">
+      <strong>Why it matters:</strong> This mirrors real-world genomics platform patterns —
+      automatic ingestion triggers + containerized compute, without manual job submission.
+    </p>
+  </div>
+</section>
+    
+
     <!-- ==============================
          ANALYTICS TAB
     =============================== -->
@@ -1181,6 +1235,7 @@ results/
   
 </body>
 </html>
+
 
 
 
