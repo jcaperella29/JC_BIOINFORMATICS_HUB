@@ -1189,16 +1189,23 @@ results/
   // GA4 helper for app clicks
   // ==========================
   function trackAppClick(el) {
-    const appId = el.getAttribute('data-app-id');
-    const url = el.href;
+  const appId = el.getAttribute('data-app-id') || 'unknown_app';
+  const appName = el.getAttribute('data-app-name') || el.textContent.trim();
+  const url = el.href;
 
-    if (typeof gtag === 'function') {
-      gtag('event', 'app_repo_click', {
-        app_id: appId,
-        link_url: url
-      });
-    }
+  // Which tab is currently active? (nice for reporting)
+  const activePane = document.querySelector('.tab-content.active');
+  const activeTabId = activePane ? activePane.id : 'unknown_tab';
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'app_repo_click', {
+      app_id: appId,
+      app_name: appName,
+      link_url: url,
+      active_tab: activeTabId
+    });
   }
+}
 
   // ==========================
   // Analytics "Last checked"
@@ -1235,6 +1242,7 @@ results/
   
 </body>
 </html>
+
 
 
 
