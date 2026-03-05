@@ -403,6 +403,7 @@
     <button class="tab-button active" data-tab="welcome" onclick="showTab('welcome', this)">Welcome</button>
     <button class="tab-button" data-tab="about" onclick="showTab('about', this)">About Me</button>
     <button class="tab-button" data-tab="analytics" onclick="showTab('analytics', this)">Analytics</button>
+    <button class="tab-button" data-tab="research-radar" onclick="showTab('research-radar', this)">Research Radar</button>
   </nav>
 
   <nav class="tab-nav sub-tabs" id="subnav-prep" aria-label="Data prep tools">
@@ -426,6 +427,7 @@
     <button class="tab-button" data-tab="enrichment-network" onclick="showTab('enrichment-network', this)">Enrichment Network</button>
     <button class="tab-button" data-tab="enrichment-llm" onclick="showTab('enrichment-llm', this)">Enrichment Triage (LLM)</button>
   </nav>
+  
 
   <main>
     <section id="welcome" class="tab-content active">
@@ -997,6 +999,59 @@ results/
   </div>
 </section>
 
+
+<section id="research-radar" class="tab-content">
+  <div class="tool">
+    <div class="ribbon">NEW</div>
+    <h2>Research Radar (PubMed + LLM Summaries)</h2>
+
+    <p class="lead">
+      A lightweight research intelligence dashboard that pulls recent PubMed papers across multiple queries
+      and generates <strong>3-bullet summaries</strong> using a local LLM (<strong>Ollama</strong>).
+      Includes filters, trending topics, and top journals — built for fast scanning.
+    </p>
+
+    <ul class="emoji-list">
+      <li>🧠 <strong>LLM summaries:</strong> exactly 3 bullets per abstract</li>
+      <li>📈 <strong>Dashboard:</strong> trending topics + top journals + search/filter</li>
+      <li>🔁 <strong>Update workflow:</strong> regenerate <code>papers.json</code> and push to Pages</li>
+      <li>🧱 <strong>Portfolio pattern:</strong> API ingestion → pipeline → structured JSON → UI</li>
+    </ul>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a
+        class="github-btn"
+        href="./research/"
+        target="_blank" rel="noopener"
+        data-app-id="research_radar_live"
+        data-app-name="Research Radar (Live)"
+        onclick="trackAppClick(this)"
+      >
+        Open Research Radar
+      </a>
+
+      <!-- Optional: if you keep radar code in a repo (recommended) -->
+      <!--
+      <a
+        class="github-btn"
+        href="https://github.com/jcaperella29/YOUR_RADAR_REPO"
+        target="_blank" rel="noopener"
+        data-app-id="research_radar_repo"
+        data-app-name="Research Radar (GitHub)"
+        onclick="trackAppClick(this)"
+      >
+        View on GitHub
+      </a>
+      -->
+    </div>
+
+    <p class="lead" style="margin-top:16px;">
+      <strong>Tip:</strong> This is ideal for tracking AI-for-biology, computational methods, and variant calling literature
+      without drowning in full abstracts.
+    </p>
+  </div>
+</section>
+    
 <section id="gcp-fastq-event-pipeline" class="tab-content">
   <div class="tool">
     <div class="ribbon">NEW</div>
@@ -1242,6 +1297,7 @@ results/
   
 </body>
 </html>
+
 
 
 
