@@ -1,0 +1,626 @@
+{
+  "generated_at": "2026-03-05T14:22:52",
+  "days": 7,
+  "max_per_query": 10,
+  "queries": [
+    {
+      "tag": "AI for biology",
+      "term": "(\"machine learning\"[Title/Abstract] OR \"deep learning\"[Title/Abstract]) AND (genomics OR proteomics OR \"drug discovery\" OR \"computational biology\")"
+    },
+    {
+      "tag": "Bioinformatics methods",
+      "term": "(bioinformatics[Title/Abstract] OR \"computational biology\"[Title/Abstract] OR \"genome analysis\"[Title/Abstract])"
+    },
+    {
+      "tag": "Variant calling",
+      "term": "(\"variant calling\"[Title/Abstract] OR \"variant detection\"[Title/Abstract])"
+    }
+  ],
+  "trending_topics": [
+    {
+      "topic": "AI for biology",
+      "count": 10
+    },
+    {
+      "topic": "Bioinformatics methods",
+      "count": 9
+    },
+    {
+      "topic": "Variant calling",
+      "count": 9
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "41784969",
+      "title": "Trends in the Application of Multiomics Based on Machine Learning in the Development of Probiotics.",
+      "journal": "Journal of agricultural and food chemistry",
+      "pub_date": "2026-03-05",
+      "authors": [
+        "Yu Chen",
+        "Zhuqing Xing",
+        "Jiachuan Sheng",
+        "Xiaoning Liu",
+        "Wenke Ding",
+        "Xinya Chen"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41784969/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Machine learning has emerged as an important analytical approach in probiotic research.",
+        "ML facilitates the integration of heterogeneous omics data for more systematic and quantitative probiotic development."
+      ]
+    },
+    {
+      "pmid": "41784169",
+      "title": "A framework for identifying the polyploid complex in Rorippa (Brassicaceae): combining trait evolution, herbarium records, and machine learning.",
+      "journal": "Annals of botany",
+      "pub_date": "2026-03-05",
+      "authors": [
+        "Ting-Shen Han",
+        "Jun-Xian Lv",
+        "Yao-Wu Xing"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41784169/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Seed arrangement, petal number, and genome size exhibited clear interspecific differentiation.",
+        "Phylogenomic analyses based on chloroplast genomes further resolved species circumscription consistent with these traits."
+      ]
+    },
+    {
+      "pmid": "41782555",
+      "title": "High MAP3K6 Expression in Spinal Cord Injury Tissues Enhances Neuronal Apoptosis: Insights from Multi-Omics Data Integrating WGCNA, Machine Learning, and Experimental Validation.",
+      "journal": "The International journal of neuroscience",
+      "pub_date": "2026-03-05",
+      "authors": [
+        "Yanbing Liu",
+        "Zhao Liu",
+        "Yiqing Shi"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41782555/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The analysis identified 4,621 differentially expressed genes between spinal cord injury (SCI) and controls.",
+        "MAP3K6 was found to be significantly upregulated in SCI and exhibited robust diagnostic efficacy as a potential biomarker."
+      ]
+    },
+    {
+      "pmid": "41784531",
+      "title": "Genome characterization of cluster EK1 bacteriophages JessellCookie and MiamiPanther.",
+      "journal": "Microbiology resource announcements",
+      "pub_date": "2026-03-05",
+      "authors": [
+        "Gabriela Barredo",
+        "Isabella Bauchiero",
+        "Denis Cabellero",
+        "Zachyra Cortes",
+        "Liam De Armas",
+        "Lucas Gonzalez",
+        "Thalia Oliveros",
+        "Martina Podesta Quistapace",
+        "Odette Pulido",
+        "Lara Becerra Reymundo"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41784531/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Bacteriophages JessellCookie and MiamiPanther were isolated from environmental samples.",
+        "They have a podoviral morphology."
+      ]
+    },
+    {
+      "pmid": "41784355",
+      "title": "Unraveling the genome of Epidendrum fulgens: demographic history and gene family dynamics in a resilient Neotropical orchid.",
+      "journal": "Genome biology and evolution",
+      "pub_date": "2026-03-05",
+      "authors": [
+        "Jacqueline S de Mattos",
+        "Paulo Aecyo",
+        "Kyle Keepers",
+        "Marília M Tavares",
+        "Fernando Della-Rosa",
+        "Clarisse Palma-Silva",
+        "Nolan C Kane",
+        "Fábio Pinheiro",
+        "Diego M Riaño-Pachon"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41784355/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The genome assembly from Epidendrum L., a perennial-terrestrial orchid species, consists of 12 chromosome-scale scaffolds representing the 12 pseudochromosomes expected for E. fulgens.",
+        "The genome contains approximately 77% transposable elements and 30,830 protein-coding genes with an N50 of 88.6 Mbp and L50 of 5."
+      ]
+    },
+    {
+      "pmid": "41784220",
+      "title": "Possible cross‑talk between sarcopenia and obstructive sleep apnea revealed by WGCNA analysis and machine learning.",
+      "journal": "The aging male : the official journal of the International Society for the Study of the Aging Male",
+      "pub_date": "2026-03-05",
+      "authors": [
+        "Kunze Lu",
+        "Haiyan Lei",
+        "Caixing Wu",
+        "Danxia Lin",
+        "Yi Li",
+        "Yan Deng"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41784220/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The study identified 20 shared common genes associated with the comorbidity of sarcopenia and obstructive sleep apnea (OSA).",
+        "LGR6 and ARRDC2 were identified as candidate hub genes for diagnosing OSA combined with sarcopenia."
+      ]
+    },
+    {
+      "pmid": "41781966",
+      "title": "Post translational modifications as biomarkers of soil microbe responses to nano-pesticides.",
+      "journal": "Journal of nanobiotechnology",
+      "pub_date": "2026-03-05",
+      "authors": [
+        "Atul Kumar Srivastava",
+        "Pooja Mishra",
+        "Simpal Kumari",
+        "Nisar Uddin",
+        "Songshu Chen",
+        "Yudan Zhao",
+        "Xin Xie"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781966/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Nano-pesticides can induce subtle disturbance in soil microbial function.",
+        "Post-translational modifications (PTMs) serve as functional biomarkers for nano-pesticide-induced microbial stress."
+      ]
+    },
+    {
+      "pmid": "41782096",
+      "title": "Uncertainty-aware hybrid deep generative framework for robust and explainable drug discovery.",
+      "journal": "BMC bioinformatics",
+      "pub_date": "2026-03-04",
+      "authors": [
+        "Saniya Gupta",
+        "A Sherly Alphonse",
+        "D Kavitha"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41782096/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the biomedical abstract:",
+        "A novel hybrid computational framework combines Graph Convolutional Networks, Variational Autoencoders, and Uncertainty Aware Adaptive Multi-Objective Optimization-based Reinforcement Learning to generate drug molecules.",
+        "The proposed method prioritizes reliability by incorporating uncertainty awareness and explainability, reducing false positives and addressing challenges in drug discovery such as robustness and interpretability."
+      ]
+    },
+    {
+      "pmid": "41781783",
+      "title": "Prosta-omics: machine learning-driven TPSA prediction and molecular modeling of ASPM-inhibitors for prostate cancer treatment.",
+      "journal": "Molecular diversity",
+      "pub_date": "2026-03-04",
+      "authors": [
+        "Kashif Iqbal Sahibzada",
+        "Shumaila Shahid",
+        "Saba Shahid",
+        "Andleeb Batool",
+        "Yuansen Hu",
+        "Dong-Qing Wei"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781783/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Single-cell RNA sequencing of prostate cancer tissues enabled fine-grained clustering and differential gene expression analysis across malignant and non-malignant cell populations.",
+        "ASPM emerged as a statistically significant biomarker associated with proliferative tumor phenotypes, and was identified through integrative omics-to-therapy pipeline."
+      ]
+    },
+    {
+      "pmid": "41781782",
+      "title": "Integrating ensemble machine-learning and fibril docking to discover potent, novel triazole-naphthalene tau-aggregation inhibitors.",
+      "journal": "Molecular diversity",
+      "pub_date": "2026-03-04",
+      "authors": [
+        "Poulami Saha",
+        "Anuja Chouhan"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781782/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are the three bullet points summarizing the biomedical abstract:",
+        "The trained QSAR model achieves high accuracy in predicting IC50 values for human-tau aggregation inhibition.",
+        "The top-ranked candidates for blocking fibril growth, such as TND-9, TND-15, and TND-5, exhibit predicted potency and fall within the blood-brain barrier window."
+      ]
+    },
+    {
+      "pmid": "41781618",
+      "title": "Cell-free chromatin state tracing reveals disease origin and therapy responses.",
+      "journal": "Nature",
+      "pub_date": "2026-03-04",
+      "authors": [
+        "Xubin Chen",
+        "Xiaoxuan Meng",
+        "Weilong Zhang",
+        "Xiawei Zhang",
+        "Yaping Zhang",
+        "Ping Yang",
+        "Yan Liu",
+        "Fang Bao",
+        "Sen Li",
+        "Jing Wang"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781618/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The cf-EpiTracing platform profiles histone modifications in cell-free DNA from plasma to deconvolute cell types of origin.",
+        "The platform enabled identification of primary diseased tissues, stratification of lymphoma subtypes, and detection of early-stage diseases or lesions."
+      ]
+    },
+    {
+      "pmid": "41781537",
+      "title": "AI can write genomes - how long until it creates synthetic life?",
+      "journal": "Nature",
+      "pub_date": "2026-03-04",
+      "authors": [
+        "Ewen Callaway"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781537/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "No abstract available.",
+        "—",
+        "—"
+      ]
+    },
+    {
+      "pmid": "41782000",
+      "title": "miR-1290 serves as a potential biomarker for osteoporotic fracture and regulates osteoblast function by targeting KDM5A.",
+      "journal": "Journal of orthopaedic surgery and research",
+      "pub_date": "2026-03-04",
+      "authors": [
+        "Xiaoqin Xu",
+        "Jia Huang",
+        "Qi Chen",
+        "Wen-Hua Lu",
+        "Wei-Bing Chen",
+        "Xiaojing Zhou"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41782000/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the biomedical abstract:",
+        "Serum miR-1290 levels decreased from healthy controls to osteoporotic fracture (OPF) patients.",
+        "MiR-1290 promoted osteoblast proliferation and differentiation, and was upregulated during osteogenic differentiation."
+      ]
+    },
+    {
+      "pmid": "41781900",
+      "title": "Identification of metabolism and inflammation-related biomarkers and potential drugs for schizophrenia based on comprehensive bioinformatics and machine learning.",
+      "journal": "BMC psychiatry",
+      "pub_date": "2026-03-04",
+      "authors": [
+        "Yanfang Chen",
+        "Min Zhang",
+        "Ling Qiao",
+        "Feng Lu",
+        "Shaoping Ji"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781900/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "No abstract available.",
+        "—",
+        "—"
+      ]
+    },
+    {
+      "pmid": "41773350",
+      "title": "AlleleMiner: A long-read pipeline for gene-wise de novo allele phasing and variant detection in diploid citrus cultivars.",
+      "journal": "DNA research : an international journal for rapid publication of reports on genes and genomes",
+      "pub_date": "2026-03-03",
+      "authors": [
+        "Yukinari Kiryu",
+        "Yoshihiro Kawahara",
+        "Tomoko Endo",
+        "Tokumasa Horiike",
+        "Kenta Shirasawa",
+        "Sachiko Isobe",
+        "Takehiko Shimada",
+        "Hiroshi Fujii"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41773350/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The AlleleMiner pipeline phases diploid gene sequences directly from PacBio HiFi reads without relying on reference-based coordinate systems.",
+        "The pipeline achieved an average phasing output of 91.5% of single-copy genes across 18 citrus cultivars with a ∼30× HiFi depth providing stable recovery of heterozygous alleles."
+      ]
+    },
+    {
+      "pmid": "41780808",
+      "title": "Linking protein aggregation and structural stability to predict pathogenic MYH7 variants via machine learning.",
+      "journal": "Journal of structural biology",
+      "pub_date": "2026-03-02",
+      "authors": [
+        "Ivan A Pyankov",
+        "Marina A Kokorina",
+        "Georgy N Rychkov",
+        "Anna A Kostareva",
+        "Mayya V Uspenskaya",
+        "Andrey V Kajava"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41780808/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Disease-causing variants in Myosin Storage Myopathy generally destabilize the MYH7 α-helical coiled-coil domain.",
+        "Pathogenic variants cluster in locally unwound regions of the coiled-coil dimer, promoting dimer destabilization and aggregation.",
+        "The RDSM-MYH7 machine learning-based predictor achieved superior performance compared to existing tools for assessing pathogenicity of MYH7 missense mutations."
+      ]
+    },
+    {
+      "pmid": "41782206",
+      "title": "Genomics of Sable (Martes zibellina) × Pine Marten (Martes martes) Hybridization.",
+      "journal": "Genome biology and evolution",
+      "pub_date": "2026-03-02",
+      "authors": [
+        "Andrey A Tomarovsky",
+        "Azamat A Totikov",
+        "Tatiana M Bulyonkova",
+        "Polina L Perelman",
+        "Alexei V Abramov",
+        "Natalia A Serdyukova",
+        "Aliya R Yakupova",
+        "Dmitry Prokopov",
+        "Violetta R Beklemisheva",
+        "Mikkel-Holger S Sinding"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41782206/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The study found a broad spectrum of hybrid types with mosaic recombinant chromosomes in sable and pine marten samples.",
+        "Mitochondrial DNA introgression from sables into most pine martens indicates displacement of native pine marten mitochondrial sequences."
+      ]
+    },
+    {
+      "pmid": "41578696",
+      "title": "Integrative chromosome-scale genome analysis of cupuassu provides insights into witches' broom disease resistance and expands genomic resources for Theobroma.",
+      "journal": "The plant genome",
+      "pub_date": "2026-03",
+      "authors": [
+        "Vinicius A C de Abreu",
+        "Rafael Moysés Alves",
+        "Mauro de Medeiros Oliveira",
+        "Vitor Trinca",
+        "Loeni Ludke Falcão",
+        "Lucilia Helena Marcellino",
+        "Antonio Figueira",
+        "Douglas S Domingues",
+        "Alessandro M Varani"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41578696/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The genome of a witches' broom disease-resistant cupuassu genotype (C174) was assembled and compared to a susceptible genotype (C1074).",
+        "C174 exhibits unique genetic features, including tandem duplications, dispersed duplications, and transposable element insertions that are not seen in C1074."
+      ]
+    },
+    {
+      "pmid": "41782801",
+      "title": "Leveraging Artificial Intelligence to Advance Bioinformatics in Africa: Opportunities, Challenges, and Ethical Considerations in Combating Antimicrobial Resistance.",
+      "journal": "Bioinformatics and biology insights",
+      "pub_date": "2026-02-28",
+      "authors": [
+        "Beatus Lyimo"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41782801/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Artificial intelligence (AI) can reduce turnaround times for antimicrobial-resistant (AMR) prediction from days to hours by leveraging whole-genome sequencing-based models.",
+        "AI techniques, such as machine learning and deep learning algorithms, can automate analysis of large-scale sequence datasets, predict resistance patterns, and model infection transmission dynamics."
+      ]
+    },
+    {
+      "pmid": "41783385",
+      "title": "Identification of Genetic Variants Among Breast Cancer Patients and At-Risk Individuals: A Cohort Study in Sri Lanka.",
+      "journal": "Breast cancer : basic and clinical research",
+      "pub_date": "2026-02-28",
+      "authors": [
+        "Lalani Yatawara",
+        "Badra Hewavithana",
+        "Ashansa P Ramanayake",
+        "Susiji Wickramasinghe",
+        "Malithi Amarasiri"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41783385/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Variants were detected in several high- and moderate-penetrance genes including BRCA1, BRCA2, PALB2, BRIP1, and MRE11A.",
+        "Among these, BRCA2 mutations and a PALB2 frameshift deletion were classified as pathogenic germline variants."
+      ]
+    },
+    {
+      "pmid": "41783153",
+      "title": "Bioinformatic Analysis and Experimental Verification Reveal the Protective Role of Baicalein Against LPS-Induced Endothelial Cell Dysfunction.",
+      "journal": "Journal of inflammation research",
+      "pub_date": "2026-02-27",
+      "authors": [
+        "Fuping Luo",
+        "Jinxi Ao",
+        "Yuan Chen",
+        "Yan Cui",
+        "Xianghai Gan",
+        "Mengqin Li"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41783153/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Baicalein (BAI) alleviates lipopolysaccharide (LPS)-induced endothelial cell injury.",
+        "BAI modulates inflammatory response and immune microenvironment through regulation of MIR3142HG, VCAM1, and PLCXD1 genes."
+      ]
+    },
+    {
+      "pmid": "41746302",
+      "title": "Unraveling the Phylogenetic Signal of Gene Expression from Single-cell RNA-seq Data.",
+      "journal": "Genomics, proteomics & bioinformatics",
+      "pub_date": "2026-02-26",
+      "authors": [
+        "Joao M Alves",
+        "Laura Tomás",
+        "David Posada"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41746302/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Six strategies were evaluated for calling single-nucleotide variants from scRNA-seq data.",
+        "scAllele, Monopogen, and Monovar consistently returned phylogenetically informative genotype calls."
+      ]
+    },
+    {
+      "pmid": "41701934",
+      "title": "A Real-Time, Programmable, and Multiplex Ligation Chain Reaction-MNAzyme Platform for Single-Nucleotide Variant Detection.",
+      "journal": "Analytical chemistry",
+      "pub_date": "2026-02-17",
+      "authors": [
+        "Jiangyan Zhang",
+        "Jiajia Li",
+        "Yan Wang",
+        "Zhaodi Jing",
+        "Zhiyong Cheng",
+        "Jinding Liu",
+        "Hongyuan Yan",
+        "Zhengping Li",
+        "Yongqiang Cheng"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41701934/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The LCR-MNAzyme system enables real-time quantitative monitoring of single-nucleotide variants (SNVs) with programmable and multiplex detection.",
+        "The system uses a universal MNAzyme-based reporter to quantify multiple SNV variants while suppressing background amplification through hot-start LCR."
+      ]
+    },
+    {
+      "pmid": "41704565",
+      "title": "DoBSeqWF: a framework for sensitive detection of individual genetic variation in pooled sequencing data.",
+      "journal": "NAR genomics and bioinformatics",
+      "pub_date": "2026-02-16",
+      "authors": [
+        "Mads Cort Nielsen",
+        "Christian Munch Hagen",
+        "Ulrik Kristoffer Stoltze",
+        "Thomas van Overeem Hansen",
+        "Mette Nyegaard",
+        "Henrik Hjalgrim",
+        "Marie Bækvad-Hansen",
+        "Anna Byrjalsen",
+        "Kjeld Schmiegelow",
+        "Karin Wadt"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41704565/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "Double-batched sequencing (DoBSeq) is a cost-effective method that uses 2D overlapping pool sequencing to enable individual-level rare variant detection.",
+        "DoBSeqWF is a Nextflow-based pipeline that processes pooled sequencing data from alignment through variant calling, filtering, and final variant assignment for efficient analysis."
+      ]
+    },
+    {
+      "pmid": "41647924",
+      "title": "ANOMALY: a Snakemake pipeline for identifying NuMTs from long-read sequencing data.",
+      "journal": "NAR genomics and bioinformatics",
+      "pub_date": "2026-02-04",
+      "authors": [
+        "Nirmal S Mahar",
+        "Rachit Singh",
+        "Ishaan Gupta",
+        "Shweta Ramdas"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41647924/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The ANOMALY workflow detects nuclear mitochondrial DNA segments (NuMTs) from long-read sequencing data with high accuracy.",
+        "The pipeline demonstrated a precision of 1.000, recall of 0.989, and F1-score of 0.994 on 50 simulated datasets."
+      ]
+    },
+    {
+      "pmid": "41604590",
+      "title": "Dual Confinement-Enhanced Multiple Single Nucleotide Variant Detection at the Single-Particle Level.",
+      "journal": "ACS sensors",
+      "pub_date": "2026-01-28",
+      "authors": [
+        "Lin-Min Zhong",
+        "Chun-Min Li",
+        "Jing Zhang",
+        "Yi-Xin Li",
+        "Jiayi Zhuang",
+        "Xin-Yi Zhong",
+        "Fen-Ying Kong",
+        "Shan-Wen Hu"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41604590/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "A novel strategy was introduced for analyzing multiple single nucleotide variants (SNVs) at the single particle level.",
+        "The strategy integrates molecular and nanomaterial confinement to accelerate the kinetics of multiplex recognition processes."
+      ]
+    },
+    {
+      "pmid": "41608734",
+      "title": "NGSTroubleFinder: a tool for detection and quantification of contamination and kinship across human NGS data.",
+      "journal": "NAR genomics and bioinformatics",
+      "pub_date": "2026-01-27",
+      "authors": [
+        "Samuel Valentini",
+        "Tecla Venturelli",
+        "Xavier Gallego",
+        "Lynn Durham",
+        "Laura Perez-Cano",
+        "Emre Guney"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41608734/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "NGSTroubleFinder detects cross-sample contamination in human whole-genome and transcriptome sequencing data.",
+        "The tool also identifies sample swaps and mismatches between reported and inferred genetic and transcriptomic sexes."
+      ]
+    },
+    {
+      "pmid": "41503160",
+      "title": "MobiCT: a UMI-based circulating tumor DNA analysis pipeline.",
+      "journal": "NAR genomics and bioinformatics",
+      "pub_date": "2026-01-06",
+      "authors": [
+        "Simon Cabello-Aguilar",
+        "Charles Van Goethem",
+        "Jean-Charles Delmas",
+        "Oussama Bourbia",
+        "Romain Senal",
+        "Mireille Cossée",
+        "Olivier Ardouin",
+        "Jérôme Solassol",
+        "Julie A Vendrell"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41503160/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Here are three bullet points summarizing the abstract:",
+        "The MobiCT pipeline detects ultra-low-frequency variants in cell-free DNA samples using unique molecular identifier (UMI).",
+        "The pipeline has three main stages: UMI deduplication, alignment to reference genome, and variant calling."
+      ]
+    }
+  ]
+}

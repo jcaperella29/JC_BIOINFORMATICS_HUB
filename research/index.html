@@ -1,0 +1,260 @@
+<<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research Radar</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 2rem; line-height: 1.35; }
+    .meta { opacity: 0.75; margin-bottom: 1rem; }
+
+    .controls { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1rem 0; align-items: center; }
+    input, select { padding: .5rem .6rem; font-size: 1rem; }
+
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem; margin: 1rem 0; }
+    .title { font-size: 1.1rem; font-weight: 700; margin: 0; }
+    .sub { opacity: 0.8; margin: .25rem 0 .75rem; }
+    ul { margin: .5rem 0 0 1.2rem; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .tag { display: inline-block; border: 1px solid #ccc; border-radius: 999px; padding: .15rem .6rem; font-size: .85rem; margin-right: .5rem; opacity: .85; }
+
+    .section { margin: 1.25rem 0; }
+    .section h2 { font-size: 1.05rem; margin: 0 0 .5rem; }
+
+    .grid { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .panel { border: 1px solid #ddd; border-radius: 12px; padding: .9rem 1rem; background: #fafafa; }
+    .kpi { font-size: 1.6rem; font-weight: 800; margin: .1rem 0 .35rem; }
+    .muted { opacity: .8; }
+
+    .chip-row { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      padding: .25rem .6rem;
+      font-size: .9rem;
+      background: #fff;
+      cursor: pointer;
+    }
+    .chip-count {
+      font-weight: 700;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      padding: .05rem .45rem;
+      background: #fafafa;
+      opacity: .9;
+    }
+    .small { font-size: .92rem; opacity: .85; }
+  </style>
+</head>
+<body>
+  <h1>Research Radar</h1>
+  <div class="meta" id="meta">Loading…</div>
+
+  <div class="section" id="glanceSection" style="display:none;">
+    <h2>At a glance</h2>
+    <div class="grid">
+      <div class="panel">
+        <div class="muted">Papers in this window</div>
+        <div class="kpi" id="paperCount">—</div>
+        <div class="small">Based on your PubMed queries</div>
+      </div>
+
+      <div class="panel" id="journalsPanel" style="display:none;">
+        <div class="muted">Top journals</div>
+        <div class="chip-row" id="topJournals"></div>
+        <div class="small" style="margin-top:.35rem;">Tip: click a journal chip to filter.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="trendingSection" style="display:none;">
+    <h2>Trending topics</h2>
+    <div class="chip-row" id="trending"></div>
+    <div class="small" style="margin-top:.35rem;">Tip: click a topic chip to filter the feed.</div>
+  </div>
+
+  <div class="controls">
+    <input id="search" placeholder="Search title/journal…" />
+    <select id="topic">
+      <option value="">All topics</option>
+    </select>
+    <select id="journal">
+      <option value="">All journals</option>
+    </select>
+  </div>
+
+  <div id="list"></div>
+
+<script>
+async function loadRadar() {
+  const res = await fetch("./papers.json", { cache: "no-store" });
+  const data = await res.json();
+
+  const meta = document.getElementById("meta");
+  meta.textContent = `Updated: ${data.generated_at} | Window: last ${data.days} days`;
+
+  // At a glance
+  const glanceSection = document.getElementById("glanceSection");
+  glanceSection.style.display = "block";
+  document.getElementById("paperCount").textContent = (data.paper_count ?? (data.papers || []).length);
+
+  const topicSel = document.getElementById("topic");
+  const journalSel = document.getElementById("journal");
+  const search = document.getElementById("search");
+  const list = document.getElementById("list");
+
+  // Populate topic dropdown
+  const topics = Array.from(new Set((data.papers || []).map(p => p.query_tag))).sort();
+  for (const t of topics) {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    topicSel.appendChild(opt);
+  }
+
+  // Populate journal dropdown from actual papers
+  const journals = Array.from(new Set((data.papers || []).map(p => p.journal).filter(Boolean))).sort();
+  for (const j of journals) {
+    const opt = document.createElement("option");
+    opt.value = j;
+    opt.textContent = j;
+    journalSel.appendChild(opt);
+  }
+
+  // Top journals chips (from JSON)
+  const topJournals = (data.top_journals || []).slice(0, 8);
+  const journalsPanel = document.getElementById("journalsPanel");
+  const journalsWrap = document.getElementById("topJournals");
+  if (topJournals.length) {
+    journalsPanel.style.display = "block";
+    journalsWrap.innerHTML = "";
+    for (const item of topJournals) {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "chip";
+
+      const label = document.createElement("span");
+      label.textContent = item.journal;
+
+      const count = document.createElement("span");
+      count.className = "chip-count";
+      count.textContent = item.count;
+
+      chip.appendChild(label);
+      chip.appendChild(count);
+
+      chip.addEventListener("click", () => {
+        journalSel.value = item.journal;
+        render();
+        document.querySelector(".controls").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      journalsWrap.appendChild(chip);
+    }
+  }
+
+  // Trending topics chips
+  const trending = (data.trending_topics || []).slice(0, 10);
+  const trendingSection = document.getElementById("trendingSection");
+  const trendingWrap = document.getElementById("trending");
+  if (trending.length) {
+    trendingSection.style.display = "block";
+    trendingWrap.innerHTML = "";
+    for (const item of trending) {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "chip";
+
+      const label = document.createElement("span");
+      label.textContent = item.topic;
+
+      const count = document.createElement("span");
+      count.className = "chip-count";
+      count.textContent = item.count;
+
+      chip.appendChild(label);
+      chip.appendChild(count);
+
+      chip.addEventListener("click", () => {
+        topicSel.value = item.topic;
+        render();
+        document.querySelector(".controls").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      trendingWrap.appendChild(chip);
+    }
+  }
+
+  function render() {
+    const q = (search.value || "").toLowerCase();
+    const topic = topicSel.value;
+    const journal = journalSel.value;
+
+    list.innerHTML = "";
+    const papers = data.papers || [];
+    const filtered = papers.filter(p => {
+      const hay = `${p.title || ""} ${p.journal || ""}`.toLowerCase();
+      const okSearch = !q || hay.includes(q);
+      const okTopic = !topic || p.query_tag === topic;
+      const okJournal = !journal || p.journal === journal;
+      return okSearch && okTopic && okJournal;
+    });
+
+    for (const p of filtered) {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const title = document.createElement("p");
+      title.className = "title";
+
+      const a = document.createElement("a");
+      a.href = p.url || "#";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = p.title || "(no title)";
+      title.appendChild(a);
+
+      const sub = document.createElement("div");
+      sub.className = "sub";
+      sub.innerHTML = `
+        <span class="tag">${p.query_tag || "topic"}</span>
+        <strong>${p.journal || "Unknown journal"}</strong>
+        &nbsp;·&nbsp; ${p.pub_date || "Unknown date"}
+      `;
+
+      const ul = document.createElement("ul");
+      (p.summary_bullets || []).forEach(b => {
+        const li = document.createElement("li");
+        li.textContent = b;
+        ul.appendChild(li);
+      });
+
+      card.appendChild(title);
+      card.appendChild(sub);
+      card.appendChild(ul);
+      list.appendChild(card);
+    }
+
+    if (!filtered.length) {
+      list.innerHTML = "<p>No papers match your filters.</p>";
+    }
+  }
+
+  search.addEventListener("input", render);
+  topicSel.addEventListener("change", render);
+  journalSel.addEventListener("change", render);
+  render();
+}
+
+loadRadar().catch(err => {
+  document.getElementById("meta").textContent = "Failed to load papers.json";
+  document.getElementById("list").innerHTML = `<pre>${err}</pre>`;
+});
+</script>
+</body>
+</html>
