@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-05T16:52:24",
+  "generated_at": "2026-03-05T18:36:09",
   "days": 7,
   "max_per_query": 20,
   "queries": [
@@ -47,9 +47,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41784969/",
       "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are the three bullet points summarizing the biomedical abstract:",
-        "ML-assisted applications have emerged in probiotic research with rapid development of computational methods and high-throughput multiomics technologies.",
-        "ML facilitates integration of heterogeneous omics data for systematic and quantitative probiotic development, enabling functional prediction, metabolic activity prediction, and probiotic effectiveness optimization."
+        "Machine learning has emerged as an important analytical approach in probiotic research.",
+        "ML facilitates the integration of heterogeneous omics data to enable more systematic and quantitative probiotic development.",
+        "Experimental validation remains essential for ensuring biological relevance, despite limitations in capturing complex microbial and environmental interactions."
       ]
     },
     {
@@ -66,8 +66,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "Seed arrangement, petal number, and genome size exhibited clear interspecific differentiation.",
-        "Phylogenomic analyses based on chloroplast genomes further resolved species circumscription consistent with these traits."
+        "Species identification in polyploid plants is challenging due to morphological continuity and genomic redundancy.",
+        "Seed arrangement, petal number, and genome size exhibited clear interspecific differentiation in the Rorippa dubia-indica complex."
       ]
     },
     {
@@ -84,8 +84,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The study analyzed gene expression data from spinal cord injury (SCI) patients and identified 4,621 differentially expressed genes.",
-        "Functional enrichment analyses revealed that the differentially expressed genes were involved in protein degradation pathways, immune-related processes, and ubiquitin-mediated proteolysis."
+        "4,621 differentially expressed genes were identified between spinal cord injury (SCI) and controls.",
+        "The green module showed the strongest positive correlation with SCI using WGCNA analysis."
       ]
     },
     {
@@ -109,8 +109,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "Bacteriophages JessellCookie and MiamiPanther were isolated from environmental samples.",
-        "The phages have a podoviral morphology."
+        "Phages JessellCookie and MiamiPanther were isolated from environmental samples.",
+        "The phages were isolated using Microbacterium foliorum as a host."
       ]
     },
     {
@@ -133,8 +133,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The first chromosome-scale genome assembly is presented from the orchid genus Epidendrum, specifically E. fulgens.",
-        "The genome assembly captured 97.3% of BUSCO genes and consisted mostly of transposable elements, with approximately 30,830 protein-coding genes identified."
+        "The first chromosome-scale genome assembly from the orchid genus Epidendrum was created using PacBio HiFi and Omni-C technologies.",
+        "The assembly comprised 12 chromosome-scale scaffolds, capturing 97.3% of BUSCO genes, with an N50 of 88.6 Mbp and L50 of 5."
       ]
     },
     {
@@ -154,8 +154,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The study identified 20 shared common genes associated with the comorbidity of sarcopenia and obstructive sleep apnea.",
-        "LGR6 and ARRDC2 were found to be candidate hub genes for diagnosing comorbid OSA and sarcopenia."
+        "The study identified 20 shared common genes associated with the comorbidity of sarcopenia and obstructive sleep apnea (OSA).",
+        "LGR6 and ARRDC2 were determined to be candidate hub genes for diagnosing OSA combined with sarcopenia."
       ]
     },
     {
@@ -176,8 +176,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "Nano-pesticides offer improved target specificity and reduced chemical load in agriculture.",
-        "Post-translational modifications (PTMs) serve as functional biomarkers for nano-pesticide-induced microbial stress."
+        "Nano-pesticides can induce subtle disturbances in soil microbial function that are not captured by conventional indicators.",
+        "Post-translational modifications (PTMs) such as phosphorylation, acetylation, and ubiquitination regulate microbial stress responses under nanoparticle-induced stress."
       ]
     },
     {
@@ -216,8 +216,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "A novel hybrid computational framework is introduced to generate drug molecules with desired pharmacological properties.",
-        "The framework integrates Graph Convolutional Networks, Variational Autoencoders, and Uncertainty Aware Adaptive Multi-Objective Optimization-based Reinforcement Learning for reliable and interpretable results."
+        "A novel hybrid computational framework integrates Graph Convolutional Networks, Variational Autoencoders, and Uncertainty Aware Adaptive Multi-Objective Optimization-based Reinforcement Learning to generate drug molecules.",
+        "The proposed method prioritizes reliability by combining uncertainty awareness and explainability, reducing false positives and addressing challenges in drug discovery such as robustness and interpretability."
       ]
     },
     {
@@ -237,8 +237,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "Single-cell RNA sequencing (scRNA-seq) was used to analyze prostate cancer tissues and identify cell-type-enriched biomarkers.",
-        "ASPM emerged as a statistically significant biomarker associated with proliferative tumor phenotypes, and drug-like molecules were curated and docked against a 3D model of ASPM."
+        "Single-cell RNA sequencing enabled fine-grained clustering and differential gene expression analysis across malignant and non-malignant cell populations.",
+        "ASPM emerged as a statistically significant biomarker associated with proliferative tumor phenotypes, enriched in certain cell types."
       ]
     },
     {
@@ -254,8 +254,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "A QSAR model was trained to predict IC50 values for human-tau aggregation inhibition.",
-        "The model predicted that 16 previously unreported derivatives of 1,2,4-triazole-naphthalene (TNDs) have potential as tau-aggregation inhibitors."
+        "The study trained a stacked-ensemble QSAR model to predict human-tau aggregation inhibitors with high accuracy.",
+        "The model predicts that 16 previously unreported compounds (TND-1 to TND-15) have potency against tau-protein aggregation, with top-ranked candidates being TND-9, TND-15, and TND-5."
       ]
     },
     {
@@ -279,8 +279,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The cf-EpiTracing platform profiles histone modifications in cell-free DNA to accurately deconvolve cell types of origin.",
-        "The platform enables unbiased identification of primary diseased tissues and other organ involvement, as well as detection of early-stage diseases or lesions."
+        "The cf-EpiTracing platform profiles histone modifications in cell-free DNA from plasma to deconvolve cell types of origin.",
+        "The platform enabled unbiased identification of primary diseased tissues and other organ involvement, as well as stratification of B cell lymphoma subtypes."
       ]
     },
     {
@@ -342,8 +342,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The study proposes an inference framework called DeepTX that connects mechanistic models and single-cell RNA sequencing (scRNA-seq) data to reveal genome-wide transcriptional burst kinetics.",
-        "Applying DeepTX to several scRNA-seq datasets, the researchers found that fluctuations in transcriptional bursting induced by different drugs were associated with distinct fate decisions: differentiation, apoptosis, or survival."
+        "The study proposes a framework called DeepTX that connects mechanistic models with scRNA-seq data to reveal genome-wide transcriptional burst kinetics.",
+        "Fluctuations in transcriptional bursting induced by different DNA-damaging drugs were associated with distinct fate decisions, including differentiation and apoptosis/survival-related fates."
       ]
     },
     {
@@ -366,9 +366,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41779447/",
       "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are the three bullet points summarizing the abstract:",
+        "Here are three bullet points summarizing the abstract:",
         "Plasma proteome profiles were distinct among disease subtypes.",
-        "The machine learning model performed robustly in both discovery and validation cohorts, achieving an AUROC > 0.8 for differentiating minimal change disease, membranous nephropathy, and IgA nephropathy."
+        "The machine learning model performed robustly in both discovery and validation cohorts, achieving an AUROC > 0.8 for differentiating certain GN subtypes."
       ]
     },
     {
@@ -385,8 +385,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The authors combine machine learning with quantum tunneling to identify d- and l-amino acid enantiomers and post-translational modifications.",
-        "This approach screens for chirality-specific molecular signatures within complex proteomes, addressing limitations in existing methods."
+        "The authors develop a machine learning approach to identify d- and l-amino acid enantiomers.",
+        "Their method uses quantum tunneling to screen and detect isobaric isomers, methylation, phosphorylation, and ring formation in complex proteomes."
       ]
     },
     {
@@ -406,8 +406,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The graph-based generative model encodes explicit 3D protein-ligand contacts in a relational graph architecture.",
-        "Molecules generated by this 3D procedure are more compatible with the dopamine D2 receptor-binding pocket than those produced by a comparable 2D method."
+        "The graph-based generative model encodes explicit 3D protein-ligand contacts.",
+        "Molecules generated with the 3D procedure are more compatible with the dopamine D2 receptor-binding pocket than those produced by a comparable 2D method."
       ]
     },
     {
@@ -425,9 +425,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41778634/",
       "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are the three bullet points summarizing the abstract:",
+        "Here are three bullet points summarizing the abstract:",
         "Neural network-based frameworks enable algorithms to propose molecules that satisfy complex pharmacological constraints.",
-        "Generative AI's greatest promise lies in generating better hypotheses, structures that are synthetically accessible, biologically plausible, optimized across potency, selectivity, and pharmacokinetics."
+        "Generative AI's greatest promise lies not in generating more molecules, but in generating better hypotheses and structures that are synthetically accessible and biologically plausible."
       ]
     },
     {
@@ -447,8 +447,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "Serum miR-1290 levels decreased from healthy controls to osteoporotic fracture (OPF) patients.",
-        "miR-1290 promoted osteoblast proliferation and differentiation, and its expression was upregulated during osteogenic differentiation."
+        "Serum miR-1290 levels decrease with increasing osteoporotic severity.",
+        "miR-1290 promotes osteoblast proliferation and differentiation by targeting KDM5A."
       ]
     },
     {
@@ -491,8 +491,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "A total of 10 OSCA genes (RcOSCAs) were identified in castor bean using bioinformatics approaches.",
-        "Phylogenetic analysis classified the RcOSCA proteins into four distinct subfamilies and clarified their evolutionary relationships with homologs from other plant species."
+        "A total of 10 OSCA genes (RcOSCAs) were identified in castor bean, unevenly distributed on five chromosomes.",
+        "Phylogenetic analysis classified RcOSCA proteins into four distinct subfamilies and clarified their evolutionary relationships with homologs from other plants."
       ]
     },
     {
@@ -535,8 +535,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "Xylella phage Phi1 is a novel podovirus with a genome size of 44,345 bp.",
-        "Phi3 is likely the same species as Xylella phage Salvo and exhibits morphological features typical of siphoviruses."
+        "Two phages, Xylella phage Phi1 and Phi3, were isolated and characterized as having potential as safe and suitable biocontrol agents.",
+        "Transmission electron microscopy revealed that Phi1 exhibited podovirus morphotype features while Phi3 showed siphovirus morphotype features, with efficient replication on Xf cells."
       ]
     },
     {
@@ -558,8 +558,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The genes TNF, IL6, IFNG, IL1B, and STAT3 were identified as hub genes driving the Correa cascade during gastric cancer development.",
-        "The genes STAT3, TP53, and MMP9 were found to be core targets of Benzo[a]pyrene (BaP) and exhibited synergistic expression patterns in tumors."
+        "The genes STAT3, TP53, and MMP9 were identified as core targets that drive the Correa cascade during gastric cancer development.",
+        "These genes exhibited synergistic expression patterns in tumors and showed a dose-dependent association with disease progression."
       ]
     },
     {
@@ -578,9 +578,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41776818/",
       "query_tag": "AI for biology",
       "summary_bullets": [
-        "The study found that individuals with elevated total lung capacity (TLC) have distinct biological features reflected in their circulating proteome.",
-        "Among pre-COPD subgroups, those with an elevated functional residual capacity-to-TLC ratio (FRC/TLC) showed greater progression to GOLD ≥ 2 and PRISm.",
-        "The study confirmed the reproducibility and prognostic validity of lung volume-based phenotypes in predicting COPD development over a 5-year follow-up period."
+        "The lung volume-based pre-COPD phenotypes have distinct biological features reflected in their circulating proteome.",
+        "Among pre-COPD subgroups, those with a relatively elevated functional residual capacity-to-TLC ratio ([FRC/TLC]high) showed greater progression to GOLD ≥ 2 and PRISm.",
+        "Plasma proteomic analysis identified 165 upregulated and 145 downregulated proteins in [TLC]high TEPS compared with other groups."
       ]
     },
     {
@@ -604,8 +604,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The study identified complementary cerebrospinal fluid (CSF) biomarkers and pathway-specific signatures through a non-targeted multiomic approach.",
-        "CXCL7 emerged as a promising complementary biomarker, which robustly distinguished ALS patients from controls and stratified patient subgroups by survival."
+        "The study identified a molecular signature in cerebrospinal fluid (CSF) that robustly distinguished ALS patients from controls and stratified patient subgroups by survival.",
+        "The signature was characterized by inflammation, downregulation of detoxification mechanisms, and synaptic dysregulation in aggressive disease forms, providing insights into the pathophysiology of ALS."
       ]
     },
     {
@@ -622,8 +622,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the biomedical abstract:",
-        "miR-199a-5p is expressed in intrahepatic cholangiocarcinoma (ICC) tumor tissues.",
-        "Hypoxia-inducible factor 1α (HIF-1α) is a target of miR-199a-5p and its expression is regulated by miR-199a-5p."
+        "miR-199a-5p expression was investigated in intrahepatic cholangiocarcinoma (ICC) tumor tissues.",
+        "The study found a correlation between miR-199a-5p and hypoxia-inducible factor 1α (HIF-1α) expression levels and clinicopathological features of ICC patients."
       ]
     },
     {
@@ -644,8 +644,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "Maternal exposure to atrazine during pregnancy and lactation can damage dopaminergic neurons in offspring.",
-        "The study revealed that maternal atrazine exposure remodels the maternal plasma metabolic profile, leading to intergenerational dopaminergic neurotoxicity in offspring."
+        "Maternal exposure to atrazine during pregnancy and lactation damages dopaminergic neurons in offspring.",
+        "The study reveals that maternal atrazine exposure remodels the maternal plasma metabolic profile, leading to intergenerational dopaminergic neurotoxicity."
       ]
     },
     {
@@ -666,9 +666,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41773350/",
       "query_tag": "Variant calling",
       "summary_bullets": [
-        "AlleleMiner is a Python-based pipeline that phases diploid gene sequences directly from PacBio HiFi reads.",
-        "The pipeline achieved an average phasing output of 91.5% of single-copy genes across 18 citrus cultivars.",
-        "A ∼30× HiFi depth is preferable for the stable recovery of heterozygous alleles, reducing potential allele dropout."
+        "Here are three bullet points summarizing the abstract:",
+        "The AlleleMiner pipeline phases diploid gene sequences directly from PacBio HiFi reads without relying on reference-based coordinate systems.",
+        "Across 18 citrus cultivars, the pipeline achieved an average phasing output of 91.5% of single-copy genes with a preference for ∼30× HiFi depth to recover heterozygous alleles."
       ]
     },
     {
@@ -687,9 +687,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41780808/",
       "query_tag": "AI for biology",
       "summary_bullets": [
-        "Disease-causing variants in Myosin Storage Myopathy generally destabilize the MYH7 α-helical coiled-coil domain.",
-        "Pathogenic variants cluster in locally unwound regions of the coiled-coil dimer, promoting dimer destabilization and aggregation.",
-        "The RDSM-MYH7 machine learning-based predictor accurately assesses the pathogenicity of missense mutations in the MYH7 rod domain."
+        "Here are three bullet points summarizing the abstract:",
+        "Disease-causing variants for Myosin Storage Myopathy generally destabilize the MYH7 α-helical coiled-coil domain.",
+        "Pathogenic variants cluster in locally unwound regions of the coiled-coil dimer, promoting dimer destabilization and aggregation."
       ]
     },
     {
@@ -713,8 +713,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "MetaRNN-indel showed the best overall results among four machine learning (ML) tools evaluated.",
-        "MetaRNN-indel identified two likely pathogenic causal variants in two unrelated IRD patients by confirming clinical phenotypes."
+        "The performance of four machine learning (ML) tools for predicting the pathogenicity of in-frame insertions and deletions was compared.",
+        "MetaRNN-indel showed the best overall results among the compared ML tools."
       ]
     },
     {
@@ -738,8 +738,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The study resequenced 30 individuals from sables' and pine martens' ranges to investigate hybridization and detect a broad spectrum of hybrid types with mosaic recombinant chromosomes.",
-        "Hybrid fertility was confirmed, and mitochondrial DNA introgression from sables into most pine martens was detected, indicating displacement of native pine marten sequences."
+        "The study found a broad spectrum of hybrid types between sable (Martes zibellina) and pine marten (Martes martes) with mosaic recombinant chromosomes.",
+        "The analysis revealed mitochondrial DNA introgression from sables into most pine martens, indicating displacement of native pine marten mitochondrial sequences."
       ]
     },
     {
@@ -757,8 +757,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The germline NAC (gNAC) proteins in Drosophila melanogaster have distinctive molecular features that promote phase separation.",
-        "These features include an atypical amino acid composition, low-complexity repeats, and extended disordered regions that may undergo structuring upon oligomerization."
+        "The germline NAC (gNAC) proteins have an atypical amino acid composition and low-complexity repeats that can form cross-β structures.",
+        "gNAC proteins also have extended disordered regions that may undergo structuring upon oligomerization, suggesting a propensity for phase separation."
       ]
     },
     {
@@ -781,9 +781,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41780609/",
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
+        "Here are three bullet points summarizing the biomedical abstract:",
         "ESRD patients showed higher Beck Depression Inventory scores than healthy controls.",
-        "QSM revealed increased magnetic susceptibility in the ventromedial prefrontal cortex and hippocampus, positively correlated with depression severity."
+        "Increased magnetic susceptibility was found in the ventromedial prefrontal cortex and hippocampus, positively correlated with depression severity."
       ]
     },
     {
@@ -806,8 +806,8 @@
       "query_tag": "Variant calling",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The genome of Cupuassu's WBD-resistant genotype C174 is presented, featuring distinctive duplications, TE insertions, and coordinated defense-gene expression.",
-        "Compared to the susceptible genotype C1074, C174 shows higher heterozygosity, differential TE expression, and spatial proximity to immune loci, suggesting regulatory importance."
+        "The genome of the WBD-resistant cupuassu genotype C174 is presented, featuring distinctive duplications, TE insertions, and coordinated defense gene expression.",
+        "Comparison with the susceptible genotype C1074 reveals differences in nucleotide-binding domain leucine-rich repeat receptors, mitogen-activated protein kinase components, transcription factors, and pathogenesis-related proteins."
       ]
     },
     {
@@ -822,8 +822,8 @@
       "query_tag": "AI for biology",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "AI-powered models can predict AMR patterns from whole-genome sequencing data, reducing turnaround times from days to hours.",
-        "AI algorithms such as ML and DL can automate analysis of large-scale sequence datasets, predicting resistance patterns and modeling infection transmission dynamics."
+        "Artificial intelligence (AI) can reduce turnaround times for antimicrobial-resistant (AMR) prediction from days to hours by leveraging whole-genome sequencing-based models.",
+        "AI techniques, such as machine learning and deep learning algorithms, can enhance genomic research by automating large-scale sequence dataset analysis, predicting resistance patterns, and modeling infection transmission dynamics."
       ]
     },
     {
@@ -862,9 +862,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41783153/",
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
-        "Here are three bullet points summarizing the biomedical abstract:",
-        "Baicalein (BAI) exhibits protective effects against lipopolysaccharide (LPS)-induced endothelial cell injury.",
-        "BAI modulates the inflammatory response and immune microenvironment by regulating genes including vascular cell adhesion molecule 1 (VCAM1), phosphoinositide-specific phospholipase C X-domain containing 1 (PLCXD1), and MIR3142 host gene (MIR3142HG)."
+        "Here are three bullet points summarizing the abstract:",
+        "RNA-seq analysis revealed a set of differentially expressed genes (DEGs) shared between control and LPS-treated HUVECs.",
+        "Molecular docking and molecular dynamics simulation analyses showed that BAI exhibits strong binding affinity for key targets VCAM1 and PLCXD1."
       ]
     },
     {
@@ -884,8 +884,8 @@
       "query_tag": "Bioinformatics methods",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The study identified 97 shared potential targets of Aristolochic acids (AAs) and Upper Tract Urothelial Carcinoma (UTUC).",
-        "Topological analysis highlighted five core genes: CASP3, EGFR, PARP1, PTGS2, and HSP90AA1, which showed high binding affinities with AAs."
+        "The study identified 97 shared potential targets of Aristolochic acids (AAs) and upper tract urothelial carcinoma (UTUC).",
+        "Molecular docking predicted high binding affinities of AA with five core genes: CASP3, EGFR, PARP1, PTGS2, and HSP90AA1."
       ]
     },
     {
@@ -902,8 +902,8 @@
       "query_tag": "Variant calling",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "ScAllele, Monopogen, and Monovar strategies consistently called single-nucleotide variants from scRNA-seq data.",
-        "These approaches provided phylogenetically informative genotype calls that discriminated between tumor and normal cells within samples and distinct subclonal lineages over time."
+        "ScAllele, Monopogen, and Monovar consistently returned phylogenetically informative genotype calls.",
+        "These strategies provided precise signals for discriminating between tumor and normal cells within heterogeneous samples."
       ]
     },
     {
@@ -926,8 +926,8 @@
       "query_tag": "Variant calling",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The platform integrates ligase chain reaction (LCR) with multicomponent nucleic acid enzymes (MNAzymes) for single-nucleotide variant (SNV) analysis.",
-        "The system enables real-time quantitative monitoring of SNVs while supporting programmable and multiplex detection through a universal MNAzyme-based reporter."
+        "The LCR-MNAzyme system enables PCR-like real-time quantification of single-nucleotide variants.",
+        "The platform supports programmable and multiplex detection through reconfiguring the signal output module."
       ]
     },
     {
@@ -951,8 +951,8 @@
       "query_tag": "Variant calling",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "DoBSeq is a cost-effective method that uses two-dimensional overlapping pool sequencing to enable individual-level rare variant detection.",
-        "The resulting high-depth, complex data require a specialized workflow, which was developed into a Nextflow-based pipeline called DoBSeqWF."
+        "DoBSeq is a cost-effective method that uses 2D overlapping pool sequencing to enable individual-level rare variant detection.",
+        "The resulting data require a specialized workflow, which was developed into a Nextflow-based pipeline called DoBSeqWF for efficient and reproducible analysis."
       ]
     },
     {
@@ -970,8 +970,8 @@
       "query_tag": "Variant calling",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The ANOMALY workflow detects nuclear mitochondrial DNA segments (NuMTs) from long-read sequencing data.",
-        "The pipeline demonstrated high accuracy on 50 simulated datasets, with a precision of 1.000, recall of 0.989, and F1-score of 0.994."
+        "The novel workflow ANOMALY detects nuclear mitochondrial DNA segments (NuMTs) from long-read sequencing data.",
+        "On 50 simulated datasets, the pipeline demonstrated high accuracy with a precision of 1.000 and a recall of 0.989."
       ]
     },
     {
@@ -992,9 +992,9 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41604590/",
       "query_tag": "Variant calling",
       "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "A novel strategy was introduced for analyzing multiple single nucleotide variants (SNVs) at the single particle level.",
-        "The method uses DNA tetrahedra to enhance sample background tolerance, X-shaped probes on DNA tetrahedra, and a hybridization chain reaction cascade confined to gold nanoparticles."
+        "Here are three bullet points summarizing the biomedical abstract:",
+        "A novel strategy was developed for multiple single nucleotide variants (SNVs) analysis at the single particle level using molecular and nanomaterial confinement.",
+        "The approach uses DNA tetrahedra to enhance sample background tolerance and X-shaped probes on DNA tetrahedra form high-stability recognition units that trigger a hybridization chain reaction (HCR) cascade."
       ]
     },
     {
@@ -1014,8 +1014,8 @@
       "query_tag": "Variant calling",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "NGSTroubleFinder detects cross-sample contamination in human whole-genome and transcriptome sequencing data.",
-        "The tool can also identify sample swaps and mismatches between reported and inferred genetic and transcriptomic sexes."
+        "NGSTroubleFinder detects cross-sample contamination in whole-genome and transcriptome sequencing data.",
+        "The tool can identify sample swaps and mismatches between reported and inferred genetic and transcriptomic sexes."
       ]
     },
     {
@@ -1038,8 +1038,8 @@
       "query_tag": "Variant calling",
       "summary_bullets": [
         "Here are three bullet points summarizing the abstract:",
-        "The bioinformatics pipeline MobiCT detects ultra-low-frequency variants in cell-free DNA samples using unique molecular identifier (UMI).",
-        "MobiCT consists of three stages: UMI deduplication, alignment to a reference genome, and variant calling."
+        "The MobiCT pipeline detects ultra-low-frequency variants using unique molecular identifier (UMI) in cell-free DNA samples.",
+        "The pipeline consists of three stages: UMI deduplication, alignment to a reference genome, and variant calling."
       ]
     }
   ]
