@@ -406,13 +406,17 @@
     <button class="tab-button" data-tab="research-radar" onclick="showTab('research-radar', this)">Research Radar</button>
   </nav>
 
-  <nav class="tab-nav sub-tabs" id="subnav-prep" aria-label="Data prep tools">
-    <button class="tab-button" data-tab="nextflow" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
-    <button class="tab-button" data-tab="wdl-fastq-qc" onclick="showTab('wdl-fastq-qc', this)">WDL FASTQ QC</button>
-    <button class="tab-button" data-tab="gcp-fastq-event-pipeline" onclick="showTab('gcp-fastq-event-pipeline', this)">GCP FASTQ Event Pipeline</button>
-    <button class="tab-button" data-tab="nlp-phenotyper" onclick="showTab('nlp-phenotyper', this)">NLP Phenotyper</button>
-  </nav>
+ <nav class="tab-nav sub-tabs" id="subnav-prep" aria-label="Data prep tools">
+  <button class="tab-button" data-tab="nextflow" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
+  <button class="tab-button" data-tab="wdl-fastq-qc" onclick="showTab('wdl-fastq-qc', this)">WDL FASTQ QC</button>
+  <button class="tab-button" data-tab="gcp-fastq-event-pipeline" onclick="showTab('gcp-fastq-event-pipeline', this)">GCP FASTQ Event Pipeline</button>
+  <button class="tab-button" data-tab="nlp-phenotyper" onclick="showTab('nlp-phenotyper', this)">NLP Phenotyper</button>
 
+  <!-- NEW TOOL -->
+  <button class="tab-button" data-tab="document-cleaning" onclick="showTab('document-cleaning', this)">
+    Document Cleaning
+  </button>
+</nav>
   <nav class="tab-nav sub-tabs" id="subnav-omics" aria-label="Primary omics analysis tools">
     <button class="tab-button" data-tab="rna" onclick="showTab('rna', this)">RNA-Seq</button>
     <button class="tab-button" data-tab="atac" onclick="showTab('atac', this)">ATAC-Seq</button>
@@ -1113,6 +1117,36 @@ results/
 </section>
     
 
+<div class="tool-card">
+  <span class="badge">NEW</span>
+  <h3>Document Cleaning CLI</h3>
+  <p>
+    AI-powered document cleanup for scanned pages, noisy screenshots, and OCR-bound records.
+    This tool denoises images, sharpens text regions, and returns cleaner outputs that are far
+    easier to read, extract, and route into downstream research or clinical workflows.
+  </p>
+
+  <ul>
+    <li><strong>Input:</strong> scanned <code>.png</code>/<code>.jpg</code> files or ZIP batches of document images</li>
+    <li><strong>Cleanup:</strong> deep-learning denoising + image enhancement for messy source material</li>
+    <li><strong>Output:</strong> OCR-optimized images and PDF-ready cleaned documents</li>
+    <li><strong>Modes:</strong> command-line workflow or REST API deployment</li>
+    <li><strong>Use case:</strong> legacy records, scanned notes, exported forms, and other hard-to-read document inputs</li>
+  </ul>
+
+  <p>
+    <strong>Why it matters:</strong> real-world data is often trapped inside ugly, low-quality documents.
+    This tool helps convert noisy visual records into cleaner, machine-readable assets — making OCR,
+    review, and downstream automation much more reliable.
+  </p>
+
+  <p>
+    <a href="https://github.com/jcaperella29/Document_cleaning_CLI" target="_blank" rel="noopener noreferrer">
+      View on GitHub
+    </a>
+  </p>
+</div>
+    
     <!-- ==============================
          ANALYTICS TAB
     =============================== -->
