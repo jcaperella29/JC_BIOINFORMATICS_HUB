@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-05T18:36:09",
+  "generated_at": "2026-04-21T16:37:41",
   "days": 7,
-  "max_per_query": 20,
+  "max_per_query": 15,
   "queries": [
     {
       "tag": "AI for biology",
@@ -16,1031 +16,3180 @@
       "term": "(\"variant calling\"[Title/Abstract] OR \"variant detection\"[Title/Abstract])"
     }
   ],
+  "paper_count": 39,
   "trending_topics": [
     {
       "topic": "AI for biology",
-      "count": 20
+      "count": 15
     },
     {
       "topic": "Bioinformatics methods",
-      "count": 18
+      "count": 15
     },
     {
       "topic": "Variant calling",
       "count": 9
     }
   ],
+  "top_journals": [
+    {
+      "journal": "Microbiology spectrum",
+      "count": 2
+    },
+    {
+      "journal": "mSystems",
+      "count": 2
+    },
+    {
+      "journal": "Scientific reports",
+      "count": 2
+    },
+    {
+      "journal": "Analytical chemistry",
+      "count": 1
+    },
+    {
+      "journal": "Natural products and bioprospecting",
+      "count": 1
+    },
+    {
+      "journal": "Biomarkers in medicine",
+      "count": 1
+    },
+    {
+      "journal": "eLife",
+      "count": 1
+    },
+    {
+      "journal": "Functional & integrative genomics",
+      "count": 1
+    },
+    {
+      "journal": "Cancer immunology, immunotherapy : CII",
+      "count": 1
+    },
+    {
+      "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+      "count": 1
+    }
+  ],
   "papers": [
     {
-      "pmid": "41784969",
-      "title": "Trends in the Application of Multiomics Based on Machine Learning in the Development of Probiotics.",
-      "journal": "Journal of agricultural and food chemistry",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Yu Chen",
-        "Zhuqing Xing",
-        "Jiachuan Sheng",
-        "Xiaoning Liu",
-        "Wenke Ding",
-        "Xinya Chen"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41784969/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Machine learning has emerged as an important analytical approach in probiotic research.",
-        "ML facilitates the integration of heterogeneous omics data to enable more systematic and quantitative probiotic development.",
-        "Experimental validation remains essential for ensuring biological relevance, despite limitations in capturing complex microbial and environmental interactions."
-      ]
-    },
-    {
-      "pmid": "41784169",
-      "title": "A framework for identifying the polyploid complex in Rorippa (Brassicaceae): combining trait evolution, herbarium records, and machine learning.",
-      "journal": "Annals of botany",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Ting-Shen Han",
-        "Jun-Xian Lv",
-        "Yao-Wu Xing"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41784169/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Species identification in polyploid plants is challenging due to morphological continuity and genomic redundancy.",
-        "Seed arrangement, petal number, and genome size exhibited clear interspecific differentiation in the Rorippa dubia-indica complex."
-      ]
-    },
-    {
-      "pmid": "41782555",
-      "title": "High MAP3K6 Expression in Spinal Cord Injury Tissues Enhances Neuronal Apoptosis: Insights from Multi-Omics Data Integrating WGCNA, Machine Learning, and Experimental Validation.",
-      "journal": "The International journal of neuroscience",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Yanbing Liu",
-        "Zhao Liu",
-        "Yiqing Shi"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41782555/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "4,621 differentially expressed genes were identified between spinal cord injury (SCI) and controls.",
-        "The green module showed the strongest positive correlation with SCI using WGCNA analysis."
-      ]
-    },
-    {
-      "pmid": "41784531",
-      "title": "Genome characterization of cluster EK1 bacteriophages JessellCookie and MiamiPanther.",
-      "journal": "Microbiology resource announcements",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Gabriela Barredo",
-        "Isabella Bauchiero",
-        "Denis Cabellero",
-        "Zachyra Cortes",
-        "Liam De Armas",
-        "Lucas Gonzalez",
-        "Thalia Oliveros",
-        "Martina Podesta Quistapace",
-        "Odette Pulido",
-        "Lara Becerra Reymundo"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41784531/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Phages JessellCookie and MiamiPanther were isolated from environmental samples.",
-        "The phages were isolated using Microbacterium foliorum as a host."
-      ]
-    },
-    {
-      "pmid": "41784355",
-      "title": "Unraveling the genome of Epidendrum fulgens: demographic history and gene family dynamics in a resilient Neotropical orchid.",
-      "journal": "Genome biology and evolution",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Jacqueline S de Mattos",
-        "Paulo Aecyo",
-        "Kyle Keepers",
-        "Marília M Tavares",
-        "Fernando Della-Rosa",
-        "Clarisse Palma-Silva",
-        "Nolan C Kane",
-        "Fábio Pinheiro",
-        "Diego M Riaño-Pachon"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41784355/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The first chromosome-scale genome assembly from the orchid genus Epidendrum was created using PacBio HiFi and Omni-C technologies.",
-        "The assembly comprised 12 chromosome-scale scaffolds, capturing 97.3% of BUSCO genes, with an N50 of 88.6 Mbp and L50 of 5."
-      ]
-    },
-    {
-      "pmid": "41784220",
-      "title": "Possible cross‑talk between sarcopenia and obstructive sleep apnea revealed by WGCNA analysis and machine learning.",
-      "journal": "The aging male : the official journal of the International Society for the Study of the Aging Male",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Kunze Lu",
-        "Haiyan Lei",
-        "Caixing Wu",
-        "Danxia Lin",
-        "Yi Li",
-        "Yan Deng"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41784220/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The study identified 20 shared common genes associated with the comorbidity of sarcopenia and obstructive sleep apnea (OSA).",
-        "LGR6 and ARRDC2 were determined to be candidate hub genes for diagnosing OSA combined with sarcopenia."
-      ]
-    },
-    {
-      "pmid": "41781966",
-      "title": "Post translational modifications as biomarkers of soil microbe responses to nano-pesticides.",
-      "journal": "Journal of nanobiotechnology",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Atul Kumar Srivastava",
-        "Pooja Mishra",
-        "Simpal Kumari",
-        "Nisar Uddin",
-        "Songshu Chen",
-        "Yudan Zhao",
-        "Xin Xie"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781966/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Nano-pesticides can induce subtle disturbances in soil microbial function that are not captured by conventional indicators.",
-        "Post-translational modifications (PTMs) such as phosphorylation, acetylation, and ubiquitination regulate microbial stress responses under nanoparticle-induced stress."
-      ]
-    },
-    {
-      "pmid": "41781470",
-      "title": "Validation of important genes and bioinformatics investigation of the relationship between ferroptosis and CVA16 infection.",
-      "journal": "Archives of virology",
-      "pub_date": "2026-03-05",
-      "authors": [
-        "Jianing Wang",
-        "Yanna Gao",
-        "Lujia Guo",
-        "Yinghui Pan",
-        "Binlian Sun",
-        "Yongjuan Liu",
-        "Yingying Shi"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781470/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "No abstract available.",
-        "—",
-        "—"
-      ]
-    },
-    {
-      "pmid": "41782096",
-      "title": "Uncertainty-aware hybrid deep generative framework for robust and explainable drug discovery.",
-      "journal": "BMC bioinformatics",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Saniya Gupta",
-        "A Sherly Alphonse",
-        "D Kavitha"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41782096/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "A novel hybrid computational framework integrates Graph Convolutional Networks, Variational Autoencoders, and Uncertainty Aware Adaptive Multi-Objective Optimization-based Reinforcement Learning to generate drug molecules.",
-        "The proposed method prioritizes reliability by combining uncertainty awareness and explainability, reducing false positives and addressing challenges in drug discovery such as robustness and interpretability."
-      ]
-    },
-    {
-      "pmid": "41781783",
-      "title": "Prosta-omics: machine learning-driven TPSA prediction and molecular modeling of ASPM-inhibitors for prostate cancer treatment.",
-      "journal": "Molecular diversity",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Kashif Iqbal Sahibzada",
-        "Shumaila Shahid",
-        "Saba Shahid",
-        "Andleeb Batool",
-        "Yuansen Hu",
-        "Dong-Qing Wei"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781783/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Single-cell RNA sequencing enabled fine-grained clustering and differential gene expression analysis across malignant and non-malignant cell populations.",
-        "ASPM emerged as a statistically significant biomarker associated with proliferative tumor phenotypes, enriched in certain cell types."
-      ]
-    },
-    {
-      "pmid": "41781782",
-      "title": "Integrating ensemble machine-learning and fibril docking to discover potent, novel triazole-naphthalene tau-aggregation inhibitors.",
-      "journal": "Molecular diversity",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Poulami Saha",
-        "Anuja Chouhan"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781782/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The study trained a stacked-ensemble QSAR model to predict human-tau aggregation inhibitors with high accuracy.",
-        "The model predicts that 16 previously unreported compounds (TND-1 to TND-15) have potency against tau-protein aggregation, with top-ranked candidates being TND-9, TND-15, and TND-5."
-      ]
-    },
-    {
-      "pmid": "41781618",
-      "title": "Cell-free chromatin state tracing reveals disease origin and therapy responses.",
-      "journal": "Nature",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Xubin Chen",
-        "Xiaoxuan Meng",
-        "Weilong Zhang",
-        "Xiawei Zhang",
-        "Yaping Zhang",
-        "Ping Yang",
-        "Yan Liu",
-        "Fang Bao",
-        "Sen Li",
-        "Jing Wang"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781618/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The cf-EpiTracing platform profiles histone modifications in cell-free DNA from plasma to deconvolve cell types of origin.",
-        "The platform enabled unbiased identification of primary diseased tissues and other organ involvement, as well as stratification of B cell lymphoma subtypes."
-      ]
-    },
-    {
-      "pmid": "41781537",
-      "title": "AI can write genomes - how long until it creates synthetic life?",
-      "journal": "Nature",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Ewen Callaway"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781537/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "No abstract available.",
-        "—",
-        "—"
-      ]
-    },
-    {
-      "pmid": "41779869",
-      "title": "Cell-free DNA fragmentomes for noninvasive detection of liver cirrhosis and other diseases.",
-      "journal": "Science translational medicine",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Akshaya V Annapragada",
-        "Zachariah H Foda",
-        "Hope Orjuela",
-        "Carter Norton",
-        "Shashikant Koul",
-        "Noushin Niknafs",
-        "Sarah Short",
-        "Keerti Boyapati",
-        "Adrianna Bartolomucci",
-        "Dimitrios Mathios"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41779869/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "A machine learning classifier detected early liver disease, advanced fibrosis, and cirrhosis with high sensitivity in separate discovery and validation cohorts.",
-        "Genome-wide fragmentome and methylome analyses revealed liver-derived and immune-mediated changes in cfDNA in individuals affected with liver disease."
-      ]
-    },
-    {
-      "pmid": "41779826",
-      "title": "Deep learning linking mechanistic models to single-cell transcriptomics data reveals transcriptional bursting in response to DNA damage.",
-      "journal": "eLife",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Zhiwei Huang",
-        "Songhao Luo",
-        "Zihao Wang",
-        "Zhenquan Zhang",
-        "Benyuan Jiang",
-        "Qing Nie",
-        "Jiajun Zhang"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41779826/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The study proposes a framework called DeepTX that connects mechanistic models with scRNA-seq data to reveal genome-wide transcriptional burst kinetics.",
-        "Fluctuations in transcriptional bursting induced by different DNA-damaging drugs were associated with distinct fate decisions, including differentiation and apoptosis/survival-related fates."
-      ]
-    },
-    {
-      "pmid": "41779447",
-      "title": "Systemic Proteome Profiling to Differentiate Primary Glomerular Diseases.",
-      "journal": "Journal of the American Society of Nephrology : JASN",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Jae-Ik Oh",
-        "Kyeonghun Jeong",
-        "Jung Hun Koh",
-        "Jin Kyung Kwon",
-        "Semin Cho",
-        "Jeong Min Cho",
-        "Yaerim Kim",
-        "Hajeong Lee",
-        "Hyun Je Kim",
-        "Jeonghwan Lee"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41779447/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Plasma proteome profiles were distinct among disease subtypes.",
-        "The machine learning model performed robustly in both discovery and validation cohorts, achieving an AUROC > 0.8 for differentiating certain GN subtypes."
-      ]
-    },
-    {
-      "pmid": "41778967",
-      "title": "Decoding d- and l-Amino Acids: Data-Driven Recognition of Enantiomers and Post-Translational Modifications via Quantum Tunneling.",
-      "journal": "The journal of physical chemistry letters",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Sneha Mittal",
-        "Milan Kumar Jena",
-        "Biswarup Pathak"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41778967/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The authors develop a machine learning approach to identify d- and l-amino acid enantiomers.",
-        "Their method uses quantum tunneling to screen and detect isobaric isomers, methylation, phosphorylation, and ring formation in complex proteomes."
-      ]
-    },
-    {
-      "pmid": "41778750",
-      "title": "In-Pocket 3D Graphs Enhance Ligand-Target Compatibility in Generative Small-Molecule Creation: A Dopamine D2 Receptor Model System.",
-      "journal": "The journal of physical chemistry. B",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Seung-Gu Kang",
-        "Jeffrey K Weber",
-        "Joseph A Morrone",
-        "Leili Zhang",
-        "Tien Huynh",
-        "Wendy D Cornell"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41778750/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The graph-based generative model encodes explicit 3D protein-ligand contacts.",
-        "Molecules generated with the 3D procedure are more compatible with the dopamine D2 receptor-binding pocket than those produced by a comparable 2D method."
-      ]
-    },
-    {
-      "pmid": "41778634",
-      "title": "Deep generative molecular design and its value in modern drug discovery.",
-      "journal": "Expert opinion on drug discovery",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "E Sila Ozdemir",
-        "Hyunbum Jang",
-        "Ozlem Keskin",
-        "Attila Gursoy",
-        "Ruth Nussinov"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41778634/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Neural network-based frameworks enable algorithms to propose molecules that satisfy complex pharmacological constraints.",
-        "Generative AI's greatest promise lies not in generating more molecules, but in generating better hypotheses and structures that are synthetically accessible and biologically plausible."
-      ]
-    },
-    {
-      "pmid": "41782000",
-      "title": "miR-1290 serves as a potential biomarker for osteoporotic fracture and regulates osteoblast function by targeting KDM5A.",
-      "journal": "Journal of orthopaedic surgery and research",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Xiaoqin Xu",
-        "Jia Huang",
-        "Qi Chen",
-        "Wen-Hua Lu",
-        "Wei-Bing Chen",
-        "Xiaojing Zhou"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41782000/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Serum miR-1290 levels decrease with increasing osteoporotic severity.",
-        "miR-1290 promotes osteoblast proliferation and differentiation by targeting KDM5A."
-      ]
-    },
-    {
-      "pmid": "41781900",
-      "title": "Identification of metabolism and inflammation-related biomarkers and potential drugs for schizophrenia based on comprehensive bioinformatics and machine learning.",
-      "journal": "BMC psychiatry",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Yanfang Chen",
-        "Min Zhang",
-        "Ling Qiao",
-        "Feng Lu",
-        "Shaoping Ji"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781900/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "No abstract available.",
-        "—",
-        "—"
-      ]
-    },
-    {
-      "pmid": "41781855",
-      "title": "Genome-wide identification of castor bean OSCA genes and analysis of expression patterns under drought and salt stress.",
-      "journal": "BMC plant biology",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Shuqi Yang",
-        "Tongjie Zhang",
-        "Hongyan Huo",
-        "Lili Yu",
-        "Jiayu Li",
-        "Shiyou Lv",
-        "Juanxia Jia",
-        "Yixin Yang",
-        "Jixing Zhang"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781855/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "A total of 10 OSCA genes (RcOSCAs) were identified in castor bean, unevenly distributed on five chromosomes.",
-        "Phylogenetic analysis classified RcOSCA proteins into four distinct subfamilies and clarified their evolutionary relationships with homologs from other plants."
-      ]
-    },
-    {
-      "pmid": "41781786",
-      "title": "Identification of the disulfidptosis-related gene G6PD as a potential biomarker and therapeutic target in pancreatic ductal adenocarcinoma by integrative bioinformatics analysis and experimental validation.",
-      "journal": "Discover oncology",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Shuangyan Su",
-        "Bihua Wu",
-        "Tingting Han",
-        "XianYu Wang",
-        "Fenglin Lou",
-        "Zhenghao Mei",
-        "Le Guo"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781786/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "No abstract available.",
-        "—",
-        "—"
-      ]
-    },
-    {
-      "pmid": "41781468",
-      "title": "Identification and characterization of Phi1 and Phi3 bacteriophages targeting Xylella fastidiosa subsp. pauca, the causal agent of olive quick decline in Italy.",
-      "journal": "Scientific reports",
-      "pub_date": "2026-03-04",
-      "authors": [
-        "Miloud Sabri",
-        "Kaoutar El Handi",
-        "Khaoula Mektoubi",
-        "Orges Cara",
-        "Angelo De Stradis",
-        "Franco Valentini",
-        "Toufic Elbeaino"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781468/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Two phages, Xylella phage Phi1 and Phi3, were isolated and characterized as having potential as safe and suitable biocontrol agents.",
-        "Transmission electron microscopy revealed that Phi1 exhibited podovirus morphotype features while Phi3 showed siphovirus morphotype features, with efficient replication on Xf cells."
-      ]
-    },
-    {
-      "pmid": "41780474",
-      "title": "Benzo[a]pyrene promotes gastric cancer progression via activation of the Correa cascade through modulation of the STAT3-TP53-MMP9 molecular axis.",
-      "journal": "Ecotoxicology and environmental safety",
-      "pub_date": "2026-03-03",
-      "authors": [
-        "Jiajia Tong",
-        "ShiYu Liu",
-        "Tingting Du",
-        "Wangting Liu",
-        "Ziyi Jin",
-        "Wenqing Si",
-        "Bingqian Zhang",
-        "Guangxia Chen"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41780474/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The genes STAT3, TP53, and MMP9 were identified as core targets that drive the Correa cascade during gastric cancer development.",
-        "These genes exhibited synergistic expression patterns in tumors and showed a dose-dependent association with disease progression."
-      ]
-    },
-    {
-      "pmid": "41776818",
-      "title": "Plasma proteomic profiles of lung volume-based phenotypes in Tobacco-Exposed Individuals Without Spirometric COPD.",
-      "journal": "Annals of the American Thoracic Society",
-      "pub_date": "2026-03-03",
-      "authors": [
-        "Siyang Zeng",
-        "Claire Guo",
-        "Katherine A Pratte",
-        "Gang Luo",
-        "Russell P Bowler",
-        "Mehrdad Arjomandi"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41776818/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "The lung volume-based pre-COPD phenotypes have distinct biological features reflected in their circulating proteome.",
-        "Among pre-COPD subgroups, those with a relatively elevated functional residual capacity-to-TLC ratio ([FRC/TLC]high) showed greater progression to GOLD ≥ 2 and PRISm.",
-        "Plasma proteomic analysis identified 165 upregulated and 145 downregulated proteins in [TLC]high TEPS compared with other groups."
-      ]
-    },
-    {
-      "pmid": "41776751",
-      "title": "Proteomic profile of CSF obtained at the time of diagnosis determines amyotrophic lateral sclerosis progression and survival: CXCL7 levels in disease prognosis and survival.",
-      "journal": "Brain pathology (Zurich, Switzerland)",
-      "pub_date": "2026-03-03",
-      "authors": [
-        "Sergio Roca-Pereira",
-        "Yaiza López-Sampere",
-        "Pol Mengod-Soler",
-        "Mario Peña-Fonteboa",
-        "Carla Marco",
-        "Alejandro Caravaca-Puchades",
-        "Raúl Domínguez",
-        "Juan Francisco Vázquez-Costa",
-        "Enrique Santamaría",
-        "Joaquín Fernández-Irigoyen"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41776751/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The study identified a molecular signature in cerebrospinal fluid (CSF) that robustly distinguished ALS patients from controls and stratified patient subgroups by survival.",
-        "The signature was characterized by inflammation, downregulation of detoxification mechanisms, and synaptic dysregulation in aggressive disease forms, providing insights into the pathophysiology of ALS."
-      ]
-    },
-    {
-      "pmid": "41781001",
-      "title": "[Mechanism of miR-199a-5p prevents migration and invasion of cholangiocarcinoma by targeting hypoxia-inducible factor 1α].",
-      "journal": "Zhonghua yi xue za zhi",
-      "pub_date": "2026-03-03",
-      "authors": [
-        "W P Tang",
-        "B Liu",
-        "G D Chen"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41781001/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the biomedical abstract:",
-        "miR-199a-5p expression was investigated in intrahepatic cholangiocarcinoma (ICC) tumor tissues.",
-        "The study found a correlation between miR-199a-5p and hypoxia-inducible factor 1α (HIF-1α) expression levels and clinicopathological features of ICC patients."
-      ]
-    },
-    {
-      "pmid": "41780476",
-      "title": "Intergenerational neurotoxicity mediated by maternal plasma metabolite profile remodeling following maternal atrazine exposure.",
-      "journal": "Ecotoxicology and environmental safety",
-      "pub_date": "2026-03-03",
-      "authors": [
-        "Xueting Li",
-        "Wenhao Fu",
-        "Jiaqi Li",
-        "Senwei Xu",
-        "Chunlong Zhao",
-        "Shuying Gao",
-        "Baixiang Li"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41780476/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Maternal exposure to atrazine during pregnancy and lactation damages dopaminergic neurons in offspring.",
-        "The study reveals that maternal atrazine exposure remodels the maternal plasma metabolic profile, leading to intergenerational dopaminergic neurotoxicity."
-      ]
-    },
-    {
-      "pmid": "41773350",
-      "title": "AlleleMiner: A long-read pipeline for gene-wise de novo allele phasing and variant detection in diploid citrus cultivars.",
-      "journal": "DNA research : an international journal for rapid publication of reports on genes and genomes",
-      "pub_date": "2026-03-03",
-      "authors": [
-        "Yukinari Kiryu",
-        "Yoshihiro Kawahara",
-        "Tomoko Endo",
-        "Tokumasa Horiike",
-        "Kenta Shirasawa",
-        "Sachiko Isobe",
-        "Takehiko Shimada",
-        "Hiroshi Fujii"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41773350/",
-      "query_tag": "Variant calling",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The AlleleMiner pipeline phases diploid gene sequences directly from PacBio HiFi reads without relying on reference-based coordinate systems.",
-        "Across 18 citrus cultivars, the pipeline achieved an average phasing output of 91.5% of single-copy genes with a preference for ∼30× HiFi depth to recover heterozygous alleles."
-      ]
-    },
-    {
-      "pmid": "41780808",
-      "title": "Linking protein aggregation and structural stability to predict pathogenic MYH7 variants via machine learning.",
-      "journal": "Journal of structural biology",
-      "pub_date": "2026-03-02",
-      "authors": [
-        "Ivan A Pyankov",
-        "Marina A Kokorina",
-        "Georgy N Rychkov",
-        "Anna A Kostareva",
-        "Mayya V Uspenskaya",
-        "Andrey V Kajava"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41780808/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Disease-causing variants for Myosin Storage Myopathy generally destabilize the MYH7 α-helical coiled-coil domain.",
-        "Pathogenic variants cluster in locally unwound regions of the coiled-coil dimer, promoting dimer destabilization and aggregation."
-      ]
-    },
-    {
-      "pmid": "41777615",
-      "title": "Assessment of In-Frame Indel Variants in an Unsolved Cohort of Inherited Retinal Diseases Using Machine Learning.",
-      "journal": "Human mutation",
-      "pub_date": "2026-03-02",
-      "authors": [
-        "David E Rauch",
-        "Meng Wang",
-        "Muhammad Jafar Hussain Hafiz",
-        "Daniel C Brock",
-        "Yumei Li",
-        "Molly Marra",
-        "Mark E Pennesi",
-        "Paul Yang",
-        "Everett Lesley",
-        "Irma Lopez"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41777615/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The performance of four machine learning (ML) tools for predicting the pathogenicity of in-frame insertions and deletions was compared.",
-        "MetaRNN-indel showed the best overall results among the compared ML tools."
-      ]
-    },
-    {
-      "pmid": "41782206",
-      "title": "Genomics of Sable (Martes zibellina) × Pine Marten (Martes martes) Hybridization.",
-      "journal": "Genome biology and evolution",
-      "pub_date": "2026-03-02",
-      "authors": [
-        "Andrey A Tomarovsky",
-        "Azamat A Totikov",
-        "Tatiana M Bulyonkova",
-        "Polina L Perelman",
-        "Alexei V Abramov",
-        "Natalia A Serdyukova",
-        "Aliya R Yakupova",
-        "Dmitry Prokopov",
-        "Violetta R Beklemisheva",
-        "Mikkel-Holger S Sinding"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41782206/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The study found a broad spectrum of hybrid types between sable (Martes zibellina) and pine marten (Martes martes) with mosaic recombinant chromosomes.",
-        "The analysis revealed mitochondrial DNA introgression from sables into most pine martens, indicating displacement of native pine marten mitochondrial sequences."
-      ]
-    },
-    {
-      "pmid": "41780630",
-      "title": "Germline-specific nascent polypeptide-associated complex (NAC) subunits are predicted by bioinformatics tools to undergo phase separation.",
-      "journal": "Bio Systems",
-      "pub_date": "2026-03-02",
-      "authors": [
-        "Oxana V Galzitskaya",
-        "Anna V Glaykina",
-        "Mikhail Yu Lobanov",
-        "Nikita V Dovidchenko"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41780630/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The germline NAC (gNAC) proteins have an atypical amino acid composition and low-complexity repeats that can form cross-β structures.",
-        "gNAC proteins also have extended disordered regions that may undergo structuring upon oligomerization, suggesting a propensity for phase separation."
-      ]
-    },
-    {
-      "pmid": "41780609",
-      "title": "L-Se-methylselenocysteine alleviates iron deposit-induced anxiety- and depression-like behaviors in chronic renal failure rats receiving iron therapy via Nrf2/GPX4 activation.",
-      "journal": "Free radical biology & medicine",
-      "pub_date": "2026-03-02",
-      "authors": [
-        "Fan Li",
-        "Siyao Liu",
-        "Yanyan Zhu",
-        "Linlin Shi",
-        "Jing Lv",
-        "Shaohui Ma",
-        "Shaoxin Xiang",
-        "Hu Hao",
-        "Ming Zhang",
-        "Wen Gu"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41780609/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the biomedical abstract:",
-        "ESRD patients showed higher Beck Depression Inventory scores than healthy controls.",
-        "Increased magnetic susceptibility was found in the ventromedial prefrontal cortex and hippocampus, positively correlated with depression severity."
-      ]
-    },
-    {
-      "pmid": "41578696",
-      "title": "Integrative chromosome-scale genome analysis of cupuassu provides insights into witches' broom disease resistance and expands genomic resources for Theobroma.",
-      "journal": "The plant genome",
-      "pub_date": "2026-03",
-      "authors": [
-        "Vinicius A C de Abreu",
-        "Rafael Moysés Alves",
-        "Mauro de Medeiros Oliveira",
-        "Vitor Trinca",
-        "Loeni Ludke Falcão",
-        "Lucilia Helena Marcellino",
-        "Antonio Figueira",
-        "Douglas S Domingues",
-        "Alessandro M Varani"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41578696/",
-      "query_tag": "Variant calling",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The genome of the WBD-resistant cupuassu genotype C174 is presented, featuring distinctive duplications, TE insertions, and coordinated defense gene expression.",
-        "Comparison with the susceptible genotype C1074 reveals differences in nucleotide-binding domain leucine-rich repeat receptors, mitogen-activated protein kinase components, transcription factors, and pathogenesis-related proteins."
-      ]
-    },
-    {
-      "pmid": "41782801",
-      "title": "Leveraging Artificial Intelligence to Advance Bioinformatics in Africa: Opportunities, Challenges, and Ethical Considerations in Combating Antimicrobial Resistance.",
-      "journal": "Bioinformatics and biology insights",
-      "pub_date": "2026-02-28",
-      "authors": [
-        "Beatus Lyimo"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41782801/",
-      "query_tag": "AI for biology",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Artificial intelligence (AI) can reduce turnaround times for antimicrobial-resistant (AMR) prediction from days to hours by leveraging whole-genome sequencing-based models.",
-        "AI techniques, such as machine learning and deep learning algorithms, can enhance genomic research by automating large-scale sequence dataset analysis, predicting resistance patterns, and modeling infection transmission dynamics."
-      ]
-    },
-    {
-      "pmid": "41783385",
-      "title": "Identification of Genetic Variants Among Breast Cancer Patients and At-Risk Individuals: A Cohort Study in Sri Lanka.",
-      "journal": "Breast cancer : basic and clinical research",
-      "pub_date": "2026-02-28",
-      "authors": [
-        "Lalani Yatawara",
-        "Badra Hewavithana",
-        "Ashansa P Ramanayake",
-        "Susiji Wickramasinghe",
-        "Malithi Amarasiri"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41783385/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "Variants were detected in several high- and moderate-penetrance genes, including BRCA1, BRCA2, PALB2, BRIP1, and MRE11A.",
-        "Among these variants, BRCA2 mutations and a PALB2 frameshift deletion were classified as pathogenic germline variants."
-      ]
-    },
-    {
-      "pmid": "41783153",
-      "title": "Bioinformatic Analysis and Experimental Verification Reveal the Protective Role of Baicalein Against LPS-Induced Endothelial Cell Dysfunction.",
-      "journal": "Journal of inflammation research",
-      "pub_date": "2026-02-27",
-      "authors": [
-        "Fuping Luo",
-        "Jinxi Ao",
-        "Yuan Chen",
-        "Yan Cui",
-        "Xianghai Gan",
-        "Mengqin Li"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41783153/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "RNA-seq analysis revealed a set of differentially expressed genes (DEGs) shared between control and LPS-treated HUVECs.",
-        "Molecular docking and molecular dynamics simulation analyses showed that BAI exhibits strong binding affinity for key targets VCAM1 and PLCXD1."
-      ]
-    },
-    {
-      "pmid": "41780445",
-      "title": "Elucidating the mechanisms of aristolochic acid-induced upper tract urothelial carcinoma: A multi-omics approach combining bioinformatics and computational modeling.",
-      "journal": "Computational biology and chemistry",
-      "pub_date": "2026-02-26",
-      "authors": [
-        "Tongpeng Liu",
-        "Yu Yao",
-        "Yuan Xu",
-        "Haojun Zhang",
-        "Lijiang Sun",
-        "Guiming Zhang"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41780445/",
-      "query_tag": "Bioinformatics methods",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The study identified 97 shared potential targets of Aristolochic acids (AAs) and upper tract urothelial carcinoma (UTUC).",
-        "Molecular docking predicted high binding affinities of AA with five core genes: CASP3, EGFR, PARP1, PTGS2, and HSP90AA1."
-      ]
-    },
-    {
-      "pmid": "41746302",
-      "title": "Unraveling the Phylogenetic Signal of Gene Expression from Single-cell RNA-seq Data.",
-      "journal": "Genomics, proteomics & bioinformatics",
-      "pub_date": "2026-02-26",
-      "authors": [
-        "Joao M Alves",
-        "Laura Tomás",
-        "David Posada"
-      ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41746302/",
-      "query_tag": "Variant calling",
-      "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "ScAllele, Monopogen, and Monovar consistently returned phylogenetically informative genotype calls.",
-        "These strategies provided precise signals for discriminating between tumor and normal cells within heterogeneous samples."
-      ]
-    },
-    {
-      "pmid": "41701934",
-      "title": "A Real-Time, Programmable, and Multiplex Ligation Chain Reaction-MNAzyme Platform for Single-Nucleotide Variant Detection.",
+      "pmid": "42012876",
+      "title": "METLIN 960 K: An Empirical Tandem Mass Spectrometry Data Resource.",
       "journal": "Analytical chemistry",
-      "pub_date": "2026-02-17",
+      "pub_date": "2026-04-21",
       "authors": [
-        "Jiangyan Zhang",
-        "Jiajia Li",
-        "Yan Wang",
-        "Zhaodi Jing",
-        "Zhiyong Cheng",
-        "Jinding Liu",
-        "Hongyuan Yan",
-        "Zhengping Li",
-        "Yongqiang Cheng"
+        "Winnie Uritboonthai",
+        "Aries E Aisporna",
+        "Linh Hoang",
+        "Corey Hoang",
+        "Elizabeth M Billings",
+        "Gary Siuzdak"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41701934/",
-      "query_tag": "Variant calling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012876/",
+      "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The LCR-MNAzyme system enables PCR-like real-time quantification of single-nucleotide variants.",
-        "The platform supports programmable and multiplex detection through reconfiguring the signal output module."
-      ]
+        "The METLIN platform features over 960,000 empirically validated molecular standards with MS/MS spectra.",
+        "The platform provides standardized MS/MS data sets acquired under controlled conditions across ionization modes and collision energies for comprehensive fragmentation coverage and improved structural annotation.",
+        "The redesigned interface enables efficient querying by exact mass, formula, or structure with direct access to curated spectra and metadata."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Each compound is characterized by MS/MS spectra acquired in both positive and negative ionization modes across four collision energies (0, 10, 20, and 40 eV), enabling comprehensive fragmentation coverage and improved structural annotation."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
     },
     {
-      "pmid": "41704565",
-      "title": "DoBSeqWF: a framework for sensitive detection of individual genetic variation in pooled sequencing data.",
-      "journal": "NAR genomics and bioinformatics",
-      "pub_date": "2026-02-16",
+      "pmid": "42012749",
+      "title": "Artificial intelligence-based screening of phytochemicals for targeted cancer therapy.",
+      "journal": "Natural products and bioprospecting",
+      "pub_date": "2026-04-21",
       "authors": [
-        "Mads Cort Nielsen",
-        "Christian Munch Hagen",
-        "Ulrik Kristoffer Stoltze",
-        "Thomas van Overeem Hansen",
-        "Mette Nyegaard",
-        "Henrik Hjalgrim",
-        "Marie Bækvad-Hansen",
-        "Anna Byrjalsen",
-        "Kjeld Schmiegelow",
-        "Karin Wadt"
+        "Livia Ramos Santiago",
+        "Estéfani Alves Asevedo",
+        "Maria Eduarda Jeunon de Oliveira",
+        "Karen Cota Pereira",
+        "Maria Fernanda da Silva Trindade",
+        "Ana Gabriela Silva Oliveira",
+        "Marina Andrade Rocha",
+        "Sojin Kang",
+        "Amama Rani",
+        "Moon Nyeo Park"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41704565/",
-      "query_tag": "Variant calling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012749/",
+      "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "DoBSeq is a cost-effective method that uses 2D overlapping pool sequencing to enable individual-level rare variant detection.",
-        "The resulting data require a specialized workflow, which was developed into a Nextflow-based pipeline called DoBSeqWF for efficient and reproducible analysis."
-      ]
+        "Cancer remains one of the leading causes of death worldwide.",
+        "Phytochemicals have emerged as a valuable source of anticancer agents offering rich structural diversity and biological activities.",
+        "Artificial intelligence (AI) is transforming phytochemical-based drug discovery by supporting key steps in the process including metabolite identification, virtual screening, target prediction, and toxicity assessment."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
     },
     {
-      "pmid": "41647924",
-      "title": "ANOMALY: a Snakemake pipeline for identifying NuMTs from long-read sequencing data.",
-      "journal": "NAR genomics and bioinformatics",
-      "pub_date": "2026-02-04",
+      "pmid": "42012234",
+      "title": "A novel autoantibody panel as potential diagnostic markers for hepatocellular carcinoma.",
+      "journal": "Biomarkers in medicine",
+      "pub_date": "2026-04-21",
       "authors": [
-        "Nirmal S Mahar",
-        "Rachit Singh",
-        "Ishaan Gupta",
-        "Shweta Ramdas"
+        "Xiaodan Zhang",
+        "Yin Lu",
+        "Qian Yang",
+        "Jicun Zhu",
+        "Jiaxin Zhang",
+        "Donglin Jiang",
+        "Ling Liu",
+        "Yuqi Liu",
+        "Yue Wang",
+        "Jianxiang Shi"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41647924/",
-      "query_tag": "Variant calling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012234/",
+      "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The novel workflow ANOMALY detects nuclear mitochondrial DNA segments (NuMTs) from long-read sequencing data.",
-        "On 50 simulated datasets, the pipeline demonstrated high accuracy with a precision of 1.000 and a recall of 0.989."
-      ]
+        "A total of 10 tumor-associated autoantibodies (TAAs) were identified in patients with hepatocellular carcinoma.",
+        "The logistic regression model predicted a positive rate of early HCC of 62.39%, significantly higher than that of alpha-fetoprotein (AFP).",
+        "Combining the logistic regression model with AFP for diagnosis achieved a positive rate of 96.36%, reducing missed diagnoses and offering a promising strategy to optimize HCC screening."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Control or comparison group mentioned in abstract/title.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Tumor-associated autoantibodies (TAAs) represent promising biomarkers for cancer detection.",
+            "PATIENTS AND METHODS: Candidate antigens were identified via multi-omics screening (Gene Expression Omnibus (GEO), Gene Expression Profiling Interactive Analysis (GEPIA), Clinical Proteomic Tumor Analysis Consortium (CPTAC), Human Protein Atlas (HPA)) and validated by enzyme-linked immunosorbent assay (ELISA) in 280 HCC patients and 280 controls."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": true,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
     },
     {
-      "pmid": "41604590",
-      "title": "Dual Confinement-Enhanced Multiple Single Nucleotide Variant Detection at the Single-Particle Level.",
-      "journal": "ACS sensors",
-      "pub_date": "2026-01-28",
+      "pmid": "42012213",
+      "title": "Analytical validation of a highly accurate and reliable next-generation sequencing-based urine assay.",
+      "journal": "Microbiology spectrum",
+      "pub_date": "2026-04-21",
       "authors": [
-        "Lin-Min Zhong",
-        "Chun-Min Li",
-        "Jing Zhang",
-        "Yi-Xin Li",
-        "Jiayi Zhuang",
-        "Xin-Yi Zhong",
-        "Fen-Ying Kong",
-        "Shan-Wen Hu"
+        "Mara Couto-Rodriguez",
+        "David C Danko",
+        "Heather L Wells",
+        "Sol Rey",
+        "Xavier Jirau Serrano",
+        "Gabor Fidler",
+        "John Papciak",
+        "P Ford Combs",
+        "Anna Plourde",
+        "Michael Augenbraun"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41604590/",
-      "query_tag": "Variant calling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012213/",
+      "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are three bullet points summarizing the biomedical abstract:",
-        "A novel strategy was developed for multiple single nucleotide variants (SNVs) analysis at the single particle level using molecular and nanomaterial confinement.",
-        "The approach uses DNA tetrahedra to enhance sample background tolerance and X-shaped probes on DNA tetrahedra form high-stability recognition units that trigger a hybridization chain reaction (HCR) cascade."
-      ]
+        "The BIOTIA-ID diagnostic pipeline uses next-generation sequencing to detect pathogens and resistance markers in urine with high sensitivity and specificity.",
+        "The assay was validated on 1,470 urine specimens and achieved a limit of detection of <15,000 CFU/mL for most bacterial species and <5,000 CFU/mL for fungal species.",
+        "BIOTIA-ID detected antimicrobial resistance genes, including sul, blaSHV, and cfxA, associated with Escherichia coli, Klebsiella pneumoniae, Prevotella, and Pseudomonas spp."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Control or comparison group mentioned in abstract/title.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "sul and blaSHV genes were commonly associated with Escherichia coli and Klebsiella pneumoniae, while cfxA was found in Prevotella and Pseudomonas spp."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": true,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
     },
     {
-      "pmid": "41608734",
-      "title": "NGSTroubleFinder: a tool for detection and quantification of contamination and kinship across human NGS data.",
-      "journal": "NAR genomics and bioinformatics",
-      "pub_date": "2026-01-27",
+      "pmid": "42011025",
+      "title": "Single-cell co-mapping reveals relationship between chromatin state and gene expression in early zebrafish development.",
+      "journal": "eLife",
+      "pub_date": "2026-04-21",
       "authors": [
-        "Samuel Valentini",
-        "Tecla Venturelli",
-        "Xavier Gallego",
-        "Lynn Durham",
-        "Laura Perez-Cano",
-        "Emre Guney"
+        "Vivek Bhardwaj",
+        "Alberto Griffa",
+        "Helena Viñas Gaza",
+        "Peter Zeller",
+        "Alexander van Oudenaarden"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41608734/",
-      "query_tag": "Variant calling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42011025/",
+      "query_tag": "AI for biology",
       "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "NGSTroubleFinder detects cross-sample contamination in whole-genome and transcriptome sequencing data.",
-        "The tool can identify sample swaps and mismatches between reported and inferred genetic and transcriptomic sexes."
-      ]
+        "Chromatin and transcription states in cells become progressively connected during gastrulation and somitogenesis.",
+        "Silencing of developmental genes is achieved through local spreading of repressive chromatin together with cell type-specific demethylation.",
+        "A subset of transcription factors (TFs) are epigenetically regulated, classified as lineage-specific activators or repressors using a machine learning model."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
     },
     {
-      "pmid": "41503160",
-      "title": "MobiCT: a UMI-based circulating tumor DNA analysis pipeline.",
-      "journal": "NAR genomics and bioinformatics",
-      "pub_date": "2026-01-06",
+      "pmid": "42009979",
+      "title": "Metabolism-related genes CYP4F2, CYP8B1, and SP1 link type 2 diabetes mellitus and non-alcoholic fatty liver disease: A multi-omics and clinical validation study.",
+      "journal": "Functional & integrative genomics",
+      "pub_date": "2026-04-21",
       "authors": [
-        "Simon Cabello-Aguilar",
-        "Charles Van Goethem",
-        "Jean-Charles Delmas",
-        "Oussama Bourbia",
-        "Romain Senal",
-        "Mireille Cossée",
-        "Olivier Ardouin",
-        "Jérôme Solassol",
-        "Julie A Vendrell"
+        "Li Ling",
+        "Tahir Ali",
+        "Mingyue Lv",
+        "Xiaoying Zeng",
+        "Caixue Duan",
+        "Shuayan Gui",
+        "Haiyan Zhao"
       ],
-      "url": "https://pubmed.ncbi.nlm.nih.gov/41503160/",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009979/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "No abstract available.",
+        "Manual review likely needed.",
+        "Study appraisal confidence will be limited."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "observational_or_unclear",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": false,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Unknown from abstract.",
+          "sample_type": "unknown",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "External validity is unclear from abstract alone."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract.",
+          "items": [
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "low",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42012689",
+      "title": "Repurposing public sarcoma multi-omics for neoantigen discovery.",
+      "journal": "Cancer immunology, immunotherapy : CII",
+      "pub_date": "2026-04-21",
+      "authors": [
+        "Panagiotis Mantas",
+        "Karen A Krogfelt"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012689/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "The study used whole-exome sequencing and RNA-sequencing to analyze complex karyotype sarcoma patients and identify potential therapeutic targets.",
+        "Normalizing tumor mutational burden metrics refined estimates and improved interpretation of low-coverage samples without changing overall cohort classification.",
+        "Integration of transcriptomic data facilitated recovery of actionable targets in \"low-TMB\" tumors, including fusion-derived peptides with predicted binding affinities."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "cohort",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Normalizing the TMB refined quantitative mutation burden estimates and improved interpretation of low-coverage samples without essentially changing the overall cohort classification.",
+            "A subset of fusion-derived peptides demonstrated predicted binding affinities competitive with SNV-derived candidates."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42012657",
+      "title": "Co-treatment of Colchicine and Rosiglitazone synergistically inhibits cytokine-driven inflammation and modulates the related hsa-miRNA26a-5p, hsa-miRNA21-5p, and STAT3 expression in non-small cell lung cancer.",
+      "journal": "Naunyn-Schmiedeberg's archives of pharmacology",
+      "pub_date": "2026-04-21",
+      "authors": [
+        "Nayera Younes",
+        "Omayma Sadek",
+        "Ahmed Sultan"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012657/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "The combination of colchicine (Col) and rosiglitazone (Rosi) synergistically reduced viability and induced apoptosis in p53-R273H-mutant NCI-H358 NSCLC cells.",
+        "This effect was associated with upregulation of hsa-miRNA-26a-5p, suppression of oncogenic hsa-miRNA-21-5p, restoration of PTEN, PDCD4, and LIN28B, and inhibition of the IL-6/STAT3/NF-κB axis.",
+        "In contrast, p53-wild-type A549 cells exhibited an antagonistic response to Col/Rosi treatment."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Control or comparison group mentioned in abstract/title.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "This effect was associated with upregulation of the tumor-suppressor hsa-miRNA-26a-5p, suppression of oncogenic hsa-miRNA-21-5p, restoration of PTEN, PDCD4, and LIN28B, and inhibition of the IL-6/STAT3/NF-κB axis, consistent with patient-derived datasets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": true,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42012255",
+      "title": "Genomic and plasmid profiles of multidrug-resistant",
+      "journal": "Microbiology spectrum",
+      "pub_date": "2026-04-21",
+      "authors": [
+        "Yongru Chen",
+        "Yanmei Fang",
+        "Kaisong Huang",
+        "Huitao Huang",
+        "Lejia Zhao",
+        "Xinfeng Ji",
+        "Yixin Sun",
+        "Xuemei Yang",
+        "Jiubiao Guo",
+        "Zhiming Cai"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012255/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "The top three serotypes of 46 isolated Salmonella strains were Salmonella I 4,[5],12:i:- (34.78%), Typhimurium (23.91%), and Enteritidis (17.39%).",
+        "Most of these Salmonella isolates were multidrug-resistant, showing resistance to ampicillin, ampicillin-sulbactam, and trimethoprim-sulfamethoxazole.",
+        "None of the 12 plasmids analyzed had intact conjugative transfer genes, indicating impaired plasmid transferability due to loss of part or whole tra genes."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Our data revealed that the top three serotypes of the 46 isolated strains are Salmonella I 4,[5],12:i:-, Typhimurium, and Enteritidis, with prevalence at 34.78% (16/46), 23.91% (11/46), and 17.39% (8/46), respectively.",
+            "Antimicrobial susceptibility testing analysis suggested that more than 80% of these Salmonella isolates belong to multidrug-resistant strains, all of them showed resistance to ampicillin, ampicillin-sulbactam, and trimethoprim-sulfamethoxazole, and all strains were susceptible to meropenem, with about 17.39% of them having minimum inhibitory concentrations ≥4 µg/mL to imipenem."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42012165",
+      "title": "Navigating prokaryotic viral genome analysis from metagenomic data.",
+      "journal": "mSystems",
+      "pub_date": "2026-04-21",
+      "authors": [
+        "Almut Werner",
+        "Cynthia M Chibani",
+        "Ruth A Schmitz"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012165/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Viruses play crucial roles in microbial ecosystems.",
+        "Viromic analysis remains challenging due to complexity and rapid evolution.",
+        "The minireview provides non-specialists with a typical viromic workflow and background information for each step."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "computational_method",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": false,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Unknown from abstract.",
+          "sample_type": "unknown",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity depends heavily on data quality, labeling, and benchmark setup.",
+          "external_validity_notes": "External validity is unclear from abstract alone."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010932",
+      "title": "Variant Calling in the Dark Genome: Benchmarking SNV Calls in the Flanks of Structural Variants.",
+      "journal": "Genomics, proteomics & bioinformatics",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Ningxin Dang",
+        "Peng Jia",
+        "Jiadong Lin",
+        "Yutong Xie",
+        "Yongyong Kang",
+        "Zixuan Li",
+        "Kai Ye",
+        "Stephen J Bush"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010932/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "The study refined data from the Chinese Quartet project to construct a benchmarking set of 1000 structural variants.",
+        "Researchers evaluated the performance of 35 short-read and 19 long-read variant calling pipelines at calling SNVs near structural variants.",
+        "The datasets extend human benchmarking resources into regions of the \"dark genome\" where accurate variant calling is challenging."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010462",
+      "title": "AI-Driven Chemometrics for Multi-omics Data Integration: Advances, Challenges, and Future Directions.",
+      "journal": "Critical reviews in analytical chemistry",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Picheswara Rao Polu"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010462/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "AI-driven approaches have revolutionized multi-omics data integration by enabling non-linear feature extraction and data fusion.",
+        "Convolutional neural networks, autoencoders, variational autoencoders, and graph neural networks demonstrate remarkable capabilities for integrating genomics, proteomics, metabolomics, and other omics layers.",
+        "Clinical applications in Alzheimer's disease, obesity, and cancer have shown 20%-30% performance improvements over traditional approaches using AI-driven multi-omics integration."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010453",
+      "title": "ChemScreener: an active learning enabled hit discovery workflow with WDR5 inhibitor case study.",
+      "journal": "Journal of cheminformatics",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Lingling Shen",
+        "Jian Fang",
+        "Lulu Liu",
+        "Rena Wang",
+        "Jeremy L Jenkins",
+        "He Wang"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010453/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "ChemScreener is a multi-task active learning workflow that increases hit rates from 0.49% to 3-10%.",
+        "The workflow leverages ensemble uncertainty to explore novel chemistry while maintaining hit rate enrichment.",
+        "ChemScreener accelerates early hit discovery and yields more diverse chemotypes, de novo identifying three scaffold series and three singleton scaffolds as hits."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "We de novo identified three scaffold series and three singleton scaffolds as the hits.",
+            "Overall, we demonstrated that ChemScreener can accelerate early hit discovery and yield more diverse chemotypes.Scientific contributionHit identification is a costly, time-intensive stage in drug discovery."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010136",
+      "title": "Development of machine learning and nomogram models to predict lung metastasis and prognosticate survival in breast cancer.",
+      "journal": "Discover oncology",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Rong Bai",
+        "Yukai Zeng",
+        "Fengwu Lin",
+        "Lening Zhang"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010136/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Machine learning models were developed to predict lung metastasis in breast cancer patients using data from the SEER database.",
+        "The LR-based prediction model demonstrated high discriminative ability, achieving an AUC of 0.947 and sensitivity of 0.816.",
+        "The prognostic model achieved a C-index of 0.79 and showed good calibration plots for predicting 1-year survival, with a mean absolute error of 0.001."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "clinical_record",
+            "computational_score",
+            "observation"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "PURPOSE: Lung metastasis in breast cancer (BCLM) is a critical determinant of poor prognosis, occurring in approximately 30-50% of advanced cases and associated with significantly reduced median survival.",
+            "For the prediction model, 11 independent predictors were identified via univariate and multivariate logistic regression."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": false
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42009687",
+      "title": "Accelerating Leigh syndrome drug discovery through deep learning screening in brain organoids.",
+      "journal": "Nature communications",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Carmen Menacho",
+        "Satoshi Okawa",
+        "Iris Álvarez-Merz",
+        "Annika Wittich",
+        "Mikel Muñoz-Oreja",
+        "Pawel Lisowski",
+        "Mario López Martín",
+        "Tancredi Massimo Pentimalli",
+        "Shiri Zakin",
+        "Mathuravani Thevandavakkam"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009687/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "A deep learning algorithm was developed for cell type-specific drug repurposing screening.",
+        "Azole compounds, specifically talarozole and sertaconazole, were identified as rescuing neuronal morphogenesis in Leigh neurons.",
+        "These compounds modulate the retinoic acid pathway and membrane-associated lipid metabolism."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42009574",
+      "title": "Risk prediction models for incident heart failure: a systematic review and meta-analysis.",
+      "journal": "Heart (British Cardiac Society)",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Jose Miguel Navarro",
+        "Barbara Stella Doumouras",
+        "William Douglas",
+        "Paul Tieu",
+        "Veronica Chan",
+        "Tsz Hin Alexander Lau",
+        "David Bobrowski",
+        "Clarissa Yu",
+        "Chang Nancy Wang",
+        "Mohamed Adam"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009574/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "Four models had moderate discrimination in predicting incident heart failure.",
+        "Eight models had high discrimination, with calibration potentially adequate for patients at low predicted risk.",
+        "The PREVENT, ARIC, and MESA models showed promising performance and should be prioritized for further validation and impact studies."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "cohort",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "observation"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "METHODS: In addition to articles from three previous systematic reviews, a search in Medline and Embase from 2014 to 2025 identified derivation or validation studies for incident HF prediction models.",
+            "RESULTS: From 24 531 publications identified, 76 studies representing 238 models were included."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42012045",
+      "title": "CTHRC1 inhibits the proliferation and promotes apoptosis of osteoarthritis chondrocytes by activating Wnt / ß-Catenin pathway.",
+      "journal": "Acta orthopaedica Belgica",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Haifeng Li",
+        "Haibo Li",
+        "Rabinsh Raj Dahal",
+        "Yunlou Jiang",
+        "Qian Lu",
+        "Shenghai Wang",
+        "Ganglian Li",
+        "Jiayu Xiao"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42012045/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "CTHRC1 expression was significantly upregulated in osteoarthritis (OA) tissues.",
+        "Knockdown of CTHRC1 promoted cell proliferation and inhibited apoptosis in IL-1β-induced OA chondrocytes.",
+        "Intra-articular knockdown of CTHRC1 in a collagen-induced arthritis (CIA) rat model alleviated joint swelling, reduced inflammatory factors, and mitigated synovial inflammation."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Bioinformatic screening of GEO-derived RNA-seq data identified CTHRC1 as a key differentially expressed gene in osteoarthritis.",
+            "We found that CTHRC1 expression was significantly upregulated in OA tissues."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42011154",
+      "title": "NAViFluX: a visualization‑centric platform for interactive analysis, refinement and design of genome‑scale metabolic networks.",
+      "journal": "Bioinformatics (Oxford, England)",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Abhishek Subramanian",
+        "Manjunatha Beduru Krishnamurthy",
+        "P S Harish"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42011154/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "The tool NAViFluX enables flux-based metabolite fate discovery, metabolic engineering, drug target identification, and multi-omics integration for genome-scale metabolic network models.",
+        "NAViFluX provides native pathway/subsystem map generation, interactive model refinement via KEGG/BiGG, and modules for flux computations, topology, and functional enrichment within network views.",
+        "The utility of NAViFluX is demonstrated through three independent case studies on Escherichia coli, including characterization of nutrient-specific metabolic adaptations and rational design of an optimized carbon-fixing metabolic state."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Using three independent case studies on Escherichia coli, the utility of NAViFluX for characterization of nutrient-specific metabolic adaptations, enhancing gene essentiality predictions and interpretability, and rational design of an optimized carbon-fixing metabolic state is demonstrated.",
+            "AVAILABILITY AND IMPLEMENTATION: All source code and supplementary files associated with the case studies are publicly available via Zenodo at https://zenodo.org/records/19107831."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010761",
+      "title": "Decoding stress resilience in soybean: Regulatory networks and precision breeding under climate change.",
+      "journal": "Journal of integrative plant biology",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Ali Shahzad",
+        "Monan Sun",
+        "Shuangkang Pei",
+        "Xiaoyu Liu",
+        "Yinhe Zhang",
+        "Keheng Xu",
+        "Hongtao Gao",
+        "Yonggang Zhou",
+        "Haiyan Li"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010761/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Soybean yield stability and global food security are threatened by environmental stresses driven by climate change.",
+        "Recent advances in functional genomics, high-throughput phenotyping, and computational biology have improved understanding of complex regulatory networks underlying soybean stress adaptation.",
+        "Emerging strategies integrate genomics, multiomics data sets, and artificial intelligence-assisted prediction to accelerate identification and deployment of stress-resilience traits."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010735",
+      "title": "Hub genes of neutrophil extracellular traps in abdominal aortic aneurysm: a bioinformatics analysis.",
+      "journal": "Hereditas",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Jinxin Liu",
+        "Bixuan Yue",
+        "Zhiying Shen",
+        "Bo Yang",
+        "Yuxuan Ou",
+        "Xiaowu Wang"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010735/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "No abstract available.",
+        "Manual review likely needed.",
+        "Study appraisal confidence will be limited."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "observational_or_unclear",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": false,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Unknown from abstract.",
+          "sample_type": "unknown",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "External validity is unclear from abstract alone."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract.",
+          "items": [
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "low",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010553",
+      "title": "Molecular markers for cervical cancer prognosis: a prognostic model using stemness-related lncRNAs and functional analysis of EMX2OS.",
+      "journal": "BMC cancer",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Xiaochen Liu",
+        "Yuandong Liao",
+        "Yunyun Liu",
+        "Hua Huang",
+        "Chunyu Zhang",
+        "Shiying Huang",
+        "Shuhang Qin",
+        "Ming Chen",
+        "Meng Xia",
+        "Tianyu Liu"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010553/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "No abstract available.",
+        "Manual review likely needed.",
+        "Study appraisal confidence will be limited."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "observational_or_unclear",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": false,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Unknown from abstract.",
+          "sample_type": "unknown",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "External validity is unclear from abstract alone."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract.",
+          "items": [
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": false
+        },
+        "confidence": {
+          "extraction_confidence": "low",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42010463",
+      "title": "Complete genome sequence of Streptococcus periodonticum strain CRC221 isolated from human colorectal tumor tissue.",
+      "journal": "BMC genomic data",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Jia-Su Li",
+        "Shu-Dan Chen",
+        "Jia-Quan Wu",
+        "Min-Xin Gao",
+        "Zhao-Shen Li",
+        "Yi-Qi Du",
+        "Wei-Liang Hou"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42010463/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "The genome of Streptococcus periodonticum strain CRC221 was characterized, consisting of a complete circular chromosome of 1,851,769 bp.",
+        "Functional annotation revealed that most genes were associated with core bacterial survival pathways and included virulence factors, antibiotic resistance genes, and pathogen-host interaction factors.",
+        "Comparative genomics analysis showed an ANI of 97.51% and dDDH value of 71.8% against the reference S. periodonticum genome, indicating a close genetic relationship."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Functional annotation associated most CDSs with core bacterial survival pathways, particularly carbohydrate and amino acid metabolism.",
+            "Comparative genomics revealed an ANI of 97.51% and a dDDH value of 71.8% against the reference S."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42009961",
+      "title": "METTL7A inhibits progression of colorectal cancer through the SREBP1 / FDFT1 / SQLE / CYP51A1 / cholesterol metabolic pathway.",
+      "journal": "Cellular oncology (Dordrecht, Netherlands)",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Sha Li",
+        "Xiangyin Chi",
+        "Xiaoxue Li",
+        "Wan Li",
+        "Hong Yang",
+        "Wanxin Cao",
+        "Yuxuan Zhao",
+        "Xu Zhang",
+        "Rui Meng",
+        "Guanhua Du"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009961/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "METTL7A was identified as a tumor suppressor that exhibits low expression in colorectal cancer cell lines and tissues.",
+        "METTL7A affects genes related to the cholesterol metabolism pathway, hindering the nuclear translocation of SREBP1 and reducing intracellular cholesterol content.",
+        "METTL7A is a potential therapeutic target for treating colorectal cancer by regulating metabolic reprogramming, particularly cholesterol synthesis."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Methyltransferase-like 7 A (METTL7A), a member of the methyltransferase-like family, is associated with various cancers including CRC.",
+            "METHODS: METTL7A was identified as a pivotal gene closely associated with CRC by bioinformatics analyses."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42009747",
+      "title": "Identification of small ubiquitin-related modifier (SUMO)-related genes-based biomarkers in Alzheimer's disease based on bioinformatics analysis.",
+      "journal": "Scientific reports",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Peng Chen",
+        "Mengting Fan",
+        "Hailiang Lin",
+        "Zhong Chen",
+        "Qiuyang Zhang",
+        "Yunfan Cheng",
+        "Jing Xu"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009747/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "The study identified 107 candidate genes that may serve as diagnostic biomarkers for Alzheimer's disease (AD) based on small ubiquitin-like modification (SUMO)-related genes.",
+        "Three specific genes - CREBBP, PIAS1, and TRIM28 - were confirmed as AD biomarkers due to their increased expression in AD samples and strong performance in receiver operating characteristic (ROC) curve analysis.",
+        "The study also predicted 21 potential drugs for AD therapy and validated the over-expression of CREBBP and TRIM28 in AD samples using reverse transcription quantitative polymerase chain reaction (RT-qPCR)."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Candidate genes were identified by intersecting differentially expressed genes (DEGs) with SRGs.",
+            "A protein-protein interaction (PPI) network was constructed to select the top 15 core genes, and the support vector machine-recursive feature elimination (SVM-RFE), least absolute shrinkage and selection operator (LASSO) and boruta random forest (Boruta-RF) identified feature genes."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42009686",
+      "title": "Matters of life and death in computational cell biology.",
+      "journal": "NPJ systems biology and applications",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Connor McShaffrey",
+        "Eran Agmon",
+        "Randall D Beer"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009686/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Computational biology lacks a theory of viability that confronts the life-death boundary.",
+        "Geometric structures in a model's state space offer organizing principles for cell fate.",
+        "Idealized models of emergent individuals may help explain life's intrinsically generated limits."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42009310",
+      "title": "Identification and Characterization of Novel Human IgG-Degrading Enzymes.",
+      "journal": "Biochemistry",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Eileen Tran",
+        "Glen Spraggon",
+        "David H Jones",
+        "Francis D Appling"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009310/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "Novel IdeS homologs with activity against human IgG were identified and characterized.",
+        "The efficiencies of these enzymes exhibit a nontrivial dependence on the sequence of the IdeS-IgG binding site.",
+        "The workflow and data presented inform basic IdeS enzymology and provide novel starting points for engineering IdeS variants for therapeutic use."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Multiple IdeS-like enzymes with a range of human IgG degradation efficiencies were identified and characterized."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42007720",
+      "title": "Evaluation of ultraviolet irradiation at 254 nm and 222 nm in inactivating human noroviruses on surfaces.",
+      "journal": "Applied and environmental microbiology",
+      "pub_date": "2026-04-20",
+      "authors": [
+        "Hong Bai",
+        "Malcolm Turk Hsern Tan",
+        "Jiangyong Hu",
+        "Walter Randazzo",
+        "Dan Li"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42007720/",
       "query_tag": "Variant calling",
       "summary_bullets": [
-        "Here are three bullet points summarizing the abstract:",
-        "The MobiCT pipeline detects ultra-low-frequency variants using unique molecular identifier (UMI) in cell-free DNA samples.",
-        "The pipeline consists of three stages: UMI deduplication, alignment to a reference genome, and variant calling."
-      ]
+        "UV 222 radiation demonstrated comparable or superior performance to UV 254 in reducing hNoV infectivity and RNA integrity.",
+        "MS2 exhibited inactivation patterns similar to hNoVs, while TV was more resistant to UV 222.",
+        "The efficacy of UV 222 was reduced when virus inocula were dried or mixed with simulated vomitus containing high levels of organic matter."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Control or comparison group mentioned in abstract/title.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "With a general laboratory setup of viruses being suspended in deionized water droplets in Petri dish, UV 222 irradiated at 7 and 70 mJ/cm2 was demonstrated with comparable, if not superior, performance in reducing hNoV infectivity and RNA integrity and was significantly more effective than UV 254 in damaging viral capsids."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": true,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42003207",
+      "title": "The Global Parkinson's Disease Genetics (GP2) Genome Browser.",
+      "journal": "Movement disorders : official journal of the Movement Disorder Society",
+      "pub_date": "2026-04-19",
+      "authors": [
+        "Zih-Hua Fang",
+        "Riley H Grant",
+        "Dan Vitale",
+        "Carlos F Hernandez",
+        "Samantha Hong",
+        "Hampton L Leonard",
+        "Mary B Makarious",
+        "Lara M Lange",
+        "Matthew Solomonson",
+        "Peter Heutink"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42003207/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "The GP2 Genome Browser is an open-access platform providing genomic data summaries for Parkinson's disease risk and disease-causing variants.",
+        "The browser integrates whole-genome sequencing data from 31,665 samples across 11 ancestries and clinical-exome sequencing data from 9,559 samples.",
+        "The platform offers intuitive gene- and variant-level summaries with ancestry-stratified allele frequencies and functional annotations, supporting global research efforts."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Control or comparison group mentioned in abstract/title.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": true,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42009261",
+      "title": "Systematic characterization of FBP gene family in Saccharum reveals ScFBP3 as a key regulator of sucrose-mediated plant branching.",
+      "journal": "Plant science : an international journal of experimental plant biology",
+      "pub_date": "2026-04-18",
+      "authors": [
+        "Huiwen Zhou",
+        "Hanmin Luo",
+        "Minyi Wei",
+        "Ting Luo",
+        "Faqian Xiong",
+        "Ming Li",
+        "Lihang Qiu",
+        "Haifeng Yan"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42009261/",
+      "query_tag": "Bioinformatics methods",
+      "summary_bullets": [
+        "The FBPase enzyme promotes tillering in plants and is key to plant photosynthesis.",
+        "Analysis of the FBP gene family in sugarcane identified three subgroups with distinct patterns of conserved motifs and gene structure.",
+        "Overexpression of ScFBP3 in Arabidopsis resulted in increased sugar content, sucrose accumulation, and branching."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Control or comparison group mentioned in abstract/title.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Here, a total of 66 FBP gene family members were identified and analyzed using bioinformatics approaches across the genomes of three Saccharum species: Saccharum spontaneum, Saccharum hybrid R570, and Saccharum hybrid ZZ1.",
+            "Promoter cis-acting element analysis suggested that these elements are mainly predicted to be associated with light responses, regulation by plant hormones, adaptation to environmental stresses, and the control of plant growth and developmental processes."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": true,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42008960",
+      "title": "NeuroBACE-ML: A reliability-aware screening framework for high-throughput prioritization of potent BACE1 inhibitors.",
+      "journal": "Journal of molecular graphics & modelling",
+      "pub_date": "2026-04-17",
+      "authors": [
+        "Kunal Bhattacharya",
+        "Nongmaithem Randhoni Chanu",
+        "Dibyajyoti Das",
+        "Pukar Khanal",
+        "Atanu Bhattacharjee"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42008960/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "NeuroBACE-ML is a reliability-aware screening framework for prioritizing potent BACE1 inhibitors from small-molecule libraries.",
+        "The framework shows high discriminative performance on both fixed and external validation datasets, with AUROC, AUPRC, MCC, and balanced accuracy metrics exceeding 0.9.",
+        "NeuroBACE-ML incorporates various techniques to strengthen reliability, including probability calibration, robustness assessment, and uncertainty analysis, making it a practical tool for identifying high-confidence BACE1 inhibitor candidates."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "cohort",
+          "is_longitudinal": true,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score"
+          ],
+          "measurement_frequency": "repeated",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "On the fixed random held-out test set, NeuroBACE-ML showed high discriminative performance, with AUROC = 0.986, AUPRC = 0.991, MCC = 0.868 and balanced accuracy = 0.943 at the deployed operating threshold of 0.70 (TN = 468, FP = 14, FN = 71, TP = 763)."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract.",
+          "items": [
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42006585",
+      "title": "AI-Augmented Iterative Screening of Libraries Against RNA Targets (AISLAR) Boosts Discovery of SAR-Tractable RNA Binders and Rational Analog Design.",
+      "journal": "Small science",
+      "pub_date": "2026-04-17",
+      "authors": [
+        "Haruhiko Hattori",
+        "Maina Otsu",
+        "Koji Imai",
+        "Mebuki Narahara",
+        "Jiro Kondo",
+        "Amiu Shino",
+        "Ella Czarina Morishita"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42006585/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "We developed an AI-augmented strategy called AISLAR to accelerate discovery of RNA binders and enable rational analog design.",
+        "The strategy yielded chemotypes suitable for structure-activity relationship development after screening against two human p53 mRNA motifs.",
+        "Biophysical assays confirmed direct binding of representative compounds to one RNA motif, with early SAR trends guiding the design of an analog with lower predicted cardiac channel liability."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "computational_score"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Docking simulations using the crystal structure of the RNA motif revealed a plausible binding mode for the validated hit compound."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": false
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "41998753",
+      "title": "A recurrent sequencing artifact on Illumina sequencers with two-color fluorescent dye chemistry and its impact on somatic variant detection.",
+      "journal": "Genome biology",
+      "pub_date": "2026-04-17",
+      "authors": [
+        "Beverly J Fu",
+        "Vinayak V Viswanadham",
+        "Dominika Maziec",
+        "Hu Jin",
+        "Peter J Park"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41998753/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "We observed a higher frequency of T-to-G and A-to-C substitutions on the NovaSeq 6000 compared to HiSeq X10.",
+        "The artifactual substitutions have a negligible effect on identifying germline or high-frequency somatic mutations but can confound low-VAF somatic variant detection in high-depth sequencing samples.",
+        "The excess T > G variants disproportionately occur at NT[TG] trinucleotides and can be bioinformatically reduced to minimize its impact on somatic mutation callsets."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Control or comparison group mentioned in abstract/title.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "genetic_sequence",
+            "observation"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Benchmarking sequencing artifacts due to biases in the newer chemistry is important to evaluate the quality of identified mutations.",
+            "CONCLUSIONS: We identified a recurrent artifact specific to the Illumina two-color chemistry platform on the NovaSeq 6000 with the potential to contaminate low-VAF somatic mutation calls."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": true,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "high",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "41996583",
+      "title": "Leveraging long-read assemblies and machine learning to enhance short-read transposable element detection and genotyping.",
+      "journal": "Genetics",
+      "pub_date": "2026-04-17",
+      "authors": [
+        "Austin Daigle",
+        "Logan S Whitehouse",
+        "Roy Zhao",
+        "J J Emerson",
+        "Daniel R Schrider"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41996583/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "The machine learning approach TEforest detects transposable elements (TEs) in short-read data using training data from long-read genome assemblies.",
+        "TEforest identifies more true positives and fewer false positives than traditional methods, accurately inferring genotypes and breakpoints of insertions.",
+        "This approach bridges the gap between large-scale population studies and the accuracy of long-read assemblies, providing a user-friendly tool to study TE prevalence and phenotypic effects."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "42007446",
+      "title": "IntegrateALL: An end-to-end RNA-seq analysis pipeline for multilevel data extraction and interpretable subtype classification in B-precursor ALL.",
+      "journal": "HemaSphere",
+      "pub_date": "2026-04-16",
+      "authors": [
+        "Nadine Wolgast",
+        "Thomas Beder",
+        "Mayukh Mondal",
+        "Wencke Walter",
+        "Stephan Hutter",
+        "Sonja Bendig",
+        "Jan Kässens",
+        "Björn-Thore Hansen",
+        "Katharina Iben",
+        "Sebastian Wolf"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42007446/",
+      "query_tag": "AI for biology",
+      "summary_bullets": [
+        "IntegrateALL is a pipeline that integrates transcript-derived genomic drivers and quantitative virtual karyotyping to standardize RNA-seq analysis.",
+        "KaryALL, a machine learning classifier, distinguishes near-haploid, hypodiploid, and high-hyperdiploid B-ALL subtypes with 0.98 accuracy on independent test samples.",
+        "IntegrateALL assigns unambiguous subtype assignments in 81.5% of cases based on concordance of gene expression class with a defining driver or expression-based classification alone."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "cohort",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "41989089",
+      "title": "Rapid whole genome sequencing of Plasmodium DNA from cryptic malaria cases in UK travellers provides insights into infection origins, transmission, and antimalarial resistance.",
+      "journal": "Journal of travel medicine",
+      "pub_date": "2026-04-16",
+      "authors": [
+        "Mark K I Tan",
+        "Nina Billows",
+        "Debbie Nolder",
+        "Sophie Moss",
+        "Jody E Phelan",
+        "Joseph Thorpe",
+        "Jonathan L Edgeworth",
+        "Colin J Sutherland",
+        "Peter L Chiodini",
+        "Susana Campino"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41989089/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "The UK reports approximately 2,000 imported malaria cases annually.",
+        "Cryptic malaria cases are challenging to track due to unclear infection routes, potentially indicating undetected local transmission or re-introduction.",
+        "Near-real-time whole-genome sequencing (WGS) was used to rapidly profile parasites and identify drug resistance markers, geographic origins, and transmission clusters in cryptic malaria cases."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "falciparum infections identified among family members were further analysed to assess parasite relatedness using identity-by-descent and multiplicity of infection approaches to investigate transmission clusters."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "41990538",
+      "title": "Isolation of a single Serratia fonticola strain from interstage samples in a drinking water treatment plant: Genomic insights and floc-shielding effects during chlorination.",
+      "journal": "Ecotoxicology and environmental safety",
+      "pub_date": "2026-04-15",
+      "authors": [
+        "Benjamin Exton",
+        "Victor Castro Gutierrez",
+        "Raoul Gave",
+        "Luke Montgomery",
+        "Jenny Banks",
+        "Neil Whitehead",
+        "Peter Jarvis",
+        "Francis Hassard"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41990538/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "A single strain of Serratia fonticola was found in multiple stages of a water treatment works with minimal genetic variation.",
+        "The strain carries antimicrobial resistance genes but is susceptible to chlorine disinfection when free-floating, achieving a 3-log reduction at a Ct of around 10 mg·min L⁻¹.",
+        "Floc-associated cells of S. fonticola show higher resilience to chlorine, requiring a Ct of approximately 100 mg·min L⁻¹ for a ∼2.5-log reduction, indicating physical shielding enhances survival through the treatment process."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Variant calling revealed minimal differences, suggesting the organism's repeated detection was not caused by multiple sources but rather a single persistence variant.",
+            "Flow cytometry-based disinfection assays demonstrated that free-floating S."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "41983465",
+      "title": "Rapid and Precise Amplicon-Based Genome Sequencing to Preparedness and Response Chikungunya Virus Outbreaks.",
+      "journal": "Emerging microbes & infections",
+      "pub_date": "2026-04-15",
+      "authors": [
+        "Kaiying Wang",
+        "Jinhui Li",
+        "Tianyuan Liu",
+        "Peihan Li",
+        "Ning Wang",
+        "Yuqi Liu",
+        "Yufeng Liang",
+        "Fenxiang Li",
+        "Chuhong Wei",
+        "Huacheng Yan"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41983465/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "Third-generation sequencing provided more uniform genome coverage and was resilient to amplification biases compared to second-generation sequencing.",
+        "Third-generation sequencing detected a broader spectrum of low-frequency variants than second-generation sequencing, including those with very low frequencies (VAF < 0.5).",
+        "In samples with low viral loads, third-generation sequencing outperformed second-generation sequencing in variant detection, with detection sensitivity showing a positive correlation for third-generation sequencing at low template concentrations."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": true,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "computational_score",
+            "genetic_sequence",
+            "observation"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "Both platforms reliably identified known epidemiologically relevant mutations, such as E1-A226 V.",
+            "However, variant detection sensitivity correlated inversely with viral load for second-generation sequencing but showed a paradoxical positive correlation for third-generation sequencing, indicating platform-dependent performance at low template concentrations."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "41981119",
+      "title": "Whole-exome sequencing increases variant detection compared to karyotyping and CMA in an unselected FGR cohort.",
+      "journal": "Scientific reports",
+      "pub_date": "2026-04-14",
+      "authors": [
+        "Jianzhen Liu",
+        "Keng Lin",
+        "Zhuowen Mai",
+        "Yongshan Zhang",
+        "Xichong Li",
+        "Xiangrong Meng",
+        "Hongzhen Chen"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41981119/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "No abstract available.",
+        "Manual review likely needed.",
+        "Study appraisal confidence will be limited."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "cohort",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": false,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Human participants or clinical subjects.",
+          "sample_type": "selected_sample",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "See summary bullets."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Observational design leaves room for confounding and selection effects.",
+          "external_validity_notes": "Selected sample may limit generalizability beyond the studied group."
+        },
+        "limitations": {
+          "limitations_summary": "Null findings are not clearly reported in the abstract. Sample may not represent the general population.",
+          "items": [
+            "Null findings are not clearly reported in the abstract.",
+            "Sample may not represent the general population."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": true,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
+    },
+    {
+      "pmid": "41823408",
+      "title": "Urban sewage resistomes partially reflect clinical resistomes.",
+      "journal": "mSystems",
+      "pub_date": "2026-03-13",
+      "authors": [
+        "Alix Vincent Thorn",
+        "Christian Brinch",
+        "Frank M Aarestrup",
+        "Patrick Munk"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41823408/",
+      "query_tag": "Variant calling",
+      "summary_bullets": [
+        "The study compared ARGs detected in clinical bacterial isolates with those found in sewage metagenomes across 33 countries.",
+        "Only 69% of ARG clusters detected in clinical isolates were also detected via read mapping in sewage, and some ARGs highly prevalent in clinical isolates were not detected in sewage.",
+        "Sewage ARG profiles correlated to the clinical AMR landscape, but did not capture the full spectrum of clinically relevant ARGs at currently realistic sequencing depths."
+      ],
+      "study_appraisal": {
+        "study_design": {
+          "primary_category": "lab_experiment",
+          "is_longitudinal": false,
+          "is_time_series": false,
+          "is_lab_study": true,
+          "is_randomized_experiment": false,
+          "is_quasi_experimental": false,
+          "is_mixed_design": false,
+          "design_notes": "Heuristic appraisal generated from title and abstract; verify against full text for high-stakes use."
+        },
+        "subjects": {
+          "population": "Animal or preclinical sample.",
+          "sample_type": "lab_material_only",
+          "selection_criteria": "Unknown from abstract.",
+          "control_group_description": "Unknown from abstract.",
+          "control_selection_notes": "Unknown from abstract.",
+          "group_differences_other_than_variable_of_interest": []
+        },
+        "measures": {
+          "measure_types": [
+            "biological",
+            "clinical_record",
+            "genetic_sequence"
+          ],
+          "measurement_frequency": "unknown_from_abstract",
+          "measurement_notes": "Measure classification inferred from abstract wording."
+        },
+        "results": {
+          "main_findings": [
+            "We compared ARGs identified in clinical bacterial isolates (n = 2,989) with those detected in sewage metagenomes (n = 468) across 33 countries.",
+            "We found that across all samples, only 69% of ARG clusters detected in clinical isolates were also detected via read mapping in sewage."
+          ],
+          "null_results": [],
+          "null_result_reporting_quality": "unclear",
+          "results_notes": "Null findings are often underreported in abstracts; full text review is better."
+        },
+        "validity": {
+          "internal_validity_notes": "Internal validity cannot be fully judged from abstract alone.",
+          "external_validity_notes": "Laboratory materials or animal systems may not generalize directly to humans."
+        },
+        "limitations": {
+          "limitations_summary": "May not generalize directly to clinical practice without downstream validation. Null findings are not clearly reported in the abstract.",
+          "items": [
+            "May not generalize directly to clinical practice without downstream validation.",
+            "Null findings are not clearly reported in the abstract."
+          ]
+        },
+        "evidence_flags": {
+          "contains_human_subjects": false,
+          "contains_control_group": false,
+          "contains_self_report": false,
+          "contains_biological_measure": true
+        },
+        "confidence": {
+          "extraction_confidence": "medium",
+          "reason": "Rule-based abstract parsing; stronger when the abstract explicitly names design, sample, and results features."
+        }
+      }
     }
   ]
 }
