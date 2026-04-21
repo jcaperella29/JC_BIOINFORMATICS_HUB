@@ -1,260 +1,493 @@
-<<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Research Radar</title>
+  <title>Research Radar v2</title>
   <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 2rem; line-height: 1.35; }
-    .meta { opacity: 0.75; margin-bottom: 1rem; }
-
-    .controls { display: flex; gap: .75rem; flex-wrap: wrap; margin: 1rem 0; align-items: center; }
-    input, select { padding: .5rem .6rem; font-size: 1rem; }
-
-    .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem; margin: 1rem 0; }
-    .title { font-size: 1.1rem; font-weight: 700; margin: 0; }
-    .sub { opacity: 0.8; margin: .25rem 0 .75rem; }
-    ul { margin: .5rem 0 0 1.2rem; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .tag { display: inline-block; border: 1px solid #ccc; border-radius: 999px; padding: .15rem .6rem; font-size: .85rem; margin-right: .5rem; opacity: .85; }
-
-    .section { margin: 1.25rem 0; }
-    .section h2 { font-size: 1.05rem; margin: 0 0 .5rem; }
-
-    .grid { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .panel { border: 1px solid #ddd; border-radius: 12px; padding: .9rem 1rem; background: #fafafa; }
-    .kpi { font-size: 1.6rem; font-weight: 800; margin: .1rem 0 .35rem; }
-    .muted { opacity: .8; }
-
-    .chip-row { display: flex; gap: .5rem; flex-wrap: wrap; }
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #18202a;
+      --muted: #5f6b7a;
+      --border: #d8dde6;
+      --accent: #3056d3;
+      --accent-soft: #eef3ff;
+    }
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    h1, h2, h3 {
+      margin: 0;
+    }
+    .meta {
+      color: var(--muted);
+      margin-top: .35rem;
+    }
+    .controls, .grid {
+      display: grid;
+      gap: .9rem;
+    }
+    .controls {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      margin: 1.25rem 0;
+      align-items: end;
+    }
+    label {
+      display: block;
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    input, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: .7rem .8rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      font-size: .96rem;
+    }
+    .section {
+      margin: 1.35rem 0;
+    }
+    .grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .panel, .card, details {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .panel {
+      padding: 1rem 1.1rem;
+    }
+    .kpi {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-top: .2rem;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .chip-row {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-top: .65rem;
+    }
     .chip {
       display: inline-flex;
       align-items: center;
-      gap: .4rem;
-      border: 1px solid #ddd;
+      gap: .45rem;
+      border: 1px solid var(--border);
       border-radius: 999px;
-      padding: .25rem .6rem;
-      font-size: .9rem;
+      padding: .28rem .7rem;
       background: #fff;
+      font-size: .9rem;
       cursor: pointer;
     }
     .chip-count {
-      font-weight: 700;
-      border: 1px solid #ddd;
       border-radius: 999px;
-      padding: .05rem .45rem;
-      background: #fafafa;
-      opacity: .9;
+      padding: .04rem .45rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-weight: 700;
     }
-    .small { font-size: .92rem; opacity: .85; }
+    .card {
+      padding: 1rem 1.05rem;
+      margin: 1rem 0;
+      box-shadow: 0 2px 12px rgba(12, 20, 33, 0.03);
+    }
+    .title {
+      font-size: 1.12rem;
+      font-weight: 750;
+      margin-bottom: .35rem;
+    }
+    .title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .title a:hover {
+      text-decoration: underline;
+    }
+    .sub {
+      color: var(--muted);
+      margin-bottom: .8rem;
+    }
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: .18rem .65rem;
+      border: 1px solid var(--border);
+      background: var(--accent-soft);
+      margin-right: .5rem;
+      color: #2945ab;
+      font-size: .86rem;
+      font-weight: 600;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: .18rem .6rem;
+      background: #f2f4f7;
+      border: 1px solid var(--border);
+      font-size: .82rem;
+      font-weight: 700;
+      margin-right: .4rem;
+    }
+    ul {
+      margin: .45rem 0 .3rem 1.15rem;
+      padding: 0;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: .8rem;
+      margin-top: .8rem;
+    }
+    .mini-panel {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fbfcff;
+      padding: .8rem .85rem;
+    }
+    .mini-panel h3 {
+      font-size: .95rem;
+      margin-bottom: .35rem;
+    }
+    details {
+      margin-top: .8rem;
+      overflow: hidden;
+    }
+    details summary {
+      cursor: pointer;
+      padding: .85rem 1rem;
+      font-weight: 700;
+      background: #fafbff;
+      list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details .content {
+      padding: 0 1rem 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .empty {
+      color: var(--muted);
+      padding: 1rem;
+      background: var(--panel);
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+    }
   </style>
 </head>
 <body>
-  <h1>Research Radar</h1>
-  <div class="meta" id="meta">Loading…</div>
+  <div class="wrap">
+    <h1>Research Radar v2</h1>
+    <div class="meta" id="meta">Loading…</div>
 
-  <div class="section" id="glanceSection" style="display:none;">
-    <h2>At a glance</h2>
-    <div class="grid">
-      <div class="panel">
-        <div class="muted">Papers in this window</div>
-        <div class="kpi" id="paperCount">—</div>
-        <div class="small">Based on your PubMed queries</div>
-      </div>
-
-      <div class="panel" id="journalsPanel" style="display:none;">
-        <div class="muted">Top journals</div>
-        <div class="chip-row" id="topJournals"></div>
-        <div class="small" style="margin-top:.35rem;">Tip: click a journal chip to filter.</div>
+    <div class="section">
+      <div class="grid">
+        <div class="panel">
+          <div class="muted">Papers in this window</div>
+          <div class="kpi" id="paperCount">—</div>
+        </div>
+        <div class="panel">
+          <div class="muted">Randomized experiments</div>
+          <div class="kpi" id="randomizedCount">—</div>
+        </div>
+        <div class="panel">
+          <div class="muted">Explicit null results</div>
+          <div class="kpi" id="nullCount">—</div>
+        </div>
+        <div class="panel">
+          <div class="muted">Biological measures</div>
+          <div class="kpi" id="bioCount">—</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section" id="trendingSection" style="display:none;">
-    <h2>Trending topics</h2>
-    <div class="chip-row" id="trending"></div>
-    <div class="small" style="margin-top:.35rem;">Tip: click a topic chip to filter the feed.</div>
-  </div>
+    <div class="section">
+      <h2 style="font-size:1.05rem;">Trending topics</h2>
+      <div class="chip-row" id="trending"></div>
+    </div>
 
-  <div class="controls">
-    <input id="search" placeholder="Search title/journal…" />
-    <select id="topic">
-      <option value="">All topics</option>
-    </select>
-    <select id="journal">
-      <option value="">All journals</option>
-    </select>
-  </div>
+    <div class="section">
+      <h2 style="font-size:1.05rem;">Top journals</h2>
+      <div class="chip-row" id="topJournals"></div>
+    </div>
 
-  <div id="list"></div>
+    <div class="controls">
+      <div>
+        <label for="search">Search</label>
+        <input id="search" placeholder="Search title or journal" />
+      </div>
+      <div>
+        <label for="topic">Topic</label>
+        <select id="topic"><option value="">All topics</option></select>
+      </div>
+      <div>
+        <label for="design">Study design</label>
+        <select id="design"><option value="">All designs</option></select>
+      </div>
+      <div>
+        <label for="measure">Measure type</label>
+        <select id="measure"><option value="">All measures</option></select>
+      </div>
+      <div>
+        <label for="nulls">Null results</label>
+        <select id="nulls">
+          <option value="">All papers</option>
+          <option value="yes">Has explicit null result</option>
+        </select>
+      </div>
+      <div>
+        <label for="confidence">Confidence</label>
+        <select id="confidence">
+          <option value="">All confidence levels</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="list"></div>
+  </div>
 
 <script>
+function text(v) {
+  return (v ?? '').toString();
+}
+
+function uniqueSorted(values) {
+  return Array.from(new Set(values.filter(Boolean))).sort((a, b) => a.localeCompare(b));
+}
+
+function makeChip(label, count, onClick) {
+  const chip = document.createElement('button');
+  chip.type = 'button';
+  chip.className = 'chip';
+  chip.innerHTML = `<span>${label}</span><span class="chip-count">${count}</span>`;
+  chip.addEventListener('click', onClick);
+  return chip;
+}
+
+function renderList(data) {
+  const topicSel = document.getElementById('topic');
+  const designSel = document.getElementById('design');
+  const measureSel = document.getElementById('measure');
+  const confidenceSel = document.getElementById('confidence');
+  const nullSel = document.getElementById('nulls');
+  const search = document.getElementById('search');
+  const list = document.getElementById('list');
+
+  const q = text(search.value).toLowerCase();
+  const topic = topicSel.value;
+  const design = designSel.value;
+  const measure = measureSel.value;
+  const confidence = confidenceSel.value;
+  const nullsOnly = nullSel.value === 'yes';
+
+  const filtered = (data.papers || []).filter(p => {
+    const appraisal = p.study_appraisal || {};
+    const designInfo = appraisal.study_design || {};
+    const measures = (appraisal.measures || {}).measure_types || [];
+    const resultInfo = appraisal.results || {};
+    const conf = ((appraisal.confidence || {}).extraction_confidence || '');
+
+    const hay = `${text(p.title)} ${text(p.journal)} ${text(p.query_tag)}`.toLowerCase();
+    const okSearch = !q || hay.includes(q);
+    const okTopic = !topic || p.query_tag === topic;
+    const okDesign = !design || designInfo.primary_category === design;
+    const okMeasure = !measure || measures.includes(measure);
+    const okConfidence = !confidence || conf === confidence;
+    const okNull = !nullsOnly || ((resultInfo.null_results || []).length > 0);
+
+    return okSearch && okTopic && okDesign && okMeasure && okConfidence && okNull;
+  });
+
+  list.innerHTML = '';
+  if (!filtered.length) {
+    list.innerHTML = `<div class="empty">No papers match your filters.</div>`;
+    return;
+  }
+
+  filtered.forEach(p => {
+    const appraisal = p.study_appraisal || {};
+    const designInfo = appraisal.study_design || {};
+    const subjects = appraisal.subjects || {};
+    const measures = appraisal.measures || {};
+    const results = appraisal.results || {};
+    const validity = appraisal.validity || {};
+    const limitations = appraisal.limitations || {};
+    const conf = appraisal.confidence || {};
+    const flags = appraisal.evidence_flags || {};
+
+    const card = document.createElement('article');
+    card.className = 'card';
+
+    const badges = [
+      `<span class="badge">${text(designInfo.primary_category || 'unknown')}</span>`,
+      `<span class="badge">confidence: ${text(conf.extraction_confidence || 'unknown')}</span>`
+    ];
+    if (flags.contains_human_subjects) badges.push('<span class="badge">human subjects</span>');
+    if (flags.contains_biological_measure) badges.push('<span class="badge">biological measure</span>');
+    if ((results.null_results || []).length) badges.push('<span class="badge">null result noted</span>');
+
+    card.innerHTML = `
+      <div class="title"><a href="${text(p.url || '#')}" target="_blank" rel="noopener">${text(p.title || '(no title)')}</a></div>
+      <div class="sub"><span class="tag">${text(p.query_tag || 'topic')}</span><strong>${text(p.journal || 'Unknown journal')}</strong> · ${text(p.pub_date || 'Unknown date')}</div>
+      <div>${badges.join(' ')}</div>
+      <div class="mini-grid">
+        <div class="mini-panel">
+          <h3>Summary</h3>
+          <ul>${(p.summary_bullets || []).map(b => `<li>${text(b)}</li>`).join('')}</ul>
+        </div>
+        <div class="mini-panel">
+          <h3>Study appraisal</h3>
+          <ul>
+            <li>Design: ${text(designInfo.primary_category || 'unknown')}</li>
+            <li>Population: ${text(subjects.population || 'unknown')}</li>
+            <li>Sample type: ${text(subjects.sample_type || 'unknown')}</li>
+            <li>Measures: ${((measures.measure_types || []).map(text)).join(', ') || 'unknown'}</li>
+          </ul>
+        </div>
+      </div>
+      <details>
+        <summary>Open evidence details</summary>
+        <div class="content">
+          <div class="mini-grid">
+            <div class="mini-panel">
+              <h3>Design</h3>
+              <ul>
+                <li>Primary category: ${text(designInfo.primary_category || 'unknown')}</li>
+                <li>Longitudinal: ${designInfo.is_longitudinal ? 'yes' : 'no'}</li>
+                <li>Time series: ${designInfo.is_time_series ? 'yes' : 'no'}</li>
+                <li>Lab study: ${designInfo.is_lab_study ? 'yes' : 'no'}</li>
+                <li>Randomized: ${designInfo.is_randomized_experiment ? 'yes' : 'no'}</li>
+                <li>Quasi-experimental: ${designInfo.is_quasi_experimental ? 'yes' : 'no'}</li>
+                <li>Mixed design: ${designInfo.is_mixed_design ? 'yes' : 'no'}</li>
+              </ul>
+              <div class="muted">${text(designInfo.design_notes || '')}</div>
+            </div>
+            <div class="mini-panel">
+              <h3>Subjects and measures</h3>
+              <ul>
+                <li>Population: ${text(subjects.population || 'unknown')}</li>
+                <li>Sample type: ${text(subjects.sample_type || 'unknown')}</li>
+                <li>Control group: ${text(subjects.control_group_description || 'unknown')}</li>
+                <li>Control notes: ${text(subjects.control_selection_notes || 'unknown')}</li>
+                <li>Measure types: ${((measures.measure_types || []).map(text)).join(', ') || 'unknown'}</li>
+                <li>Measurement frequency: ${text(measures.measurement_frequency || 'unknown')}</li>
+              </ul>
+            </div>
+            <div class="mini-panel">
+              <h3>Results</h3>
+              <div><strong>Main findings</strong></div>
+              <ul>${(results.main_findings || []).map(x => `<li>${text(x)}</li>`).join('') || '<li>Unknown</li>'}</ul>
+              <div><strong>Null results</strong></div>
+              <ul>${(results.null_results || []).map(x => `<li>${text(x)}</li>`).join('') || '<li>None explicitly extracted</li>'}</ul>
+              <div class="muted">Reporting quality: ${text(results.null_result_reporting_quality || 'unknown')}</div>
+            </div>
+            <div class="mini-panel">
+              <h3>Validity and limits</h3>
+              <div><strong>Internal validity</strong></div>
+              <div class="muted" style="margin:.2rem 0 .6rem;">${text(validity.internal_validity_notes || 'Unknown')}</div>
+              <div><strong>External validity</strong></div>
+              <div class="muted" style="margin:.2rem 0 .6rem;">${text(validity.external_validity_notes || 'Unknown')}</div>
+              <div><strong>Limitations</strong></div>
+              <ul>${(limitations.items || []).map(x => `<li>${text(x)}</li>`).join('') || '<li>None extracted</li>'}</ul>
+              <div class="muted">${text(limitations.limitations_summary || '')}</div>
+            </div>
+          </div>
+        </div>
+      </details>
+    `;
+
+    list.appendChild(card);
+  });
+}
+
 async function loadRadar() {
-  const res = await fetch("./papers.json", { cache: "no-store" });
+  const res = await fetch('./papers.json', { cache: 'no-store' });
   const data = await res.json();
 
-  const meta = document.getElementById("meta");
-  meta.textContent = `Updated: ${data.generated_at} | Window: last ${data.days} days`;
+  document.getElementById('meta').textContent = `Updated: ${data.generated_at} | Window: last ${data.days} days`;
+  document.getElementById('paperCount').textContent = data.paper_count ?? (data.papers || []).length;
 
-  // At a glance
-  const glanceSection = document.getElementById("glanceSection");
-  glanceSection.style.display = "block";
-  document.getElementById("paperCount").textContent = (data.paper_count ?? (data.papers || []).length);
+  const randomized = (data.papers || []).filter(p => ((p.study_appraisal || {}).study_design || {}).is_randomized_experiment).length;
+  const nulls = (data.papers || []).filter(p => (((p.study_appraisal || {}).results || {}).null_results || []).length > 0).length;
+  const bio = (data.papers || []).filter(p => ((p.study_appraisal || {}).evidence_flags || {}).contains_biological_measure).length;
 
-  const topicSel = document.getElementById("topic");
-  const journalSel = document.getElementById("journal");
-  const search = document.getElementById("search");
-  const list = document.getElementById("list");
+  document.getElementById('randomizedCount').textContent = randomized;
+  document.getElementById('nullCount').textContent = nulls;
+  document.getElementById('bioCount').textContent = bio;
 
-  // Populate topic dropdown
-  const topics = Array.from(new Set((data.papers || []).map(p => p.query_tag))).sort();
-  for (const t of topics) {
-    const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
+  const topicSel = document.getElementById('topic');
+  const designSel = document.getElementById('design');
+  const measureSel = document.getElementById('measure');
+
+  uniqueSorted((data.papers || []).map(p => p.query_tag)).forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
     topicSel.appendChild(opt);
-  }
+  });
 
-  // Populate journal dropdown from actual papers
-  const journals = Array.from(new Set((data.papers || []).map(p => p.journal).filter(Boolean))).sort();
-  for (const j of journals) {
-    const opt = document.createElement("option");
-    opt.value = j;
-    opt.textContent = j;
-    journalSel.appendChild(opt);
-  }
+  uniqueSorted((data.papers || []).map(p => ((p.study_appraisal || {}).study_design || {}).primary_category)).forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    designSel.appendChild(opt);
+  });
 
-  // Top journals chips (from JSON)
-  const topJournals = (data.top_journals || []).slice(0, 8);
-  const journalsPanel = document.getElementById("journalsPanel");
-  const journalsWrap = document.getElementById("topJournals");
-  if (topJournals.length) {
-    journalsPanel.style.display = "block";
-    journalsWrap.innerHTML = "";
-    for (const item of topJournals) {
-      const chip = document.createElement("button");
-      chip.type = "button";
-      chip.className = "chip";
+  uniqueSorted((data.papers || []).flatMap(p => (((p.study_appraisal || {}).measures || {}).measure_types || []))).forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    measureSel.appendChild(opt);
+  });
 
-      const label = document.createElement("span");
-      label.textContent = item.journal;
+  const trendingWrap = document.getElementById('trending');
+  (data.trending_topics || []).forEach(item => {
+    trendingWrap.appendChild(makeChip(item.topic, item.count, () => {
+      topicSel.value = item.topic;
+      renderList(data);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }));
+  });
 
-      const count = document.createElement("span");
-      count.className = "chip-count";
-      count.textContent = item.count;
+  const journalsWrap = document.getElementById('topJournals');
+  (data.top_journals || []).forEach(item => {
+    journalsWrap.appendChild(makeChip(item.journal, item.count, () => {
+      document.getElementById('search').value = item.journal;
+      renderList(data);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }));
+  });
 
-      chip.appendChild(label);
-      chip.appendChild(count);
+  ['search','topic','design','measure','nulls','confidence'].forEach(id => {
+    document.getElementById(id).addEventListener(id === 'search' ? 'input' : 'change', () => renderList(data));
+  });
 
-      chip.addEventListener("click", () => {
-        journalSel.value = item.journal;
-        render();
-        document.querySelector(".controls").scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-
-      journalsWrap.appendChild(chip);
-    }
-  }
-
-  // Trending topics chips
-  const trending = (data.trending_topics || []).slice(0, 10);
-  const trendingSection = document.getElementById("trendingSection");
-  const trendingWrap = document.getElementById("trending");
-  if (trending.length) {
-    trendingSection.style.display = "block";
-    trendingWrap.innerHTML = "";
-    for (const item of trending) {
-      const chip = document.createElement("button");
-      chip.type = "button";
-      chip.className = "chip";
-
-      const label = document.createElement("span");
-      label.textContent = item.topic;
-
-      const count = document.createElement("span");
-      count.className = "chip-count";
-      count.textContent = item.count;
-
-      chip.appendChild(label);
-      chip.appendChild(count);
-
-      chip.addEventListener("click", () => {
-        topicSel.value = item.topic;
-        render();
-        document.querySelector(".controls").scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-
-      trendingWrap.appendChild(chip);
-    }
-  }
-
-  function render() {
-    const q = (search.value || "").toLowerCase();
-    const topic = topicSel.value;
-    const journal = journalSel.value;
-
-    list.innerHTML = "";
-    const papers = data.papers || [];
-    const filtered = papers.filter(p => {
-      const hay = `${p.title || ""} ${p.journal || ""}`.toLowerCase();
-      const okSearch = !q || hay.includes(q);
-      const okTopic = !topic || p.query_tag === topic;
-      const okJournal = !journal || p.journal === journal;
-      return okSearch && okTopic && okJournal;
-    });
-
-    for (const p of filtered) {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const title = document.createElement("p");
-      title.className = "title";
-
-      const a = document.createElement("a");
-      a.href = p.url || "#";
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = p.title || "(no title)";
-      title.appendChild(a);
-
-      const sub = document.createElement("div");
-      sub.className = "sub";
-      sub.innerHTML = `
-        <span class="tag">${p.query_tag || "topic"}</span>
-        <strong>${p.journal || "Unknown journal"}</strong>
-        &nbsp;·&nbsp; ${p.pub_date || "Unknown date"}
-      `;
-
-      const ul = document.createElement("ul");
-      (p.summary_bullets || []).forEach(b => {
-        const li = document.createElement("li");
-        li.textContent = b;
-        ul.appendChild(li);
-      });
-
-      card.appendChild(title);
-      card.appendChild(sub);
-      card.appendChild(ul);
-      list.appendChild(card);
-    }
-
-    if (!filtered.length) {
-      list.innerHTML = "<p>No papers match your filters.</p>";
-    }
-  }
-
-  search.addEventListener("input", render);
-  topicSel.addEventListener("change", render);
-  journalSel.addEventListener("change", render);
-  render();
+  renderList(data);
 }
 
 loadRadar().catch(err => {
-  document.getElementById("meta").textContent = "Failed to load papers.json";
-  document.getElementById("list").innerHTML = `<pre>${err}</pre>`;
+  document.getElementById('meta').textContent = 'Failed to load papers.json';
+  document.getElementById('list').innerHTML = `<div class="empty"><pre>${text(err)}</pre></div>`;
 });
 </script>
 </body>
 </html>
+
