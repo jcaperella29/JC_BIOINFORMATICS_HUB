@@ -440,36 +440,42 @@
         <p>Pick a tab above to view a one-page overview of each app, including what it does, how to start, and links to the code. Each section follows the same clean card layout for quick scanning.</p>
       </div>
     </section>
-  <section id="enrichment-network" class="tab-content">
+<section id="enrichment-network" class="tab-content">
   <div class="tool">
     <div class="ribbon">NEW</div>
     <h2>JC Enrichment Network Studio (Dash App)</h2>
 
     <p class="lead">
-      Interactive <strong>Dash</strong> web app for transforming <strong>gene ↔ pathway/term enrichment results</strong>
-      into <strong>network-based biological insight</strong>. Explore bipartite enrichment structure, run
-      <strong>diffusion-based prioritization</strong>, analyze <strong>pathway relationships</strong> via projection,
-      and generate <strong>actionable follow-up candidates</strong> with exportable, publication-ready visuals.
+      A public, zero-preprocessing <strong>Dash</strong> workbench for turning enrichment results into
+      interactive <strong>gene ↔ pathway networks</strong>, <strong>pathway-overlap projections</strong>,
+      diffusion-based follow-up rankings, consensus candidates, and reproducible export bundles.
+    </p>
+
+    <p class="lead">
+      Upload enrichment-style results, choose a column preset, build the main network, explore pathway
+      overlap, rank biological themes, and export clean node/edge/result tables without needing to
+      manually preprocess everything in Cytoscape first.
     </p>
 
     <ul class="emoji-list">
-      <li>📄 <strong>Input:</strong> long-format CSV (one row per gene–term membership edge)</li>
-      <li>🧬 <strong>Bipartite graph:</strong> genes ↔ pathways/terms with weighted edges (<code>-log10(p)</code>)</li>
-      <li>🌊 <strong>Diffusion analysis:</strong> PageRank-style scoring (evidence, connectivity, balanced modes)</li>
-      <li>🎯 <strong>Top candidates:</strong> combines significance, centrality, and connectivity</li>
-      <li>🔗 <strong>Pathway projection:</strong> pathway ↔ pathway networks based on shared genes</li>
-      <li>🧠 <strong>Projection diffusion:</strong> identifies central biological themes and clusters</li>
-      <li>🏆 <strong>Consensus ranking:</strong> integrates bipartite + projection signals</li>
-      <li>🎚️ <strong>Filters:</strong> search, degree thresholds, edge weights, layout modes</li>
-      <li>📊 <strong>Stats:</strong> node/edge counts, components, top genes/terms</li>
-      <li>⬇️ <strong>Export:</strong> CSV tables + <strong>PNG / SVG / PDF</strong> figures</li>
+      <li>🧪 <strong>Inputs:</strong> custom long-format CSV, Enrichr-style, g:Profiler/gprofiler2, clusterProfiler, and GSEA/MSigDB-style results</li>
+      <li>⚡ <strong>One-click demo:</strong> bundled demo dataset for testing the full workflow immediately</li>
+      <li>🧬 <strong>Main network:</strong> genes/items ↔ pathways/terms with optional adjusted p-value weighting</li>
+      <li>🌊 <strong>Bipartite diffusion:</strong> PageRank-style prioritization with balanced, evidence-weighted, and connectivity-weighted modes</li>
+      <li>🔗 <strong>Pathway projection:</strong> pathway ↔ pathway overlap networks based on shared genes/items</li>
+      <li>🧠 <strong>Projection diffusion:</strong> identifies central biological themes in the pathway-overlap graph</li>
+      <li>🏆 <strong>Consensus candidates:</strong> combines main-network and projection signals into a final prioritized pathway list</li>
+      <li>📦 <strong>Report bundle:</strong> exports mapped columns, settings, input preview, node/edge tables, diffusion results, candidate tables, and notes</li>
+      <li>🤖 <strong>LLM Triage handoff:</strong> exports a safe input bundle for a companion local/BYOK/paid LLM interpretation workflow</li>
+      <li>🛡️ <strong>Public-safe design:</strong> no unrestricted live LLM calls and no hidden API spending in the public app</li>
+      <li>⚠️ <strong>Large graph warnings:</strong> warns users when graphs may be slow and suggests filtering options</li>
       <li>☁️ <strong>Live deployment:</strong> Google Cloud Run</li>
     </ul>
 
     <div style="display:flex; gap:10px; flex-wrap:wrap;">
       <a
         class="github-btn"
-        href="https://jc-enrichment-network-studio232-390287836436.europe-west1.run.app/"
+        href="https://jc-enrichment-network-studio121-390287836436.northamerica-northeast1.run.app/"
         target="_blank" rel="noopener"
         data-app-id="jc_enrichment_network_live"
         data-app-name="JC Enrichment Network Studio (Live)"
@@ -491,8 +497,16 @@
     </div>
 
     <p class="lead" style="margin-top:16px;">
-      <strong>Tip:</strong> If you have a standard enrichment table (term + list of genes), convert it to long format
-      first (one gene per row per term). This app is designed for clean network building and fast exploration.
+      <strong>Why it matters:</strong> enrichment results often arrive as long tables that are hard to
+      interpret and communicate. This app turns those tables into structured networks, overlap maps,
+      candidate rankings, and reproducible exports so scientists can move from “what is enriched?”
+      to “what is connected, biologically coherent, and worth following up?”
+    </p>
+
+    <p class="lead">
+      <strong>Important note:</strong> diffusion, follow-up, and consensus scores are prioritization
+      scores, not new statistical p-values. LLM interpretation is export-based and should be reviewed
+      by a scientist.
     </p>
   </div>
 </section>
