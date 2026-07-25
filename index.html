@@ -1,1400 +1,732 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JCaperella Bioinformatics and solutions Hub</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="John Caperella's bioinformatics software portfolio featuring FastAPI services, Nextflow workflows, Dash applications, omics analysis, network visualization, and scientific decision support.">
+  <title>John Caperella | Bioinformatics Software Engineering</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    // Automatically enable debug mode if URL contains debug=true
-    const isDebug = window.location.search.includes("debug=true");
-
     gtag('config', 'G-BH0ZXLJ6N2', {
-      debug_mode: isDebug
+      debug_mode: window.location.search.includes("debug=true")
     });
   </script>
 
-
-  
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #071629;
+      --navy-2: #0b223c;
+      --blue: #1677ff;
+      --cyan: #29c7e8;
+      --ink: #172033;
+      --muted: #5e6b7e;
+      --line: #dce4ee;
+      --surface: #ffffff;
+      --surface-soft: #f5f8fc;
+      --success: #0d8b6f;
+      --shadow: 0 18px 50px rgba(7, 22, 41, 0.10);
+      --radius: 20px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: url('dna_background.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #1b263b;
-      padding: 20px;
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    
-
-    .tab-nav { text-align: center; margin-bottom: 30px; }
-    .tab-button {
-      background: #0077b6;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 0 10px 10px;
-      font-size: 1em;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .tab-button:hover { background: #023e8a; }
-    .tab-button.active {
-      background: #00b4d8;
-      box-shadow: 0 0 10px #00b4d8, 0 0 20px #00b4d8;
-    }
-
-    
-    /* Back to categories */
-    .back-row { text-align: center; margin: -10px 0 10px; }
-    .back-btn {
-      background: transparent;
-      color: #e0fbff;
-      border: 2px solid rgba(144, 224, 239, 0.55);
-      padding: 8px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 800;
-      transition: transform .12s ease, filter .12s ease, background .12s ease;
-    }
-    .back-btn:hover { transform: translateY(-1px); filter: brightness(.97); background: rgba(0,180,216,0.12); }
-
-.tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-
-    /* 2-level nav */
-    .sub-tabs { display: none !important; margin-top: -10px; }
-    .sub-tabs.active { display: flex !important; }
-    .main-tabs { margin-bottom: 14px; }
-
-    .tool {
-      background: #ffffff;
-      padding: 25px;
-      margin: 0 auto 25px;
-      max-width: 800px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-    .tool:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.4); }
-
-    .tool h2 {
-  margin-bottom: 15px;
-  color: #003566;   /* deep blue */
-  font-size: 1.8em;
-}
-
-    .tool p { margin-bottom: 15px; font-size: 1.05em; color: #343a40; }
-
-    .tool a {
-      display: inline-block;
-      text-decoration: none;
-      background: #0077b6;
-      color: #ffffff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .tool a:hover { background: #023e8a; }
-
-    footer { text-align: center; margin-top: 60px; font-size: 0.9em; color: #adb5bd; }
-
-    .ribbon {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background: #ff4757;
-      color: white;
-      padding: 6px 12px;
-      font-weight: bold;
-      font-size: 0.85em;
-      font-family: 'Montserrat', sans-serif;
-      transform: rotate(10deg);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      border-radius: 4px;
-      z-index: 10;
-    }
-
-    .scrna-hero {
+      margin: 0;
+      color: var(--ink);
       background:
-        radial-gradient(1100px 520px at 10% -10%, rgba(165,243,252,.35), transparent 60%),
-        radial-gradient(900px 520px at 95% 0%, rgba(199,210,254,.35), transparent 60%);
-      padding: 6px;
-      border-radius: 16px;
-      max-width: 860px;
-      margin: 0 auto 25px;
+        radial-gradient(circle at 8% 2%, rgba(41,199,232,.12), transparent 27rem),
+        radial-gradient(circle at 92% 8%, rgba(22,119,255,.10), transparent 30rem),
+        var(--surface-soft);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
     }
 
-    .scrna-title {
-  font-size: 2.1em;
-  font-weight: 800;
-  line-height: 1.1;
-  background: linear-gradient(90deg, #ffb3ff, #b3d4ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
-}
+    a { color: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
 
-    .lead { font-size: 1.05em; color: #344054; margin-bottom: 14px; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(220,228,238,.85);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(14px);
+    }
 
-    .emoji-list { list-style: none; padding-left: 0; margin: 12px 0 18px; }
-    .emoji-list li { margin: 8px 0; font-size: 1.02em; color: #1b263b; }
-    .emoji-list li strong { font-weight: 700; }
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-    .github-btn {
-      display: inline-block;
-      background: #0d6efd;
-      color: #fff !important;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      box-shadow: 0 6px 16px rgba(13,110,253,.28);
-      transition: transform .12s ease, filter .12s ease;
+    .brand {
       text-decoration: none;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      font-size: 1.08rem;
     }
-    .github-btn:hover { filter: brightness(.96); transform: translateY(-1px); text-decoration: none; }
 
-    .about-grid {
+    .nav-links { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+    .nav-links a {
+      padding: 8px 11px;
+      text-decoration: none;
+      color: #42506a;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover { color: var(--blue); background: #edf5ff; }
+
+    .hero { padding: 92px 0 70px; }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 16px;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #0b6b80;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    h1, h2, h3 {
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(2.6rem, 6vw, 5.1rem);
+      color: var(--navy);
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      margin: 0 0 28px;
+      color: #46546b;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 17px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), #0758ca);
+      box-shadow: 0 10px 25px rgba(22,119,255,.23);
+    }
+
+    .button.secondary {
+      color: var(--navy);
+      background: white;
+      border-color: var(--line);
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      color: white;
+      background:
+        linear-gradient(145deg, rgba(41,199,232,.16), transparent 42%),
+        linear-gradient(145deg, var(--navy-2), var(--navy));
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel h2 { margin-bottom: 18px; font-size: 1.35rem; }
+
+    .stack { display: flex; flex-wrap: wrap; gap: 9px; }
+
+    .stack span {
+      padding: 7px 10px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      color: #dcecff;
+      background: rgba(255,255,255,.07);
+      font-size: .84rem;
+      font-weight: 650;
+    }
+
+    .section { padding: 78px 0; }
+
+    .section.white {
+      background: white;
+      border-block: 1px solid #e6edf5;
+    }
+
+    .section-head { max-width: 760px; margin-bottom: 34px; }
+
+    .section-head h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--navy);
+    }
+
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.06rem; }
+
+    .flagship {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 28px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      color: #075d4c;
+      background: #ddf8ef;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .flagship h3 { margin-bottom: 15px; font-size: clamp(1.7rem, 3vw, 2.5rem); color: var(--navy); }
+    .flagship p { color: #526077; }
+
+    .feature-list {
+      display: grid;
+      gap: 11px;
+      padding: 0;
+      margin: 24px 0 28px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 9px;
       align-items: start;
     }
-    @media (min-width: 720px) {
-      .about-grid { grid-template-columns: 180px 1fr; gap: 20px; }
+
+    .feature-list li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      margin-top: 2px;
+      border-radius: 50%;
+      color: white;
+      background: var(--success);
+      font-size: .74rem;
+      font-weight: 900;
     }
-    .about-headshot {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid #d1d5db;
+
+    .architecture {
+      align-self: stretch;
+      display: grid;
+      align-content: center;
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(160deg, #071629, #0d2a4a);
+    }
+
+    .architecture-title {
+      margin-bottom: 18px;
+      color: #d9eaff;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .arch-box {
+      padding: 11px 14px;
+      color: white;
+      text-align: center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 11px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .arch-arrow { padding: 5px; color: #55d4ee; text-align: center; font-weight: 900; }
+    .arch-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 10px 32px rgba(7,22,41,.06);
+    }
+
+    .card-kicker {
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .card h3 { margin-bottom: 12px; color: var(--navy); font-size: 1.42rem; }
+    .card p { margin: 0 0 18px; color: var(--muted); }
+    .card .button-row { margin-top: auto; }
+
+    .mini-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+
+    .mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .mini-card h3 { margin-bottom: 8px; color: var(--navy); font-size: 1.07rem; }
+    .mini-card p { margin: 0 0 14px; color: var(--muted); font-size: .91rem; }
+    .text-link { color: var(--blue); text-decoration: none; font-weight: 750; }
+
+    .legacy-box {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #f8fafc;
+    }
+
+    .legacy-box p { margin-top: 0; color: var(--muted); }
+
+    .legacy-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 20px 0 0;
+      list-style: none;
+    }
+
+    .legacy-list a {
+      display: inline-block;
+      padding: 8px 11px;
+      color: #384860;
+      text-decoration: none;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .headshot {
+      width: 150px;
+      aspect-ratio: 1;
       object-fit: cover;
-      aspect-ratio: 1 / 1;
+      border: 5px solid white;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
     }
 
-    .analytics-embed-wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
+    .about h2 { margin-bottom: 12px; color: var(--navy); font-size: 2.2rem; }
+    .about p { max-width: 780px; color: var(--muted); }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      max-width: 560px;
+      margin-top: 24px;
     }
 
-    /* Force all tool headers to deep blue */
-.tool h2 {
-  color: #003566 !important;
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  -webkit-text-fill-color: #003566 !important;
-}
+    .contact-form label { display: grid; gap: 6px; font-weight: 650; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+    }
 
-/* Force About Me header (your pink one) to deep blue */
-#about h2 {
-  color: #003566 !important;
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  -webkit-text-fill-color: #003566 !important;
-}
+    .contact-form button { cursor: pointer; }
 
-/* Override SCRNA header too */
-.scrna-title {
-  color: #003566 !important;
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  -webkit-text-fill-color: #003566 !important;
-}
-/* =========================
-   HERO (better readability)
-   ========================= */
-.hero {
-  text-align: center;
-  margin: 10px auto 22px;
-  max-width: 980px;
-}
+    footer {
+      padding: 34px 0;
+      color: #728096;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      background: white;
+      font-size: .9rem;
+    }
 
-.hero-inner {
-  padding: 18px 18px 16px;
-  border-radius: 18px;
-  /* This is the key: readable text on a busy DNA background */
-  background: rgba(0, 20, 40, 0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
-}
+    @media (max-width: 900px) {
+      .hero-grid, .flagship { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-links { display: none; }
+    }
 
-.hero h1 {
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-  margin-bottom: 8px;
-  color: #90e0ef;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.35);
-}
-
-.hero-tagline {
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  color: #e0fbff;
-  max-width: 860px;
-  margin: 0 auto 6px;
-}
-
-.hero-sub {
-  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-  color: rgba(202, 240, 248, 0.95);
-  max-width: 860px;
-  margin: 0 auto 12px;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.hero-link {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-weight: 800;
-  text-decoration: none;
-  background: #00b4d8;
-  color: #00121f;
-  transition: transform .12s ease, filter .12s ease;
-}
-.hero-link:hover { transform: translateY(-1px); filter: brightness(.96); }
-
-.hero-link.ghost {
-  background: transparent;
-  border: 2px solid rgba(144, 224, 239, 0.65);
-  color: #e0fbff;
-}
-
-/* =========================
-   NAV: better mobile behavior
-   ========================= */
-
-/* Let buttons wrap nicely on mid screens */
-.tab-nav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* Improve chip feel + prevent huge horizontal margins */
-.tab-button {
-  margin: 0;
-  white-space: nowrap;
-}
-
-/* On small screens: make nav a horizontal "chip scroller" */
-@media (max-width: 640px) {
-  body { padding: 12px; }
-
-  .tab-nav {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
-  }
-  .tab-nav::-webkit-scrollbar { height: 8px; }
-  .tab-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 99px; }
-
-  .tab-button {
-    flex: 0 0 auto;
-    font-size: 0.95rem;
-    padding: 10px 14px;
-    border-radius: 999px;
-  }
-
-  header { margin-bottom: 18px; }
-}
-/* =========================
-   CARDS: better spacing on mobile
-   ========================= */
-.tool {
-  width: 100%;
-  max-width: 900px;
-}
-
-@media (max-width: 640px) {
-  .tool {
-    padding: 18px;
-    border-radius: 14px;
-    margin-bottom: 16px;
-  }
-  .tool h2 { font-size: 1.45em; }
-  .tool p, .lead { font-size: 1rem; }
-}
-
-/* =========================
-   ABOUT GRID: stack on phones
-   ========================= */
-@media (max-width: 640px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-  .about-headshot {
-    max-width: 220px;
-    margin: 0 auto;
-  }
-}
-
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .hero { padding: 65px 0 52px; }
+      .section { padding: 58px 0; }
+      .grid, .mini-grid { grid-template-columns: 1fr; }
+      .flagship { padding: 22px; }
+      .arch-row { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .headshot { width: 125px; }
+      .button { width: 100%; }
+    }
   </style>
 </head>
 
 <body>
-<header class="hero" role="banner">
-  <div class="hero-inner">
-    <h1>JCaperella Bioinformatics Hub</h1>
-
-    <p class="hero-tagline">
-      Turning complex genomic data into usable insights through clear, reproducible code.
-    </p>
-
-    <p class="hero-sub">
-      Tools for researchers, biologists, and data scientists — from pipelines to interactive analysis apps.
-    </p>
-
-    <div class="hero-cta">
-      <a class="hero-link" href="#main-nav" onclick="scrollToNav(event)">Explore tools ↓</a>
-      <a class="hero-link ghost" href="resume.html" target="_blank" rel="noopener">View résumé</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">John Caperella</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#platform">Platform</a>
+        <a href="#featured">Featured work</a>
+        <a href="#engineering">Engineering examples</a>
+        <a href="#legacy">Earlier prototypes</a>
+        <a href="#about">About</a>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Bioinformatics software engineering</div>
+          <h1>Reproducible omics analysis, built as usable software.</h1>
+          <p class="hero-lead">
+            I build scientific APIs, workflow orchestration, interactive dashboards, and containerized
+            analysis systems using Python, R, FastAPI, Nextflow, Dash, and modern cloud tooling.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="#platform">View flagship platform</a>
+            <a class="button secondary" href="resume.html" target="_blank" rel="noopener">View résumé</a>
+            <a class="button secondary" href="https://github.com/jcaperella29" target="_blank" rel="noopener">GitHub profile</a>
+          </div>
+        </div>
 
-        <!-- ==============================
-       CATEGORY NAV (Level 1)
-  =============================== -->
-  <nav id="main-nav" class="tab-nav main-tabs" aria-label="Main categories">
-    <button class="tab-button active" onclick="showCategory('info', 'welcome', this)">Introduction &amp; Site Info</button>
-    <button class="tab-button" onclick="showCategory('prep', 'nextflow', this)">Data Prep Tools</button>
-    <button class="tab-button" onclick="showCategory('omics', 'rna', this)">Primary Omics Analysis</button>
-    <button class="tab-button" onclick="showCategory('trans', 'enrichment-network', this)">Translational &amp; Decision Support</button>
-  </nav>
-
-  <!-- Back control (shown after a category is opened) -->
-  <div id="back-row" class="back-row" style="display:none;">
-    <button class="back-btn" type="button" onclick="backToCategories()">← Back to categories</button>
-  </div>
-
-<!-- ==============================
-       SUB NAV (Level 2)
-  =============================== -->
-  <nav class="tab-nav sub-tabs active" id="subnav-info" aria-label="Introduction &amp; site info">
-    <button class="tab-button active" data-tab="welcome" onclick="showTab('welcome', this)">Welcome</button>
-    <button class="tab-button" data-tab="about" onclick="showTab('about', this)">About Me</button>
-    <button class="tab-button" data-tab="analytics" onclick="showTab('analytics', this)">Analytics</button>
-    <button class="tab-button" data-tab="research-radar" onclick="showTab('research-radar', this)">Research Radar</button>
-  </nav>
-
- <nav class="tab-nav sub-tabs" id="subnav-prep" aria-label="Data prep tools">
-  <button class="tab-button" data-tab="nextflow" onclick="showTab('nextflow', this)">Nextflow Pipeline</button>
-  <button class="tab-button" data-tab="wdl-fastq-qc" onclick="showTab('wdl-fastq-qc', this)">WDL FASTQ QC</button>
-  <button class="tab-button" data-tab="gcp-fastq-event-pipeline" onclick="showTab('gcp-fastq-event-pipeline', this)">GCP FASTQ Event Pipeline</button>
-  <button class="tab-button" data-tab="nlp-phenotyper" onclick="showTab('nlp-phenotyper', this)">NLP Phenotyper</button>
-
-  <!-- NEW TOOL -->
-  <button class="tab-button" data-tab="document-cleaning" onclick="showTab('document-cleaning', this)">
-    Document Cleaning
-  </button>
-</nav>
-  <nav class="tab-nav sub-tabs" id="subnav-omics" aria-label="Primary omics analysis tools">
-    <button class="tab-button" data-tab="rna" onclick="showTab('rna', this)">RNA-Seq</button>
-    <button class="tab-button" data-tab="atac" onclick="showTab('atac', this)">ATAC-Seq</button>
-    <button class="tab-button" data-tab="mirna" onclick="showTab('mirna', this)">miRNA-Seq</button>
-    <button class="tab-button" data-tab="methylation" onclick="showTab('methylation', this)">Methylation Analysis</button>
-    <button class="tab-button" data-tab="crispr" onclick="showTab('crispr', this)">CRISPR/Mixscape</button>
-    <button class="tab-button" data-tab="gwas" onclick="showTab('gwas', this)">GWAS</button>
-    <button class="tab-button" data-tab="scrna" onclick="showTab('scrna', this)">Single-cell RNA-Seq</button>
-  </nav>
-
-  <nav class="tab-nav sub-tabs" id="subnav-trans" aria-label="Translational and decision support tools">
-    <button class="tab-button" data-tab="enrichment-network" onclick="showTab('enrichment-network', this)">Enrichment Network</button>
-    <button class="tab-button" data-tab="enrichment-llm" onclick="showTab('enrichment-llm', this)">Enrichment Triage (LLM)</button>
-  </nav>
-  
-
-  <main>
-    <section id="welcome" class="tab-content active">
-      <div class="tool">
-        <h2>Welcome</h2>
-        <p>Pick a tab above to view a one-page overview of each app, including what it does, how to start, and links to the code. Each section follows the same clean card layout for quick scanning.</p>
-      </div>
-    </section>
-<section id="enrichment-network" class="tab-content">
-  <div class="tool">
-    <div class="ribbon">NEW</div>
-    <h2>JC Enrichment Network Studio (Dash App)</h2>
-
-    <p class="lead">
-      A public, zero-preprocessing <strong>Dash</strong> workbench for turning enrichment results into
-      interactive <strong>gene ↔ pathway networks</strong>, <strong>pathway-overlap projections</strong>,
-      diffusion-based follow-up rankings, consensus candidates, and reproducible export bundles.
-    </p>
-
-    <p class="lead">
-      Upload enrichment-style results, choose a column preset, build the main network, explore pathway
-      overlap, rank biological themes, and export clean node/edge/result tables without needing to
-      manually preprocess everything in Cytoscape first.
-    </p>
-
-    <ul class="emoji-list">
-      <li>🧪 <strong>Inputs:</strong> custom long-format CSV, Enrichr-style, g:Profiler/gprofiler2, clusterProfiler, and GSEA/MSigDB-style results</li>
-      <li>⚡ <strong>One-click demo:</strong> bundled demo dataset for testing the full workflow immediately</li>
-      <li>🧬 <strong>Main network:</strong> genes/items ↔ pathways/terms with optional adjusted p-value weighting</li>
-      <li>🌊 <strong>Bipartite diffusion:</strong> PageRank-style prioritization with balanced, evidence-weighted, and connectivity-weighted modes</li>
-      <li>🔗 <strong>Pathway projection:</strong> pathway ↔ pathway overlap networks based on shared genes/items</li>
-      <li>🧠 <strong>Projection diffusion:</strong> identifies central biological themes in the pathway-overlap graph</li>
-      <li>🏆 <strong>Consensus candidates:</strong> combines main-network and projection signals into a final prioritized pathway list</li>
-      <li>📦 <strong>Report bundle:</strong> exports mapped columns, settings, input preview, node/edge tables, diffusion results, candidate tables, and notes</li>
-      <li>🤖 <strong>LLM Triage handoff:</strong> exports a safe input bundle for a companion local/BYOK/paid LLM interpretation workflow</li>
-      <li>🛡️ <strong>Public-safe design:</strong> no unrestricted live LLM calls and no hidden API spending in the public app</li>
-      <li>⚠️ <strong>Large graph warnings:</strong> warns users when graphs may be slow and suggests filtering options</li>
-      <li>☁️ <strong>Live deployment:</strong> Google Cloud Run</li>
-    </ul>
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a
-        class="github-btn"
-        href="https://jc-enrichment-network-studio121-390287836436.northamerica-northeast1.run.app/"
-        target="_blank" rel="noopener"
-        data-app-id="jc_enrichment_network_live"
-        data-app-name="JC Enrichment Network Studio (Live)"
-        onclick="trackAppClick(this)"
-      >
-        Open Live App
-      </a>
-
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/JC-Enrichment-Network-Studio"
-        target="_blank" rel="noopener"
-        data-app-id="jc_enrichment_network_repo"
-        data-app-name="JC Enrichment Network Studio (GitHub)"
-        onclick="trackAppClick(this)"
-      >
-        View on GitHub
-      </a>
-    </div>
-
-    <p class="lead" style="margin-top:16px;">
-      <strong>Why it matters:</strong> enrichment results often arrive as long tables that are hard to
-      interpret and communicate. This app turns those tables into structured networks, overlap maps,
-      candidate rankings, and reproducible exports so scientists can move from “what is enriched?”
-      to “what is connected, biologically coherent, and worth following up?”
-    </p>
-
-    <p class="lead">
-      <strong>Important note:</strong> diffusion, follow-up, and consensus scores are prioritization
-      scores, not new statistical p-values. LLM interpretation is export-based and should be reviewed
-      by a scientist.
-    </p>
-  </div>
-</section>
-
-    <section id="rna" class="tab-content">
-      <div class="tool">
-        <h2>Bulk RNA-Seq Analyzer</h2>
-        <p class="lead">
-          Interactive Shiny app for bulk RNA-seq: differential expression, PCA/UMAP, volcano & heatmaps,
-          enrichment, Random Forest, power analysis, and downloadable results.
-        </p>
-        <ul class="emoji-list">
-          <li>🗂️ <strong>Inputs:</strong> counts matrix + phenotype CSV</li>
-          <li>🧬 <strong>DE:</strong> limma-voom workflow</li>
-          <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
-          <li>🌋 <strong>Plots:</strong> volcano, heatmap, interactive tables</li>
-          <li>🧠 <strong>ML:</strong> Random Forest + ROC/AUC</li>
-          <li>🧪 <strong>Pathways:</strong> Enrichr (KEGG/GO/Reactome)</li>
-          <li>⚡ <strong>Power:</strong> sample size/power curves</li>
-          <li>designed for HPC environments using Singularity</li>
-        </ul>
-        <a
-          class="github-btn"
-          href="https://github.com/jcaperella29/RNA_SEQ_APP"
-          target="_blank" rel="noopener"
-          data-app-id="rna"
-          data-app-name="Bulk RNA-Seq Analyzer"
-          onclick="trackAppClick(this)"
-        >
-          View on GitHub
-        </a>
+        <aside class="hero-panel" aria-label="Core technical stack">
+          <h2>Current focus</h2>
+          <div class="stack">
+            <span>FastAPI</span><span>Nextflow DSL2</span><span>Dash</span><span>Python</span>
+            <span>R / Bioconductor</span><span>Docker</span><span>RNA-seq</span>
+            <span>scRNA-seq</span><span>CRISPR Mixscape</span><span>Network analysis</span>
+            <span>LLM-assisted triage</span>
+          </div>
+        </aside>
       </div>
     </section>
 
+    <section id="platform" class="section white">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Flagship project</div>
+          <h2>Integrated Omics Workflow Platform</h2>
+          <p>
+            A modular platform connecting user-facing analysis, scientific APIs, and reproducible
+            Nextflow orchestration instead of treating every analysis as an isolated application.
+          </p>
+        </div>
 
+        <article class="flagship">
+          <div>
+            <span class="badge">Current platform</span>
+            <h3>From uploaded data to organized, reviewable results</h3>
+            <p>
+              The platform brings bulk RNA-seq, single-cell RNA-seq, CRISPR Mixscape,
+              enrichment-network analysis, and LLM-assisted triage into one software architecture.
+            </p>
 
-   <section id="wdl-fastq-qc" class="tab-content">
-  <div class="tool">
-    <div class="ribbon">NEW</div>
-    <h2>Paired FASTQ QC (WDL + Cromwell)</h2>
+            <ul class="feature-list">
+              <li><span><strong>Unified Dash interface</strong> for submitting analyses, checking jobs, and reviewing outputs.</span></li>
+              <li><span><strong>FastAPI service layer</strong> with modular endpoints, input validation, job tracking, and structured result delivery.</span></li>
+              <li><span><strong>Nextflow DSL2 orchestration</strong> linking analysis services into resumable end-to-end workflows.</span></li>
+              <li><span><strong>Organized result bundles</strong> containing analysis outputs, networks, triage reports, manifests, and workflow reports.</span></li>
+              <li><span><strong>Container-oriented design</strong> supporting reproducibility and deployment across local, cloud, and HPC-style environments.</span></li>
+            </ul>
 
-    <p class="lead">
-      Containerized <strong>WDL</strong> workflow executed with <strong>Cromwell</strong> for paired-end FASTQ QC.
-      Runs <strong>FastQC</strong> on R1/R2 and generates a single <strong>MultiQC</strong> report across samples,
-      plus a merged read-count table.
-    </p>
+            <div class="button-row">
+              <a class="button primary"
+                 href="https://github.com/jcaperella29/Omics_dashboard"
+                 target="_blank" rel="noopener"
+                 onclick="trackProject('omics_dashboard')">Dashboard repository</a>
+              <a class="button secondary"
+                 href="https://github.com/jcaperella29/Omics_pipelines"
+                 target="_blank" rel="noopener"
+                 onclick="trackProject('omics_pipelines')">Pipeline repository</a>
+            </div>
+          </div>
 
-    <ul class="emoji-list">
-      <li>🧬 <strong>Inputs:</strong> paired FASTQs (R1/R2) + sample IDs via JSON</li>
-      <li>🔍 <strong>QC:</strong> FastQC per read pair</li>
-      <li>📊 <strong>Multi-sample summary:</strong> MultiQC report</li>
-      <li>🧾 <strong>Counts:</strong> merged per-sample read counts (R1/R2)</li>
-      <li>📦 <strong>Reproducible:</strong> Docker runtime inside WDL tasks</li>
-    </ul>
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/paired-fastq-qc-wdl/tree/main"
-        target="_blank" rel="noopener"
-        data-app-id="paired_fastq_qc_wdl_repo"
-        data-app-name="Paired FASTQ QC (WDL + Cromwell)"
-        onclick="trackAppClick(this)"
-      >
-        View on GitHub
-      </a>
-
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/paired-fastq-qc-wdl/blob/main/README.md"
-        target="_blank" rel="noopener"
-        data-app-id="paired_fastq_qc_wdl_readme"
-        data-app-name="Paired FASTQ QC (WDL + Cromwell) README"
-        onclick="trackAppClick(this)"
-      >
-        README
-      </a>
-    </div>
-
-    <p class="lead" style="margin-top:16px;">
-      <strong>Use case:</strong> a compact, portfolio-friendly example of WDL/Cromwell workflow wiring,
-      containerized execution, and QC aggregation across multiple samples.
-    </p>
-  </div>
-</section> 
-    <section id="nextflow" class="tab-content">
-  <div class="tool">
-    <h2>Counts_matrix_Nextflow (RNA-seq Pipeline)</h2>
-
-    <p class="lead">
-      Portable <strong>Nextflow DSL2</strong> RNA-seq workflow: QC → STAR alignment → gene counts →
-      Salmon TPM → BigWig coverage → matrix merge + MultiQC summary.
-      Designed to be <strong>minimal, readable, and robust</strong>.
-    </p>
-
-    <ul class="emoji-list">
-      <li>📄 <strong>Inputs:</strong> paired-end FASTQs via samplesheet CSV</li>
-      <li>🧬 <strong>Core steps:</strong> fastp → STAR → featureCounts → Salmon → MultiQC</li>
-      <li>📈 <strong>Outputs:</strong> gene counts matrix, TPM matrix, BigWig tracks, QC report</li>
-      <li>🧱 <strong>Indexes:</strong> auto-builds STAR + Salmon indexes (per run)</li>
-      <li>🛡️ <strong>Robustness:</strong> skips coverage gracefully for zero-mapped samples</li>
-      <li>📦 <strong>Runs anywhere:</strong> Conda, Docker, or Singularity/Apptainer</li>
-      <li>🧪 <strong>Great for:</strong> demos, infra tests, portfolio/template pipelines</li>
-    </ul>
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/Counts_matrix_Nextflow"
-        target="_blank" rel="noopener"
-        data-app-id="nextflow_counts_matrix"
-        data-app-name="Counts_matrix_Nextflow"
-        onclick="trackAppClick(this)"
-      >
-        View on GitHub
-      </a>
-
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/Counts_matrix_Nextflow#readme"
-        target="_blank" rel="noopener"
-        data-app-id="nextflow_counts_matrix_readme"
-        data-app-name="Counts_matrix_Nextflow README"
-        onclick="trackAppClick(this)"
-      >
-        README
-      </a>
-    </div>
-
-    <h3 style="margin: 6px 0 10px; color:#003566;">Quickstart</h3>
-
-    <p style="margin-bottom:8px; color:#343a40;"><strong>Docker</strong></p>
-    <pre style="background:#0b1320; color:#e5e7eb; padding:14px; border-radius:12px; overflow:auto; font-size:0.92rem; line-height:1.45;">
-docker build -t rnaseq-pipeline .
-nextflow run main.nf -profile docker \
-  --samplesheet samples.csv \
-  --ref genome.fa \
-  --gtf genes.gtf \
-  --transcripts transcripts.fa
-    </pre>
-
-    <p style="margin:14px 0 8px; color:#343a40;"><strong>Singularity/Apptainer</strong></p>
-    <pre style="background:#0b1320; color:#e5e7eb; padding:14px; border-radius:12px; overflow:auto; font-size:0.92rem; line-height:1.45;">
-singularity build containers/rnaseq-pipeline.sif docker://rnaseq-pipeline
-nextflow run main.nf -profile singularity \
-  --samplesheet samples.csv \
-  --ref genome.fa \
-  --gtf genes.gtf \
-  --transcripts transcripts.fa
-    </pre>
-
-    <h3 style="margin: 16px 0 10px; color:#003566;">Key Outputs</h3>
-    <pre style="background:#f1f5f9; color:#111827; padding:14px; border-radius:12px; overflow:auto; font-size:0.92rem; line-height:1.45;">
-results/
-├── qc/                       (fastp)
-├── ref/                      (STAR + Salmon indexes)
-├── bam/                      (sorted BAM + BAI + flagstat)
-├── bigwig/                   (coverage tracks)
-├── counts_per_sample/        (per-sample featureCounts)
-├── counts_matrix.tsv         (gene count matrix)
-├── salmon_tpm_matrix.tsv     (transcript TPM matrix)
-└── multiqc_report.html       (summary report)
-    </pre>
-
-    <p class="lead" style="margin-top:14px;">
-      <strong>Notes:</strong> intentionally simple; explicit channels; guards against common failure modes.
-      Easy to extend into DESeq2/edgeR downstream analysis.
-    </p>
-  </div>
-</section>
-<section id="enrichment-llm" class="tab-content">
-  <div class="tool">
-    <div class="ribbon">NEW</div>
-    <h2>Enrichment Analysis LLM Triage (Flask App)</h2>
-
-    <p class="lead">
-      A lightweight <strong>Flask</strong> web app that takes enrichment results (CSV) and generates a structured,
-      human-readable triage report — highlighting likely biological <strong>drivers</strong>, <strong>reactive</strong>
-      programs, potential <strong>confounders</strong>, and suggested <strong>follow-up experiments</strong>.
-    </p>
-
-    <ul class="emoji-list">
-      <li>📄 <strong>Input:</strong> enrichment CSV (terms + scores + genes/overlap fields)</li>
-      <li>🧠 <strong>LLM reasoning:</strong> summarizes key programs and flags confounding patterns</li>
-      <li>🧪 <strong>Follow-ups:</strong> proposes targeted experiments with readouts + controls</li>
-      <li>📑 <strong>PDF report:</strong> generates a clean downloadable triage PDF</li>
-      <li>📦 <strong>Deploy:</strong> Docker + Apptainer/Singularity (HPC-friendly)</li>
-    </ul>
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/Enrichment_Analysis_LLM_APP/tree/main"
-        target="_blank" rel="noopener"
-        data-app-id="enrichment_llm_repo"
-        data-app-name="Enrichment Analysis LLM Triage (GitHub)"
-        onclick="trackAppClick(this)"
-      >
-        View on GitHub
-      </a>
-    </div>
-
-    <p class="lead" style="margin-top:16px;">
-      <strong>Why it matters:</strong> enrichment tables are easy to generate but hard to interpret.
-      This tool helps translate “significant pathways” into an actionable short list of mechanisms
-      and concrete next experiments — without drowning the user in jargon.
-    </p>
-  </div>
-</section>
-
-<section id="nlp-phenotyper" class="tab-content">
-  <div class="tool">
-    <div class="ribbon">NEW</div>
-    <h2>Breast Cancer NLP Phenotyper (Dash + medspaCy)</h2>
-
-    <p class="lead">
-      A lightweight, <strong>rule-based clinical NLP dashboard</strong> for extracting key breast cancer phenotypes
-      from free-text notes (e.g., pathology, consults). Outputs include a clean patient-level table plus
-      <strong>auditable evidence mentions</strong> with snippets so results can be reviewed and trusted.
-    </p>
-
-    <ul class="emoji-list">
-      <li>📄 <strong>Input:</strong> upload multiple <code>.txt</code> notes + optional mapping CSV (note → patient/date/type)</li>
-      <li>🧠 <strong>NLP engine:</strong> spaCy + medspaCy patterns (deterministic extraction)</li>
-      <li>🧬 <strong>Phenotypes:</strong> ER/PR status (+ % if present), HER2 (IHC/FISH → final), Ki-67, histology, grade, stage</li>
-      <li>🔎 <strong>Evidence:</strong> each extracted value is backed by mention-level snippets for auditing</li>
-      <li>🧮 <strong>Aggregation:</strong> note-type/date precedence rules roll note-level data to patient-level output</li>
-      <li>designed for HPC environments using Singularity</li>
-
-    </ul>
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/NLP_Phenotyper"
-        target="_blank" rel="noopener"
-        data-app-id="nlp_phenotyper_repo"
-        data-app-name="NLP Phenotyper (GitHub)"
-        onclick="trackAppClick(this)"
-      >
-        View on GitHub
-      </a>
-    </div>
-
-    <p class="lead" style="margin-top:16px;">
-      <strong>Note:</strong> This is an MVP designed for transparency and portability — ideal for demos, iteration,
-      and extension into richer rule sets or model-assisted extraction later.
-    </p>
-  </div>
-</section>
-    
-    <section id="atac" class="tab-content">
-      <div class="tool">
-        <h2>ATAC-Seq Peak Annotation & Enrichment</h2>
-        <p class="lead">
-          Upload MACS2 <code>.narrowPeak</code>, annotate with ChIPseeker, and run GO/KEGG/Reactome
-          enrichment with slick visuals and CSV exports.
-        </p>
-        <ul class="emoji-list">
-          <li>📄 <strong>Input:</strong> MACS2 <code>.narrowPeak</code> file</li>
-          <li>🏷️ <strong>Annotation:</strong> ChIPseeker + TxDb</li>
-          <li>📊 <strong>Views:</strong> pie charts, tables, barplots</li>
-          <li>🧠 <strong>Pathways:</strong> enrichR (GO/KEGG/Reactome)</li>
-          <li>designed for HPC environments using Singularity</li>
-
-        </ul>
-        <a
-          class="github-btn"
-          href="https://github.com/jcaperella29/ATAC_APP"
-          target="_blank" rel="noopener"
-          data-app-id="atac"
-          data-app-name="ATAC-Seq App"
-          onclick="trackAppClick(this)"
-        >
-          View on GitHub
-        </a>
+          <div class="architecture" aria-label="Platform architecture">
+            <div class="architecture-title">System architecture</div>
+            <div class="arch-box">Dash user interface</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-box">FastAPI service layer</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-box">RNA-seq</div>
+              <div class="arch-box">scRNA-seq</div>
+              <div class="arch-box">CRISPR</div>
+            </div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-box">Nextflow DSL2 orchestration</div>
+            <div class="arch-arrow">↓</div>
+            <div class="arch-row">
+              <div class="arch-box">Network</div>
+              <div class="arch-box">LLM triage</div>
+              <div class="arch-box">Reports</div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="mirna" class="tab-content">
-      <div class="tool">
-        <h2>miRNA Differential Expression & Enrichment</h2>
-        <p class="lead">
-          DESeq2-based miRNA analysis with PCA/UMAP, volcano & heatmaps, Enrichr enrichment,
-          Random Forest classification, power analysis, and exports.
-        </p>
-        <ul class="emoji-list">
-          <li>🗂️ <strong>Inputs:</strong> miRNA counts + metadata</li>
-          <li>🧬 <strong>DE:</strong> DESeq2 pipeline</li>
-          <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
-          <li>🌋 <strong>Plots:</strong> volcano, top-miRNA bars, heatmaps</li>
-          <li>🧠 <strong>ML:</strong> RF classification + metrics</li>
-          <li>🧪 <strong>Pathways:</strong> Enrichr (clusterProfiler fallback)</li>
-          <li>⚡ <strong>Power:</strong> sample size estimates</li>
-          <li>designed for HPC environments using Singularity</li>
+    <section id="featured" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Featured work</div>
+          <h2>Selected scientific applications</h2>
+          <p>
+            These projects show scientific reasoning, software architecture, transparent outputs,
+            and practical usability rather than simply maximizing the number of listed tools.
+          </p>
+        </div>
 
-        </ul>
-        <a
-          class="github-btn"
-          href="https://github.com/jcaperella29/MI_RNA_SHINY"
-          target="_blank" rel="noopener"
-          data-app-id="mirna"
-          data-app-name="miRNA-Seq App"
-          onclick="trackAppClick(this)"
-        >
-          View on GitHub
-        </a>
+        <div class="grid">
+          <article class="card">
+            <div class="card-kicker">Network analysis · Dash</div>
+            <h3>JC Enrichment Network Studio</h3>
+            <p>
+              Converts enrichment tables into interactive gene-pathway networks, pathway-overlap
+              projections, diffusion-based rankings, consensus candidates, and reproducible export bundles.
+            </p>
+            <div class="button-row">
+              <a class="button primary" href="https://jc-enrichment-network-studio121-390287836436.northamerica-northeast1.run.app/" target="_blank" rel="noopener" onclick="trackProject('network_live')">Open live app</a>
+              <a class="button secondary" href="https://github.com/jcaperella29/JC-Enrichment-Network-Studio" target="_blank" rel="noopener" onclick="trackProject('network_repo')">Repository</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Clinical NLP · Dash + medspaCy</div>
+            <h3>Breast Cancer NLP Phenotyper</h3>
+            <p>
+              A transparent, rule-based clinical NLP prototype that extracts breast-cancer phenotypes,
+              preserves evidence snippets, and aggregates note-level findings into auditable patient-level outputs.
+            </p>
+            <div class="button-row">
+              <a class="button secondary" href="https://github.com/jcaperella29/NLP_Phenotyper" target="_blank" rel="noopener" onclick="trackProject('nlp_phenotyper')">Repository</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Cloud architecture · GCP</div>
+            <h3>Event-Driven FASTQ Processing</h3>
+            <p>
+              An architecture demonstration using Cloud Storage, Eventarc, a Cloud Function, and a
+              containerized Cloud Run Job to trigger reproducible batch processing when a FASTQ file arrives.
+            </p>
+            <div class="button-row">
+              <a class="button secondary" href="https://github.com/jcaperella29/gcp-fastq-event-pipeline" target="_blank" rel="noopener" onclick="trackProject('gcp_fastq')">Repository</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Decision support · Flask</div>
+            <h3>Enrichment LLM Triage</h3>
+            <p>
+              Produces structured summaries of enrichment results, separates likely drivers from reactive
+              programs and confounders, and suggests follow-up experiments for scientist review.
+            </p>
+            <div class="button-row">
+              <a class="button secondary" href="https://github.com/jcaperella29/Enrichment_Analysis_LLM_APP" target="_blank" rel="noopener" onclick="trackProject('llm_triage')">Repository</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="methylation" class="tab-content">
-      <div class="tool">
-        <h2>DNA Methylation App</h2>
-        <p class="lead">
-          Explore beta values, run differential methylation, enrichment, PCA/UMAP, Random Forest,
-          power analysis, and download everything — HPC-ready.
-        </p>
-        <ul class="emoji-list">
-          <li>🗂️ <strong>Input:</strong> CSV beta matrix (e.g., 450k)</li>
-          <li>🧪 <strong>DE:</strong> probe-level stats + FDR</li>
-          <li>🧭 <strong>Dims:</strong> PCA & UMAP</li>
-          <li>🧠 <strong>ML:</strong> RF + AUC & importance</li>
-          <li>🧪 <strong>Pathways:</strong> Enrichr KEGG/GO/Reactome</li>
-          <li>⚡ <strong>Power:</strong> Cohen’s d → n per group</li>
-          <li>📦 <strong>Deploy:</strong> Singularity/Apptainer</li>
-        </ul>
-        <a
-          class="github-btn"
-          href="https://github.com/jcaperella29/methylation_shiny"
-          target="_blank" rel="noopener"
-          data-app-id="methylation"
-          data-app-name="Methylation App"
-          onclick="trackAppClick(this)"
-        >
-          View on GitHub
-        </a>
+    <section id="engineering" class="section white">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Engineering examples</div>
+          <h2>Workflow and platform demonstrations</h2>
+          <p>
+            Smaller projects retained because they demonstrate distinct engineering skills, not because
+            they are intended to replace mature community pipelines.
+          </p>
+        </div>
+
+        <div class="mini-grid">
+          <article class="mini-card">
+            <h3>Nextflow RNA-seq workflow</h3>
+            <p>Readable DSL2 example covering channels, processes, containers, QC, alignment, quantification, and reports.</p>
+            <a class="text-link" href="https://github.com/jcaperella29/Counts_matrix_Nextflow" target="_blank" rel="noopener">View repository →</a>
+          </article>
+
+          <article class="mini-card">
+            <h3>WDL + Cromwell FASTQ QC</h3>
+            <p>Compact workflow-language example using containerized FastQC, MultiQC, and merged read-count outputs.</p>
+            <a class="text-link" href="https://github.com/jcaperella29/paired-fastq-qc-wdl" target="_blank" rel="noopener">View repository →</a>
+          </article>
+
+          <article class="mini-card">
+            <h3>Research Radar</h3>
+            <p>PubMed ingestion, structured JSON generation, local LLM summaries, filtering, and literature trend views.</p>
+            <a class="text-link" href="./research/" target="_blank" rel="noopener">Open project →</a>
+          </article>
+
+          <article class="mini-card">
+            <h3>Document Cleaning CLI</h3>
+            <p>Image cleanup and OCR-preparation workflow exposed through command-line and API-oriented interfaces.</p>
+            <a class="text-link" href="https://github.com/jcaperella29/Document_cleaning_CLI" target="_blank" rel="noopener">View repository →</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="crispr" class="tab-content">
-      <div class="tool">
-        <h2>CRISPR Mixscape Pipeline (Perturb-seq)</h2>
-        <p class="lead">
-          Single-cell CRISPR screen workflow using Seurat’s Mixscape: QC/normalization,
-          UMAP, perturbation scoring, KO/NP/NT assignment, DE, and rich plots — with HPC support.
-        </p>
-        <ul class="emoji-list">
-          <li>🧪 <strong>Inputs:</strong> counts + metadata CSVs</li>
-          <li>🧭 <strong>Dims:</strong> UMAP visualization</li>
-          <li>🧮 <strong>Mixscape:</strong> perturbation scores & class labels</li>
-          <li>🧬 <strong>DE:</strong> KO vs NT + downloads</li>
-          <li>📈 <strong>Views:</strong> bar/violin/heatmaps, summaries</li>
-          <li>📦 <strong>Deploy:</strong> Singularity + Slurm script</li>
-        </ul>
-        <a
-          class="github-btn"
-          href="https://github.com/jcaperella29/Perturb_seq_app"
-          target="_blank" rel="noopener"
-          data-app-id="crispr"
-          data-app-name="CRISPR Mixscape App"
-          onclick="trackAppClick(this)"
-        >
-          View on GitHub
-        </a>
-      </div>
-    </section>
+    <section id="legacy" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Earlier work</div>
+          <h2>Earlier omics application prototypes</h2>
+        </div>
 
-    <section id="gwas" class="tab-content">
-      <div class="tool">
-        <h2>GWAS Analysis App</h2>
-        <p>A full-stack, no-code Shiny app for Genome-Wide Association Studies (GWAS) using raw VCF files—no PLINK needed. Upload your VCF, phenotype, and covariate table to begin.</p>
-        <ul class="emoji-list">
-          <li>🧪 <strong>QC Filters:</strong> MAF, allele frequency, call rate, HWE p-value thresholds</li>
-          <li>🧮 <strong>GWAS Engine:</strong> Logistic regression with Bonferroni correction support</li>
-          <li>📊 <strong>Visualization:</strong> PCA, UMAP, QQ plot, Manhattan plot with region zoom</li>
-          <li>🤖 <strong>Machine Learning:</strong> Random Forest with AUC, importance, ROC</li>
-          <li>🧬 <strong>SNP-to-Gene Mapping:</strong> Map significant SNPs to nearest genes</li>
-          <li>🧠 <strong>Enrichment:</strong> KEGG/GO/Reactome via <em>enrichR</em></li>
-          <li>⚡ <strong>Power Analysis:</strong> Cohen’s d-based observed power & sample size curve</li>
-          <li>📦 <strong>Export Everything:</strong> GWAS tables, enrichment results, ML metrics, more</li>
-          <li>designed for HPC environments using Singularity</li>
-
-        </ul>
-        <a
-          class="github-btn"
-          href="https://github.com/jcaperella29/GWAS_SHINY_APP"
-          target="_blank" rel="noopener"
-          data-app-id="gwas"
-          data-app-name="GWAS App"
-          onclick="trackAppClick(this)"
-        >
-          View on GitHub
-        </a>
-      </div>
-    </section>
-
-    <section id="scrna" class="tab-content">
-      <div class="scrna-hero">
-        <div class="tool">
-          <div class="ribbon">NEW</div>
-          <h2 class="scrna-title">Single-cell RNA-Seq App</h2>
-
-          <p class="lead">
-            Interactive Seurat-based app to explore scRNA-seq data, run DE, pathway enrichment,
-            classification, power analyses, and download publication-ready tables/plots.
+        <div class="legacy-box">
+          <p>
+            These repositories document earlier work exploring accessible Shiny interfaces for common
+            bioinformatics analyses. Newer RNA-seq, scRNA-seq, CRISPR, network, and triage capabilities
+            have been incorporated into the API-driven Omics Workflow Platform. The earlier projects
+            remain available to show technical progression and breadth.
           </p>
 
-          <ul class="emoji-list">
-            <li>🗂️ <strong>Upload:</strong> counts CSV (genes × cells/samples) + metadata CSV (matching names)</li>
-            <li>🧱 <strong>Create Seurat Object:</strong> load & normalize your data in-app</li>
-            <li>🧭 <strong>Dimensionality Reduction:</strong> <strong>PCA & UMAP</strong> for cluster/pattern visualization</li>
-            <li>🧬 <strong>Differential Expression:</strong> by condition and by cell type; find condition-only DE genes</li>
-            <li>🧠 <strong>Pathway Analysis:</strong> enrich DE gene sets across multiple databases</li>
-            <li>🌋 <strong>Volcano Plot:</strong> publication-style volcano for condition-only DE</li>
-            <li>🤖 <strong>Feature Selection & Classification:</strong> Random Forest markers, ROC, importance</li>
-            <li>📈 <strong>Power Analysis:</strong> estimate power and minimum sample size for key DE genes</li>
-            <li>🔥 <strong>Heatmaps:</strong> top features and group differences</li>
-            <li>⬇️ <strong>Downloads:</strong> export all result tables and figures</li>
-            <li>designed for HPC environments using Singularity</li>
-
+          <ul class="legacy-list">
+            <li><a href="https://github.com/jcaperella29/RNA_SEQ_APP" target="_blank" rel="noopener">RNA-seq Shiny prototype</a></li>
+            <li><a href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution" target="_blank" rel="noopener">scRNA-seq Shiny prototype</a></li>
+            <li><a href="https://github.com/jcaperella29/Perturb_seq_app" target="_blank" rel="noopener">CRISPR Mixscape prototype</a></li>
+            <li><a href="https://github.com/jcaperella29/ATAC_APP" target="_blank" rel="noopener">ATAC-seq prototype</a></li>
+            <li><a href="https://github.com/jcaperella29/MI_RNA_SHINY" target="_blank" rel="noopener">miRNA prototype</a></li>
+            <li><a href="https://github.com/jcaperella29/methylation_shiny" target="_blank" rel="noopener">Methylation prototype</a></li>
+            <li><a href="https://github.com/jcaperella29/GWAS_SHINY_APP" target="_blank" rel="noopener">GWAS prototype</a></li>
           </ul>
-
-          <a
-            class="github-btn"
-            href="https://github.com/jcaperella29/JCAP_SINGLE_CELL_RNA-Seq-Solution"
-            target="_blank" rel="noopener"
-            data-app-id="scrna"
-            data-app-name="scRNA-Seq App"
-            onclick="trackAppClick(this)"
-          >
-            View on GitHub
-          </a>
-
-          <p class="lead" style="margin-top:16px;">
-            <strong>Tips:</strong> CSV format only; counts & metadata must match by name. For best results, use
-            quality-filtered data (see <code>insurance_policy_script.R</code>).
-          </p>
         </div>
       </div>
     </section>
 
-    
-    
+    <section id="about" class="section white">
+      <div class="container about">
+        <img class="headshot" src="assets/IMG_0740.jpg" alt="John Caperella" loading="lazy">
+        <div>
+          <div class="eyebrow">About</div>
+          <h2>John Caperella, MS</h2>
+          <p>
+            I am a bioinformatician and full-stack software engineer with an MS in Bioinformatics.
+            My work focuses on turning scientific analysis into maintainable software: modular APIs,
+            reproducible workflows, interactive interfaces, structured outputs, and clear documentation.
+          </p>
 
-<section id="about" class="tab-content">
-  <div class="tool">
-    <h2>About Me</h2>
+          <div class="button-row">
+            <a class="button secondary" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button secondary" href="https://github.com/jcaperella29" target="_blank" rel="noopener">GitHub</a>
+            <a class="button secondary" href="resume.html" target="_blank" rel="noopener">Résumé</a>
+          </div>
 
-    <div class="about-grid">
-      <img
-        class="about-headshot"
-        src="assets/IMG_0740.jpg"
-        alt="Headshot of John Caperella"
-        loading="lazy"
-      />
-
-      <div>
-        <p>
-          I’m <strong>John Caperella</strong>, a bioinformatics developer passionate about turning
-          complex genomic data into usable insights. I build clear, scalable tools for
-          <em>single-cell RNA-seq</em>, <em>CRISPR Mixscape</em>, and <em>omics visualization</em> in
-          <strong>R, Python, and Shiny</strong>—helping researchers and data scientists get to answers faster.
-        </p>
-
-        <ul class="emoji-list" style="margin:14px 0;">
-          <li>🧬 Single-cell &amp; CRISPR analytics (Seurat/Mixscape)</li>
-          <li>📊 Reproducible visualization apps (Docker/Singularity/HPC)</li>
-          <li>🤖 Exploring LLMs for genomics workflows</li>
-        </ul>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="github-btn" href="#contact-form">Contact Form</a>
-          <a class="github-btn" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="github-btn" href="https://github.com/jcaperella29" target="_blank" rel="noopener">GitHub</a>
-          <a class="github-btn" href="resume.html" target="_blank" rel="noopener">Résumé (HTML)</a>
-        </div>
-
-        <!-- Contact form -->
-        <form
-          id="contact-form"
-          action="https://formspree.io/f/mjkneagn"
-          method="POST"
-          style="margin-top:16px; display:flex; flex-direction:column; gap:10px; max-width:420px;"
-        >
-
-          <label style="display:flex; flex-direction:column; gap:4px; font-size:0.95rem;">
-            Your Email
-            <input
-              type="email"
-              name="email"
-              required
-              style="padding:6px 8px; border-radius:4px; border:1px solid #ccc;"
-            />
-          </label>
-
-          <label style="display:flex; flex-direction:column; gap:4px; font-size:0.95rem;">
-            Subject
-            <input
-              type="text"
-              name="subject"
-              required
-              style="padding:6px 8px; border-radius:4px; border:1px solid #ccc;"
-            />
-          </label>
-
-          <label style="display:flex; flex-direction:column; gap:4px; font-size:0.95rem;">
-            Message
-            <textarea
-              name="message"
-              rows="4"
-              required
-              style="padding:6px 8px; border-radius:4px; border:1px solid #ccc; resize:vertical;"
-            ></textarea>
-          </label>
-
-          <button type="submit" class="github-btn">Send Message</button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="research-radar" class="tab-content">
-  <div class="tool">
-    <div class="ribbon">NEW</div>
-    <h2>Research Radar (PubMed + LLM Summaries)</h2>
-
-    <p class="lead">
-      A lightweight research intelligence dashboard that pulls recent PubMed papers across multiple queries
-      and generates <strong>3-bullet summaries</strong> using a local LLM (<strong>Ollama</strong>).
-      Includes filters, trending topics, and top journals — built for fast scanning.
-    </p>
-
-    <ul class="emoji-list">
-      <li>🧠 <strong>LLM summaries:</strong> exactly 3 bullets per abstract</li>
-      <li>📈 <strong>Dashboard:</strong> trending topics + top journals + search/filter</li>
-      <li>🔁 <strong>Update workflow:</strong> regenerate <code>papers.json</code> and push to Pages</li>
-      <li>🧱 <strong>Portfolio pattern:</strong> API ingestion → pipeline → structured JSON → UI</li>
-    </ul>
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a
-        class="github-btn"
-        href="./research/"
-        target="_blank" rel="noopener"
-        data-app-id="research_radar_live"
-        data-app-name="Research Radar (Live)"
-        onclick="trackAppClick(this)"
-      >
-        Open Research Radar
-      </a>
-
-      <!-- Optional: if you keep radar code in a repo (recommended) -->
-      <!--
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/YOUR_RADAR_REPO"
-        target="_blank" rel="noopener"
-        data-app-id="research_radar_repo"
-        data-app-name="Research Radar (GitHub)"
-        onclick="trackAppClick(this)"
-      >
-        View on GitHub
-      </a>
-      -->
-    </div>
-
-    <p class="lead" style="margin-top:16px;">
-      <strong>Tip:</strong> This is ideal for tracking AI-for-biology, computational methods, and variant calling literature
-      without drowning in full abstracts.
-    </p>
-  </div>
-</section>
-    
-<section id="gcp-fastq-event-pipeline" class="tab-content">
-  <div class="tool">
-    <div class="ribbon">NEW</div>
-    <h2>GCP FASTQ Event Pipeline (Eventarc → Cloud Run Job)</h2>
-
-    <p class="lead">
-      Cloud-native, <strong>event-driven FASTQ processing</strong> on Google Cloud.
-      Upload a FASTQ to <strong>Cloud Storage</strong> and automatically trigger a serverless pipeline:
-      <strong>Eventarc</strong> fires on object finalize → <strong>Cloud Function</strong> launches a
-      containerized <strong>Cloud Run Job</strong> → results are written back for downstream analysis.
-    </p>
-
-    <ul class="emoji-list">
-      <li>☁️ <strong>Trigger:</strong> GCS “object finalize” event (Eventarc)</li>
-      <li>🧩 <strong>Orchestration:</strong> Cloud Function (glue layer)</li>
-      <li>📦 <strong>Compute:</strong> Cloud Run Job (containerized batch)</li>
-      <li>🧬 <strong>Bioinformatics-ready pattern:</strong> scalable ETL wiring for genomics ingestion</li>
-      <li>📤 <strong>Outputs:</strong> structured results written to storage (and designed to extend to analytics/warehousing)</li>
-      <li>🛠️ <strong>Great for:</strong> portfolio demos of serverless pipelines + reproducible containers</li>
-    </ul>
-
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/gcp-fastq-event-pipeline"
-        target="_blank" rel="noopener"
-        data-app-id="gcp_fastq_event_pipeline_repo"
-        data-app-name="GCP FASTQ Event Pipeline (GitHub)"
-        onclick="trackAppClick(this)"
-      >
-        View on GitHub
-      </a>
-
-      <a
-        class="github-btn"
-        href="https://github.com/jcaperella29/gcp-fastq-event-pipeline#readme"
-        target="_blank" rel="noopener"
-        data-app-id="gcp_fastq_event_pipeline_readme"
-        data-app-name="GCP FASTQ Event Pipeline README"
-        onclick="trackAppClick(this)"
-      >
-        README
-      </a>
-    </div>
-
-    <p class="lead" style="margin-top:16px;">
-      <strong>Why it matters:</strong> This mirrors real-world genomics platform patterns —
-      automatic ingestion triggers + containerized compute, without manual job submission.
-    </p>
-  </div>
-</section>
-    
-<section id="document-cleaning" class="tab-content">
-  <div class="tool">
-    <h2>Document Cleaning CLI</h2>
-
-    <p class="lead">
-      AI-powered document cleanup for scanned pages, noisy screenshots, and OCR-bound records.
-      Enhances messy source images into cleaner, sharper outputs that are easier to read, extract,
-      and route into downstream research or clinical workflows.
-    </p>
-
-    <ul class="emoji-list">
-      <li>📥 <strong>Inputs:</strong> scanned <code>.png</code>/<code>.jpg</code> files or ZIP batches of document images</li>
-      <li>🧼 <strong>Cleanup:</strong> deep-learning denoising + image enhancement for messy source material</li>
-      <li>📄 <strong>Outputs:</strong> OCR-optimized images and PDF-ready cleaned documents</li>
-      <li>🛠️ <strong>Modes:</strong> command-line workflow or REST API deployment</li>
-      <li>🏥 <strong>Use cases:</strong> legacy records, scanned notes, exported forms, and other hard-to-read document inputs</li>
-      <li>⚙️ designed for flexible local or API-based deployment workflows</li>
-    </ul>
-
-    <a
-      class="github-btn"
-      href="https://github.com/jcaperella29/Document_cleaning_CLI"
-      target="_blank" rel="noopener"
-      data-app-id="document-cleaning"
-    >
-      View on GitHub
-    </a>
-
-    <p>
-      <strong>Why it matters:</strong> a lot of valuable information is trapped inside low-quality visual documents.
-      This tool helps turn noisy records into cleaner, machine-readable assets for OCR, review, and downstream automation.
-    </p>
-  </div>
-</section>
-    <!-- ==============================
-         ANALYTICS TAB
-    =============================== -->
-    <section id="analytics" class="tab-content">
-      <div class="tool">
-        <h2>Usage Analytics</h2>
-
-        <p class="lead">
-          This dashboard is powered by Google Analytics 4 and Looker Studio.
-          It shows historical click activity for each app.
-        </p>
-
-        <!-- Last checked text -->
-        <p id="analytics-updated" style="margin-top: 4px; font-size: 0.9rem; color: #6c757d;">
-          Last checked: loading…
-        </p>
-
-        <div class="analytics-embed-wrapper">
-          <iframe
-            id="analytics-iframe"
-            width="900"
-            height="600"
-            src="https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF"
-            frameborder="0"
-            style="border:0; width: 100%; border-radius: 12px;"
-            allowfullscreen
-            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-          </iframe>
+          <form class="contact-form" action="https://formspree.io/f/mjkneagn" method="POST">
+            <label>
+              Your email
+              <input type="email" name="email" required>
+            </label>
+            <label>
+              Subject
+              <input type="text" name="subject" required>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="button primary">Send message</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> JCaperella — All rights reserved.
+    <div class="container">
+      © <span id="year"></span> John Caperella. Portfolio projects are research and software demonstrations unless otherwise stated.
+    </div>
   </footer>
 
-<script>
-  // ==========================
-  // 2-level navigation
-  // ==========================
-  function showCategory(cat, defaultTabId, btn) {
-    // show only this category's subnav
-    document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.main-tabs .tab-button').forEach(b => b.classList.remove('active'));
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    const subnav = document.getElementById('subnav-' + cat);
-    if (subnav) subnav.classList.add('active');
-
-    // active state for main category buttons
-    document.querySelectorAll('.main-tabs .tab-button').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
-
-    // show default tab for that category
-    const defaultBtn = document.querySelector(`#subnav-${cat} .tab-button[data-tab="${defaultTabId}"]`);
-    showTab(defaultTabId, defaultBtn);
-
-    // show Back button
-    toggleBackRow(false);
-
-    // GA4 event
-    if (typeof gtag === 'function') {
-      gtag('event', 'category_view', {
-        category_id: cat,
-        category_label: btn ? btn.textContent.trim() : cat
-      });
+    function trackProject(projectId) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'project_click', { project_id: projectId });
+      }
     }
-  }
-
-  function showTab(id, btn) {
-    // show only this pane
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    const pane = document.getElementById(id);
-    if (pane) pane.classList.add('active');
-
-    // active state for sub-tab buttons (only within visible subnav)
-    document.querySelectorAll('.sub-tabs .tab-button').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
-
-    if (pane) pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    // GA4 event
-    if (typeof gtag === 'function') {
-      gtag('event', 'tab_view', {
-        tab_id: id,
-        tab_label: btn ? btn.textContent.trim() : id
-      });
-    }
-
-    if (id === 'analytics') {
-      refreshAnalyticsEmbed();
-    }
-  }
-
-  // ==========================
-  // Back-to-categories
-  // ==========================
-  function toggleBackRow(isHidden) {
-    const backRow = document.getElementById('back-row');
-    if (backRow) backRow.style.display = isHidden ? 'none' : 'block';
-  }
-
-  function backToCategories() {
-    // hide all subnav bars
-    document.querySelectorAll('.sub-tabs').forEach(el => el.classList.remove('active'));
-
-    // clear sub-tab active states
-    document.querySelectorAll('.sub-tabs .tab-button').forEach(b => b.classList.remove('active'));
-
-    // show Welcome as default
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    const welcome = document.getElementById('welcome');
-    if (welcome) welcome.classList.add('active');
-
-    // keep main tabs; scroll to them
-    const nav = document.getElementById('main-nav');
-    if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    toggleBackRow(true);
-  }
-
-  // ==========================
-  // Hero link helper
-  // ==========================
-  function scrollToNav(e) {
-    e.preventDefault();
-    const nav = document.getElementById('main-nav');
-    if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  // ==========================
-  // Footer year
-  // ==========================
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // ==========================
-  // GA4 helper for app clicks
-  // ==========================
-  function trackAppClick(el) {
-  const appId = el.getAttribute('data-app-id') || 'unknown_app';
-  const appName = el.getAttribute('data-app-name') || el.textContent.trim();
-  const url = el.href;
-
-  // Which tab is currently active? (nice for reporting)
-  const activePane = document.querySelector('.tab-content.active');
-  const activeTabId = activePane ? activePane.id : 'unknown_tab';
-
-  if (typeof gtag === 'function') {
-    gtag('event', 'app_repo_click', {
-      app_id: appId,
-      app_name: appName,
-      link_url: url,
-      active_tab: activeTabId
-    });
-  }
-}
-
-  // ==========================
-  // Analytics "Last checked"
-  // ==========================
-  function updateAnalyticsTimestamp() {
-    const el = document.getElementById('analytics-updated');
-    if (!el) return;
-
-    const now = new Date();
-    const formatted = now.toLocaleString([], {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-
-    el.textContent = 'Last checked: ' + formatted;
-  }
-
-  function refreshAnalyticsEmbed() {
-    const iframe = document.getElementById('analytics-iframe');
-    if (!iframe) return;
-
-    const baseSrc = "https://lookerstudio.google.com/embed/reporting/47a9e1cf-8107-4ff2-8536-82613e19c0c4/page/zbUfF";
-    iframe.src = baseSrc + "?ts=" + Date.now();
-    updateAnalyticsTimestamp();
-  }
-
-  // Start state: no crowding (only subnav-info visible because it's marked active in HTML)
-  toggleBackRow(true);
-</script>
-
-  
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
