@@ -1,0 +1,9 @@
+WEBSITE REPOSITORY COPY LIST
+
+1. Replace the website repository root index.html with index.html in this package (or merge if your deployed homepage has changed).
+2. Add the testing-logs/ directory from this package to the website repository root.
+3. Keep your existing assets/IMG_0740.jpg and resume.html. This package references but does not contain those site-specific files.
+4. Optionally commit RUNNER_API_CONTRACT.md to document the new frontend API.
+5. Configure a real hosted Nextflow job service according to RUNNER_API_CONTRACT.md and route /api/* to it. Until this is done, the Run Pipeline buttons honestly report that the service is unavailable. Static hosting alone will not run Nextflow.
+6. Maintain pipeline data, presets and code in the single canonical JCAPEBIOINFORMATICS_PLATFORM repository, not in the website repository. BRCA needs its own sample preset; airway is currently bundled.
+7. Do not commit API keys to either public repository.
