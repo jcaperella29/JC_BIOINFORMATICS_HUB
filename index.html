@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="John Caperella's bioinformatics software portfolio featuring FastAPI services, Nextflow workflows, Dash applications, omics analysis, network visualization, and scientific decision support.">
+  <title>John Caperella | Bioinformatics Software Engineering</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BH0ZXLJ6N2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BH0ZXLJ6N2', {
+      debug_mode: window.location.search.includes("debug=true")
+    });
+  </script>
+
+  <style>
+
+    :root {
+      --navy: #071629;
+      --navy-2: #0b223c;
+      --blue: #1677ff;
+      --cyan: #29c7e8;
+      --ink: #172033;
+      --muted: #5e6b7e;
+      --line: #dce4ee;
+      --surface: #ffffff;
+      --surface-soft: #f5f8fc;
+      --success: #0d8b6f;
+      --shadow: 0 18px 50px rgba(7, 22, 41, 0.10);
+      --radius: 20px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 2%, rgba(41,199,232,.12), transparent 27rem),
+        radial-gradient(circle at 92% 8%, rgba(22,119,255,.10), transparent 30rem),
+        var(--surface-soft);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(220,228,238,.85);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      font-size: 1.08rem;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+    .nav-links a {
+      padding: 8px 11px;
+      text-decoration: none;
+      color: #42506a;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover { color: var(--blue); background: #edf5ff; }
+
+    .hero { padding: 92px 0 70px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #0b6b80;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    h1, h2, h3 {
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 1.12;
+      letter-spacing: -.035em;
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(2.6rem, 6vw, 5.1rem);
+      color: var(--navy);
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      margin: 0 0 28px;
+      color: #46546b;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 17px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), #0758ca);
+      box-shadow: 0 10px 25px rgba(22,119,255,.23);
+    }
+
+    .button.secondary {
+      color: var(--navy);
+      background: white;
+      border-color: var(--line);
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      color: white;
+      background:
+        linear-gradient(145deg, rgba(41,199,232,.16), transparent 42%),
+        linear-gradient(145deg, var(--navy-2), var(--navy));
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel h2 { margin-bottom: 18px; font-size: 1.35rem; }
+
+    .stack { display: flex; flex-wrap: wrap; gap: 9px; }
+
+    .stack span {
+      padding: 7px 10px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      color: #dcecff;
+      background: rgba(255,255,255,.07);
+      font-size: .84rem;
+      font-weight: 650;
+    }
+
+    .section { padding: 78px 0; }
+
+    .section.white {
+      background: white;
+      border-block: 1px solid #e6edf5;
+    }
+
+    .section-head { max-width: 760px; margin-bottom: 34px; }
+
+    .section-head h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--navy);
+    }
+
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.06rem; }
+
+    .flagship {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 28px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      color: #075d4c;
+      background: #ddf8ef;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .flagship h3 { margin-bottom: 15px; font-size: clamp(1.7rem, 3vw, 2.5rem); color: var(--navy); }
+    .flagship p { color: #526077; }
+
+    .feature-list {
+      display: grid;
+      gap: 11px;
+      padding: 0;
+      margin: 24px 0 28px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 9px;
+      align-items: start;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      margin-top: 2px;
+      border-radius: 50%;
+      color: white;
+      background: var(--success);
+      font-size: .74rem;
+      font-weight: 900;
+    }
+
+    .architecture {
+      align-self: stretch;
+      display: grid;
+      align-content: center;
+      padding: 24px;
+      border-radius: 20px;
+      background: linear-gradient(160deg, #071629, #0d2a4a);
+    }
+
+    .architecture-title {
+      margin-bottom: 18px;
+      color: #d9eaff;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .architecture-path {
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 15px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .path-label {
+      margin-bottom: 11px;
+      color: #7ee6f8;
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .architecture-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 14px 0;
+      color: #8fa9c6;
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+    }
+
+    .architecture-divider::before,
+    .architecture-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,.15);
+    }
+
+    .arch-box {
+      padding: 11px 14px;
+      color: white;
+      text-align: center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 11px;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .arch-arrow { padding: 5px; color: #55d4ee; text-align: center; font-weight: 900; }
+    .arch-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 10px 32px rgba(7,22,41,.06);
+    }
+
+    .card-kicker {
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .card h3 { margin-bottom: 12px; color: var(--navy); font-size: 1.42rem; }
+    .card p { margin: 0 0 18px; color: var(--muted); }
+    .card .button-row { margin-top: auto; }
+
+    .mini-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+
+    .mini-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .mini-card h3 { margin-bottom: 8px; color: var(--navy); font-size: 1.07rem; }
+    .mini-card p { margin: 0 0 14px; color: var(--muted); font-size: .91rem; }
+    .text-link { color: var(--blue); text-decoration: none; font-weight: 750; }
+
+    .legacy-box {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #f8fafc;
+    }
+
+    .legacy-box p { margin-top: 0; color: var(--muted); }
+
+    .legacy-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 20px 0 0;
+      list-style: none;
+    }
+
+    .legacy-list a {
+      display: inline-block;
+      padding: 8px 11px;
+      color: #384860;
+      text-decoration: none;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .headshot {
+      width: 150px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 5px solid white;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .about h2 { margin-bottom: 12px; color: var(--navy); font-size: 2.2rem; }
+    .about p { max-width: 780px; color: var(--muted); }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      max-width: 560px;
+      margin-top: 24px;
+    }
+
+    .contact-form label { display: grid; gap: 6px; font-weight: 650; }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font: inherit;
+      background: white;
+    }
+
+    .contact-form button { cursor: pointer; }
+
+    footer {
+      padding: 34px 0;
+      color: #728096;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      background: white;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .flagship { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .hero { padding: 65px 0 52px; }
+      .section { padding: 58px 0; }
+      .grid, .mini-grid { grid-template-columns: 1fr; }
+      .flagship { padding: 22px; }
+      .arch-row { grid-template-columns: 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .headshot { width: 125px; }
+      .button { width: 100%; }
+    }
+  
+
+.site-header .nav { min-height:74px; }
+.nav-links a:focus-visible,.button:focus-visible,summary:focus-visible {outline:3px solid var(--cyan);outline-offset:3px}
+.hero {padding:76px 0 74px}.hero-grid{grid-template-columns:1.35fr .65fr}.hero h1{font-size:clamp(2.5rem,5vw,4.4rem)}
+.hero-about{font-weight:700;color:#1b527d;margin-bottom:12px}.hero-panel .portrait{width:100%;max-width:250px;aspect-ratio:1;object-fit:cover;border-radius:22px;margin:0 auto 18px;display:block;border:3px solid rgba(255,255,255,.28)}
+.hero-panel .bio-list{color:#dcecff;padding-left:22px;margin-bottom:0}.hero-panel .bio-list li{margin-bottom:9px}
+.tagline{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,4vw,3rem);line-height:1.18;color:var(--navy);font-weight:700;letter-spacing:-.04em;margin:9px 0 18px}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.pillar{padding:23px;border:1px solid var(--line);border-radius:18px;background:white}.pillar h3{color:var(--navy);font-size:1.3rem;margin-bottom:9px}.pillar p{color:var(--muted);margin:0}
+.cta-strip{margin-top:25px;background:var(--navy);color:white;border-radius:20px;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.cta-strip p{margin:0;color:#dceaff;max-width:650px}.cta-strip strong{font-size:1.15rem}.cta-strip .button{background:#fff;color:#072445}
+.workflow-note{font-size:.9rem;color:var(--muted)}.demo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.demo-card{background:white;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 10px 30px rgba(7,22,41,.05);display:flex;flex-direction:column;gap:12px}
+.demo-card h3{font-size:1.44rem;margin:0;color:var(--navy)}.demo-card p{margin:0;color:var(--muted)}.demo-card .meta{font-size:.79rem;color:#315d83;text-transform:uppercase;letter-spacing:.06em;font-weight:800}.demo-card .result{border-left:3px solid var(--cyan);padding-left:12px;color:var(--ink)}
+.demo-card .action-set{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}.demo-card .action-set a,.demo-card .action-set button{font-size:.88rem}.run-button{cursor:pointer;font-family:inherit}.run-button:disabled{opacity:.58;cursor:wait}.job-status{font-size:.9rem;background:#eff5fb;border:1px solid #dce4ee;border-radius:10px;padding:10px;color:#334962}.job-status[data-state="failed"]{background:#fff1ed;border-color:#efc9c1}.job-output{display:flex;flex-direction:column;align-items:flex-start;gap:10px}.job-output[hidden]{display:none}.demo-card details{border-top:1px solid var(--line);padding-top:12px}.demo-card summary{font-weight:750;cursor:pointer;color:var(--blue)}.demo-card details p{margin-top:12px;font-size:.91rem}
+.helper{font-size:.9rem;color:var(--muted)}.about-inline{display:grid;grid-template-columns:1fr 1fr;gap:30px}.about-inline p{color:var(--muted)}.links-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.research-sources{background:#f5f8fc;padding:18px 22px;border:1px solid var(--line);border-radius:16px}.research-sources p{margin:0 0 9px;color:var(--muted)}
+footer a{color:#425d7c}.section-head{max-width:900px}.eyebrow{margin-bottom:12px}
+@media(max-width:900px){.demo-grid{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}.about-inline{grid-template-columns:1fr}.hero-grid{grid-template-columns:1fr}.nav-links{display:flex}.nav{flex-wrap:wrap;padding-block:10px}.nav-links a{font-size:.82rem;padding:6px}}
+@media(max-width:640px){.hero{padding:48px 0}.hero-panel .portrait{max-width:160px}.cta-strip{padding:20px}.nav{justify-content:center}.nav-links{justify-content:center}}
+
+
+/* Single-view site: only the chosen panel appears beneath the same navigation. */
+.view-panel[hidden]{display:none !important}
+.nav-links a[aria-current="page"]{background:#e7f2ff;color:#0758ca;box-shadow:inset 0 0 0 1px #c2d9fa}
+.view-panel{animation:appear .18s ease-out}
+@keyframes appear{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.hero.view-panel{padding-top:54px;padding-bottom:44px}
+.view-panel.section{padding-top:48px}
+.about-additional{margin-top:38px}
+.about-additional .section{border-radius:22px;border:1px solid var(--line);padding:32px;background:#fff}
+@media(max-width:640px){.nav-links{width:100%;gap:3px;flex-wrap:nowrap;justify-content:space-between}.nav-links a{white-space:nowrap;font-size:.73rem;padding:8px 6px}.hero.view-panel{padding-top:30px}.about-additional .section{padding:20px}}
+@media(prefers-reduced-motion:reduce){.view-panel{animation:none}}
+
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav">
+<a class="brand" href="#about">John Caperella · JCAP</a>
+<nav class="nav-links" aria-label="Main navigation"><a href="#about">About John</a><a href="#platform">The Platform</a><a href="#validation">Validation &amp; Try It</a></nav>
+</div></header>
+<main id="top">
+<section id="about" class="hero view-panel" data-view="about"><div class="container hero-grid">
+<div>
+<div class="eyebrow">Meet the developer</div>
+<h1>Hi, I'm John Caperella.</h1>
+<p class="hero-about">Bioinformatician · Scientific software developer · MS in Bioinformatics</p>
+<p class="hero-lead">I build tools that help research teams move from complex data to clear results. With a background in biochemistry and bioinformatics, I created JCAP to make it easier to analyze experiments, understand the biology, and decide what to study next.</p>
+<div class="button-row"><a class="button primary" href="#validation">Try a research example</a><a class="button secondary" href="#platform">Meet JCAP</a><a class="button secondary" href="resume.html" target="_blank" rel="noopener">My résumé</a></div>
+</div>
+<aside class="hero-panel"><img class="portrait" src="assets/IMG_0740.jpg" alt="Portrait of John Caperella" loading="lazy"><h2>Why I built JCAP</h2><p>Scientists should get more than long tables of numbers. They need a clear account of what the data suggest—and what deserves a closer look.</p><div class="stack"><span>Python</span><span>R / Bioconductor</span><span>Nextflow</span><span>FastAPI</span><span>Dash</span></div></aside>
+</div>
+<div class="about-additional"><section class="section white" id="contact"><div class="container about-inline"><div><div class="eyebrow">Behind the platform</div><h2>Built for researchers who need answers they can use.</h2><p>My goal is to make bioinformatics outputs easier to interpret and easier to discuss with a research team. JCAP combines statistics, biological context, and supporting publications—but keeps the underlying data available for inspection.</p><div class="links-row"><a class="button secondary" href="https://github.com/jcaperella29/JCAPEBIOINFORMATICS_PLATFORM" target="_blank" rel="noopener">JCAP source code</a><a class="button secondary" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a><a class="button secondary" href="resume.html" target="_blank" rel="noopener">Résumé</a></div></div><div><h3>Questions or feedback?</h3><p>If you test JCAP, I'd welcome feedback about what worked, what was confusing, and which research tasks you want it to support next.</p><form class="contact-form" action="https://formspree.io/f/mjkneagn" method="POST"><label>Your email<input type="email" name="email" autocomplete="email" required></label><label>Subject<input type="text" name="subject" required></label><label>Message<textarea name="message" rows="4" required></textarea></label><button type="submit" class="button primary">Send feedback</button></form></div></div></section></div>
+</section>
+<section id="platform" class="section white view-panel" data-view="platform" hidden><div class="container">
+<div class="section-head"><div class="eyebrow">The JCAP Bioinformatics Platform</div><h2>From data to a report you can share with your PI</h2><div class="tagline">Numbers. Narrative. Next Steps.</div><p>JCAP connects gene-expression analysis, biological interpretation, scientific papers, and possible follow-up experiments. Instead of leaving you with only spreadsheets and plots, it helps prepare a report you can review with your principal investigator (PI).</p></div>
+<div class="pillars"><article class="pillar"><h3>01 · Numbers</h3><p>Find important changes in genes and biological pathways, backed by statistics.</p></article><article class="pillar"><h3>02 · Narrative</h3><p>Explain what the results may mean and connect them to published research.</p></article><article class="pillar"><h3>03 · Next Steps</h3><p>Suggest questions and follow-up experiments, assembled into a reviewable research report.</p></article></div>
+<div class="about-inline" style="margin-top:34px"><div><h3>What can JCAP analyze?</h3><p><strong>Bulk RNA-seq:</strong> compare gene activity between groups of samples. <strong>Single-cell RNA-seq:</strong> see how individual cell types respond. <strong>Perturb-seq:</strong> explore how changing a gene affects cells.</p></div><div><h3>What will I see in the dashboard?</h3><p>Analysis results, interactive plots, cell-state information (where relevant), gene-pathway networks, summaries of research papers, and a final report—all organized by stage.</p></div></div>
+<div class="cta-strip"><div><strong>Want to see what JCAP can do?</strong><p>Start with a real published research example, then inspect the science behind the result.</p></div><a class="button" href="#validation">CLICK HERE TO GET STARTED →</a></div>
+</div></section>
+<section id="validation" class="section view-panel" data-view="validation" hidden><div class="container">
+<div class="section-head"><div class="eyebrow">Validation &amp; try it yourself</div><h2>Real research data. Recognizable findings.</h2><p>I tested JCAP with published datasets and checked whether it recovered important findings reported by the original researchers. Choose a sample, run the real pipeline from this page, then download the complete result bundle. Hosted execution requires the JCAP job service to be deployed and connected.</p></div>
+<div class="demo-grid">
+<article class="demo-card"><div class="meta">Bulk RNA-seq · Breast cancer</div><h3>What changes in a tumor?</h3><p class="result">JCAP found changes related to the tissue surrounding breast tumors, consistent with established breast-cancer biology.</p><p><strong>Test snapshot:</strong> 200 samples; 17,591 genes tested; 4,291 met the stated significance cutoffs.</p><details><summary>See the science</summary><p>Using the TCGA-BRCA subset of GEO GSE62944, the analysis found extracellular-matrix and tissue-remodeling signatures, including MMP11 upregulation. Thresholds: FDR &lt; 0.05 and |log2 fold change| ≥ 1. These are findings from an internal benchmark, not an independent accuracy rating.</p></details><div class="action-set"><button type="button" class="button primary run-button" data-demo="brca" aria-controls="status-brca">Run BRCA pipeline ▶</button></div><div class="job-status" id="status-brca" role="status" aria-live="polite">Ready to submit when the job service is connected.</div><div class="job-output" id="output-brca" hidden><a class="button secondary bundle-link" download>Download complete results (.zip) ↓</a><a class="text-link report-link" target="_blank" rel="noopener" hidden>View final report ↗</a></div><div class="helper">The BRCA demo requires its prepared dataset and execution preset on the server; the bundled bulk RNA-seq example currently uses airway.</div><a class="text-link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62944" target="_blank" rel="noopener">Original dataset ↗</a><a class="text-link" href="testing-logs/brca-bulk-rnaseq-test-log.docx" download>Full BRCA test record ↓</a></article>
+<article class="demo-card"><div class="meta">Single-cell RNA-seq · Immune response</div><h3>How do immune cells respond?</h3><p class="result">JCAP found the expected antiviral response in immune cells exposed to interferon-beta, matching the main biology of the original study.</p><p><strong>Test snapshot:</strong> 4,000 cells; eight donors; paired donor-aware analysis of CD14+ monocytes.</p><details><summary>See the science</summary><p>The Kang benchmark recovered interferon-response genes and pathways. Cell-level and donor-aware pseudobulk analyses agreed on the dominant antiviral response. Pseudobulk means grouping cells by donor so people—not individual cells—provide the biological replication.</p></details><div class="action-set"><button type="button" class="button primary run-button" data-demo="kang" aria-controls="status-kang">Run Kang pipeline ▶</button></div><div class="job-status" id="status-kang" role="status" aria-live="polite">Ready to submit when the job service is connected.</div><div class="job-output" id="output-kang" hidden><a class="button secondary bundle-link" download>Download complete results (.zip) ↓</a><a class="text-link report-link" target="_blank" rel="noopener" hidden>View final report ↗</a></div><a class="text-link" href="https://doi.org/10.1038/nbt.4042" target="_blank" rel="noopener">Original paper — Kang et al. (2018) ↗</a><a class="text-link" href="testing-logs/kang-single-cell-test-log.docx" download>Full Kang test record ↓</a></article>
+<article class="demo-card"><div class="meta">Perturb-seq · Blood cell development</div><h3>What happens when a gene changes?</h3><p class="result">JCAP recovered expected changes in blood-cell development linked to targeted gene perturbations.</p><p><strong>Test snapshot:</strong> perturbation-by-perturbation analysis with cell-state context and a combined experiment report.</p><details><summary>See the science</summary><p>The Giladi-based benchmark recovered hematopoietic differentiation biology. JCAP reports gene-perturbation signals alongside cell lineage/state information, then checks literature relevance before producing a combined interpretation.</p></details><div class="action-set"><button type="button" class="button primary run-button" data-demo="giladi" aria-controls="status-giladi">Run Giladi pipeline ▶</button></div><div class="job-status" id="status-giladi" role="status" aria-live="polite">Ready to submit when the job service is connected.</div><div class="job-output" id="output-giladi" hidden><a class="button secondary bundle-link" download>Download complete results (.zip) ↓</a><a class="text-link report-link" target="_blank" rel="noopener" hidden>View final report ↗</a></div><a class="text-link" href="https://doi.org/10.1038/s41556-018-0121-4" target="_blank" rel="noopener">Original paper — Giladi et al. (2018) ↗</a><a class="text-link" href="testing-logs/perturbseq-and-scrna-test-log.docx" download>Full Giladi / integrated test record ↓</a></article>
+</div>
+<div class="research-sources" style="margin-top:24px"><h3>One click. Real analysis. Full results.</h3><p>When the hosted runner is connected, the buttons above will submit the selected test dataset to JCAP, show its job status, and make the complete result ZIP available when the run finishes. The final report can be opened separately. Until then, this page does not claim that cloud execution is live.</p><div class="button-row"><a class="button secondary" href="https://github.com/jcaperella29/JCAPEBIOINFORMATICS_PLATFORM" target="_blank" rel="noopener">View JCAP source and local setup ↗</a><a class="button secondary" href="testing-logs/dashboard-integration-test-log.docx" download>Dashboard technical record ↓</a></div></div>
+<p class="helper" style="margin-top:18px">Also tested: the airway bulk RNA-seq sample included in the repository. Benchmark results show recovery of selected published biological findings; they do not guarantee accuracy for every dataset. Interpretation and proposed experiments require scientific review. Very large network graphs may render slowly even when analysis is complete.</p>
+</div></section>
+</main><footer><div class="container">© <span id="year"></span> John Caperella · JCAP is a research software demonstration, not a clinical diagnostic tool.</div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+// The website uses a real server-side launcher. No pipelines run in browser JavaScript.
+// Expected same-origin endpoints are documented in RUNNER_API_CONTRACT.md.
+const JCAP_API_BASE = '/api';
+const activeJobs = new Map();
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+function setRunStatus(name, state, message) {
+  const el = document.getElementById('status-' + name);
+  el.dataset.state = state;
+  el.textContent = message;
+}
+async function getJSON(url, init) {
+  const response = await fetch(url, { credentials: 'same-origin', cache: 'no-store', ...init });
+  const contentType = response.headers.get('content-type') || '';
+  if (!response.ok || !contentType.includes('application/json')) {
+    throw new Error(response.status === 404 ? 'The hosted JCAP job service is not connected yet.' : `Server response: ${response.status}. Check the hosted runner.`);
+  }
+  return response.json();
+}
+function safePath(path, jobId) {
+  if (typeof path !== 'string' || !path.startsWith('/api/jobs/' + encodeURIComponent(jobId) + '/')) return null;
+  return path;
+}
+async function startDemo(name, button) {
+  if (activeJobs.has(name)) return;
+  button.disabled = true;
+  const output = document.getElementById('output-' + name);
+  output.hidden = true;
+  setRunStatus(name, 'submitting', 'Starting the ' + name.toUpperCase() + ' analysis…');
+  try {
+    const launched = await getJSON(`${JCAP_API_BASE}/jobs`, {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({demo: name})
+    });
+    if (typeof launched.job_id !== 'string' || !/^[A-Za-z0-9_-]{1,100}$/.test(launched.job_id)) throw new Error('Unexpected job ID from server.');
+    const id = launched.job_id;
+    activeJobs.set(name, id);
+    let completed = false;
+    while (activeJobs.get(name) === id) {
+      const result = await getJSON(`${JCAP_API_BASE}/jobs/${encodeURIComponent(id)}`);
+      const status = result.status;
+      if (status === 'complete' || status === 'completed' || status === 'succeeded') {
+        const bundle = safePath(result.bundle_url, id);
+        if (!bundle) throw new Error('Run finished, but the downloadable result bundle is not available.');
+        const bundleLink = output.querySelector('.bundle-link');
+        bundleLink.href = bundle;
+        const report = safePath(result.report_url, id);
+        const reportLink = output.querySelector('.report-link');
+        reportLink.hidden = !report;
+        if (report) reportLink.href = report;
+        output.hidden = false;
+        setRunStatus(name, 'complete', 'Analysis complete! Open the report or download all results.');
+        completed = true;
+        break;
+      }
+      if (status === 'failed' || status === 'cancelled') throw new Error(result.message || 'The analysis did not finish.');
+      if (!['queued', 'running', 'starting'].includes(status)) throw new Error('Unrecognized job status from server.');
+      setRunStatus(name, status, status === 'queued' ? 'Job queued. Waiting for compute resources…' : 'Pipeline running. The analysis may take some time.');
+      await delay(5000);
+    }
+  } catch (error) {
+    setRunStatus(name, 'failed', error.message || 'Could not start the analysis.');
+  } finally {
+    activeJobs.delete(name);
+    button.disabled = false;
+  }
+}
+document.querySelectorAll('.run-button').forEach(button => {
+  button.addEventListener('click', () => startDemo(button.dataset.demo, button));
+});
+</script>
+
+<script>
+// The navigation switches views in place; URLs such as #validation remain shareable.
+(function(){
+ const allowed = new Set(['about','platform','validation']);
+ const panels = [...document.querySelectorAll('.view-panel')];
+ const navLinks = [...document.querySelectorAll('.nav-links a')];
+ function selected(){const name=decodeURIComponent(location.hash.slice(1));return allowed.has(name)?name:'about';}
+ function renderView(){
+   const name=selected();
+   panels.forEach(p=>{p.hidden=p.dataset.view!==name;});
+   navLinks.forEach(link=>{if(link.getAttribute('href')==='#'+name){link.setAttribute('aria-current','page')}else{link.removeAttribute('aria-current')}});
+   document.title = (name==='about'?'About John':name==='platform'?'The JCAP Platform':'Validation & Try It')+' | John Caperella';
+   window.scrollTo({top:0,behavior:'instant'});
+ }
+ window.addEventListener('hashchange',renderView);
+ document.querySelectorAll('a[href="#about"],a[href="#platform"],a[href="#validation"]').forEach(a=>{
+  a.addEventListener('click',()=>{if(location.hash===a.getAttribute('href')) renderView();});
+ });
+ renderView();
+})();
+</script>
+</body></html>
