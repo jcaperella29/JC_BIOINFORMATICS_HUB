@@ -483,7 +483,7 @@
 .workflow-note{font-size:.9rem;color:var(--muted)}.demo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .demo-card{background:white;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 10px 30px rgba(7,22,41,.05);display:flex;flex-direction:column;gap:12px}
 .demo-card h3{font-size:1.44rem;margin:0;color:var(--navy)}.demo-card p{margin:0;color:var(--muted)}.demo-card .meta{font-size:.79rem;color:#315d83;text-transform:uppercase;letter-spacing:.06em;font-weight:800}.demo-card .result{border-left:3px solid var(--cyan);padding-left:12px;color:var(--ink)}
-.demo-card .action-set{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}.demo-card .action-set a,.demo-card .action-set button{font-size:.88rem}.run-button{cursor:pointer;font-family:inherit}.run-button:disabled{opacity:.58;cursor:wait}.job-status{font-size:.9rem;background:#eff5fb;border:1px solid #dce4ee;border-radius:10px;padding:10px;color:#334962}.job-status[data-state="failed"]{background:#fff1ed;border-color:#efc9c1}.job-output{display:flex;flex-direction:column;align-items:flex-start;gap:10px}.job-output[hidden]{display:none}.demo-card details{border-top:1px solid var(--line);padding-top:12px}.demo-card summary{font-weight:750;cursor:pointer;color:var(--blue)}.demo-card details p{margin-top:12px;font-size:.91rem}
+.demo-card .action-set{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}.demo-card .action-set a,.demo-card .action-set button{font-size:.88rem}.demo-card details{border-top:1px solid var(--line);padding-top:12px}.demo-card summary{font-weight:750;cursor:pointer;color:var(--blue)}.demo-card details p{margin-top:12px;font-size:.91rem}
 .helper{font-size:.9rem;color:var(--muted)}.about-inline{display:grid;grid-template-columns:1fr 1fr;gap:30px}.about-inline p{color:var(--muted)}.links-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
 .research-sources{background:#f5f8fc;padding:18px 22px;border:1px solid var(--line);border-radius:16px}.research-sources p{margin:0 0 9px;color:var(--muted)}
 footer a{color:#425d7c}.section-head{max-width:900px}.eyebrow{margin-bottom:12px}
@@ -508,7 +508,7 @@ footer a{color:#425d7c}.section-head{max-width:900px}.eyebrow{margin-bottom:12px
 <body>
 <header class="site-header"><div class="container nav">
 <a class="brand" href="#about">John Caperella · JCAP</a>
-<nav class="nav-links" aria-label="Main navigation"><a href="#about">About John</a><a href="#platform">The Platform</a><a href="#validation">Validation &amp; Try It</a></nav>
+<nav class="nav-links" aria-label="Main navigation"><a href="#about">About John</a><a href="#platform">The Platform</a><a href="#validation">Validation &amp; Results</a></nav>
 </div></header>
 <main id="top">
 <section id="about" class="hero view-panel" data-view="about"><div class="container hero-grid">
@@ -517,101 +517,29 @@ footer a{color:#425d7c}.section-head{max-width:900px}.eyebrow{margin-bottom:12px
 <h1>Hi, I'm John Caperella.</h1>
 <p class="hero-about">Bioinformatician · Scientific software developer · MS in Bioinformatics</p>
 <p class="hero-lead">I build tools that help research teams move from complex data to clear results. With a background in biochemistry and bioinformatics, I created JCAP to make it easier to analyze experiments, understand the biology, and decide what to study next.</p>
-<div class="button-row"><a class="button primary" href="#validation">Try a research example</a><a class="button secondary" href="#platform">Meet JCAP</a><a class="button secondary" href="resume.html" target="_blank" rel="noopener">My résumé</a></div>
+<div class="button-row"><a class="button primary" href="#validation">Explore research results</a><a class="button secondary" href="#platform">Meet JCAP</a><a class="button secondary" href="resume.html" target="_blank" rel="noopener">My résumé</a></div>
 </div>
 <aside class="hero-panel"><img class="portrait" src="assets/IMG_0740.jpg" alt="Portrait of John Caperella" loading="lazy"><h2>Why I built JCAP</h2><p>Scientists should get more than long tables of numbers. They need a clear account of what the data suggest—and what deserves a closer look.</p><div class="stack"><span>Python</span><span>R / Bioconductor</span><span>Nextflow</span><span>FastAPI</span><span>Dash</span></div></aside>
 </div>
-<div class="about-additional"><section class="section white" id="contact"><div class="container about-inline"><div><div class="eyebrow">Behind the platform</div><h2>Built for researchers who need answers they can use.</h2><p>My goal is to make bioinformatics outputs easier to interpret and easier to discuss with a research team. JCAP combines statistics, biological context, and supporting publications—but keeps the underlying data available for inspection.</p><div class="links-row"><a class="button secondary" href="https://github.com/jcaperella29/JCAPEBIOINFORMATICS_PLATFORM" target="_blank" rel="noopener">JCAP source code</a><a class="button secondary" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a><a class="button secondary" href="resume.html" target="_blank" rel="noopener">Résumé</a></div></div><div><h3>Questions or feedback?</h3><p>If you test JCAP, I'd welcome feedback about what worked, what was confusing, and which research tasks you want it to support next.</p><form class="contact-form" action="https://formspree.io/f/mjkneagn" method="POST"><label>Your email<input type="email" name="email" autocomplete="email" required></label><label>Subject<input type="text" name="subject" required></label><label>Message<textarea name="message" rows="4" required></textarea></label><button type="submit" class="button primary">Send feedback</button></form></div></div></section></div>
+<div class="about-additional"><section class="section white" id="contact"><div class="container about-inline"><div><div class="eyebrow">Behind the platform</div><h2>Built for researchers who need answers they can use.</h2><p>My goal is to make bioinformatics outputs easier to interpret and easier to discuss with a research team. JCAP combines statistics, biological context, and supporting publications—but keeps the underlying data available for inspection.</p><div class="links-row"><a class="button secondary" href="https://github.com/jcaperella29/JCAPEBIOINFORMATICS_PLATFORM" target="_blank" rel="noopener">JCAP source code</a><a class="button secondary" href="https://www.linkedin.com/in/john-caperella/" target="_blank" rel="noopener">LinkedIn</a><a class="button secondary" href="resume.html" target="_blank" rel="noopener">Résumé</a></div></div><div><h3>Questions or feedback?</h3><p>If you explore the reports and results, I'd welcome feedback about what was useful, what was confusing, and which research tasks you want JCAP to support next.</p><form class="contact-form" action="https://formspree.io/f/mjkneagn" method="POST"><label>Your email<input type="email" name="email" autocomplete="email" required></label><label>Subject<input type="text" name="subject" required></label><label>Message<textarea name="message" rows="4" required></textarea></label><button type="submit" class="button primary">Send feedback</button></form></div></div></section></div>
 </section>
 <section id="platform" class="section white view-panel" data-view="platform" hidden><div class="container">
 <div class="section-head"><div class="eyebrow">The JCAP Bioinformatics Platform</div><h2>From data to a report you can share with your PI</h2><div class="tagline">Numbers. Narrative. Next Steps.</div><p>JCAP connects gene-expression analysis, biological interpretation, scientific papers, and possible follow-up experiments. Instead of leaving you with only spreadsheets and plots, it helps prepare a report you can review with your principal investigator (PI).</p></div>
 <div class="pillars"><article class="pillar"><h3>01 · Numbers</h3><p>Find important changes in genes and biological pathways, backed by statistics.</p></article><article class="pillar"><h3>02 · Narrative</h3><p>Explain what the results may mean and connect them to published research.</p></article><article class="pillar"><h3>03 · Next Steps</h3><p>Suggest questions and follow-up experiments, assembled into a reviewable research report.</p></article></div>
 <div class="about-inline" style="margin-top:34px"><div><h3>What can JCAP analyze?</h3><p><strong>Bulk RNA-seq:</strong> compare gene activity between groups of samples. <strong>Single-cell RNA-seq:</strong> see how individual cell types respond. <strong>Perturb-seq:</strong> explore how changing a gene affects cells.</p></div><div><h3>What will I see in the dashboard?</h3><p>Analysis results, interactive plots, cell-state information (where relevant), gene-pathway networks, summaries of research papers, and a final report—all organized by stage.</p></div></div>
-<div class="cta-strip"><div><strong>Want to see what JCAP can do?</strong><p>Start with a real published research example, then inspect the science behind the result.</p></div><a class="button" href="#validation">CLICK HERE TO GET STARTED →</a></div>
+<div class="cta-strip"><div><strong>Want to see what JCAP can do?</strong><p>Start with a real published research example, then inspect the science behind the result.</p></div><a class="button" href="#validation">EXPLORE REAL RESULTS →</a></div>
 </div></section>
 <section id="validation" class="section view-panel" data-view="validation" hidden><div class="container">
-<div class="section-head"><div class="eyebrow">Validation &amp; try it yourself</div><h2>Real research data. Recognizable findings.</h2><p>I tested JCAP with published datasets and checked whether it recovered important findings reported by the original researchers. Choose a sample, run the real pipeline from this page, then download the complete result bundle. Hosted execution requires the JCAP job service to be deployed and connected.</p></div>
+<div class="section-head"><div class="eyebrow">Validation &amp; completed results</div><h2>Real research data. Recognizable findings.</h2><p>I tested JCAP using published research datasets to see whether it could recover important findings from the original studies. Explore the completed scientific reports or download every analysis output. These examples were run in advance, not live on this page.</p></div>
 <div class="demo-grid">
-<article class="demo-card"><div class="meta">Bulk RNA-seq · Breast cancer</div><h3>What changes in a tumor?</h3><p class="result">JCAP found changes related to the tissue surrounding breast tumors, consistent with established breast-cancer biology.</p><p><strong>Test snapshot:</strong> 200 samples; 17,591 genes tested; 4,291 met the stated significance cutoffs.</p><details><summary>See the science</summary><p>Using the TCGA-BRCA subset of GEO GSE62944, the analysis found extracellular-matrix and tissue-remodeling signatures, including MMP11 upregulation. Thresholds: FDR &lt; 0.05 and |log2 fold change| ≥ 1. These are findings from an internal benchmark, not an independent accuracy rating.</p></details><div class="action-set"><button type="button" class="button primary run-button" data-demo="brca" aria-controls="status-brca">Run BRCA pipeline ▶</button></div><div class="job-status" id="status-brca" role="status" aria-live="polite">Ready to submit when the job service is connected.</div><div class="job-output" id="output-brca" hidden><a class="button secondary bundle-link" download>Download complete results (.zip) ↓</a><a class="text-link report-link" target="_blank" rel="noopener" hidden>View final report ↗</a></div><div class="helper">The BRCA demo requires its prepared dataset and execution preset on the server; the bundled bulk RNA-seq example currently uses airway.</div><a class="text-link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62944" target="_blank" rel="noopener">Original dataset ↗</a><a class="text-link" href="testing-logs/brca-bulk-rnaseq-test-log.docx" download>Full BRCA test record ↓</a></article>
-<article class="demo-card"><div class="meta">Single-cell RNA-seq · Immune response</div><h3>How do immune cells respond?</h3><p class="result">JCAP found the expected antiviral response in immune cells exposed to interferon-beta, matching the main biology of the original study.</p><p><strong>Test snapshot:</strong> 4,000 cells; eight donors; paired donor-aware analysis of CD14+ monocytes.</p><details><summary>See the science</summary><p>The Kang benchmark recovered interferon-response genes and pathways. Cell-level and donor-aware pseudobulk analyses agreed on the dominant antiviral response. Pseudobulk means grouping cells by donor so people—not individual cells—provide the biological replication.</p></details><div class="action-set"><button type="button" class="button primary run-button" data-demo="kang" aria-controls="status-kang">Run Kang pipeline ▶</button></div><div class="job-status" id="status-kang" role="status" aria-live="polite">Ready to submit when the job service is connected.</div><div class="job-output" id="output-kang" hidden><a class="button secondary bundle-link" download>Download complete results (.zip) ↓</a><a class="text-link report-link" target="_blank" rel="noopener" hidden>View final report ↗</a></div><a class="text-link" href="https://doi.org/10.1038/nbt.4042" target="_blank" rel="noopener">Original paper — Kang et al. (2018) ↗</a><a class="text-link" href="testing-logs/kang-single-cell-test-log.docx" download>Full Kang test record ↓</a></article>
-<article class="demo-card"><div class="meta">Perturb-seq · Blood cell development</div><h3>What happens when a gene changes?</h3><p class="result">JCAP recovered expected changes in blood-cell development linked to targeted gene perturbations.</p><p><strong>Test snapshot:</strong> perturbation-by-perturbation analysis with cell-state context and a combined experiment report.</p><details><summary>See the science</summary><p>The Giladi-based benchmark recovered hematopoietic differentiation biology. JCAP reports gene-perturbation signals alongside cell lineage/state information, then checks literature relevance before producing a combined interpretation.</p></details><div class="action-set"><button type="button" class="button primary run-button" data-demo="giladi" aria-controls="status-giladi">Run Giladi pipeline ▶</button></div><div class="job-status" id="status-giladi" role="status" aria-live="polite">Ready to submit when the job service is connected.</div><div class="job-output" id="output-giladi" hidden><a class="button secondary bundle-link" download>Download complete results (.zip) ↓</a><a class="text-link report-link" target="_blank" rel="noopener" hidden>View final report ↗</a></div><a class="text-link" href="https://doi.org/10.1038/s41556-018-0121-4" target="_blank" rel="noopener">Original paper — Giladi et al. (2018) ↗</a><a class="text-link" href="testing-logs/perturbseq-and-scrna-test-log.docx" download>Full Giladi / integrated test record ↓</a></article>
+<article class="demo-card"><div class="meta">Bulk RNA-seq · Breast cancer</div><h3>What changes in a tumor?</h3><p class="result">JCAP found changes related to the tissue surrounding breast tumors, consistent with established breast-cancer biology.</p><p><strong>Test snapshot:</strong> 200 samples; 17,591 genes tested; 4,291 met the stated significance cutoffs.</p><details><summary>See the science</summary><p>Using the TCGA-BRCA subset of GEO GSE62944, the analysis found extracellular-matrix and tissue-remodeling signatures, including MMP11 upregulation. Thresholds: FDR &lt; 0.05 and |log2 fold change| ≥ 1. These are findings from an internal benchmark, not an independent accuracy rating.</p></details><div class="action-set"><a class="button primary" href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/rnaseq_final_report.md" target="_blank" rel="noopener">View final report ↗</a><a class="button secondary" href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/releases/download/jcap-validation-v1/jcap_RNA_integrated_results.zip" target="_blank" rel="noopener">Download complete results ZIP (30.7 MB) ↓</a></div><p class="helper">Reports: <a href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/rnaseq_final_report.md" target="_blank" rel="noopener">readable Markdown</a> · <a href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/rnaseq_final_report.json" target="_blank" rel="noopener">structured JSON</a>. The ZIP contains the completed analysis outputs; no pipeline runs when you click.</p><a class="text-link" href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62944" target="_blank" rel="noopener">Original dataset ↗</a><a class="text-link" href="testing-logs/brca-bulk-rnaseq-test-log.docx" download>Full BRCA test record ↓</a></article>
+<article class="demo-card"><div class="meta">Single-cell RNA-seq · Immune response</div><h3>How do immune cells respond?</h3><p class="result">JCAP found the expected antiviral response in immune cells exposed to interferon-beta, matching the main biology of the original study.</p><p><strong>Test snapshot:</strong> 4,000 cells; eight donors; paired donor-aware analysis of CD14+ monocytes.</p><details><summary>See the science</summary><p>The Kang benchmark recovered interferon-response genes and pathways. Cell-level and donor-aware pseudobulk analyses agreed on the dominant antiviral response. Pseudobulk means grouping cells by donor so people—not individual cells—provide the biological replication.</p></details><div class="action-set"><a class="button primary" href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/scrna_final_report.md" target="_blank" rel="noopener">View final report ↗</a><a class="button secondary" href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/releases/download/jcap-validation-v1/jcap_scrna_integrated_results.zip" target="_blank" rel="noopener">Download complete results ZIP (132 MB) ↓</a></div><p class="helper">Reports: <a href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/scrna_final_report.md" target="_blank" rel="noopener">readable Markdown</a> · <a href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/scrna_final_report.json" target="_blank" rel="noopener">structured JSON</a>. The ZIP contains the completed analysis outputs; no pipeline runs when you click.</p><a class="text-link" href="https://doi.org/10.1038/nbt.4042" target="_blank" rel="noopener">Original paper — Kang et al. (2018) ↗</a><a class="text-link" href="testing-logs/kang-single-cell-test-log.docx" download>Full Kang test record ↓</a></article>
+<article class="demo-card"><div class="meta">Perturb-seq · Blood cell development</div><h3>What happens when a gene changes?</h3><p class="result">JCAP recovered expected changes in blood-cell development linked to targeted gene perturbations.</p><p><strong>Test snapshot:</strong> perturbation-by-perturbation analysis with cell-state context and a combined experiment report.</p><details><summary>See the science</summary><p>The Giladi-based benchmark recovered hematopoietic differentiation biology. JCAP reports gene-perturbation signals alongside cell lineage/state information, then checks literature relevance before producing a combined interpretation.</p></details><div class="action-set"><a class="button primary" href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/perturbseq_final_report.md" target="_blank" rel="noopener">View final report ↗</a><a class="button secondary" href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/releases/download/jcap-validation-v1/jcap_perturbseq_integrated_results.zip" target="_blank" rel="noopener">Download complete results ZIP (804 MB) ↓</a></div><p class="helper">Reports: <a href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/perturbseq_final_report.md" target="_blank" rel="noopener">readable Markdown</a> · <a href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/blob/main/perturbseq_final_report.json" target="_blank" rel="noopener">structured JSON</a>. The ZIP contains the completed analysis outputs; no pipeline runs when you click.</p><a class="text-link" href="https://doi.org/10.1038/s41556-018-0121-4" target="_blank" rel="noopener">Original paper — Giladi et al. (2018) ↗</a><a class="text-link" href="testing-logs/perturbseq-and-scrna-test-log.docx" download>Full Giladi / integrated test record ↓</a></article>
 </div>
-<div class="research-sources" style="margin-top:24px"><h3>One click. Real analysis. Full results.</h3><p>When the hosted runner is connected, the buttons above will submit the selected test dataset to JCAP, show its job status, and make the complete result ZIP available when the run finishes. The final report can be opened separately. Until then, this page does not claim that cloud execution is live.</p><div class="button-row"><a class="button secondary" href="https://github.com/jcaperella29/JCAPEBIOINFORMATICS_PLATFORM" target="_blank" rel="noopener">View JCAP source and local setup ↗</a><a class="button secondary" href="testing-logs/dashboard-integration-test-log.docx" download>Dashboard technical record ↓</a></div></div>
+<div class="research-sources" style="margin-top:24px"><h3>Real analyses. Reports and complete results.</h3><p>Each example links to its JCAP-generated final report in this website repository and its full output bundle in the October 2026 GitHub Release. The results were generated by local runs of the JCAP pipelines. No backend or cloud execution is required to browse or download them.</p><div class="button-row"><a class="button secondary" href="https://github.com/jcaperella29/JCAPEBIOINFORMATICS_PLATFORM" target="_blank" rel="noopener">View JCAP source and local setup ↗</a><a class="button secondary" href="testing-logs/dashboard-integration-test-log.docx" download>Dashboard technical record ↓</a><a class="button secondary" href="https://github.com/jcaperella29/JC_BIOINFORMATICS_HUB/releases/tag/jcap-validation-v1" target="_blank" rel="noopener">All validation downloads ↗</a></div></div>
 <p class="helper" style="margin-top:18px">Also tested: the airway bulk RNA-seq sample included in the repository. Benchmark results show recovery of selected published biological findings; they do not guarantee accuracy for every dataset. Interpretation and proposed experiments require scientific review. Very large network graphs may render slowly even when analysis is complete.</p>
 </div></section>
 </main><footer><div class="container">© <span id="year"></span> John Caperella · JCAP is a research software demonstration, not a clinical diagnostic tool.</div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-<script>
-// The website uses a real server-side launcher. No pipelines run in browser JavaScript.
-// Expected same-origin endpoints are documented in RUNNER_API_CONTRACT.md.
-const JCAP_API_BASE = '/api';
-const activeJobs = new Map();
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-function setRunStatus(name, state, message) {
-  const el = document.getElementById('status-' + name);
-  el.dataset.state = state;
-  el.textContent = message;
-}
-async function getJSON(url, init) {
-  const response = await fetch(url, { credentials: 'same-origin', cache: 'no-store', ...init });
-  const contentType = response.headers.get('content-type') || '';
-  if (!response.ok || !contentType.includes('application/json')) {
-    throw new Error(response.status === 404 ? 'The hosted JCAP job service is not connected yet.' : `Server response: ${response.status}. Check the hosted runner.`);
-  }
-  return response.json();
-}
-function safePath(path, jobId) {
-  if (typeof path !== 'string' || !path.startsWith('/api/jobs/' + encodeURIComponent(jobId) + '/')) return null;
-  return path;
-}
-async function startDemo(name, button) {
-  if (activeJobs.has(name)) return;
-  button.disabled = true;
-  const output = document.getElementById('output-' + name);
-  output.hidden = true;
-  setRunStatus(name, 'submitting', 'Starting the ' + name.toUpperCase() + ' analysis…');
-  try {
-    const launched = await getJSON(`${JCAP_API_BASE}/jobs`, {
-      method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({demo: name})
-    });
-    if (typeof launched.job_id !== 'string' || !/^[A-Za-z0-9_-]{1,100}$/.test(launched.job_id)) throw new Error('Unexpected job ID from server.');
-    const id = launched.job_id;
-    activeJobs.set(name, id);
-    let completed = false;
-    while (activeJobs.get(name) === id) {
-      const result = await getJSON(`${JCAP_API_BASE}/jobs/${encodeURIComponent(id)}`);
-      const status = result.status;
-      if (status === 'complete' || status === 'completed' || status === 'succeeded') {
-        const bundle = safePath(result.bundle_url, id);
-        if (!bundle) throw new Error('Run finished, but the downloadable result bundle is not available.');
-        const bundleLink = output.querySelector('.bundle-link');
-        bundleLink.href = bundle;
-        const report = safePath(result.report_url, id);
-        const reportLink = output.querySelector('.report-link');
-        reportLink.hidden = !report;
-        if (report) reportLink.href = report;
-        output.hidden = false;
-        setRunStatus(name, 'complete', 'Analysis complete! Open the report or download all results.');
-        completed = true;
-        break;
-      }
-      if (status === 'failed' || status === 'cancelled') throw new Error(result.message || 'The analysis did not finish.');
-      if (!['queued', 'running', 'starting'].includes(status)) throw new Error('Unrecognized job status from server.');
-      setRunStatus(name, status, status === 'queued' ? 'Job queued. Waiting for compute resources…' : 'Pipeline running. The analysis may take some time.');
-      await delay(5000);
-    }
-  } catch (error) {
-    setRunStatus(name, 'failed', error.message || 'Could not start the analysis.');
-  } finally {
-    activeJobs.delete(name);
-    button.disabled = false;
-  }
-}
-document.querySelectorAll('.run-button').forEach(button => {
-  button.addEventListener('click', () => startDemo(button.dataset.demo, button));
-});
-</script>
-
 <script>
 // The navigation switches views in place; URLs such as #validation remain shareable.
 (function(){
@@ -623,7 +551,7 @@ document.querySelectorAll('.run-button').forEach(button => {
    const name=selected();
    panels.forEach(p=>{p.hidden=p.dataset.view!==name;});
    navLinks.forEach(link=>{if(link.getAttribute('href')==='#'+name){link.setAttribute('aria-current','page')}else{link.removeAttribute('aria-current')}});
-   document.title = (name==='about'?'About John':name==='platform'?'The JCAP Platform':'Validation & Try It')+' | John Caperella';
+   document.title = (name==='about'?'About John':name==='platform'?'The JCAP Platform':'Validation & Results')+' | John Caperella';
    window.scrollTo({top:0,behavior:'instant'});
  }
  window.addEventListener('hashchange',renderView);
