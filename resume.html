@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>John J. Caperella Jr. – Resume</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Resume of John J. Caperella Jr., MS – Bioinformatician & Full-Stack Software Engineer." />
-  <style>
+<meta charset="utf-8"/>
+<title>John J. Caperella Jr. — Bioinformatics Resume</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Resume of John J. Caperella Jr., MS — Bioinformatician and scientific software engineer; creator of the JCAP Bioinformatics Platform." name="description"/>
+<style>
     :root {
       --bg: #f5f7fa;
       --card-bg: #ffffff;
@@ -212,288 +213,60 @@
       body { padding: 0; background: #ffffff; }
       .resume { box-shadow: none; border-radius: 0; padding: 1.5rem 1.75rem; }
       a { color: #000000; text-decoration: none; }
-      a::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+      a::after { content: ""; }
       .subsection-title { background: none; border: none; padding: 0; }
     }
-  </style>
+  
+    @media print { .section, .item, .edu-item { break-inside: avoid; } .resume-header { margin-bottom: 1.2rem; } .section { margin-bottom: 1.1rem; } }
+</style>
 </head>
-
 <body>
-  <main class="resume" aria-label="Resume of John J. Caperella Jr.">
-    <header class="resume-header">
-      <h1>John J. Caperella Jr., MS</h1>
-      <h2>Bioinformatician &amp; Full-Stack Software Engineer</h2>
-
-      <div class="summary">
-        MS in Bioinformatics with 2+ years computational research experience and full-stack engineering experience building
-        production-ready scientific and business applications.
-      </div>
-
-      <div class="contact-line">
-        <span>13 Crotona Avenue, Harrison, NY 10528</span>
-        <span>914-484-0257</span>
-        <span>
-          <a href="mailto:jcaperella@gmail.com">jcaperella@gmail.com</a>
-        </span>
-        <span>
-          GitHub:
-          <a href="https://github.com/jcaperella29" target="_blank" rel="noopener noreferrer">
-            github.com/jcaperella29
-          </a>
-        </span>
-      </div>
-    </header>
-
-    <!-- EDUCATION -->
-    <section class="section">
-      <div class="section-title">Education</div>
-      <div class="section-body">
-        <div class="edu-item">
-          <div class="edu-header">
-            <div>Brandeis University, Waltham, MA</div>
-            <div>May 2024</div>
-          </div>
-          <div class="edu-sub">Master of Science in Bioinformatics &nbsp;•&nbsp; GPA: 4.0</div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-header">
-            <div>Pace University, Dyson College of Arts and Sciences, Pleasantville, NY</div>
-            <div>May 2019</div>
-          </div>
-          <div class="edu-sub">Bachelor of Science in Biochemistry; Mathematics Minor</div>
-          <div class="edu-notes">
-            Honors: Biochemistry Excellence Award, Dyson Society of Fellows, Dean’s Scholarship,
-            Dean’s List, Multiple Presentation Awards
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section">
-      <div class="section-title">Skills</div>
-      <div class="section-body skills-grid">
-
-        <div>
-          <div class="skill-group-title">Programming &amp; Deployment</div>
-          <ul class="skill-list">
-            <li>R (Bioconductor, ML, Shiny)</li>
-            <li>Python (ML, Biopython, Flask)</li>
-            <li>Bash, SQL Alchemy</li>
-            <li>Docker, Apptainer/Singularity</li>
-            <li>Nextflow, CWL</li>
-            <li>Google Cloud Platform</li>
-            <li>AWS (App Runner, SES, ECR)</li>
-            <li>Basic SQL and web development</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="skill-group-title">Genomics &amp; Genetics</div>
-          <ul class="skill-list">
-            <li>PLINK, METAL</li>
-            <li>Variant calling</li>
-            <li>ATAC peak analysis</li>
-            <li>Burden tests, meta-analysis</li>
-            <li>FASTQ pipelines</li>
-            <li>De novo assembly</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="skill-group-title">Transcriptomics</div>
-          <ul class="skill-list">
-            <li>RNA-seq, scRNA-seq</li>
-            <li>Microarray processing</li>
-            <li>WGCNA, differential expression</li>
-            <li>PCA/UMAP visualization</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="skill-group-title">Machine Learning &amp; Dimensionality Reduction</div>
-          <ul class="skill-list">
-            <li>Regression models</li>
-            <li>Random Forests, neural networks</li>
-            <li>PCA, UMAP</li>
-            <li>Hierarchical clustering, k-means</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="skill-group-title">Structural Biology</div>
-          <ul class="skill-list">
-            <li>PyMOL</li>
-            <li>AlphaFold</li>
-            <li>AutoDock</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="skill-group-title">Databases &amp; Data Sources</div>
-          <ul class="skill-list">
-            <li>Genebass, Ensembl, UCSC, NCBI</li>
-            <li>PDB, Open Targets, UniProt</li>
-            <li>Gene Ontology</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="skill-group-title">Data Visualization Tools</div>
-          <ul class="skill-list">
-            <li>
-              Flourish Studio — interactive bar, bubble, and treemap charts using Perturb-seq enrichment data;
-              storytelling dashboards.
-            </li>
-            <li>
-              Tableau — interactive dashboards combining bar charts and volcano plots; parameter-driven Top-N filters;
-              custom calculated fields; cross-sheet highlight actions; dynamic tooltips; dashboard containers and layout control.
-            </li>
-            <li>
-              Power BI — built cross-filtered dashboards using Country/Product/Discount slicers; created DAX measures
-              for revenue, profit, and margins; implemented treemaps and comparative bar charts to analyze product and regional performance.
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section">
-      <div class="section-title">Projects</div>
-      <div class="section-body">
-
-        <div class="subsection-title">Independent / Self-Directed</div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Bioinformatics Tools Hub — Multi-Species Analysis Platform</div>
-            <div class="item-context">Ongoing</div>
-          </div>
-          <div class="item-tags">
-            Creator &amp; Full-Stack Developer &nbsp;•&nbsp; R, Shiny, Python, Docker/Singularity, HTML/CSS/JS, GA4, Looker Studio
-          </div>
-          <div class="item-link">
-            <a href="https://jcaperella29.github.io/JC_BIOINFORMATICS_HUB/" target="_blank" rel="noopener noreferrer">
-              jcaperella29.github.io/JC_BIOINFORMATICS_HUB
-            </a>
-          </div>
-          <ul>
-            <li>
-              Engineered a unified platform of interactive multi-species analysis tools supporting human, mouse, fly,
-              and zebrafish for RNA-seq, scRNA-seq, Perturb-seq, ATAC-seq, miRNA-seq, and GWAS workflows.
-            </li>
-            <li>
-              Built consistent UIs for differential expression, QC, PCA/UMAP, clustering, metadata handling,
-              and machine learning (RF/NN-based) analysis.
-            </li>
-            <li>
-              Containerized all tools for HPC deployment using Docker, Singularity, and Apptainer, ensuring reproducibility and minimal setup.
-            </li>
-            <li>
-              Added a dedicated Analytics Tab featuring an embedded Looker Studio iframe dashboard, GA4 event tracking,
-              interactive time-series usage charts, auto-updating event tables, and “Last Checked” timestamps.
-            </li>
-            <li>Designed a central navigation portal improving accessibility for programmers and non-programmers.</li>
-          </ul>
-        </div>
-
-        <div class="subsection-title">Client / Production Work</div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Inflection Point Portal — Full-Stack Flask Application</div>
-            <div class="item-context">2025</div>
-          </div>
-          <div class="item-tags">
-            Sole Developer (Client Project) &nbsp;•&nbsp; AWS, Python/Flask, SQL Alchemy, HTML/CSS/JS, CometChat, AWS SES
-          </div>
-          <ul>
-            <li>Built a production multi-page portal for a small business (The Inflection Point) as the sole full-stack developer.</li>
-            <li>Implemented user authentication,  and secure file uploading (general + private).</li>
-            <li>Embedded a CometChat real-time messaging widget for user-to-user communication.</li>
-            <li>Built an email sending interface using AWS SES, with UI forms for subject/body and backend API handling.</li>
-            <li>Developed a goal-tracking dashboard with cumulative progress entries and user-specific tracking.</li>
-            <li>Deployed on AWS with containerization, environment variables, and secure secrets management.</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="section">
-      <div class="section-title">Relevant Experience</div>
-      <div class="section-body">
-
-        <div class="subsection-title">Independent / Consulting</div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Independent Software Engineer</div>
-            <div class="item-context">2024–Present</div>
-          </div>
-          <ul>
-            <li>Designed and deployed full-stack applications integrating scientific workflows, business logic, and real-time communication tools.</li>
-            <li>Built Flask portals, Shiny apps, APIs, and containerized workflows ready for production use.</li>
-            <li>Implemented reproducible deployment patterns using Docker/Apptainer, environment variables, and secrets management.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Inflection Point — Contract Web Developer</div>
-            <div class="item-context">2025</div>
-          </div>
-          <ul>
-            <li>Owned end-to-end delivery of a production portal (AWS + Flask) for a small business, from requirements through deployment.</li>
-            <li>Implemented authentication, file upload flows, real-time chat integration, and an AWS SES email interface.</li>
-            <li>Built and shipped user-facing dashboards for structured goal tracking and progress history.</li>
-          </ul>
-        </div>
-
-        <div class="subsection-title">Academic Research</div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Computational Research Assistant — Department of Biology</div>
-            <div class="item-context">Pace University, Pleasantville, NY &nbsp;•&nbsp; 2021–2024</div>
-          </div>
-          <ul>
-            <li>Automated zebrafish hair-cell counting with a Python GUI to streamline image-based quantification.</li>
-            <li>Used ML + AlphaFold to predict Cxcr4b receptor partners.</li>
-            <li>Provided computational and lab support; introduced the team to text-mining workflows.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Research Assistant — Department of Biology</div>
-            <div class="item-context">Pace University, Pleasantville, NY &nbsp;•&nbsp; 2020–2021</div>
-          </div>
-          <ul>
-            <li>Zebrafish husbandry and experimental support.</li>
-            <li>RNA extraction, RT-PCR, gel electrophoresis.</li>
-            <li>EdU labeling, confocal microscopy, sequence analysis.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <div class="item-header">
-            <div class="item-role">Biology &amp; Chemistry Tutor</div>
-            <div class="item-context">Pace University, New York, NY &nbsp;•&nbsp; 2019–2020</div>
-          </div>
-          <ul>
-            <li>Tutored General Biology and General &amp; Organic Chemistry students.</li>
-            <li>Supported exam preparation, concept reinforcement, and study strategy.</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-  </main>
+<main aria-label="Resume of John J. Caperella Jr." class="resume">
+<header class="resume-header">
+<h1>John J. Caperella Jr., MS</h1>
+<h2>Bioinformatician &amp; Scientific Software Engineer</h2>
+<div class="summary">Bioinformatician and software engineer with an MS in Bioinformatics, computational research experience, and a record of building scientific workflows and deployed applications. Creator and lead developer of JCAP, an evolving bioinformatics platform connecting omics analysis with biological interpretation and reproducible results.</div>
+<div class="contact-line">
+<span>Harrison, NY</span><span>914-484-0257</span><span><a href="mailto:jcaperella@gmail.com">jcaperella@gmail.com</a></span><span><a href="https://github.com/jcaperella29" rel="noopener noreferrer" target="_blank">GitHub Profile</a></span>
+</div></header>
+<section aria-labelledby="skills-heading" class="section">
+<h3 class="section-title" id="skills-heading">Technical Skills</h3>
+<div class="section-body skills-grid">
+<div><div class="skill-group-title">Programming &amp; Software</div><ul class="skill-list"><li>Python, R/Bioconductor, Bash, SQL</li><li>Flask, FastAPI, Shiny, Dash</li><li>HTML, CSS, JavaScript; SQLAlchemy</li></ul></div>
+<div><div class="skill-group-title">Bioinformatics &amp; Omics</div><ul class="skill-list"><li>RNA-seq, scRNA-seq, Perturb-seq</li><li>Differential expression, enrichment analysis, gene networks</li><li>GWAS, PLINK, METAL; variant analysis</li><li>ATAC-seq, miRNA-seq analysis experience</li></ul></div>
+<div><div class="skill-group-title">Pipelines &amp; Infrastructure</div><ul class="skill-list"><li>Nextflow DSL2, CWL</li><li>Docker, Apptainer/Singularity</li><li>AWS (App Runner, SES, ECR), Google Cloud</li><li>Git/GitHub; reproducible workflows</li></ul></div>
+<div><div class="skill-group-title">Analysis &amp; Visualization</div><ul class="skill-list"><li>Regression, random forests, neural networks</li><li>PCA, UMAP, clustering; WGCNA</li><li>Tableau, Power BI, Flourish</li><li>Scientific dashboards and reporting</li></ul></div>
+<div><div class="skill-group-title">Scientific Resources &amp; Tools</div><ul class="skill-list"><li>NCBI, Ensembl, UCSC, UniProt, PDB</li><li>Gene Ontology, Open Targets, GeneBass</li><li>PyMOL, AlphaFold, AutoDock</li></ul></div>
+</div></section>
+<section aria-labelledby="project-heading" class="section">
+<h3 class="section-title" id="project-heading">Featured Platform</h3>
+<div class="section-body"><div class="item">
+<div class="item-header"><div class="item-role">JCAP Bioinformatics Platform — Creator &amp; Lead Developer</div><div class="item-context">Ongoing</div></div>
+<div class="item-tags">Python · R/Bioconductor · API workflows · Nextflow · Docker/Apptainer · Omics analysis · Enrichment/network interpretation</div>
+<div class="item-link"><a href="https://github.com/jcaperella29/JCAPEBIOINFORMATICS_PLATFORM" rel="noopener noreferrer" target="_blank">Explore the JCAP platform, reports, and releases</a></div>
+<ul>
+<li>Evolved a collection of standalone bioinformatics applications (formerly the Bioinformatics Tools Hub) into JCAP, a unified, pipeline-focused platform for reproducible analysis and interpretation.</li>
+<li>Converted RNA-seq and scRNA-seq analysis tools into API-based workflows; additional legacy tools are candidates for future conversion.</li>
+<li>Combined omics results with enrichment and gene-network analysis to support literature-informed biological interpretation and hypothesis generation.</li>
+<li>Produced analysis outputs for bulk RNA-seq and single-cell/Perturb-seq datasets, including public example reports and downloadable result bundles.</li>
+<li>Built a public-facing, mobile-responsive GitHub Pages site to explain the platform and make demonstrated outputs accessible; computational workflows are not executed on the static site.</li>
+</ul></div></div></section>
+<section aria-labelledby="experience-heading" class="section">
+<h3 class="section-title" id="experience-heading">Professional &amp; Research Experience</h3><div class="section-body">
+<div class="subsection-title">Software Development &amp; Consulting</div>
+<div class="item"><div class="item-header"><div class="item-role">Independent Software Engineer</div><div class="item-context">2024–Present</div></div><ul><li>Developed scientific software, interactive applications, and containerized computational workflows, including the JCAP platform featured above.</li><li>Integrated application interfaces with analysis logic and deployment infrastructure for reusable research and business workflows.</li></ul></div>
+<div class="item"><div class="item-header"><div class="item-role">Inflection Point — Contract Web Developer</div><div class="item-context">2025</div></div><div class="item-tags">Python/Flask · SQLAlchemy · AWS · CometChat · AWS SES</div><ul><li>Served as sole full-stack developer for a deployed small-business portal, from implementation through AWS deployment.</li><li>Implemented authentication, general/private file uploads, real-time messaging integration, and an AWS SES email interface.</li><li>Built user-specific goal-tracking dashboards and progress histories; used containerization, environment variables, and secrets management.</li></ul></div>
+<div class="subsection-title">Academic Research</div>
+<div class="item"><div class="item-header"><div class="item-role">Computational Research Assistant — Department of Biology</div><div class="item-context">Pace University · 2021–2024</div></div><ul><li>Developed a Python GUI to automate zebrafish hair-cell counting and streamline image-based quantification.</li><li>Applied machine learning and AlphaFold to investigate potential Cxcr4b receptor partners.</li><li>Supported computational and laboratory investigations and introduced text-mining workflows.</li></ul></div>
+<div class="item"><div class="item-header"><div class="item-role">Research Assistant — Department of Biology</div><div class="item-context">Pace University · 2020–2021</div></div><ul><li>Performed zebrafish husbandry, RNA extraction, RT-PCR, gel electrophoresis, EdU labeling, confocal microscopy, and sequence analysis.</li></ul></div>
+<div class="item"><div class="item-header"><div class="item-role">Biology &amp; Chemistry Tutor</div><div class="item-context">Pace University · 2019–2020</div></div><ul><li>Tutored general biology and general/organic chemistry, supporting conceptual understanding and exam preparation.</li></ul></div>
+</div></section>
+<section aria-labelledby="education-heading" class="section"><h3 class="section-title" id="education-heading">Education</h3><div class="section-body">
+<div class="edu-item"><div class="edu-header"><div>Brandeis University — Waltham, MA</div><div>May 2024</div></div><div class="edu-sub">Master of Science in Bioinformatics · GPA: 4.0</div></div>
+<div class="edu-item"><div class="edu-header"><div>Pace University — Pleasantville, NY</div><div>May 2019</div></div><div class="edu-sub">Bachelor of Science in Biochemistry · Minor in Mathematics</div><div class="edu-notes">Honors: Biochemistry Excellence Award; Dyson Society of Fellows; Dean’s Scholarship and Dean’s List; presentation awards.</div></div>
+</div></section>
+</main>
 </body>
 </html>
 
+    
